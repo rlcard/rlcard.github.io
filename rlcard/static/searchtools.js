@@ -259,7 +259,7 @@ var Search = {
           listItem.slideDown(5, function() {
             displayNextItem();
           });
-        } else if (DOCUMENTATION_OPTIONS.HASsource) {
+        } else if (DOCUMENTATION_OPTIONS.HAS_SOURCE) {
           var suffix = DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX;
           if (suffix === undefined) {
             suffix = '.txt';
