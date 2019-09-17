@@ -1,42 +1,42 @@
-rlcard.games.simpletexasholdem
+rlcard.games.limitholdem
 ==============================
 
-rlcard.games.simpletexasholdem.dealer
+rlcard.games.limitholdem.dealer
 -------------------------------------
 
-.. automodule:: rlcard.games.simpletexasholdem.dealer
+.. automodule:: rlcard.games.limitholdem.dealer
     :members:
     :undoc-members:
     :show-inheritance:
 
-rlcard.games.simpletexasholdem.game
+rlcard.games.limitholdem.game
 -----------------------------------
 
-.. automodule:: rlcard.games.simpletexasholdem.game
+.. automodule:: rlcard.games.limitholdem.game
     :members:
     :undoc-members:
     :show-inheritance:
 
-rlcard.games.simpletexasholdem.judger
+rlcard.games.limitholdem.judger
 -------------------------------------
 
-.. automodule:: rlcard.games.simpletexasholdem.judger
+.. automodule:: rlcard.games.limitholdem.judger
     :members:
     :undoc-members:
     :show-inheritance:
     
-rlcard.games.simpletexasholdem.player
+rlcard.games.limitholdem.player
 -------------------------------------
 
-.. automodule:: rlcard.games.simpletexasholdem.player
+.. automodule:: rlcard.games.limitholdem.player
     :members:
     :undoc-members:
     :show-inheritance:
     
-rlcard.games.simpletexasholdem.round
+rlcard.games.limitholdem.round
 ------------------------------------
 
-.. automodule:: rlcard.games.simpletexasholdem.round
+.. automodule:: rlcard.games.limitholdem.round
     :members:
     :undoc-members:
     :show-inheritance:
