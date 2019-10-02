@@ -7,3 +7,7 @@ rlcard.games
     rlcard.games.blackjack
     rlcard.games.doudizhu
     rlcard.games.limitholdem
+    rlcard.games.nolimitholdem
+    rlcard.games.leducholdem
+    rlcard.games.uno
+    rlcard.games.mahjong

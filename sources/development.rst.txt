@@ -6,24 +6,61 @@ Developping Algorithms
 
 Although users may do whatever they like to design and try their
 algorithms. We recommend wrapping a new algorithm as an ``Agent`` class
-as the `example agents <rlcard/agents>`__. To be compatible with the
-toolkit, the agent should have the following functions: 
- * ``step``: Given the current state, predict the next action. 
+as the `example agents <../rlcard/agents>`__. To be compatible with the
+toolkit, the agent should have the following functions:
+ * ``step``: Given the current state, predict the next action.
  * ``eval_step``: Similar to ``step``, but for evaluation purpose. Reinforcement learning algorithms will usually add some noise for better exploration in training. In evaluation, no noise will be added to make predictions.
 
 Adding New Environments
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 To add a new environment to the toolkit, generally you should take the
-following steps: 
- * **Implement a game.** Card games usually have similar structures so that they can be implemented with ``Game``, ``Round``, ``Dealer``, ``Judger``, ``Player`` as in existing games. The easiest way is to inherit the classed in `rlcard/core.py <rlcard/core.py>`__ and implement the functions. 
- * **Wrap the game with an environment.** The easiest way is to inherit ``Env`` in `rlcard/envs/env.py <rlcard/env/env.py>`__. You need to implement ``extract_state`` which encodes the state, ``decode_action`` which decode actions from the id to the text string, and ``get_payoffs`` which calculate payoffs of the players. 
- * **Register the game.** Now it is time to tell the toolkit where to locate the new environment. Go to `rlcard/envs/\ **init**.py <rlcard/envs/__init__.py>`__, and indicate the name of the game and its entry point.
+following steps:
+ * **Implement a game.** Card games usually have similar structures so that they can be implemented with ``Game``, ``Round``, ``Dealer``, ``Judger``, ``Player`` as in existing games. The easiest way is to inherit the classed in `rlcard/core.py <../rlcard/core.py>`__ and implement the functions.
+ * **Wrap the game with an environment.** The easiest way is to inherit ``Env`` in `rlcard/envs/env.py <../rlcard/env/env.py>`__. You need to implement ``extract_state`` which encodes the state, ``decode_action`` which decode actions from the id to the text string, and ``get_payoffs`` which calculate payoffs of the players.
+ * **Register the game.** Now it is time to tell the toolkit where to locate the new environment. Go to `rlcard/envs/\_\_init\_\_.py <../rlcard/envs/__init__.py>`__, and indicate the name of the game and its entry point.
 
 To test whether the new environment is set up successfully:
 
 .. code:: python
 
     import rlcard
-    env.make(#the new evironment#)
+    rlcard.make(#the new evironment#)
 
+Customizing Environments
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+In addition to the default state representation and action encoding, we
+also allow customizing an envitonment. In this document, we use Limit
+Texas Hold'em as an example to describe how to modify state
+representation, action encoding, reward calculation, or even the game
+rules.
+
+State Representation
+--------------------
+
+To define our own state representation, we can modify the
+``extract_state`` function in
+`/rlcard/envs/limitholdem.py <../rlcard/envs/limitholdem.py#L33>`__.
+
+Action Encoding
+---------------
+
+To define our own action encoding, we can modify the ``decode_action``
+function in
+`/rlcard/envs/limitholdem.py <../rlcard/envs/limitholdem.py#L69>`__.
+
+Reward Calculation
+------------------
+
+To define our own reward calculation, we can modify the ``get_payoffs``
+function in
+`/rlcard/envs/limitholdem.py <../rlcard/envs/limitholdem.py#L60>`__.
+
+Modifying Game
+--------------
+
+We can change the parameters of a game to adjust its difficulty. For
+example, we can change the number of players, the number of allowed
+raises in Limit Texas Hold'em in the ``__init__`` function in
+`rlcard/games/limitholdem/game.py <../rlcard/games/limitholdem/game.py#L11>`__.

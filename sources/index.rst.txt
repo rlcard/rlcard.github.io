@@ -7,7 +7,7 @@ Welcome to rlcard's documentation!
 ==================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
    :caption: Documentation:
 
@@ -20,7 +20,7 @@ Welcome to rlcard's documentation!
 
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
    :glob:
    :caption: Package Reference:
    

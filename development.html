@@ -103,35 +103,58 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#deepcfr-on-blackjack">DeepCFR on Blackjack</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="games.html#blackjack">Blackjack</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding">State Encoding</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-decoding">Action Decoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-blackjack">State Representation of Blackjack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-blackjack">Action Encoding of Blackjack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-blackjack">Payoff of Blackjack</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#limit-texas-hold-em">Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-limit-texas-hold-em">State Representation of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-limit-texas-hold-em">Action Encoding of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-limit-texas-hold-em">Payoff of Limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#leduc-hold-em">Leduc Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-leduc-hold-em">State Representation of Leduc Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-leduc-hold-em">Action Encoding of Leduc Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-leduc-hold-em">Payoff of Leduc Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#dou-dizhu">Dou Dizhu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-dou-dizhu">State Representation of Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-dou-dizhu">State Encoding of Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-abstraction-of-dou-dizhu">Action Abstraction of Dou Dizhu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff">Payoff</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#limit-texas-hold-em">Limit Texas Hold’em</a></li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a></li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#dou-dizhu">Dou Dizhu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state">State</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#id1">State Encoding</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-abstraction">Action Abstraction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#id2">Payoff</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#uno">UNO</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-q-learning">Deep-Q Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#nfsp">NFSP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deepcfr">DeepCFR</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Development</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#developping-algorithms">Developping Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#adding-new-environments">Adding New Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customizing-environments">Customizing Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#state-representation">State Representation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#action-encoding">Action Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reward-calculation">Reward Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifying-game">Modifying Game</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -172,6 +195,43 @@
 <li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.judger">rlcard.games.limitholdem.judger</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.player">rlcard.games.limitholdem.player</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.round">rlcard.games.limitholdem.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.utils">rlcard.games.limitholdem.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.nolimitholdem.html">rlcard.games.nolimitholdem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.dealer">rlcard.games.nolimitholdem.dealer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.game">rlcard.games.nolimitholdem.game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.judger">rlcard.games.nolimitholdem.judger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.player">rlcard.games.nolimitholdem.player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.round">rlcard.games.nolimitholdem.round</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.leducholdem.html">rlcard.games.leducholdem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.dealer">rlcard.games.leducholdem.dealer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.game">rlcard.games.leducholdem.game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.judger">rlcard.games.leducholdem.judger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.player">rlcard.games.leducholdem.player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.round">rlcard.games.leducholdem.round</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.uno.html">rlcard.games.uno</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.dealer">rlcard.games.uno.dealer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.game">rlcard.games.uno.game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.judger">rlcard.games.uno.judger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.player">rlcard.games.uno.player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.round">rlcard.games.uno.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.card">rlcard.games.uno.card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.utils">rlcard.games.uno.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.mahjong.html">rlcard.games.mahjong</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.dealer">rlcard.games.mahjong.dealer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.game">rlcard.games.mahjong.game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.judger">rlcard.games.mahjong.judger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.player">rlcard.games.mahjong.player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.round">rlcard.games.mahjong.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.card">rlcard.games.mahjong.card</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.utils">rlcard.games.mahjong.utils</a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +314,7 @@
 <h2>Developping Algorithms<a class="headerlink" href="#developping-algorithms" title="Permalink to this headline">¶</a></h2>
 <p>Although users may do whatever they like to design and try their
 algorithms. We recommend wrapping a new algorithm as an <code class="docutils literal notranslate"><span class="pre">Agent</span></code> class
-as the <a class="reference external" href="rlcard/agents">example agents</a>. To be compatible with the
+as the <a class="reference external" href="../rlcard/agents">example agents</a>. To be compatible with the
 toolkit, the agent should have the following functions:</p>
 <blockquote>
 <div><ul class="simple">
@@ -269,15 +329,48 @@ toolkit, the agent should have the following functions:</p>
 following steps:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><strong>Implement a game.</strong> Card games usually have similar structures so that they can be implemented with <code class="docutils literal notranslate"><span class="pre">Game</span></code>, <code class="docutils literal notranslate"><span class="pre">Round</span></code>, <code class="docutils literal notranslate"><span class="pre">Dealer</span></code>, <code class="docutils literal notranslate"><span class="pre">Judger</span></code>, <code class="docutils literal notranslate"><span class="pre">Player</span></code> as in existing games. The easiest way is to inherit the classed in <a class="reference external" href="rlcard/core.py">rlcard/core.py</a> and implement the functions.</p></li>
-<li><p><strong>Wrap the game with an environment.</strong> The easiest way is to inherit <code class="docutils literal notranslate"><span class="pre">Env</span></code> in <a class="reference external" href="rlcard/env/env.py">rlcard/envs/env.py</a>. You need to implement <code class="docutils literal notranslate"><span class="pre">extract_state</span></code> which encodes the state, <code class="docutils literal notranslate"><span class="pre">decode_action</span></code> which decode actions from the id to the text string, and <code class="docutils literal notranslate"><span class="pre">get_payoffs</span></code> which calculate payoffs of the players.</p></li>
-<li><p><strong>Register the game.</strong> Now it is time to tell the toolkit where to locate the new environment. Go to <a class="reference external" href="rlcard/envs/__init__.py">rlcard/envs/**init**.py</a>, and indicate the name of the game and its entry point.</p></li>
+<li><p><strong>Implement a game.</strong> Card games usually have similar structures so that they can be implemented with <code class="docutils literal notranslate"><span class="pre">Game</span></code>, <code class="docutils literal notranslate"><span class="pre">Round</span></code>, <code class="docutils literal notranslate"><span class="pre">Dealer</span></code>, <code class="docutils literal notranslate"><span class="pre">Judger</span></code>, <code class="docutils literal notranslate"><span class="pre">Player</span></code> as in existing games. The easiest way is to inherit the classed in <a class="reference external" href="../rlcard/core.py">rlcard/core.py</a> and implement the functions.</p></li>
+<li><p><strong>Wrap the game with an environment.</strong> The easiest way is to inherit <code class="docutils literal notranslate"><span class="pre">Env</span></code> in <a class="reference external" href="../rlcard/env/env.py">rlcard/envs/env.py</a>. You need to implement <code class="docutils literal notranslate"><span class="pre">extract_state</span></code> which encodes the state, <code class="docutils literal notranslate"><span class="pre">decode_action</span></code> which decode actions from the id to the text string, and <code class="docutils literal notranslate"><span class="pre">get_payoffs</span></code> which calculate payoffs of the players.</p></li>
+<li><p><strong>Register the game.</strong> Now it is time to tell the toolkit where to locate the new environment. Go to <a class="reference external" href="../rlcard/envs/__init__.py">rlcard/envs/__init__.py</a>, and indicate the name of the game and its entry point.</p></li>
 </ul>
 </div></blockquote>
 <p>To test whether the new environment is set up successfully:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rlcard</span>
-<span class="n">env</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="c1">#the new evironment#)</span>
+<span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="c1">#the new evironment#)</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="customizing-environments">
+<h2>Customizing Environments<a class="headerlink" href="#customizing-environments" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the default state representation and action encoding, we
+also allow customizing an envitonment. In this document, we use Limit
+Texas Hold’em as an example to describe how to modify state
+representation, action encoding, reward calculation, or even the game
+rules.</p>
+<div class="section" id="state-representation">
+<h3>State Representation<a class="headerlink" href="#state-representation" title="Permalink to this headline">¶</a></h3>
+<p>To define our own state representation, we can modify the
+<code class="docutils literal notranslate"><span class="pre">extract_state</span></code> function in
+<a class="reference external" href="../rlcard/envs/limitholdem.py#L33">/rlcard/envs/limitholdem.py</a>.</p>
+</div>
+<div class="section" id="action-encoding">
+<h3>Action Encoding<a class="headerlink" href="#action-encoding" title="Permalink to this headline">¶</a></h3>
+<p>To define our own action encoding, we can modify the <code class="docutils literal notranslate"><span class="pre">decode_action</span></code>
+function in
+<a class="reference external" href="../rlcard/envs/limitholdem.py#L69">/rlcard/envs/limitholdem.py</a>.</p>
+</div>
+<div class="section" id="reward-calculation">
+<h3>Reward Calculation<a class="headerlink" href="#reward-calculation" title="Permalink to this headline">¶</a></h3>
+<p>To define our own reward calculation, we can modify the <code class="docutils literal notranslate"><span class="pre">get_payoffs</span></code>
+function in
+<a class="reference external" href="../rlcard/envs/limitholdem.py#L60">/rlcard/envs/limitholdem.py</a>.</p>
+</div>
+<div class="section" id="modifying-game">
+<h3>Modifying Game<a class="headerlink" href="#modifying-game" title="Permalink to this headline">¶</a></h3>
+<p>We can change the parameters of a game to adjust its difficulty. For
+example, we can change the number of players, the number of allowed
+raises in Limit Texas Hold’em in the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function in
+<a class="reference external" href="../rlcard/games/limitholdem/game.py#L11">rlcard/games/limitholdem/game.py</a>.</p>
 </div>
 </div>
 </div>

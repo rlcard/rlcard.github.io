@@ -1,50 +1,58 @@
-rlcard.games.limitholdem
+rlcard.games.mahjong
 ==============================
 
-rlcard.games.limitholdem.dealer
+rlcard.games.mahjong.dealer
 -------------------------------------
 
-.. automodule:: rlcard.games.limitholdem.dealer
+.. automodule:: rlcard.games.mahjong.dealer
     :members:
     :undoc-members:
     :show-inheritance:
 
-rlcard.games.limitholdem.game
+rlcard.games.mahjong.game
 -----------------------------------
 
-.. automodule:: rlcard.games.limitholdem.game
+.. automodule:: rlcard.games.mahjong.game
     :members:
     :undoc-members:
     :show-inheritance:
 
-rlcard.games.limitholdem.judger
+rlcard.games.mahjong.judger
 -------------------------------------
 
-.. automodule:: rlcard.games.limitholdem.judger
+.. automodule:: rlcard.games.mahjong.judger
     :members:
     :undoc-members:
     :show-inheritance:
     
-rlcard.games.limitholdem.player
+rlcard.games.mahjong.player
 -------------------------------------
 
-.. automodule:: rlcard.games.limitholdem.player
+.. automodule:: rlcard.games.mahjong.player
     :members:
     :undoc-members:
     :show-inheritance:
     
-rlcard.games.limitholdem.round
+rlcard.games.mahjong.round
 ------------------------------------
 
-.. automodule:: rlcard.games.limitholdem.round
+.. automodule:: rlcard.games.mahjong.round
     :members:
     :undoc-members:
     :show-inheritance:
 
-rlcard.games.limitholdem.utils
+rlcard.games.mahjong.card
 ------------------------------------
 
-.. automodule:: rlcard.games.limitholdem.utils
+.. automodule:: rlcard.games.mahjong.card
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.games.mahjong.utils
+------------------------------------
+
+.. automodule:: rlcard.games.mahjong.utils
     :members:
     :undoc-members:
     :show-inheritance:
