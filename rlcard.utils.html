@@ -84,12 +84,6 @@
             
               <p class="caption"><span class="caption-text">Documentation:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#rlcard-a-toolkit-for-reinforcement-learning-in-card-games">RLCard: A Toolkit for Reinforcement Learning in Card Games</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#available-environments">Available Environments</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#design-principles">Design Principles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#rlcard-high-level-design">RLCard High-level Design</a><ul>
@@ -158,7 +152,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Package Reference:</span></p>
+<p class="caption"><span class="caption-text">API Documents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="rlcard.envs.html">rlcard.envs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env</a></li>
@@ -237,7 +231,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr">rlcard.agents.deep_cfr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#rlcard-agents-deep-cfr">rlcard.agents.deep_cfr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
 </ul>
@@ -293,11 +287,10 @@
     
     
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="sources/rlcard.utils.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+        <!-- <a href="https://github.com/datamllab/rlcard" class="fa fa-github"> GitHub</a> -->
+        <!-- <a class="github-button" href="https://github.com/datamllab/rlcard" data-icon="octicon-star" data-show-count="true" aria-label="Star datamllab/rlcard on GitHub">Star</a> -->
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/datamllab/rlcard" data-size="large" data-show-count="true" aria-label="Star datamllab/rlcard on GitHub">Star</a>
       </li>
     
   </ul>
@@ -305,6 +298,9 @@
   
   <hr/>
 </div>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
@@ -312,6 +308,28 @@
 <h1>rlcard.utils<a class="headerlink" href="#rlcard-utils" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module-rlcard.utils.utils">
 <span id="rlcard-utils-utils"></span><h2>rlcard.utils.utils<a class="headerlink" href="#module-rlcard.utils.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="rlcard.utils.utils.assign_task">
+<code class="sig-prename descclassname">rlcard.utils.utils.</code><code class="sig-name descname">assign_task</code><span class="sig-paren">(</span><em class="sig-param">task_num</em>, <em class="sig-param">process_num</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.utils.utils.assign_task" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rlcard.utils.utils.elegent_form">
+<code class="sig-prename descclassname">rlcard.utils.utils.</code><code class="sig-name descname">elegent_form</code><span class="sig-paren">(</span><em class="sig-param">card</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.utils.utils.elegent_form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a elegent form of a card string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>card</strong> (<em>string</em>) – A card string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A nice form of card</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>elegent_card (string)</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="function">
 <dt id="rlcard.utils.utils.get_cards_from_ranks">
 <code class="sig-prename descclassname">rlcard.utils.utils.</code><code class="sig-name descname">get_cards_from_ranks</code><span class="sig-paren">(</span><em class="sig-param">player</em>, <em class="sig-param">ranks</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.utils.utils.get_cards_from_ranks" title="Permalink to this definition">¶</a></dt>
@@ -485,6 +503,22 @@
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>(boolean)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rlcard.utils.utils.make_copy_params_op">
+<code class="sig-prename descclassname">rlcard.utils.utils.</code><code class="sig-name descname">make_copy_params_op</code><span class="sig-paren">(</span><em class="sig-param">v1_list</em>, <em class="sig-param">v2_list</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.utils.utils.make_copy_params_op" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rlcard.utils.utils.print_card">
+<code class="sig-prename descclassname">rlcard.utils.utils.</code><code class="sig-name descname">print_card</code><span class="sig-paren">(</span><em class="sig-param">cards</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.utils.utils.print_card" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nicely print a card or list of cards</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>card</strong> (<em>string</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – The card(s) to be printed</p>
 </dd>
 </dl>
 </dd></dl>

@@ -84,12 +84,6 @@
             
               <p class="caption"><span class="caption-text">Documentation:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#rlcard-a-toolkit-for-reinforcement-learning-in-card-games">RLCard: A Toolkit for Reinforcement Learning in Card Games</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#available-environments">Available Environments</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#design-principles">Design Principles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#rlcard-high-level-design">RLCard High-level Design</a><ul>
@@ -158,7 +152,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Package Reference:</span></p>
+<p class="caption"><span class="caption-text">API Documents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="rlcard.envs.html">rlcard.envs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env</a></li>
@@ -237,7 +231,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr">rlcard.agents.deep_cfr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#rlcard-agents-deep-cfr">rlcard.agents.deep_cfr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
 </ul>
@@ -295,11 +289,10 @@
     
     
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="sources/rlcard.games.limitholdem.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+        <!-- <a href="https://github.com/datamllab/rlcard" class="fa fa-github"> GitHub</a> -->
+        <!-- <a class="github-button" href="https://github.com/datamllab/rlcard" data-icon="octicon-star" data-show-count="true" aria-label="Star datamllab/rlcard on GitHub">Star</a> -->
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/datamllab/rlcard" data-size="large" data-show-count="true" aria-label="Star datamllab/rlcard on GitHub">Star</a>
       </li>
     
   </ul>
@@ -307,6 +300,9 @@
   
   <hr/>
 </div>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
@@ -647,7 +643,7 @@
 <span id="rlcard-games-limitholdem-utils"></span><h2>rlcard.games.limitholdem.utils<a class="headerlink" href="#module-rlcard.games.limitholdem.utils" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="rlcard.games.limitholdem.utils.Hand">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.games.limitholdem.utils.</code><code class="sig-name descname">Hand</code><a class="headerlink" href="#rlcard.games.limitholdem.utils.Hand" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">rlcard.games.limitholdem.utils.</code><code class="sig-name descname">Hand</code><span class="sig-paren">(</span><em class="sig-param">all_cards</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.Hand" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="method">
 <dt id="rlcard.games.limitholdem.utils.Hand.evaluateHand">
@@ -659,14 +655,9 @@ And pick the best five cards (for comparing in case 2 hands have the same Catego
 <dl class="method">
 <dt id="rlcard.games.limitholdem.utils.Hand.get_hand_five_cards">
 <code class="sig-name descname">get_hand_five_cards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.Hand.get_hand_five_cards" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="rlcard.games.limitholdem.utils.Hand.setCards">
-<code class="sig-name descname">setCards</code><span class="sig-paren">(</span><em class="sig-param">seven_cards=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.Hand.setCards" title="Permalink to this definition">¶</a></dt>
-<dd><p>Assign value to all_cards
-:param seven_cards: # two hand cards + five public cards on deck
-:type seven_cards: list</p>
+<dd><p>Get the best five cards of a player
+:returns: the best five cards among the seven cards of a player
+:rtype: (list)</p>
 </dd></dl>
 
 </dd></dl>
@@ -679,6 +670,50 @@ And pick the best five cards (for comparing in case 2 hands have the same Catego
 :type hand0: list
 :param hand1: all the seven cards of player1
 :type hand1: list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>player1 wins
+[1, 0]: player0 wins
+[1, 1]: draw</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>[0, 1]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rlcard.games.limitholdem.utils.compare_ranks">
+<code class="sig-prename descclassname">rlcard.games.limitholdem.utils.</code><code class="sig-name descname">compare_ranks</code><span class="sig-paren">(</span><em class="sig-param">position</em>, <em class="sig-param">handcard0</em>, <em class="sig-param">handcard1</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.compare_ranks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compare cards in same position of plays’ five handcards
+:param position: the position of a card in a sorted handcard
+:type position: int
+:param handcard0: five best cards of player0
+:type handcard0: list
+:param handcard1: five best cards of player1
+:type handcard1: list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>player1 wins
+[1, 0]: player0 wins
+[1, 1]: draw</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>[0, 1]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rlcard.games.limitholdem.utils.determine_winner">
+<code class="sig-prename descclassname">rlcard.games.limitholdem.utils.</code><code class="sig-name descname">determine_winner</code><span class="sig-paren">(</span><em class="sig-param">key_index</em>, <em class="sig-param">hand0_5_cards</em>, <em class="sig-param">hand1_5_cards</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.determine_winner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine who wins
+:param key_index: the position of a card in a sorted handcard
+:type key_index: int
+:param hand0_5_cards: five best cards of player0
+:type hand0_5_cards: list
+:param hand0_5_cards: five best cards of player1
+:type hand0_5_cards: list</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>player1 wins

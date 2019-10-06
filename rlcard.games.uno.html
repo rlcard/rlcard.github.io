@@ -84,12 +84,6 @@
             
               <p class="caption"><span class="caption-text">Documentation:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#rlcard-a-toolkit-for-reinforcement-learning-in-card-games">RLCard: A Toolkit for Reinforcement Learning in Card Games</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#available-environments">Available Environments</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#design-principles">Design Principles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#rlcard-high-level-design">RLCard High-level Design</a><ul>
@@ -158,7 +152,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Package Reference:</span></p>
+<p class="caption"><span class="caption-text">API Documents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="rlcard.envs.html">rlcard.envs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env</a></li>
@@ -237,7 +231,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr">rlcard.agents.deep_cfr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#rlcard-agents-deep-cfr">rlcard.agents.deep_cfr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
 </ul>
@@ -295,11 +289,10 @@
     
     
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="sources/rlcard.games.uno.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+        <!-- <a href="https://github.com/datamllab/rlcard" class="fa fa-github"> GitHub</a> -->
+        <!-- <a class="github-button" href="https://github.com/datamllab/rlcard" data-icon="octicon-star" data-show-count="true" aria-label="Star datamllab/rlcard on GitHub">Star</a> -->
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/datamllab/rlcard" data-size="large" data-show-count="true" aria-label="Star datamllab/rlcard on GitHub">Star</a>
       </li>
     
   </ul>
@@ -307,6 +300,9 @@
   
   <hr/>
 </div>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
@@ -322,17 +318,36 @@
 <dl class="method">
 <dt id="rlcard.games.uno.dealer.UnoDealer.deal_cards">
 <code class="sig-name descname">deal_cards</code><span class="sig-paren">(</span><em class="sig-param">player</em>, <em class="sig-param">num</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.dealer.UnoDealer.deal_cards" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Deal some cards from deck to one player</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>player</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><em>object</em></a>) – The object of DoudizhuPlayer</p></li>
+<li><p><strong>num</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – The number of cards to be dealed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.dealer.UnoDealer.flip_top_card">
 <code class="sig-name descname">flip_top_card</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.dealer.UnoDealer.flip_top_card" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Flip top card when a new game starts</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The object of UnoCard at the top of the deck</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)">object</a>)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.dealer.UnoDealer.shuffle">
 <code class="sig-name descname">shuffle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.dealer.UnoDealer.shuffle" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Shuffle the deck</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -346,52 +361,158 @@
 <dl class="method">
 <dt id="rlcard.games.uno.game.UnoGame.get_action_num">
 <em class="property">static </em><code class="sig-name descname">get_action_num</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.game.UnoGame.get_action_num" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return the number of applicable actions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of actions. There are 61 actions</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a>)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.game.UnoGame.get_legal_actions">
 <code class="sig-name descname">get_legal_actions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.game.UnoGame.get_legal_actions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return the legal actions for current player</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of legal actions</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a>)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.game.UnoGame.get_payoffs">
 <code class="sig-name descname">get_payoffs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.game.UnoGame.get_payoffs" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return the payoffs of the game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Each entry corresponds to the payoff of one player</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a>)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.game.UnoGame.get_player_id">
 <code class="sig-name descname">get_player_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.game.UnoGame.get_player_id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return the current player’s id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>current player’s id</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a>)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.game.UnoGame.get_player_num">
 <code class="sig-name descname">get_player_num</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.game.UnoGame.get_player_num" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return the number of players in Limit Texas Hold’em</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of players in the game</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a>)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.game.UnoGame.get_state">
 <code class="sig-name descname">get_state</code><span class="sig-paren">(</span><em class="sig-param">player_id</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.game.UnoGame.get_state" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return player’s state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>player_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – player id</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The state of the player</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a>)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.game.UnoGame.init_game">
 <code class="sig-name descname">init_game</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.game.UnoGame.init_game" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Initialize players and state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Tuple containing:</p>
+<blockquote>
+<div><p>(dict): The first state in one game
+(int): Current player’s id</p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)">tuple</a>)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.game.UnoGame.is_over">
 <code class="sig-name descname">is_over</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.game.UnoGame.is_over" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Check if the game is over</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the game is over</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(boolean)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.game.UnoGame.step">
 <code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param">action</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.game.UnoGame.step" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Get the next state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – A specific action</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>Tuple containing:</p>
+<blockquote>
+<div><p>(dict): next player’s state
+(int): next plater’s id</p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)">tuple</a>)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.game.UnoGame.step_back">
 <code class="sig-name descname">step_back</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.game.UnoGame.step_back" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return to the previous state of the game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the game steps back successfully</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a>)</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -405,7 +526,19 @@
 <dl class="method">
 <dt id="rlcard.games.uno.judger.UnoJudger.judge_winner">
 <em class="property">static </em><code class="sig-name descname">judge_winner</code><span class="sig-paren">(</span><em class="sig-param">players</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.judger.UnoJudger.judge_winner" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Judge the winner of the game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>players</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – The list of players who play the game</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The player id of the winner</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a>)</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -434,7 +567,16 @@
 <dl class="method">
 <dt id="rlcard.games.uno.round.UnoRound.flip_top_card">
 <code class="sig-name descname">flip_top_card</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.round.UnoRound.flip_top_card" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Flip the top card of the card pile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the top card in game</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(object of UnoCard)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.round.UnoRound.get_legal_actions">
@@ -444,22 +586,50 @@
 <dl class="method">
 <dt id="rlcard.games.uno.round.UnoRound.get_state">
 <code class="sig-name descname">get_state</code><span class="sig-paren">(</span><em class="sig-param">players</em>, <em class="sig-param">player_id</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.round.UnoRound.get_state" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Get player’s state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>players</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – The list of UnoPlayer</p></li>
+<li><p><strong>player_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – The id of the player</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.round.UnoRound.perform_top_card">
 <code class="sig-name descname">perform_top_card</code><span class="sig-paren">(</span><em class="sig-param">players</em>, <em class="sig-param">top_card</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.round.UnoRound.perform_top_card" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Perform the top card</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>players</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – list of UnoPlayer objects</p></li>
+<li><p><strong>top_card</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><em>object</em></a>) – object of UnoCard</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.round.UnoRound.proceed_round">
 <code class="sig-name descname">proceed_round</code><span class="sig-paren">(</span><em class="sig-param">players</em>, <em class="sig-param">action</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.round.UnoRound.proceed_round" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Call other Classes’s functions to keep one round running</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>player</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><em>object</em></a>) – object of UnoPlayer</p></li>
+<li><p><strong>action</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – string of legal action</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="method">
 <dt id="rlcard.games.uno.round.UnoRound.replace_deck">
 <code class="sig-name descname">replace_deck</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.round.UnoRound.replace_deck" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Add cards have been played to deck</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -473,12 +643,35 @@
 <dl class="method">
 <dt id="rlcard.games.uno.card.UnoCard.get_str">
 <code class="sig-name descname">get_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.card.UnoCard.get_str" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Get the string representation of card</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The string of card’s color and trait</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a>)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="rlcard.games.uno.card.UnoCard.info">
 <code class="sig-name descname">info</code><em class="property"> = {'color': ['r', 'g', 'b', 'y'], 'trait': ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'skip', 'reverse', 'draw_2', 'wild', 'wild_draw_4'], 'type': ['number', 'action', 'wild']}</em><a class="headerlink" href="#rlcard.games.uno.card.UnoCard.info" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="rlcard.games.uno.card.UnoCard.print_cards">
+<em class="property">static </em><code class="sig-name descname">print_cards</code><span class="sig-paren">(</span><em class="sig-param">cards</em>, <em class="sig-param">wild_color=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.card.UnoCard.print_cards" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print out card in a nice form</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>card</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – The string form or a list of a UNO card</p></li>
+<li><p><strong>wild_color</strong> (<em>boolean</em>) – True if assign collor to wild cards</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -488,27 +681,82 @@
 <dl class="function">
 <dt id="rlcard.games.uno.utils.cards2list">
 <code class="sig-prename descclassname">rlcard.games.uno.utils.</code><code class="sig-name descname">cards2list</code><span class="sig-paren">(</span><em class="sig-param">cards</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.utils.cards2list" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Get the corresponding string representation of cards</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cards</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – list of UnoCards objects</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>string representation of cards</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(string)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="function">
 <dt id="rlcard.games.uno.utils.encode_hand">
-<code class="sig-prename descclassname">rlcard.games.uno.utils.</code><code class="sig-name descname">encode_hand</code><span class="sig-paren">(</span><em class="sig-param">encoded_hand</em>, <em class="sig-param">hand</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.utils.encode_hand" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-prename descclassname">rlcard.games.uno.utils.</code><code class="sig-name descname">encode_hand</code><span class="sig-paren">(</span><em class="sig-param">plane</em>, <em class="sig-param">hand</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.utils.encode_hand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode hand and represerve it into plane</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plane</strong> (<em>array</em>) – 3*4*15 numpy array</p></li>
+<li><p><strong>hand</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – list of string of hand’s card</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>3*4*15 numpy array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(array)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="function">
 <dt id="rlcard.games.uno.utils.encode_target">
-<code class="sig-prename descclassname">rlcard.games.uno.utils.</code><code class="sig-name descname">encode_target</code><span class="sig-paren">(</span><em class="sig-param">encoded_target</em>, <em class="sig-param">target</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.utils.encode_target" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-prename descclassname">rlcard.games.uno.utils.</code><code class="sig-name descname">encode_target</code><span class="sig-paren">(</span><em class="sig-param">plane</em>, <em class="sig-param">target</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.utils.encode_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode target and represerve it into plane</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>plane</strong> (<em>array</em>) – 1*4*15 numpy array</p></li>
+<li><p><strong>target</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – string of target card</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>1*4*15 numpy array</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(array)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="function">
 <dt id="rlcard.games.uno.utils.hand2dict">
 <code class="sig-prename descclassname">rlcard.games.uno.utils.</code><code class="sig-name descname">hand2dict</code><span class="sig-paren">(</span><em class="sig-param">hand</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.utils.hand2dict" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Get the corresponding dict representation of hand</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hand</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – list of string of hand’s card</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict of hand</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a>)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="function">
 <dt id="rlcard.games.uno.utils.init_deck">
 <code class="sig-prename descclassname">rlcard.games.uno.utils.</code><code class="sig-name descname">init_deck</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.uno.utils.init_deck" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Generate uno deck of 108 cards</p>
+</dd></dl>
 
 </div>
 </div>

@@ -83,12 +83,6 @@
             
               <p class="caption"><span class="caption-text">Documentation:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#rlcard-a-toolkit-for-reinforcement-learning-in-card-games">RLCard: A Toolkit for Reinforcement Learning in Card Games</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#available-environments">Available Environments</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#design-principles">Design Principles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#rlcard-high-level-design">RLCard High-level Design</a><ul>
@@ -157,7 +151,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Package Reference:</span></p>
+<p class="caption"><span class="caption-text">API Documents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="rlcard.envs.html">rlcard.envs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env</a></li>
@@ -236,7 +230,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr">rlcard.agents.deep_cfr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#rlcard-agents-deep-cfr">rlcard.agents.deep_cfr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
 </ul>
@@ -292,11 +286,10 @@
     
     
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="sources/rlcard.core.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+        <!-- <a href="https://github.com/datamllab/rlcard" class="fa fa-github"> GitHub</a> -->
+        <!-- <a class="github-button" href="https://github.com/datamllab/rlcard" data-icon="octicon-star" data-show-count="true" aria-label="Star datamllab/rlcard on GitHub">Star</a> -->
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/datamllab/rlcard" data-size="large" data-show-count="true" aria-label="Star datamllab/rlcard on GitHub">Star</a>
       </li>
     
   </ul>
@@ -304,6 +297,9 @@
   
   <hr/>
 </div>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
@@ -479,23 +475,6 @@ Similarly the rank variable should be one of [A, 2, 3, 4, 5, 6, 7, 8, 9, T, J, Q
 </dd></dl>
 
 <dl class="class">
-<dt id="rlcard.core.Monitor">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.core.</code><code class="sig-name descname">Monitor</code><a class="headerlink" href="#rlcard.core.Monitor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>Monitor records useful information in the game</p>
-<dl class="attribute">
-<dt id="rlcard.core.Monitor.all_played">
-<code class="sig-name descname">all_played</code><em class="property"> = []</em><a class="headerlink" href="#rlcard.core.Monitor.all_played" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="rlcard.core.Monitor.last_played">
-<code class="sig-name descname">last_played</code><em class="property"> = []</em><a class="headerlink" href="#rlcard.core.Monitor.last_played" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
 <dt id="rlcard.core.Player">
 <em class="property">class </em><code class="sig-prename descclassname">rlcard.core.</code><code class="sig-name descname">Player</code><span class="sig-paren">(</span><em class="sig-param">player_id</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.core.Player" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
@@ -542,11 +521,6 @@ Similarly the rank variable should be one of [A, 2, 3, 4, 5, 6, 7, 8, 9, T, J, Q
 <code class="sig-name descname">proceed_round</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.core.Round.proceed_round" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call other Classes’s functions to keep the game running</p>
 </dd></dl>
-
-<dl class="attribute">
-<dt id="rlcard.core.Round.round_id">
-<code class="sig-name descname">round_id</code><em class="property"> = None</em><a class="headerlink" href="#rlcard.core.Round.round_id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Introduction &mdash; RLcard 0.0.1 documentation</title>
+  <title>RLCard: A Toolkit for Reinforcement Learning in Card Games &mdash; RLcard 0.0.1 documentation</title>
   
 
   
@@ -35,9 +35,7 @@
   <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <!-- <link rel="copyright" title="DATA Lab at Texas A&M University"> -->
-    <link rel="next" title="Overview" href="overview.html" />
-    <link rel="prev" title="Welcome to rlcard’s documentation!" href="index.html" /> 
+    <!-- <link rel="copyright" title="DATA Lab at Texas A&M University"> --> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,13 +81,7 @@
             
             
               <p class="caption"><span class="caption-text">Documentation:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#rlcard-a-toolkit-for-reinforcement-learning-in-card-games">RLCard: A Toolkit for Reinforcement Learning in Card Games</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#available-environments">Available Environments</a></li>
-</ul>
-</li>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#design-principles">Design Principles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#rlcard-high-level-design">RLCard High-level Design</a><ul>
@@ -158,7 +150,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Package Reference:</span></p>
+<p class="caption"><span class="caption-text">API Documents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.envs.html">rlcard.envs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env</a></li>
@@ -237,7 +229,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr">rlcard.agents.deep_cfr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#rlcard-agents-deep-cfr">rlcard.agents.deep_cfr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
 </ul>
@@ -289,15 +281,14 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Introduction</li>
+      <li>RLCard: A Toolkit for Reinforcement Learning in Card Games</li>
     
     
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="sources/introduction.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+        <!-- <a href="https://github.com/datamllab/rlcard" class="fa fa-github"> GitHub</a> -->
+        <!-- <a class="github-button" href="https://github.com/datamllab/rlcard" data-icon="octicon-star" data-show-count="true" aria-label="Star datamllab/rlcard on GitHub">Star</a> -->
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/datamllab/rlcard" data-size="large" data-show-count="true" aria-label="Star datamllab/rlcard on GitHub">Star</a>
       </li>
     
   </ul>
@@ -305,13 +296,14 @@
   
   <hr/>
 </div>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="rlcard-a-toolkit-for-reinforcement-learning-in-card-games">
-<h2>RLCard: A Toolkit for Reinforcement Learning in Card Games<a class="headerlink" href="#rlcard-a-toolkit-for-reinforcement-learning-in-card-games" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="rlcard-a-toolkit-for-reinforcement-learning-in-card-games">
+<h1>RLCard: A Toolkit for Reinforcement Learning in Card Games<a class="headerlink" href="#rlcard-a-toolkit-for-reinforcement-learning-in-card-games" title="Permalink to this headline">¶</a></h1>
 <p>RLCard is a toolkit for developing Reinforcement Learning (RL)
 algorithms in card games. It supports multiple challenging card
 environments with common and easy-to-use interfaces. The goal of RLCard
@@ -320,7 +312,6 @@ the research of reinforcement learning in domains with multiple agents,
 imperfect information, and large state and action space. RLCard is
 developed by <a class="reference external" href="http://faculty.cs.tamu.edu/xiahu/">DATA Lab</a> at Texas
 A&amp;M University.</p>
-</div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>Make sure that you have <strong>Python 3.5+</strong> and <strong>pip</strong> installed. You can
@@ -431,15 +422,6 @@ should be passed to <code class="docutils literal notranslate"><span class="pre"
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="overview.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to rlcard’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

@@ -84,12 +84,6 @@
             
               <p class="caption"><span class="caption-text">Documentation:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#rlcard-a-toolkit-for-reinforcement-learning-in-card-games">RLCard: A Toolkit for Reinforcement Learning in Card Games</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#available-environments">Available Environments</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#design-principles">Design Principles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview.html#rlcard-high-level-design">RLCard High-level Design</a><ul>
@@ -158,7 +152,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Package Reference:</span></p>
+<p class="caption"><span class="caption-text">API Documents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="rlcard.envs.html">rlcard.envs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env</a></li>
@@ -237,7 +231,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">rlcard.agents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-rlcard.agents.deep_cfr">rlcard.agents.deep_cfr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rlcard-agents-deep-cfr">rlcard.agents.deep_cfr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
 </ul>
@@ -293,11 +287,10 @@
     
     
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="sources/rlcard.agents.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+        <!-- <a href="https://github.com/datamllab/rlcard" class="fa fa-github"> GitHub</a> -->
+        <!-- <a class="github-button" href="https://github.com/datamllab/rlcard" data-icon="octicon-star" data-show-count="true" aria-label="Star datamllab/rlcard on GitHub">Star</a> -->
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/datamllab/rlcard" data-size="large" data-show-count="true" aria-label="Star datamllab/rlcard on GitHub">Star</a>
       </li>
     
   </ul>
@@ -305,213 +298,16 @@
   
   <hr/>
 </div>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="rlcard-agents">
 <h1>rlcard.agents<a class="headerlink" href="#rlcard-agents" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-rlcard.agents.deep_cfr">
-<span id="rlcard-agents-deep-cfr"></span><h2>rlcard.agents.deep_cfr<a class="headerlink" href="#module-rlcard.agents.deep_cfr" title="Permalink to this headline">¶</a></h2>
-<p>Implements Deep CFR Algorithm.</p>
-<dl class="simple">
-<dt>The implementation is derived from:</dt><dd><p><a class="reference external" href="https://github.com/deepmind/open_spiel/blob/master/open_spiel/python/algorithms/deep_cfr.py">https://github.com/deepmind/open_spiel/blob/master/open_spiel/python/algorithms/deep_cfr.py</a></p>
-</dd>
-</dl>
-<p>We modify the structure for single player game and rlcard package, and fix some bugs for loss calculation.</p>
-<p>See <a class="reference external" href="https://arxiv.org/abs/1811.00164">https://arxiv.org/abs/1811.00164</a>.</p>
-<p>The algorithm defines an <cite>advantage</cite> and <cite>strategy</cite> networks that compute
-advantages used to do regret matching across information sets and to approximate
-the strategy profiles of the game.    To train these networks a fixed ring buffer
-(other data structures may be used) memory is used to accumulate samples to
-train the networks.</p>
-<dl class="class">
-<dt id="rlcard.agents.deep_cfr.AdvantageMemory">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.agents.deep_cfr.</code><code class="sig-name descname">AdvantageMemory</code><span class="sig-paren">(</span><em class="sig-param">info_state</em>, <em class="sig-param">iteration</em>, <em class="sig-param">advantage</em>, <em class="sig-param">action</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.deep_cfr.AdvantageMemory" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.AdvantageMemory.action">
-<em class="property">property </em><code class="sig-name descname">action</code><a class="headerlink" href="#rlcard.agents.deep_cfr.AdvantageMemory.action" title="Permalink to this definition">¶</a></dt>
-<dd><p>Alias for field number 3</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.AdvantageMemory.advantage">
-<em class="property">property </em><code class="sig-name descname">advantage</code><a class="headerlink" href="#rlcard.agents.deep_cfr.AdvantageMemory.advantage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Alias for field number 2</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.AdvantageMemory.info_state">
-<em class="property">property </em><code class="sig-name descname">info_state</code><a class="headerlink" href="#rlcard.agents.deep_cfr.AdvantageMemory.info_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>Alias for field number 0</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.AdvantageMemory.iteration">
-<em class="property">property </em><code class="sig-name descname">iteration</code><a class="headerlink" href="#rlcard.agents.deep_cfr.AdvantageMemory.iteration" title="Permalink to this definition">¶</a></dt>
-<dd><p>Alias for field number 1</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="rlcard.agents.deep_cfr.DeepCFR">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.agents.deep_cfr.</code><code class="sig-name descname">DeepCFR</code><span class="sig-paren">(</span><em class="sig-param">session</em>, <em class="sig-param">env</em>, <em class="sig-param">policy_network_layers=(32</em>, <em class="sig-param">32)</em>, <em class="sig-param">advantage_network_layers=(32</em>, <em class="sig-param">32)</em>, <em class="sig-param">num_traversals=10</em>, <em class="sig-param">num_step=40</em>, <em class="sig-param">learning_rate=0.0001</em>, <em class="sig-param">batch_size_advantage=16</em>, <em class="sig-param">batch_size_strategy=16</em>, <em class="sig-param">memory_capacity=10000000</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.deep_cfr.DeepCFR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>Implement the Deep CFR Algorithm.</p>
-<p>See <a class="reference external" href="https://arxiv.org/abs/1811.00164">https://arxiv.org/abs/1811.00164</a>.</p>
-<p>Define all networks and sampling buffers/memories.    Derive losses &amp; learning
-steps. Initialize the game state and algorithmic variables.</p>
-<dl class="simple">
-<dt>Note: batch sizes default to <cite>None</cite> implying that training over the full</dt><dd><p>dataset in memory is done by default.    To sample from the memories you
-may set these values to something less than the full capacity of the
-memory.</p>
-</dd>
-</dl>
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.DeepCFR.action_advantage">
-<code class="sig-name descname">action_advantage</code><span class="sig-paren">(</span><em class="sig-param">state</em>, <em class="sig-param">player</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.deep_cfr.DeepCFR.action_advantage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns action advantages for a single batch.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.DeepCFR.action_probabilities">
-<code class="sig-name descname">action_probabilities</code><span class="sig-paren">(</span><em class="sig-param">state</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.deep_cfr.DeepCFR.action_probabilities" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns action probabilites dict for a single batch.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.DeepCFR.reinitialize_advantage_networks">
-<code class="sig-name descname">reinitialize_advantage_networks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.deep_cfr.DeepCFR.reinitialize_advantage_networks" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reinitialize the advantage networks</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.DeepCFR.simulate_other">
-<code class="sig-name descname">simulate_other</code><span class="sig-paren">(</span><em class="sig-param">player</em>, <em class="sig-param">state</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.deep_cfr.DeepCFR.simulate_other" title="Permalink to this definition">¶</a></dt>
-<dd><p>simulate the action for other players</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>player</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – an player id</p></li>
-<li><p><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – current state</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>an action id</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>action (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.DeepCFR.step">
-<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param">state</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.deep_cfr.DeepCFR.step" title="Permalink to this definition">¶</a></dt>
-<dd><p>predict the action for generating training data</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – current state</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>an action id</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>action (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.DeepCFR.train">
-<code class="sig-name descname">train</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.deep_cfr.DeepCFR.train" title="Permalink to this definition">¶</a></dt>
-<dd><p>Perform tree traversal and train the network</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>the trained policy network
-average advantage loss (float): players average advantage loss
-policy loss (float): policy loss</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>policy_network (tf.placeholder)</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="rlcard.agents.deep_cfr.FixedSizeRingBuffer">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.agents.deep_cfr.</code><code class="sig-name descname">FixedSizeRingBuffer</code><span class="sig-paren">(</span><em class="sig-param">replay_buffer_capacity</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.deep_cfr.FixedSizeRingBuffer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>ReplayBuffer of fixed size with a FIFO replacement policy.</p>
-<p>Stored transitions can be sampled uniformly.</p>
-<p>The underlying datastructure is a ring buffer, allowing 0(1) adding and
-sampling.</p>
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.FixedSizeRingBuffer.add">
-<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">element</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.deep_cfr.FixedSizeRingBuffer.add" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds <cite>element</cite> to the buffer.</p>
-<p>If the buffer is full, the oldest element will be replaced.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>element</strong> – data to be added to the buffer.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.FixedSizeRingBuffer.clear">
-<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.deep_cfr.FixedSizeRingBuffer.clear" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.FixedSizeRingBuffer.sample">
-<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param">num_samples</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.deep_cfr.FixedSizeRingBuffer.sample" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns <cite>num_samples</cite> uniformly sampled from the buffer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>num_samples</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – number of samples to draw.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>a list of random sampled elements of the buffer</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>sample data (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a>)</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.7)"><strong>ValueError</strong></a> – If there are less than <cite>num_samples</cite> elements in the buffer</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="rlcard.agents.deep_cfr.StrategyMemory">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.agents.deep_cfr.</code><code class="sig-name descname">StrategyMemory</code><span class="sig-paren">(</span><em class="sig-param">info_state</em>, <em class="sig-param">iteration</em>, <em class="sig-param">strategy_action_probs</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.deep_cfr.StrategyMemory" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.StrategyMemory.info_state">
-<em class="property">property </em><code class="sig-name descname">info_state</code><a class="headerlink" href="#rlcard.agents.deep_cfr.StrategyMemory.info_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>Alias for field number 0</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.StrategyMemory.iteration">
-<em class="property">property </em><code class="sig-name descname">iteration</code><a class="headerlink" href="#rlcard.agents.deep_cfr.StrategyMemory.iteration" title="Permalink to this definition">¶</a></dt>
-<dd><p>Alias for field number 1</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.agents.deep_cfr.StrategyMemory.strategy_action_probs">
-<em class="property">property </em><code class="sig-name descname">strategy_action_probs</code><a class="headerlink" href="#rlcard.agents.deep_cfr.StrategyMemory.strategy_action_probs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Alias for field number 2</p>
-</dd></dl>
-
-</dd></dl>
-
+<div class="section" id="rlcard-agents-deep-cfr">
+<h2>rlcard.agents.deep_cfr<a class="headerlink" href="#rlcard-agents-deep-cfr" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-rlcard.agents.dqn_agent">
 <span id="rlcard-agents-dqn-agent"></span><h2>rlcard.agents.dqn_agent<a class="headerlink" href="#module-rlcard.agents.dqn_agent" title="Permalink to this headline">¶</a></h2>

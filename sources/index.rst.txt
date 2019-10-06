@@ -1,39 +1,130 @@
-.. rlcard documentation master file, created by
-   sphinx-quickstart on Thu Sep  5 18:45:31 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+RLCard: A Toolkit for Reinforcement Learning in Card Games
+==========================================================
 
-Welcome to rlcard's documentation!
-==================================
+RLCard is a toolkit for Reinforcement Learning (RL) in card games. It
+supports multiple card environments with easy-to-use interfaces. The
+goal of RLCard is to bridge reinforcement learning and imperfect
+information games, and push forward the research of reinforcement
+learning in domains with multiple agents, large state and action space,
+and sparse reward. RLCard is developed by `DATA
+Lab <http://faculty.cs.tamu.edu/xiahu/>`__ at Texas A&M University.
 
-.. toctree::
-   :maxdepth: 1
-   :glob:
-   :caption: Documentation:
+Installation
+------------
 
-   introduction
-   overview
-   getting_started
-   games
-   algorithms
-   development
+Make sure that you have **Python 3.5+** and **pip** installed. You can
+install ``rlcard`` with ``pip`` as follow:
 
+::
 
-.. toctree::
-   :maxdepth: 2
-   :glob:
-   :caption: Package Reference:
-   
-   rlcard.envs
-   rlcard.utils
-   rlcard.games
-   rlcard.agents
-   rlcard.core
-   
+   git clone https://github.com/datamllab/rlcard.git
+   cd rlcard
+   pip install -e .
 
-Indices and tables
-==================
+Examples
+--------
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+Please refer to `examples/ <examples>`__. A **short example** is as
+below.
+
+.. code:: python
+
+   import rlcard
+   from rlcard.agents.random_agent import RandomAgent
+
+   env = rlcard.make('blackjack')
+   env.set_agents([RandomAgent()])
+
+   trajectories, payoffs = env.run()
+
+We also recommend the **toy examples** in `Getting Started <getting_started.html>`__.
+
+Demo
+----
+
+Run ``examples/leduc_holdem_human.py`` to play with the pre-trained
+Leduc Hold’em model:
+
+::
+
+   >> Leduc Hold'em pre-trained model
+
+   >> Start a new game!
+   >> Agent 1 chooses raise
+
+   =============== Community Card ===============
+   ┌─────────┐
+   │░░░░░░░░░│
+   │░░░░░░░░░│
+   │░░░░░░░░░│
+   │░░░░░░░░░│
+   │░░░░░░░░░│
+   │░░░░░░░░░│
+   │░░░░░░░░░│
+   └─────────┘
+   ===============   Your Hand    ===============
+   ┌─────────┐
+   │J        │
+   │         │
+   │         │
+   │    ♥    │
+   │         │
+   │         │
+   │        J│
+   └─────────┘
+   ===============     Chips      ===============
+   Yours:   +
+   Agent 1: +++
+   =========== Actions You Can Choose ===========
+   0: call, 1: raise, 2: fold
+
+   >> You choose action (integer):
+
+Available Environments
+----------------------
+
+We provide a complexity estimation for the games on several aspects.
+**InfoSet Number:** the number of information set; **Avg. InfoSet
+Size:** the average number of states in a single information set;
+**Action Size:** the size of the action space. **Name:** the name that
+should be passed to ``env.make`` to create the game environment.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------------------+---------------+-------------------+--------------+
+| Game                                                                                                                                                                                                   | InfoSet Number    | Avg. InfoSet Size   | Action Size   | Name              | Status       |
++========================================================================================================================================================================================================+===================+=====================+===============+===================+==============+
+| Blackjack (`wiki <https://en.wikipedia.org/wiki/Blackjack>`__, `baike <https://baike.baidu.com/item/21%E7%82%B9/5481683?fr=aladdin>`__)                                                                | 10^3              | 10^1                | 10^0          | blackjack         | Available    |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------------------+---------------+-------------------+--------------+
+| Leduc Hold’em                                                                                                                                                                                          | 10^2              | 10^2                | 10^0          | leduc-holdem      | Available    |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------------------+---------------+-------------------+--------------+
+| Limit Texas Hold'em (`wiki <https://en.wikipedia.org/wiki/Texas_hold_%27em>`__, `baike <https://baike.baidu.com/item/%E5%BE%B7%E5%85%8B%E8%90%A8%E6%96%AF%E6%89%91%E5%85%8B/83440?fr=aladdin>`__)      | 10^14             | 10^3                | 10^0          | limit-holdem      | Available    |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------------------+---------------+-------------------+--------------+
+| Dou Dizhu (`wiki <https://en.wikipedia.org/wiki/Dou_dizhu>`__, `baike <https://baike.baidu.com/item/%E6%96%97%E5%9C%B0%E4%B8%BB/177997?fr=aladdin>`__)                                                 | 10^53 ~ 10^83     | 10^23               | 10^4          | doudizhu          | Available    |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------------------+---------------+-------------------+--------------+
+| Mahjong (`wiki <https://en.wikipedia.org/wiki/Competition_Mahjong_scoring_rules>`__, `baike <https://baike.baidu.com/item/%E9%BA%BB%E5%B0%86/215>`__)                                                  | 10^121            | 10^48               | 10^2          | mahjong           | Available    |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------------------+---------------+-------------------+--------------+
+| No-limit Texas Hold'em (`wiki <https://en.wikipedia.org/wiki/Texas_hold_%27em>`__, `baike <https://baike.baidu.com/item/%E5%BE%B7%E5%85%8B%E8%90%A8%E6%96%AF%E6%89%91%E5%85%8B/83440?fr=aladdin>`__)   | 10^162            | 10^3                | 10^4          | no-limit-holdem   | Available    |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------------------+---------------+-------------------+--------------+
+| UNO (`wiki <https://en.wikipedia.org/wiki/Uno_(card_game>`__, `baike <https://baike.baidu.com/item/UNO%E7%89%8C/2249587>`__)                                                                           | 10^163            | 10^10               | 10^1          | uno               | Available    |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------------------+---------------+-------------------+--------------+
+| Sheng Ji (`wiki <https://en.wikipedia.org/wiki/Sheng_ji>`__, `baike <https://baike.baidu.com/item/%E5%8D%87%E7%BA%A7/3563150>`__)                                                                      | 10^157 ~ 10^165   | 10^61               | 10^11         | \-                | Developing   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------------------+---------------+-------------------+--------------+
+
+Evaluation
+----------
+
+The perfomance is measured by winning rate through tournaments. Example
+outputs are as follows: |Learning Curves|
+
+Contributing
+------------
+
+Contribution to this project is greatly appreciated! Please create a
+issue/pull request for feedbacks/bugs/new features.
+
+Acknowledgements
+----------------
+
+We would like to thank JJ World Network Technology Co.,LTD for the
+technical support.
+
+.. |Learning Curves| image:: /imgs/curves.png

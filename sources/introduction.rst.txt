@@ -1,8 +1,5 @@
-Introduction
-============
-
 RLCard: A Toolkit for Reinforcement Learning in Card Games
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==========================================================
 
 RLCard is a toolkit for developing Reinforcement Learning (RL)
 algorithms in card games. It supports multiple challenging card
