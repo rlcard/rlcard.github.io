@@ -97,6 +97,10 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-multiple-processes">Running Multiple Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#leduc-holdem-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#training-cfr-on-leduc-holdem">Training CFR on Leduc Hold’em</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
@@ -106,20 +110,16 @@
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-blackjack">Payoff of Blackjack</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#limit-texas-hold-em">Limit Texas Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-limit-texas-hold-em">State Representation of Limit Texas Hold’em</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-limit-texas-hold-em">Action Encoding of Limit Texas Hold’em</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-limit-texas-hold-em">Payoff of Limit Texas Hold’em</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="games.html#leduc-hold-em">Leduc Hold’em</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-leduc-hold-em">State Representation of Leduc Hold’em</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-leduc-hold-em">Action Encoding of Leduc Hold’em</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-leduc-hold-em">Payoff of Leduc Hold’em</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-limit Texas Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#limit-texas-hold-em">Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-limit-texas-hold-em">State Representation of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-limit-texas-hold-em">Action Encoding of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-limit-texas-hold-em">Payoff of Limit Texas Hold’em</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="games.html#dou-dizhu">Dou Dizhu</a><ul>
@@ -129,17 +129,39 @@
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff">Payoff</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a></li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#uno">UNO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-mahjong">State Representation of Mahjong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-space-of-mahjong">Action Space of Mahjong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-mahjong">Payoff of Mahjong</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-no-limit-texas-hold-em">Payoff of No-Limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#uno">UNO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-uno">State Representation of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-uno">State Encoding of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-uno">Action Encoding of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-uno">Payoff of Uno</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#sheng-ji">Sheng Ji</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-q-learning">Deep-Q Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#nfsp">NFSP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr">CFR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deepcfr">DeepCFR</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#adding-pre-trained-rule-based-models">Adding Pre-trained/Rule-based models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html#developping-algorithms">Developping Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html#adding-new-environments">Adding New Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html#customizing-environments">Customizing Environments</a><ul>
@@ -276,6 +298,7 @@
 
 
 
+
 <div style="display: flex; justify-content: space-between">
   <div role="navigation" aria-label="breadcrumbs navigation">
 
@@ -283,17 +306,17 @@
       
         <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
           
-        <li>Getting Started</li>
+        <li>RLCard: A Toolkit for Reinforcement Learning in Card Games</li>
       
     </ul>
 
     
   </div>
   <div style="display: block; width: 7.5rem; max-width: 7.5rem; padding-right: .6rem; float: right;">
-	  <a href="https://github.com/datamllab/rlcard" title="Go to repository" data-md-source="github" data-md-state="done" style="display: block; padding-right: .6rem; line-height: 1.2">
-	    <div style="display: inline-block; width: 2.4rem; height: 2.4rem;">
-	    	<i class="fa fa-github" style="font-size: 2rem"></i>	
-	    </div>
+    <a href="https://github.com/datamllab/rlcard" title="Go to repository" data-md-source="github" data-md-state="done" style="display: block; padding-right: .6rem; line-height: 1.2">
+      <div style="display: inline-block; width: 2.4rem; height: 2.4rem;">
+        <i class="fa fa-github" style="font-size: 2rem"></i>  
+      </div>
       <div style="display: inline-block; margin-left: -2rem; margin-top: -0.6rem; padding-left: 2rem; vertical-align: middle">
         GitHub
         <ul style="font-size: 0.7rem; list-style-type: none;"><li style="float: left" id="github-stars">... Stars</li></ul>
@@ -309,7 +332,7 @@
         });
       </script>
     </a>
-	</div>
+  </div>
 </div>
 <hr/>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -317,8 +340,7 @@
             
   <div class="section" id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<p>In this document, we provide some toy examples for getting started. For
-more examples, please refer to <a class="reference external" href="../examples">examples/</a>.</p>
+<p>In this document, we provide some toy examples for getting started.</p>
 <div class="section" id="playing-with-random-agents">
 <h2>Playing with Random Agents<a class="headerlink" href="#playing-with-random-agents" title="Permalink to this headline">¶</a></h2>
 <p>We have set up a random agent that can play randomly on each
@@ -351,12 +373,12 @@ follow:</p>
 </pre></div>
 </div>
 <p>The expected output should look like something as follows:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Episode <span class="m">0</span>
-State: <span class="o">{</span><span class="s1">&#39;obs&#39;</span>: array<span class="o">([</span><span class="m">20</span>,  <span class="m">3</span><span class="o">])</span>, <span class="s1">&#39;legal_actions&#39;</span>: <span class="o">[</span><span class="m">0</span>, <span class="m">1</span><span class="o">]}</span>, Action: <span class="m">0</span>, Reward: <span class="m">0</span>, Next State: <span class="o">{</span><span class="s1">&#39;obs&#39;</span>: array<span class="o">([</span><span class="m">15</span>,  <span class="m">3</span><span class="o">])</span>, <span class="s1">&#39;legal_actions&#39;</span>: <span class="o">[</span><span class="m">0</span>, <span class="m">1</span><span class="o">]}</span>, Done: False
-State: <span class="o">{</span><span class="s1">&#39;obs&#39;</span>: array<span class="o">([</span><span class="m">15</span>,  <span class="m">3</span><span class="o">])</span>, <span class="s1">&#39;legal_actions&#39;</span>: <span class="o">[</span><span class="m">0</span>, <span class="m">1</span><span class="o">]}</span>, Action: <span class="m">1</span>, Reward: -1, Next State: <span class="o">{</span><span class="s1">&#39;obs&#39;</span>: array<span class="o">([</span><span class="m">15</span>, <span class="m">20</span><span class="o">])</span>, <span class="s1">&#39;legal_actions&#39;</span>: <span class="o">[</span><span class="m">0</span>, <span class="m">1</span><span class="o">]}</span>, Done: True
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Episode</span> <span class="mi">0</span>
+<span class="n">State</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span>  <span class="mi">3</span><span class="p">]),</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span> <span class="n">Action</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Reward</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Next</span> <span class="n">State</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span>  <span class="mi">3</span><span class="p">]),</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span> <span class="n">Done</span><span class="p">:</span> <span class="kc">False</span>
+<span class="n">State</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span>  <span class="mi">3</span><span class="p">]),</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span> <span class="n">Action</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Reward</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">Next</span> <span class="n">State</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">]),</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span> <span class="n">Done</span><span class="p">:</span> <span class="kc">True</span>
 
-Episode <span class="m">1</span>
-State: <span class="o">{</span><span class="s1">&#39;obs&#39;</span>: array<span class="o">([</span><span class="m">15</span>,  <span class="m">5</span><span class="o">])</span>, <span class="s1">&#39;legal_actions&#39;</span>: <span class="o">[</span><span class="m">0</span>, <span class="m">1</span><span class="o">]}</span>, Action: <span class="m">1</span>, Reward: <span class="m">1</span>, Next State: <span class="o">{</span><span class="s1">&#39;obs&#39;</span>: array<span class="o">([</span><span class="m">15</span>, <span class="m">23</span><span class="o">])</span>, <span class="s1">&#39;legal_actions&#39;</span>: <span class="o">[</span><span class="m">0</span>, <span class="m">1</span><span class="o">]}</span>, Done: True
+<span class="n">Episode</span> <span class="mi">1</span>
+<span class="n">State</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span>  <span class="mi">5</span><span class="p">]),</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span> <span class="n">Action</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Reward</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Next</span> <span class="n">State</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">23</span><span class="p">]),</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span> <span class="n">Done</span><span class="p">:</span> <span class="kc">True</span>
 </pre></div>
 </div>
 <p>Note that the states and actions are wrapped by <code class="docutils literal notranslate"><span class="pre">env</span></code> in Blackjack. In
@@ -463,39 +485,39 @@ training RL agents. The example is shown below:</p>
 </pre></div>
 </div>
 <p>The expected output is something like below:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1">########## Evaluation ##########</span>
-Timestep: <span class="m">1</span> Average reward is -0.2868
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">########## Evaluation ##########</span>
+<span class="n">Timestep</span><span class="p">:</span> <span class="mi">1</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.2868</span>
 
 <span class="c1">########## Evaluation ##########</span>
-Timestep: <span class="m">136</span> Average reward is -0.642
+<span class="n">Timestep</span><span class="p">:</span> <span class="mi">136</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.642</span>
 
-INFO - Copied model parameters to target network.
-INFO - Step <span class="m">271</span>, loss: <span class="m">0</span>.6861089468002319
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Copied</span> <span class="n">model</span> <span class="n">parameters</span> <span class="n">to</span> <span class="n">target</span> <span class="n">network</span><span class="o">.</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">271</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.6861089468002319</span>
 <span class="c1">########## Evaluation ##########</span>
-Timestep: <span class="m">271</span> Average reward is -0.5751
-INFO - Step <span class="m">402</span>, loss: <span class="m">0</span>.7866340875625612
+<span class="n">Timestep</span><span class="p">:</span> <span class="mi">271</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.5751</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">402</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.7866340875625612</span>
 <span class="c1">########## Evaluation ##########</span>
-Timestep: <span class="m">402</span> Average reward is -0.5857
-INFO - Step <span class="m">537</span>, loss: <span class="m">0</span>.7525347471237183
+<span class="n">Timestep</span><span class="p">:</span> <span class="mi">402</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.5857</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">537</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.7525347471237183</span>
 <span class="c1">########## Evaluation ##########</span>
-Timestep: <span class="m">537</span> Average reward is -0.5762
-INFO - Step <span class="m">681</span>, loss: <span class="m">0</span>.7957633137702942
+<span class="n">Timestep</span><span class="p">:</span> <span class="mi">537</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.5762</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">681</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.7957633137702942</span>
 <span class="c1">########## Evaluation ##########</span>
-Timestep: <span class="m">681</span> Average reward is -0.4895
-INFO - Step <span class="m">824</span>, loss: <span class="m">0</span>.8273138403892517
+<span class="n">Timestep</span><span class="p">:</span> <span class="mi">681</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.4895</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">824</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.8273138403892517</span>
 <span class="c1">########## Evaluation ##########</span>
-Timestep: <span class="m">824</span> Average reward is -0.4341
-INFO - Step <span class="m">958</span>, loss: <span class="m">0</span>.7127346992492676
+<span class="n">Timestep</span><span class="p">:</span> <span class="mi">824</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.4341</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">958</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.7127346992492676</span>
 <span class="c1">########## Evaluation ##########</span>
-Timestep: <span class="m">958</span> Average reward is -0.3816
-INFO - Step <span class="m">1093</span>, loss: <span class="m">0</span>.61426079273223884
+<span class="n">Timestep</span><span class="p">:</span> <span class="mi">958</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.3816</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">1093</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.61426079273223884</span>
 <span class="c1">########## Evaluation ##########</span>
-Timestep: <span class="m">1093</span> Average reward is -0.2907
-INFO - Step <span class="m">1200</span>, loss: <span class="m">0</span>.7053447961807251
-INFO - Copied model parameters to target network.
-INFO - Step <span class="m">1221</span>, loss: <span class="m">0</span>.7781758308410645
+<span class="n">Timestep</span><span class="p">:</span> <span class="mi">1093</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.2907</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">1200</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.7053447961807251</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Copied</span> <span class="n">model</span> <span class="n">parameters</span> <span class="n">to</span> <span class="n">target</span> <span class="n">network</span><span class="o">.</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">1221</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.7781758308410645</span>
 <span class="c1">########## Evaluation ##########</span>
-Timestep: <span class="m">1221</span> Average reward is -0.2197
+<span class="n">Timestep</span><span class="p">:</span> <span class="mi">1221</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.2197</span>
 </pre></div>
 </div>
 <p>In Blackjack, the player will get a payoff at the end of the game: 1 if
@@ -504,6 +526,508 @@ performance is measured by the average payoff the player obtains by
 playing 1000 episodes. The above example shows that the agent achieves
 better and better performance during training. The logs and learning
 curves are saved in <code class="docutils literal notranslate"><span class="pre">./experiments/blackjack_dqn_result/</span></code>.</p>
+</div>
+<div class="section" id="running-multiple-processes">
+<h2>Running Multiple Processes<a class="headerlink" href="#running-multiple-processes" title="Permalink to this headline">¶</a></h2>
+<p>We have also used multiple processes to accelerate training a DQN agent
+on Blackjack. Multiple processes are applied in two parts. The first is
+generating data from the environment, the second is evaluating the
+performance. Our strategy is setting a class inherited from Process
+class, which is responsible for playing game and providing the data. And
+we uses an input queue to delivery instruction information like the
+number of tasks, the values of network variables in main process. In
+particular, when evaluation starts, we first copy network variables’
+values of main process to subprocess to update the subnetwork. For the
+output, we also use a queue to receive it. The example is shown below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39; A toy example of learning a Deep-Q Agent on Blackjack with multiple processes</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">JoinableQueue</span><span class="p">,</span> <span class="n">Queue</span>
+
+<span class="kn">import</span> <span class="nn">rlcard</span>
+<span class="kn">from</span> <span class="nn">rlcard.agents.dqn_agent</span> <span class="kn">import</span> <span class="n">DQNAgent</span>
+<span class="kn">from</span> <span class="nn">rlcard.utils.utils</span> <span class="kn">import</span> <span class="n">set_global_seed</span><span class="p">,</span> <span class="n">assign_task</span>
+<span class="kn">from</span> <span class="nn">rlcard.utils.logger</span> <span class="kn">import</span> <span class="n">Logger</span>
+
+<span class="c1"># Set the the number of steps for collecting normalization statistics</span>
+<span class="c1"># and intial memory size</span>
+<span class="n">memory_init_size</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">norm_step</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># Set the iterations numbers and how frequently we evaluate/save plot</span>
+<span class="n">evaluate_every</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">save_plot_every</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">evaluate_num</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">episode_num</span> <span class="o">=</span> <span class="mi">1000000</span>
+
+<span class="c1"># The paths for saving the logs and learning curves</span>
+<span class="n">root_path</span> <span class="o">=</span> <span class="s1">&#39;./experiments/blackjack_dqn_result/&#39;</span>
+<span class="n">log_path</span> <span class="o">=</span> <span class="n">root_path</span> <span class="o">+</span> <span class="s1">&#39;log.txt&#39;</span>
+<span class="n">csv_path</span> <span class="o">=</span> <span class="n">root_path</span> <span class="o">+</span> <span class="s1">&#39;performance.csv&#39;</span>
+<span class="n">figure_path</span> <span class="o">=</span> <span class="n">root_path</span> <span class="o">+</span> <span class="s1">&#39;figures/&#39;</span>
+
+
+<span class="c1"># Set the process class to generate trajectories for training and evaluation</span>
+<span class="k">class</span> <span class="nc">BlackjackProcess</span><span class="p">(</span><span class="n">Process</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">input_queue</span><span class="p">,</span> <span class="n">output_queue</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">Process</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">index</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_queue</span> <span class="o">=</span> <span class="n">input_queue</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_queue</span> <span class="o">=</span> <span class="n">output_queue</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#import tensorflow as tf</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;blackjack&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+        <span class="n">agent</span> <span class="o">=</span> <span class="n">DQNAgent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sess</span><span class="p">,</span>
+                         <span class="n">scope</span><span class="o">=</span><span class="s1">&#39;sub-dqn&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">),</span>
+                         <span class="n">action_num</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">action_num</span><span class="p">,</span>
+                         <span class="n">replay_memory_init_size</span><span class="o">=</span><span class="n">memory_init_size</span><span class="p">,</span>
+                         <span class="n">norm_step</span><span class="o">=</span><span class="n">norm_step</span><span class="p">,</span>
+                         <span class="n">state_shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">state_shape</span><span class="p">,</span>
+                         <span class="n">mlp_layers</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">agent</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>
+
+        <span class="c1"># normalize</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">norm_step</span><span class="p">):</span>
+            <span class="n">trajectories</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">ts</span> <span class="ow">in</span> <span class="n">trajectories</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">agent</span><span class="o">.</span><span class="n">feed</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+
+        <span class="c1"># Receive instruction to run game and generate trajectories</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">instruction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">instruction</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">tasks</span><span class="p">,</span> <span class="n">train_flag</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">total_t</span> <span class="o">=</span> <span class="n">instruction</span>
+
+                <span class="c1"># For evaluation</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">train_flag</span><span class="p">:</span>
+                    <span class="n">agent</span><span class="o">.</span><span class="n">total_t</span> <span class="o">=</span> <span class="n">total_t</span>
+                    <span class="n">global_vars</span> <span class="o">=</span> <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">convert_to_tensor</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">]</span>
+                    <span class="n">agent</span><span class="o">.</span><span class="n">copy_params_op</span><span class="p">(</span><span class="n">global_vars</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tasks</span><span class="p">):</span>
+                        <span class="n">_</span><span class="p">,</span> <span class="n">payoffs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">is_training</span><span class="o">=</span><span class="n">train_flag</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">output_queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">payoffs</span><span class="p">)</span>
+
+                <span class="c1"># For training</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tasks</span><span class="p">):</span>
+                        <span class="n">trajectories</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">is_training</span><span class="o">=</span><span class="n">train_flag</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">output_queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">trajectories</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">input_queue</span><span class="o">.</span><span class="n">task_done</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">input_queue</span><span class="o">.</span><span class="n">task_done</span><span class="p">()</span>
+                <span class="k">break</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sess</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span>
+
+
+<span class="c1"># Set a global seed</span>
+<span class="n">set_global_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Initialize processes</span>
+<span class="n">PROCESS_NUM</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">INPUT_QUEUE</span> <span class="o">=</span> <span class="n">JoinableQueue</span><span class="p">()</span>
+<span class="n">OUTPUT_QUEUE</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+<span class="n">PROCESSES</span> <span class="o">=</span> <span class="p">[</span><span class="n">BlackjackProcess</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">INPUT_QUEUE</span><span class="p">,</span> <span class="n">OUTPUT_QUEUE</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000000</span><span class="p">))</span>
+             <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">PROCESS_NUM</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">PROCESSES</span><span class="p">:</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># Make environment</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;blackjack&#39;</span><span class="p">)</span>
+<span class="n">eval_env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;blackjack&#39;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
+
+    <span class="c1"># Set agents</span>
+    <span class="n">global_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;global_step&#39;</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">agent</span> <span class="o">=</span> <span class="n">DQNAgent</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span>
+                     <span class="n">scope</span><span class="o">=</span><span class="s1">&#39;dqn&#39;</span><span class="p">,</span>
+                     <span class="n">action_num</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">action_num</span><span class="p">,</span>
+                     <span class="n">replay_memory_init_size</span><span class="o">=</span><span class="n">memory_init_size</span><span class="p">,</span>
+                     <span class="n">norm_step</span><span class="o">=</span><span class="n">norm_step</span><span class="p">,</span>
+                     <span class="n">state_shape</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">state_shape</span><span class="p">,</span>
+                     <span class="n">mlp_layers</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">agent</span><span class="p">])</span>
+    <span class="n">eval_env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">agent</span><span class="p">])</span>
+    <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>
+
+    <span class="c1"># Count the number of steps</span>
+    <span class="n">step_counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Init a Logger to plot the learning curve</span>
+    <span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;timestep&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;reward&#39;</span><span class="p">,</span>
+                    <span class="n">legend</span><span class="o">=</span><span class="s1">&#39;DQN on Blackjack&#39;</span><span class="p">,</span> <span class="n">log_path</span><span class="o">=</span><span class="n">log_path</span><span class="p">,</span> <span class="n">csv_path</span><span class="o">=</span><span class="n">csv_path</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">episode_num</span> <span class="o">//</span> <span class="n">evaluate_every</span><span class="p">):</span>
+
+        <span class="c1"># Generate data from the environment</span>
+        <span class="n">tasks</span> <span class="o">=</span> <span class="n">assign_task</span><span class="p">(</span><span class="n">evaluate_every</span><span class="p">,</span> <span class="n">PROCESS_NUM</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+            <span class="n">INPUT_QUEUE</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="n">task</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">evaluate_every</span><span class="p">):</span>
+            <span class="n">trajectories</span> <span class="o">=</span> <span class="n">OUTPUT_QUEUE</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+            <span class="c1"># Feed transitions into agent memory, and train</span>
+            <span class="k">for</span> <span class="n">ts</span> <span class="ow">in</span> <span class="n">trajectories</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">agent</span><span class="o">.</span><span class="n">feed</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+                <span class="n">step_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                <span class="c1"># Train the agent</span>
+                <span class="k">if</span> <span class="n">step_counter</span> <span class="o">&gt;</span> <span class="n">memory_init_size</span> <span class="o">+</span> <span class="n">norm_step</span><span class="p">:</span>
+                    <span class="n">loss</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">INFO - Step {}, loss: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">step_counter</span><span class="p">,</span> <span class="n">loss</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="c1"># Evaluate the performance</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">tasks</span> <span class="o">=</span> <span class="n">assign_task</span><span class="p">(</span><span class="n">evaluate_num</span><span class="p">,</span> <span class="n">PROCESS_NUM</span><span class="p">)</span>
+        <span class="n">variables</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">slim</span><span class="o">.</span><span class="n">get_variables</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;dqn&quot;</span><span class="p">,</span> <span class="n">collection</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">GraphKeys</span><span class="o">.</span><span class="n">TRAINABLE_VARIABLES</span><span class="p">)</span>
+        <span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+            <span class="n">INPUT_QUEUE</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="n">task</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">agent</span><span class="o">.</span><span class="n">total_t</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">evaluate_num</span><span class="p">):</span>
+            <span class="n">payoffs</span> <span class="o">=</span> <span class="n">OUTPUT_QUEUE</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+            <span class="n">reward</span> <span class="o">+=</span> <span class="n">payoffs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">########## Evaluation ##########&#39;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Average reward is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span><span class="o">/</span><span class="n">evaluate_num</span><span class="p">))</span>
+
+        <span class="c1"># Add point to logger</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">timestep</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span><span class="o">/</span><span class="n">evaluate_num</span><span class="p">)</span>
+
+        <span class="c1"># Make plot</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">episode</span><span class="o">*</span><span class="n">evaluate_every</span><span class="p">)</span> <span class="o">%</span> <span class="n">save_plot_every</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">episode</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">make_plot</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="n">figure_path</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">episode</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Make the final plot</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">make_plot</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="n">figure_path</span><span class="o">+</span><span class="s1">&#39;final_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">episode</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Close multi-processes</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">PROCESS_NUM</span><span class="p">):</span>
+        <span class="n">INPUT_QUEUE</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+
+    <span class="n">INPUT_QUEUE</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">PROCESSES</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Example output is as follow:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.6465</span>
+
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Copied</span> <span class="n">model</span> <span class="n">parameters</span> <span class="n">to</span> <span class="n">target</span> <span class="n">network</span><span class="o">.</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">275</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.6382206678390503</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.637</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">410</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.8343381881713867</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.5895</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">545</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.8565489053726196</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.5677</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">676</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.8005591034889221</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.5433</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">804</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.8520776629447937</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.4937</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">928</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.9055832624435425</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.4632</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">1046</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.6933344602584839</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.4063</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">1181</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.7428562045097351</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.3113</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">1200</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.6615606546401978</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Copied</span> <span class="n">model</span> <span class="n">parameters</span> <span class="n">to</span> <span class="n">target</span> <span class="n">network</span><span class="o">.</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">1306</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.5042598247528076</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.2181</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">1437</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.59900450706481934</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.1525</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">1558</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.74328237771987926</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.1158</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">1686</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.69347083568573586</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.1109</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">1819</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.58389663696289067</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.1165</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">1938</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.64740669727325447</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.0897</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">2068</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.42769449949264526</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.105</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">2199</span><span class="p">,</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.75212180614471447</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="having-fun-with-pretrained-leduc-model">
+<h2>Having Fun with Pretrained Leduc Model<a class="headerlink" href="#having-fun-with-pretrained-leduc-model" title="Permalink to this headline">¶</a></h2>
+<p>We have designed simple human interfaces to play against the pretrained
+model. Example of playing against Leduc Hold’em NFSP model is as below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rlcard</span>
+
+<span class="c1"># Make environment and enable human mode</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">)</span>
+
+<span class="c1"># Set it to human mode</span>
+<span class="n">env</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="n">human_mode</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># Reset environment</span>
+<span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;&gt;&gt; You choose action (integer): &quot;</span><span class="p">))</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Example output is as follow:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt; Leduc Hold&#39;em pre-trained model
+
+&gt;&gt; Start a new game!
+&gt;&gt; Agent 1 chooses raise
+
+=============== Community Card ===============
+┌─────────┐
+│░░░░░░░░░│
+│░░░░░░░░░│
+│░░░░░░░░░│
+│░░░░░░░░░│
+│░░░░░░░░░│
+│░░░░░░░░░│
+│░░░░░░░░░│
+└─────────┘
+===============   Your Hand    ===============
+┌─────────┐
+│J        │
+│         │
+│         │
+│    ♥    │
+│         │
+│         │
+│        J│
+└─────────┘
+===============     Chips      ===============
+Yours:   +
+Agent 1: +++
+=========== Actions You Can Choose ===========
+0: call, 1: raise, 2: fold
+
+&gt;&gt; You choose action (integer):
+</pre></div>
+</div>
+<p>We also provide a running demo of a rule-based agent for UNO. Try it by
+running <code class="docutils literal notranslate"><span class="pre">examples/uno_human.py</span></code>.</p>
+</div>
+<div class="section" id="leduc-holdem-as-single-agent-environment">
+<h2>Leduc Hold’em as Single-Agent Environment<a class="headerlink" href="#leduc-holdem-as-single-agent-environment" title="Permalink to this headline">¶</a></h2>
+<p>We have wrraped the environment as single agent environment by assuming
+that other players play with pre-trained models. The interfaces are
+exactly the same to OpenAI Gym. Thus, any single-agent algorithm can be
+connected to the environment. An example of Leduc Hold’em is as below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">rlcard</span>
+<span class="kn">from</span> <span class="nn">rlcard.agents.random_agent</span> <span class="kn">import</span> <span class="n">RandomAgent</span>
+<span class="kn">from</span> <span class="nn">rlcard.agents.dqn_agent</span> <span class="kn">import</span> <span class="n">DQNAgent</span>
+<span class="kn">from</span> <span class="nn">rlcard.utils.utils</span> <span class="kn">import</span> <span class="n">set_global_seed</span>
+<span class="kn">from</span> <span class="nn">rlcard.utils.logger</span> <span class="kn">import</span> <span class="n">Logger</span>
+
+<span class="c1"># Make environment and enable single mode</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">)</span>
+<span class="n">eval_env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">)</span>
+<span class="n">env</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="n">single_agent_mode</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">eval_env</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="n">single_agent_mode</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># Set the iterations numbers and how frequently we evaluate/save plot</span>
+<span class="n">evaluate_every</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">save_plot_every</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">evaluate_num</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">timesteps</span> <span class="o">=</span> <span class="mi">1000000</span>
+
+<span class="c1"># Set the the number of steps for collecting normalization statistics</span>
+<span class="c1"># and intial memory size</span>
+<span class="n">memory_init_size</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">norm_step</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># The paths for saving the logs and learning curves</span>
+<span class="n">root_path</span> <span class="o">=</span> <span class="s1">&#39;./experiments/leduc_holdem_single_agent_dqn_result/&#39;</span>
+<span class="n">log_path</span> <span class="o">=</span> <span class="n">root_path</span> <span class="o">+</span> <span class="s1">&#39;log.txt&#39;</span>
+<span class="n">csv_path</span> <span class="o">=</span> <span class="n">root_path</span> <span class="o">+</span> <span class="s1">&#39;performance.csv&#39;</span>
+<span class="n">figure_path</span> <span class="o">=</span> <span class="n">root_path</span> <span class="o">+</span> <span class="s1">&#39;figures/&#39;</span>
+
+<span class="c1"># Set a global seed</span>
+<span class="n">set_global_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
+    <span class="n">global_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;global_step&#39;</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">agent</span> <span class="o">=</span> <span class="n">DQNAgent</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span>
+                     <span class="n">scope</span><span class="o">=</span><span class="s1">&#39;dqn&#39;</span><span class="p">,</span>
+                     <span class="n">action_num</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">action_num</span><span class="p">,</span>
+                     <span class="n">replay_memory_size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e5</span><span class="p">),</span>
+                     <span class="n">replay_memory_init_size</span><span class="o">=</span><span class="n">memory_init_size</span><span class="p">,</span>
+                     <span class="n">norm_step</span><span class="o">=</span><span class="n">norm_step</span><span class="p">,</span>
+                     <span class="n">state_shape</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">state_shape</span><span class="p">,</span>
+                     <span class="n">mlp_layers</span><span class="o">=</span><span class="p">[</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">])</span>
+
+    <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>
+
+    <span class="c1"># Init a Logger to plot the learning curve</span>
+    <span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;timestep&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;reward&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s1">&#39;DQN on Leduc Holdem&#39;</span><span class="p">,</span> <span class="n">log_path</span><span class="o">=</span><span class="n">log_path</span><span class="p">,</span> <span class="n">csv_path</span><span class="o">=</span><span class="n">csv_path</span><span class="p">)</span>
+
+    <span class="n">state</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">timestep</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">timesteps</span><span class="p">):</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+        <span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+        <span class="n">ts</span> <span class="o">=</span> <span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span><span class="p">,</span> <span class="n">done</span><span class="p">)</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">feed</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+
+        <span class="n">train_count</span> <span class="o">=</span> <span class="n">timestep</span> <span class="o">-</span> <span class="p">(</span><span class="n">memory_init_size</span> <span class="o">+</span> <span class="n">norm_step</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">train_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">INFO - Step {}, loss: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">timestep</span><span class="p">,</span> <span class="n">loss</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">timestep</span> <span class="o">%</span> <span class="n">evaluate_every</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">rewards</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="n">eval_env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">evaluate_num</span><span class="p">):</span>
+                <span class="n">action</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">eval_step</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+                <span class="n">_</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">done</span><span class="p">:</span>
+                    <span class="n">rewards</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">########## Evaluation ##########&#39;</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Timestep: {} Average reward is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">timestep</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">rewards</span><span class="p">)))</span>
+
+            <span class="c1"># Add point to logger</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">timestep</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span><span class="o">/</span><span class="n">evaluate_num</span><span class="p">)</span>
+
+        <span class="c1"># Make plot</span>
+        <span class="k">if</span> <span class="n">timestep</span> <span class="o">%</span> <span class="n">save_plot_every</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">make_plot</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="n">figure_path</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Make the final plot</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">make_plot</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="n">figure_path</span><span class="o">+</span><span class="s1">&#39;final_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">timestep</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="training-cfr-on-leduc-holdem">
+<h2>Training CFR on Leduc Hold’em<a class="headerlink" href="#training-cfr-on-leduc-holdem" title="Permalink to this headline">¶</a></h2>
+<p>To show how we can use <code class="docutils literal notranslate"><span class="pre">step</span></code> and <code class="docutils literal notranslate"><span class="pre">step_back</span></code> to traverse the game
+tree, we provide an example of solving Leduc Hold’em with CFR:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">rlcard</span>
+<span class="kn">from</span> <span class="nn">rlcard.agents.cfr_agent</span> <span class="kn">import</span> <span class="n">CFRAgent</span>
+<span class="kn">from</span> <span class="nn">rlcard</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">rlcard.utils.utils</span> <span class="kn">import</span> <span class="n">set_global_seed</span>
+<span class="kn">from</span> <span class="nn">rlcard.utils.logger</span> <span class="kn">import</span> <span class="n">Logger</span>
+
+<span class="c1"># Make environment and enable human mode</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">,</span> <span class="n">allow_step_back</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">eval_env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">)</span>
+
+<span class="c1"># Set the iterations numbers and how frequently we evaluate/save plot</span>
+<span class="n">evaluate_every</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">save_plot_every</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">evaluate_num</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">episode_num</span> <span class="o">=</span> <span class="mi">10000000</span>
+
+<span class="c1"># The paths for saving the logs and learning curves</span>
+<span class="n">root_path</span> <span class="o">=</span> <span class="s1">&#39;./experiments/leduc_holdem_cfr_result/&#39;</span>
+<span class="n">log_path</span> <span class="o">=</span> <span class="n">root_path</span> <span class="o">+</span> <span class="s1">&#39;log.txt&#39;</span>
+<span class="n">csv_path</span> <span class="o">=</span> <span class="n">root_path</span> <span class="o">+</span> <span class="s1">&#39;performance.csv&#39;</span>
+<span class="n">figure_path</span> <span class="o">=</span> <span class="n">root_path</span> <span class="o">+</span> <span class="s1">&#39;figures/&#39;</span>
+
+<span class="c1"># Set a global seed</span>
+<span class="n">set_global_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Initilize CFR Agent</span>
+<span class="n">agent</span> <span class="o">=</span> <span class="n">CFRAgent</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+
+<span class="c1"># Evaluate CFR against pre-trained NFSP</span>
+<span class="n">eval_env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">agent</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;leduc-holdem-nfsp&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+
+<span class="c1"># Init a Logger to plot the learning curve</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;iteration&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;reward&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s1">&#39;CFR on Leduc Holdem&#39;</span><span class="p">,</span> <span class="n">log_path</span><span class="o">=</span><span class="n">log_path</span><span class="p">,</span> <span class="n">csv_path</span><span class="o">=</span><span class="n">csv_path</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">episode_num</span><span class="p">):</span>
+    <span class="n">agent</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">Iteration {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">episode</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="c1"># Evaluate the performance. Play with NFSP agents.</span>
+    <span class="k">if</span> <span class="n">episode</span> <span class="o">%</span> <span class="n">evaluate_every</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">reward</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">eval_episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">evaluate_num</span><span class="p">):</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">payoffs</span> <span class="o">=</span> <span class="n">eval_env</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">is_training</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+            <span class="n">reward</span> <span class="o">+=</span> <span class="n">payoffs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">########## Evaluation ##########&#39;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Iteration: {} Average reward is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">episode</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span><span class="o">/</span><span class="n">evaluate_num</span><span class="p">))</span>
+
+        <span class="c1"># Add point to logger</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">timestep</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span><span class="o">/</span><span class="n">evaluate_num</span><span class="p">)</span>
+
+    <span class="c1"># Make plot</span>
+    <span class="k">if</span> <span class="n">episode</span> <span class="o">%</span> <span class="n">save_plot_every</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">episode</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">make_plot</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="n">figure_path</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">episode</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
+
+<span class="c1"># Make the final plot</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">make_plot</span><span class="p">(</span><span class="n">save_path</span><span class="o">=</span><span class="n">figure_path</span><span class="o">+</span><span class="s1">&#39;final_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">episode</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the above example, the performance is measured by playing against a
+pre-trained NFSP model. The expected output is as below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Iteration</span> <span class="mi">0</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Iteration</span><span class="p">:</span> <span class="mi">0</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">1.0494</span>
+<span class="n">Iteration</span> <span class="mi">100</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Iteration</span><span class="p">:</span> <span class="mi">100</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.3044</span>
+<span class="n">Iteration</span> <span class="mi">200</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Iteration</span><span class="p">:</span> <span class="mi">200</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.2224</span>
+<span class="n">Iteration</span> <span class="mi">300</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Iteration</span><span class="p">:</span> <span class="mi">300</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="mf">0.0053</span>
+<span class="n">Iteration</span> <span class="mi">400</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Iteration</span><span class="p">:</span> <span class="mi">400</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.0163</span>
+<span class="n">Iteration</span> <span class="mi">500</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Iteration</span><span class="p">:</span> <span class="mi">500</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.0715</span>
+<span class="n">Iteration</span> <span class="mi">600</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Iteration</span><span class="p">:</span> <span class="mi">600</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.0435</span>
+<span class="n">Iteration</span> <span class="mi">700</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Iteration</span><span class="p">:</span> <span class="mi">700</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.0347</span>
+<span class="n">Iteration</span> <span class="mi">800</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Iteration</span><span class="p">:</span> <span class="mi">800</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="mf">0.123</span>
+<span class="n">Iteration</span> <span class="mi">900</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Iteration</span><span class="p">:</span> <span class="mi">900</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="mf">0.0215</span>
+<span class="n">Iteration</span> <span class="mi">1000</span>
+<span class="c1">########## Evaluation ##########</span>
+<span class="n">Iteration</span><span class="p">:</span> <span class="mi">1000</span> <span class="n">Average</span> <span class="n">reward</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">0.0322</span>
+</pre></div>
+</div>
+<p>We observe that CFR achieves simialr performance as NFSP. However, CFR
+requires traversal of the game tree, which is infeasible in large
+environments.</p>
 </div>
 </div>
 

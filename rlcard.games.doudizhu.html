@@ -97,6 +97,10 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-holdem-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-holdem">Training CFR on Leduc Hold’em</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
@@ -106,20 +110,16 @@
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-blackjack">Payoff of Blackjack</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#limit-texas-hold-em">Limit Texas Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-limit-texas-hold-em">State Representation of Limit Texas Hold’em</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-limit-texas-hold-em">Action Encoding of Limit Texas Hold’em</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-limit-texas-hold-em">Payoff of Limit Texas Hold’em</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="games.html#leduc-hold-em">Leduc Hold’em</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-leduc-hold-em">State Representation of Leduc Hold’em</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-leduc-hold-em">Action Encoding of Leduc Hold’em</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-leduc-hold-em">Payoff of Leduc Hold’em</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-limit Texas Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#limit-texas-hold-em">Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-limit-texas-hold-em">State Representation of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-limit-texas-hold-em">Action Encoding of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-limit-texas-hold-em">Payoff of Limit Texas Hold’em</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="games.html#dou-dizhu">Dou Dizhu</a><ul>
@@ -129,17 +129,39 @@
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff">Payoff</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a></li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#uno">UNO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-mahjong">State Representation of Mahjong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-space-of-mahjong">Action Space of Mahjong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-mahjong">Payoff of Mahjong</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-no-limit-texas-hold-em">Payoff of No-Limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#uno">UNO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-uno">State Representation of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-uno">State Encoding of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-uno">Action Encoding of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-uno">Payoff of Uno</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#sheng-ji">Sheng Ji</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-q-learning">Deep-Q Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#nfsp">NFSP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr">CFR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deepcfr">DeepCFR</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#adding-pre-trained-rule-based-models">Adding Pre-trained/Rule-based models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html#developping-algorithms">Developping Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html#adding-new-environments">Adding New Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html#customizing-environments">Customizing Environments</a><ul>
@@ -276,6 +298,7 @@
 
 
 
+
 <div style="display: flex; justify-content: space-between">
   <div role="navigation" aria-label="breadcrumbs navigation">
 
@@ -283,19 +306,17 @@
       
         <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
           
-            <li><a href="rlcard.games.html">rlcard.games</a> &raquo;</li>
-          
-        <li>rlcard.games.doudizhu</li>
+        <li>RLCard: A Toolkit for Reinforcement Learning in Card Games</li>
       
     </ul>
 
     
   </div>
   <div style="display: block; width: 7.5rem; max-width: 7.5rem; padding-right: .6rem; float: right;">
-	  <a href="https://github.com/datamllab/rlcard" title="Go to repository" data-md-source="github" data-md-state="done" style="display: block; padding-right: .6rem; line-height: 1.2">
-	    <div style="display: inline-block; width: 2.4rem; height: 2.4rem;">
-	    	<i class="fa fa-github" style="font-size: 2rem"></i>	
-	    </div>
+    <a href="https://github.com/datamllab/rlcard" title="Go to repository" data-md-source="github" data-md-state="done" style="display: block; padding-right: .6rem; line-height: 1.2">
+      <div style="display: inline-block; width: 2.4rem; height: 2.4rem;">
+        <i class="fa fa-github" style="font-size: 2rem"></i>  
+      </div>
       <div style="display: inline-block; margin-left: -2rem; margin-top: -0.6rem; padding-left: 2rem; vertical-align: middle">
         GitHub
         <ul style="font-size: 0.7rem; list-style-type: none;"><li style="float: left" id="github-stars">... Stars</li></ul>
@@ -311,7 +332,7 @@
         });
       </script>
     </a>
-	</div>
+  </div>
 </div>
 <hr/>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">

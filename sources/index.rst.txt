@@ -9,11 +9,13 @@ learning in domains with multiple agents, large state and action space,
 and sparse reward. RLCard is developed by `DATA
 Lab <http://faculty.cs.tamu.edu/xiahu/>`__ at Texas A&M University.
 
+-  Paper: https://arxiv.org/abs/1910.04376
+
 Installation
 ------------
 
-Make sure that you have **Python 3.5+** and **pip** installed. You can
-install ``rlcard`` with ``pip`` as follow:
+Make sure that you have **Python 3.5+** and **pip** installed. We
+recommend installing ``rlcard`` with ``pip`` as follow:
 
 ::
 
@@ -21,10 +23,16 @@ install ``rlcard`` with ``pip`` as follow:
    cd rlcard
    pip install -e .
 
+Or you can directly install the package with
+
+::
+
+   pip install rlcard
+
 Examples
 --------
 
-Please refer to `examples/ <examples>`__. A **short example** is as
+A **short example** is as
 below.
 
 .. code:: python
@@ -83,7 +91,10 @@ Leduc Hold’em model:
 Available Environments
 ----------------------
 
- **Name:** the name that
+We provide a complexity estimation for the games on several aspects.
+**InfoSet Number:** the number of information sets; **Avg. InfoSet
+Size:** the average number of states in a single information set;
+**Action Size:** the size of the action space. **Name:** the name that
 should be passed to ``env.make`` to create the game environment.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+--------------+
@@ -116,12 +127,14 @@ Contributing
 ------------
 
 Contribution to this project is greatly appreciated! Please create a
-issue/pull request for feedbacks/bugs/new features.
+issue for feedbacks/bugs. If you want to contribute codes, pleast
+contact daochen.zha@tamu.edu or
+`khlai037@tamu.edu <khlai037@tamu.edu>`__.
 
 Acknowledgements
 ----------------
 
 We would like to thank JJ World Network Technology Co.,LTD for the
-technical support.
+generous support.
 
 .. |Learning Curves| image:: /imgs/curves.png

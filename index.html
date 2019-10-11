@@ -95,6 +95,10 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-holdem-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-holdem">Training CFR on Leduc Hold’em</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
@@ -104,20 +108,16 @@
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-blackjack">Payoff of Blackjack</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#limit-texas-hold-em">Limit Texas Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-limit-texas-hold-em">State Representation of Limit Texas Hold’em</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-limit-texas-hold-em">Action Encoding of Limit Texas Hold’em</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-limit-texas-hold-em">Payoff of Limit Texas Hold’em</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="games.html#leduc-hold-em">Leduc Hold’em</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-leduc-hold-em">State Representation of Leduc Hold’em</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-leduc-hold-em">Action Encoding of Leduc Hold’em</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-leduc-hold-em">Payoff of Leduc Hold’em</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-limit Texas Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#limit-texas-hold-em">Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-limit-texas-hold-em">State Representation of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-limit-texas-hold-em">Action Encoding of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-limit-texas-hold-em">Payoff of Limit Texas Hold’em</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="games.html#dou-dizhu">Dou Dizhu</a><ul>
@@ -127,17 +127,39 @@
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff">Payoff</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a></li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#uno">UNO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-mahjong">State Representation of Mahjong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-space-of-mahjong">Action Space of Mahjong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-mahjong">Payoff of Mahjong</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-no-limit-texas-hold-em">Payoff of No-Limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#uno">UNO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-uno">State Representation of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-uno">State Encoding of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-uno">Action Encoding of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-uno">Payoff of Uno</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#sheng-ji">Sheng Ji</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-q-learning">Deep-Q Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#nfsp">NFSP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr">CFR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deepcfr">DeepCFR</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#adding-pre-trained-rule-based-models">Adding Pre-trained/Rule-based models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html#developping-algorithms">Developping Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html#adding-new-environments">Adding New Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html#customizing-environments">Customizing Environments</a><ul>
@@ -274,6 +296,7 @@
 
 
 
+
 <div style="display: flex; justify-content: space-between">
   <div role="navigation" aria-label="breadcrumbs navigation">
 
@@ -288,10 +311,10 @@
     
   </div>
   <div style="display: block; width: 7.5rem; max-width: 7.5rem; padding-right: .6rem; float: right;">
-	  <a href="https://github.com/datamllab/rlcard" title="Go to repository" data-md-source="github" data-md-state="done" style="display: block; padding-right: .6rem; line-height: 1.2">
-	    <div style="display: inline-block; width: 2.4rem; height: 2.4rem;">
-	    	<i class="fa fa-github" style="font-size: 2rem"></i>	
-	    </div>
+    <a href="https://github.com/datamllab/rlcard" title="Go to repository" data-md-source="github" data-md-state="done" style="display: block; padding-right: .6rem; line-height: 1.2">
+      <div style="display: inline-block; width: 2.4rem; height: 2.4rem;">
+        <i class="fa fa-github" style="font-size: 2rem"></i>  
+      </div>
       <div style="display: inline-block; margin-left: -2rem; margin-top: -0.6rem; padding-left: 2rem; vertical-align: middle">
         GitHub
         <ul style="font-size: 0.7rem; list-style-type: none;"><li style="float: left" id="github-stars">... Stars</li></ul>
@@ -307,7 +330,7 @@
         });
       </script>
     </a>
-	</div>
+  </div>
 </div>
 <hr/>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -322,19 +345,26 @@ information games, and push forward the research of reinforcement
 learning in domains with multiple agents, large state and action space,
 and sparse reward. RLCard is developed by <a class="reference external" href="http://faculty.cs.tamu.edu/xiahu/">DATA
 Lab</a> at Texas A&amp;M University.</p>
+<ul class="simple">
+<li><p>Paper: <a class="reference external" href="https://arxiv.org/abs/1910.04376">https://arxiv.org/abs/1910.04376</a></p></li>
+</ul>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>Make sure that you have <strong>Python 3.5+</strong> and <strong>pip</strong> installed. You can
-install <code class="docutils literal notranslate"><span class="pre">rlcard</span></code> with <code class="docutils literal notranslate"><span class="pre">pip</span></code> as follow:</p>
+<p>Make sure that you have <strong>Python 3.5+</strong> and <strong>pip</strong> installed. We
+recommend installing <code class="docutils literal notranslate"><span class="pre">rlcard</span></code> with <code class="docutils literal notranslate"><span class="pre">pip</span></code> as follow:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">datamllab</span><span class="o">/</span><span class="n">rlcard</span><span class="o">.</span><span class="n">git</span>
 <span class="n">cd</span> <span class="n">rlcard</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
 </pre></div>
 </div>
+<p>Or you can directly install the package with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">rlcard</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>Please refer to <a class="reference external" href="examples">examples/</a>. A <strong>short example</strong> is as
+<p>A <strong>short example</strong> is as
 below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rlcard</span>
 <span class="kn">from</span> <span class="nn">rlcard.agents.random_agent</span> <span class="kn">import</span> <span class="n">RandomAgent</span>
@@ -388,10 +418,11 @@ Agent 1: +++
 </div>
 <div class="section" id="available-environments">
 <h2>Available Environments<a class="headerlink" href="#available-environments" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p><strong>Name:</strong> the name that</p>
-</div></blockquote>
-<p>should be passed to <code class="docutils literal notranslate"><span class="pre">env.make</span></code> to create the game environment.</p>
+<p>We provide a complexity estimation for the games on several aspects.
+<strong>InfoSet Number:</strong> the number of information sets; <strong>Avg. InfoSet
+Size:</strong> the average number of states in a single information set;
+<strong>Action Size:</strong> the size of the action space. <strong>Name:</strong> the name that
+should be passed to <code class="docutils literal notranslate"><span class="pre">env.make</span></code> to create the game environment.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 86%" />
@@ -448,12 +479,14 @@ outputs are as follows: <img alt="Learning Curves" src="imgs/curves.png" /></p>
 <div class="section" id="contributing">
 <h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
 <p>Contribution to this project is greatly appreciated! Please create a
-issue/pull request for feedbacks/bugs/new features.</p>
+issue for feedbacks/bugs. If you want to contribute codes, pleast
+contact <a class="reference external" href="mailto:daochen&#46;zha&#37;&#52;&#48;tamu&#46;edu">daochen<span>&#46;</span>zha<span>&#64;</span>tamu<span>&#46;</span>edu</a> or
+<a class="reference external" href="mailto:khlai037&#37;&#52;&#48;tamu&#46;edu">khlai037<span>&#64;</span>tamu<span>&#46;</span>edu</a>.</p>
 </div>
 <div class="section" id="acknowledgements">
 <h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
 <p>We would like to thank JJ World Network Technology Co.,LTD for the
-technical support.</p>
+generous support.</p>
 </div>
 </div>
 

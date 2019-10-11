@@ -97,6 +97,10 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-holdem-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-holdem">Training CFR on Leduc Hold’em</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Games in RLCard</a><ul>
@@ -106,20 +110,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#payoff-of-blackjack">Payoff of Blackjack</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#limit-texas-hold-em">Limit Texas Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#state-representation-of-limit-texas-hold-em">State Representation of Limit Texas Hold’em</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#action-encoding-of-limit-texas-hold-em">Action Encoding of Limit Texas Hold’em</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#payoff-of-limit-texas-hold-em">Payoff of Limit Texas Hold’em</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#leduc-hold-em">Leduc Hold’em</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#state-representation-of-leduc-hold-em">State Representation of Leduc Hold’em</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#action-encoding-of-leduc-hold-em">Action Encoding of Leduc Hold’em</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#payoff-of-leduc-hold-em">Payoff of Leduc Hold’em</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-limit Texas Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#limit-texas-hold-em">Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#state-representation-of-limit-texas-hold-em">State Representation of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#action-encoding-of-limit-texas-hold-em">Action Encoding of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#payoff-of-limit-texas-hold-em">Payoff of Limit Texas Hold’em</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#dou-dizhu">Dou Dizhu</a><ul>
@@ -129,17 +129,39 @@
 <li class="toctree-l3"><a class="reference internal" href="#payoff">Payoff</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#mahjong">Mahjong</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#uno">UNO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mahjong">Mahjong</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#state-representation-of-mahjong">State Representation of Mahjong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#action-space-of-mahjong">Action Space of Mahjong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#payoff-of-mahjong">Payoff of Mahjong</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#payoff-of-no-limit-texas-hold-em">Payoff of No-Limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#uno">UNO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#state-representation-of-uno">State Representation of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#state-encoding-of-uno">State Encoding of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#action-encoding-of-uno">Action Encoding of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#payoff-of-uno">Payoff of Uno</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sheng-ji">Sheng Ji</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-q-learning">Deep-Q Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#nfsp">NFSP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr">CFR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deepcfr">DeepCFR</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#adding-pre-trained-rule-based-models">Adding Pre-trained/Rule-based models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html#developping-algorithms">Developping Algorithms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html#adding-new-environments">Adding New Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="development.html#customizing-environments">Customizing Environments</a><ul>
@@ -276,6 +298,7 @@
 
 
 
+
 <div style="display: flex; justify-content: space-between">
   <div role="navigation" aria-label="breadcrumbs navigation">
 
@@ -283,17 +306,17 @@
       
         <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
           
-        <li>Games in RLCard</li>
+        <li>RLCard: A Toolkit for Reinforcement Learning in Card Games</li>
       
     </ul>
 
     
   </div>
   <div style="display: block; width: 7.5rem; max-width: 7.5rem; padding-right: .6rem; float: right;">
-	  <a href="https://github.com/datamllab/rlcard" title="Go to repository" data-md-source="github" data-md-state="done" style="display: block; padding-right: .6rem; line-height: 1.2">
-	    <div style="display: inline-block; width: 2.4rem; height: 2.4rem;">
-	    	<i class="fa fa-github" style="font-size: 2rem"></i>	
-	    </div>
+    <a href="https://github.com/datamllab/rlcard" title="Go to repository" data-md-source="github" data-md-state="done" style="display: block; padding-right: .6rem; line-height: 1.2">
+      <div style="display: inline-block; width: 2.4rem; height: 2.4rem;">
+        <i class="fa fa-github" style="font-size: 2rem"></i>  
+      </div>
       <div style="display: inline-block; margin-left: -2rem; margin-top: -0.6rem; padding-left: 2rem; vertical-align: middle">
         GitHub
         <ul style="font-size: 0.7rem; list-style-type: none;"><li style="float: left" id="github-stars">... Stars</li></ul>
@@ -309,7 +332,7 @@
         });
       </script>
     </a>
-	</div>
+  </div>
 </div>
 <hr/>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -364,85 +387,6 @@ encoded as follows:</p>
 end of the game.</p>
 </div>
 </div>
-<div class="section" id="limit-texas-hold-em">
-<h2>Limit Texas Hold’em<a class="headerlink" href="#limit-texas-hold-em" title="Permalink to this headline">¶</a></h2>
-<p>Texas Hold’em is a popular betting game. Each player is dealt two
-face-down cards, called hole cards. Then 5 community cards are dealt in
-three stages (the flop, the turn and the river). Each player seeks the
-five best cards among the hole cards and community cards. There are 4
-betting rounds. During each round each player can choose “call”,
-“check”, “raise”, or “fold”.</p>
-<p>In fixed limit Texas Hold’em. Each player can only choose a fixed amount
-of raise. And in each round the number of raises is limited to 4.</p>
-<div class="section" id="state-representation-of-limit-texas-hold-em">
-<h3>State Representation of Limit Texas Hold’em<a class="headerlink" href="#state-representation-of-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
-<p>The state is encoded as a vector of length 52, where each element
-corresponds to one card. The state is represented as the two hole cards
-plus the observed community cards so far. The correspondence between the
-index and the card is as below.</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 74%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Index</p></th>
-<th class="head"><p>Card</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0~12</p></td>
-<td><p>Spade A ~ Spade K</p></td>
-</tr>
-<tr class="row-odd"><td><p>13~25</p></td>
-<td><p>Heart A ~ Heart K</p></td>
-</tr>
-<tr class="row-even"><td><p>26~38</p></td>
-<td><p>Diamond A ~ Diamond K</p></td>
-</tr>
-<tr class="row-odd"><td><p>39~51</p></td>
-<td><p>Club A ~ Club K</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="action-encoding-of-limit-texas-hold-em">
-<h3>Action Encoding of Limit Texas Hold’em<a class="headerlink" href="#action-encoding-of-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
-<p>There 4 actions in Limit Texas Hold’em. They are encoded as below.</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 57%" />
-<col style="width: 43%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Action ID</p></th>
-<th class="head"><p>Action</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>Call</p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p>Raise</p></td>
-</tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>Fold</p></td>
-</tr>
-<tr class="row-odd"><td><p>3</p></td>
-<td><p>Check</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="payoff-of-limit-texas-hold-em">
-<h3>Payoff of Limit Texas Hold’em<a class="headerlink" href="#payoff-of-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
-<p>The stardard unit used in the leterature is milli big blinds per hand
-(mbb/h). In the toolkit, the reward is calculated based on big blinds
-per hand. For example, a reward of 0.5 (-0.5) means that the player wins
-(loses) 0.5 times of the amount of big blind.</p>
-</div>
-</div>
 <div class="section" id="leduc-hold-em">
 <h2>Leduc Hold’em<a class="headerlink" href="#leduc-hold-em" title="Permalink to this headline">¶</a></h2>
 <p>Leduc Hold’em is a smaller version of Limit Texas Hold’em (first
@@ -465,8 +409,8 @@ player’s hand and public card (if it has been dealt). The correspondence
 between the index and the card is as below.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 30%" />
-<col style="width: 70%" />
+<col style="width: 27%" />
+<col style="width: 73%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Index</p></th>
@@ -495,27 +439,68 @@ As both players start the first round with 1 unit in the pot, we treat
 the ‘big blind’ in calculation as 1 by default.</p>
 </div>
 </div>
-<div class="section" id="no-limit-texas-hold-em">
-<h2>No-limit Texas Hold’em<a class="headerlink" href="#no-limit-texas-hold-em" title="Permalink to this headline">¶</a></h2>
-<p>No-limit Texas Hold’em has similar rule with Limit Texas Hold’em. But
-unlike in Limit Texas Hold’em game, each player can only choose a fixed
-amount of raise and the number of raises is limited. In No-limit Texas
-Hold’em, The player may raise with at least the same amount as previous
-raised amount in the same round (or the minimum raise amount set before
-the game if none has raised), and up to the player’s remaining stack.
-The number of raises is also unlimited.</p>
-<p>Other than that, the state representation and payoff are exactly the
-same as Limit Hold’em game.</p>
-<div class="section" id="action-encoding-of-no-limit-texas-hold-em">
-<h3>Action Encoding of No-limit Texas Hold’em<a class="headerlink" href="#action-encoding-of-no-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
-<p>There 103 actions in No-limit Texas Hold’em. They are encoded as below.</p>
-<p>*Note: Starting from Action ID 3, the action means the amount player
-should put in the pot when chooses ‘Raise’. The action ID from 3 to 102
-corresponds to the bet amount from 1 to 100.</p>
+<div class="section" id="limit-texas-hold-em">
+<h2>Limit Texas Hold’em<a class="headerlink" href="#limit-texas-hold-em" title="Permalink to this headline">¶</a></h2>
+<p>Texas Hold’em is a popular betting game. Each player is dealt two
+face-down cards, called hole cards. Then 5 community cards are dealt in
+three stages (the flop, the turn and the river). Each player seeks the
+five best cards among the hole cards and community cards. There are 4
+betting rounds. During each round each player can choose “call”,
+“check”, “raise”, or “fold”.</p>
+<p>In fixed limit Texas Hold’em. Each player can only choose a fixed amount
+of raise. And in each round the number of raises is limited to 4.</p>
+<div class="section" id="state-representation-of-limit-texas-hold-em">
+<h3>State Representation of Limit Texas Hold’em<a class="headerlink" href="#state-representation-of-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
+<p>The state is encoded as a vector of length 72. The first 52 elements
+represent cards, where each element corresponds to one card. The hand is
+represented as the two hole cards plus the observed community cards so
+far. The last 20 elements are the betting history. The correspondence
+between the index and the card is as below.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 54%" />
-<col style="width: 46%" />
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Index</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0~12</p></td>
+<td><p>Spade A ~ Spade K</p></td>
+</tr>
+<tr class="row-odd"><td><p>13~25</p></td>
+<td><p>Heart A ~ Heart K</p></td>
+</tr>
+<tr class="row-even"><td><p>26~38</p></td>
+<td><p>Diamond A ~ Diamond K</p></td>
+</tr>
+<tr class="row-odd"><td><p>39~51</p></td>
+<td><p>Club A ~ Club K</p></td>
+</tr>
+<tr class="row-even"><td><p>52~56</p></td>
+<td><p>Raise number in round 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>37~61</p></td>
+<td><p>Raise number in round 2</p></td>
+</tr>
+<tr class="row-even"><td><p>62~66</p></td>
+<td><p>Raise number in round 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>67~71</p></td>
+<td><p>Raise number in round 4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="action-encoding-of-limit-texas-hold-em">
+<h3>Action Encoding of Limit Texas Hold’em<a class="headerlink" href="#action-encoding-of-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
+<p>There 4 actions in Limit Texas Hold’em. They are encoded as below.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 58%" />
+<col style="width: 42%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Action ID</p></th>
@@ -527,16 +512,23 @@ corresponds to the bet amount from 1 to 100.</p>
 <td><p>Call</p></td>
 </tr>
 <tr class="row-odd"><td><p>1</p></td>
-<td><p>Fold</p></td>
+<td><p>Raise</p></td>
 </tr>
 <tr class="row-even"><td><p>2</p></td>
-<td><p>Check</p></td>
+<td><p>Fold</p></td>
 </tr>
-<tr class="row-odd"><td><p>3 ~ 102</p></td>
-<td><p>*Raise</p></td>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Check</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="payoff-of-limit-texas-hold-em">
+<h3>Payoff of Limit Texas Hold’em<a class="headerlink" href="#payoff-of-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
+<p>The stardard unit used in the leterature is milli big blinds per hand
+(mbb/h). In the toolkit, the reward is calculated based on big blinds
+per hand. For example, a reward of 0.5 (-0.5) means that the player wins
+(loses) 0.5 times of the amount of big blind.</p>
 </div>
 </div>
 <div class="section" id="dou-dizhu">
@@ -634,8 +626,8 @@ their own purposes by modifying <code class="docutils literal notranslate"><span
 encoded planes are as below:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 83%" />
+<col style="width: 14%" />
+<col style="width: 86%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Plane</p></th>
@@ -679,15 +671,18 @@ ID is in
 <a class="reference external" href="rlcard/games/doudizhu/jsondata/action_space.json">rlcard/games/doudizhu/jsondata/action_space.json</a>:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 23%" />
-<col style="width: 42%" />
-<col style="width: 14%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Type</p></th>
-<th class="head"><p>Number of Actions</p></th>
-<th class="head"><p>Number of Actions after Abstraction</p></th>
+<th class="head"><p>Number of
+Actions</p></th>
+<th class="head"><p>Number of
+Actions after
+Abstraction</p></th>
 <th class="head"><p>Action ID</p></th>
 </tr>
 </thead>
@@ -707,7 +702,8 @@ ID is in
 <td><p>13</p></td>
 <td><p>28-40</p></td>
 </tr>
-<tr class="row-odd"><td><p>Trio with single</p></td>
+<tr class="row-odd"><td><p>Trio with
+single</p></td>
 <td><p>182</p></td>
 <td><p>13</p></td>
 <td><p>41-53</p></td>
@@ -783,10 +779,379 @@ game.</p>
 </div>
 <div class="section" id="mahjong">
 <h2>Mahjong<a class="headerlink" href="#mahjong" title="Permalink to this headline">¶</a></h2>
-<p>(Under construction)</p>
+<div class="line-block">
+<div class="line">Mahjong is a tile-based game developed in China, and has spread
+throughout the world since 20th century. It is commonly played but 4
+players. The game is played with a set of 136 tiles. In turn players
+draw and discard tiles until</div>
+<div class="line">The goal of the game is to complete the leagal hand using the 14th
+drawn tile to form 4 sets and a pair. We revised the game into a
+simple version that all of the winning set are equal, and player will
+win as long as she complete forming 4 sets and a pair. Please refer
+the detail on <a class="reference external" href="https://en.wikipedia.org/wiki/Mahjong">Wikipedia</a> or
+<a class="reference external" href="https://baike.baidu.com/item/麻将/215">Baike</a>.</div>
+</div>
+<div class="section" id="state-representation-of-mahjong">
+<h3>State Representation of Mahjong<a class="headerlink" href="#state-representation-of-mahjong" title="Permalink to this headline">¶</a></h3>
+<p>The state representation of Mahjong is encoded as 6 feature planes,
+where each plane has 34 X 4 dimensions. For each plane, the column of
+the plane indicates the number of the cards in the given cards set, and
+the row of the plane represents each kind of cards (Please refer to the
+action space table). The information that has been encoded can be
+refered as follows:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Plane</p></th>
+<th class="head"><p>Feature</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>the cards in current player’s hand</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>the played cards on the table</p></td>
+</tr>
+<tr class="row-even"><td><p>2-5</p></td>
+<td><p>the public piles of each players</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="action-space-of-mahjong">
+<h3>Action Space of Mahjong<a class="headerlink" href="#action-space-of-mahjong" title="Permalink to this headline">¶</a></h3>
+<p>There are 38 actions in Mahjong.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Action ID</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0 ~ 8</p></td>
+<td><p>Bamboo-1 ~ Bamboo-9</p></td>
+</tr>
+<tr class="row-odd"><td><p>9 ~ 17</p></td>
+<td><p>Characters-1 ~ Character-9</p></td>
+</tr>
+<tr class="row-even"><td><p>18 ~ 26</p></td>
+<td><p>Dots-1 ~ Dots-9</p></td>
+</tr>
+<tr class="row-odd"><td><p>27</p></td>
+<td><p>Dragons-green</p></td>
+</tr>
+<tr class="row-even"><td><p>28</p></td>
+<td><p>Dragons-red</p></td>
+</tr>
+<tr class="row-odd"><td><p>29</p></td>
+<td><p>Dragons-white</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>Winds-east</p></td>
+</tr>
+<tr class="row-odd"><td><p>31</p></td>
+<td><p>Winds-west</p></td>
+</tr>
+<tr class="row-even"><td><p>32</p></td>
+<td><p>Winds-north</p></td>
+</tr>
+<tr class="row-odd"><td><p>33</p></td>
+<td><p>Winds-south</p></td>
+</tr>
+<tr class="row-even"><td><p>34</p></td>
+<td><p>Pong</p></td>
+</tr>
+<tr class="row-odd"><td><p>35</p></td>
+<td><p>Chow</p></td>
+</tr>
+<tr class="row-even"><td><p>36</p></td>
+<td><p>Gong</p></td>
+</tr>
+<tr class="row-odd"><td><p>37</p></td>
+<td><p>Stand</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="payoff-of-mahjong">
+<h3>Payoff of Mahjong<a class="headerlink" href="#payoff-of-mahjong" title="Permalink to this headline">¶</a></h3>
+<p>The reward is calculated by the terminal state of the game, where
+winning player is awarded as 1, losing players are punished as -1. And
+if no one win the game, then all players’ reward will be 0.</p>
+</div>
+</div>
+<div class="section" id="no-limit-texas-hold-em">
+<h2>No-limit Texas Hold’em<a class="headerlink" href="#no-limit-texas-hold-em" title="Permalink to this headline">¶</a></h2>
+<p>No-limit Texas Hold’em has similar rule with Limit Texas Hold’em. But
+unlike in Limit Texas Hold’em game in which each player can only choose
+a fixed amount of raise and the number of raises is limited. In No-limit
+Texas Hold’em, The player may raise with at least the same amount as
+previous raised amount in the same round (or the minimum raise amount
+set before the game if none has raised), and up to the player’s
+remaining stack. The number of raises is also unlimited.</p>
+<div class="section" id="state-representation-of-no-limit-texas-hold-em">
+<h3>State Representation of No-Limit Texas Hold’em<a class="headerlink" href="#state-representation-of-no-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
+<p>The state representation is similar to Limit Hold’em game. The state is
+represented as 52 cards and 2 elements of the chips of the players as
+below:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Index</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0~12</p></td>
+<td><p>Spade A ~ Spade K</p></td>
+</tr>
+<tr class="row-odd"><td><p>13~25</p></td>
+<td><p>Heart A ~ Heart K</p></td>
+</tr>
+<tr class="row-even"><td><p>26~38</p></td>
+<td><p>Diamond A ~ Diamond K</p></td>
+</tr>
+<tr class="row-odd"><td><p>39~51</p></td>
+<td><p>Club A ~ Club K</p></td>
+</tr>
+<tr class="row-even"><td><p>52</p></td>
+<td><p>Chips of player 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>53</p></td>
+<td><p>Chips of player 2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="action-encoding-of-no-limit-texas-hold-em">
+<h2>Action Encoding of No-Limit Texas Hold’em<a class="headerlink" href="#action-encoding-of-no-limit-texas-hold-em" title="Permalink to this headline">¶</a></h2>
+<p>There are 103 actions in No-limit Texas Hold’em. They are encoded as
+below.</p>
+<p>*Note: Starting from Action ID 3, the action means the amount player
+should put in the pot when chooses ‘Raise’. The action ID from 3 to 102
+corresponds to the bet amount from 1 to 100.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Action ID</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Call</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Fold</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Check</p></td>
+</tr>
+<tr class="row-odd"><td><p>3 ~ 102</p></td>
+<td><p>*Raise</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="payoff-of-no-limit-texas-hold-em">
+<h3>Payoff of No-Limit Texas Hold’em<a class="headerlink" href="#payoff-of-no-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
+<p>The reward is calculated based on big blinds per hand. For example, a
+reward of 0.5 (-0.5) means that the player wins (loses) 0.5 times of the
+amount of big blind.</p>
+</div>
 </div>
 <div class="section" id="uno">
 <h2>UNO<a class="headerlink" href="#uno" title="Permalink to this headline">¶</a></h2>
+<p>Uno is an American shedding-type card game that is played with a
+specially deck.The game is for 2-10 players. Every player starts with
+seven cards, and they are dealt face down. The rest of the cards are
+placed in a Draw Pile face down. Next to the pile a space should be
+designated for a Discard Pile. The top card should be placed in the
+Discard Pile, and the game begins. The first player is normally the
+player to the left of the dealer and gameplay usually follows a
+clockwise direction. Every player views his/her cards and tries to match
+the card in the Discard pile. Players have to match either by the
+number, color, or the symbol/action. If the player has no matches, they
+must draw a card. If that card can be played, play it. Otherwise, keep
+the card. The objective of the game is to be the first player to get rid
+of all the cards in hand. For detailed rules, please refer to
+<a class="reference external" href="https://en.wikipedia.org/wiki/Uno_(card_game)">Wikipedia</a> or <a class="reference external" href="https://www.unorules.com/">Uno
+Rules</a>. And in our toolkit, the number of
+players is 2.</p>
+<div class="section" id="state-representation-of-uno">
+<h3>State Representation of Uno<a class="headerlink" href="#state-representation-of-uno" title="Permalink to this headline">¶</a></h3>
+<p>In state representation, each card is represented as a string of color
+and trait(number, symbol/action). ‘r’, ‘b’, ‘y’, ‘g’ represent red,
+blue, yellow and green respectively. And at each decision point of the
+game, the corresponding player will be able to observe the current state
+(or information set in imperfect information game). The state consists
+of all the information that the player can observe from his view. We
+encode the information into a readable Python dictionary. The following
+table shows the structure of the state:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 42%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>hand</p></td>
+<td><p>A list of the player’s current
+hand.</p></td>
+<td><p>[‘g-wild’, ‘b-0’, ‘g-draw_2’,
+‘y-skip’, ‘r-draw_2’, ‘y-3’,
+‘y-wild’]</p></td>
+</tr>
+<tr class="row-odd"><td><p>target</p></td>
+<td><p>The top card in the Discard
+pile</p></td>
+<td><p>‘g-wild’</p></td>
+</tr>
+<tr class="row-even"><td><p>played_cards</p></td>
+<td><p>As the game progresses, the
+cards which have been played
+by the players</p></td>
+<td><p>[‘g-3’, ‘g-wild’]</p></td>
+</tr>
+<tr class="row-odd"><td><p>others_hand</p></td>
+<td><p>The union of the other
+player’s current hand</p></td>
+<td><p>[‘b-0’, ‘g-draw_2’, ‘y-skip’,
+‘r-draw_2’, ‘y-3’, ‘r-wild’]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="state-encoding-of-uno">
+<h3>State Encoding of Uno<a class="headerlink" href="#state-encoding-of-uno" title="Permalink to this headline">¶</a></h3>
+<p>In Uno environment, we encode the state into 7 feature planes. The size
+of each plane is 4*15. Each entry of a plane can be either 1 or 0. Note
+that the current encoding method is just an example to show how the
+feature can be encoded. Users are encouraged to encode the state for
+their own purposes by modifying <code class="docutils literal notranslate"><span class="pre">extract_state</span></code> function in
+<a class="reference external" href="rlcard/envs/uno.py">rlcard/envs/uno.py</a>. The example encoded planes
+are as below:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Plane</p></th>
+<th class="head"><p>Feature</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0-2</p></td>
+<td><p>hand</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>target</p></td>
+</tr>
+<tr class="row-even"><td><p>4-6</p></td>
+<td><p>the recent three actions</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="action-encoding-of-uno">
+<h3>Action Encoding of Uno<a class="headerlink" href="#action-encoding-of-uno" title="Permalink to this headline">¶</a></h3>
+<p>There are 61 actions in Uno. They are encoded as below. The detailed
+mapping of action and its ID is in
+<a class="reference external" href="rlcard/games/uno/jsondata/action_space.json">rlcard/games/uno/jsondata/action_space.json</a>:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Action ID</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0~9</p></td>
+<td><p>Red number cards from 0 to 9</p></td>
+</tr>
+<tr class="row-odd"><td><p>10~12</p></td>
+<td><p>Red action cards: skip, reverse, draw 2</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>Red wild card</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>Red wild and draw 4 card</p></td>
+</tr>
+<tr class="row-even"><td><p>15~24</p></td>
+<td><p>green number cards from 0 to 9</p></td>
+</tr>
+<tr class="row-odd"><td><p>25~27</p></td>
+<td><p>green action cards: skip, reverse, draw 2</p></td>
+</tr>
+<tr class="row-even"><td><p>28</p></td>
+<td><p>green wild card</p></td>
+</tr>
+<tr class="row-odd"><td><p>29</p></td>
+<td><p>green wild and draw 4 card</p></td>
+</tr>
+<tr class="row-even"><td><p>30~39</p></td>
+<td><p>blue number cards from 0 to 9</p></td>
+</tr>
+<tr class="row-odd"><td><p>40~42</p></td>
+<td><p>blue action cards: skip, reverse, draw 2</p></td>
+</tr>
+<tr class="row-even"><td><p>43</p></td>
+<td><p>blue wild card</p></td>
+</tr>
+<tr class="row-odd"><td><p>44</p></td>
+<td><p>blue wild and draw 4 card</p></td>
+</tr>
+<tr class="row-even"><td><p>45~54</p></td>
+<td><p>yellow number cards from 0 to 9</p></td>
+</tr>
+<tr class="row-odd"><td><p>55~57</p></td>
+<td><p>yellow action cards: skip, reverse, draw 2</p></td>
+</tr>
+<tr class="row-even"><td><p>58</p></td>
+<td><p>yellow wild card</p></td>
+</tr>
+<tr class="row-odd"><td><p>59</p></td>
+<td><p>yellow wild and draw 4 card</p></td>
+</tr>
+<tr class="row-even"><td><p>60</p></td>
+<td><p>draw</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="payoff-of-uno">
+<h3>Payoff of Uno<a class="headerlink" href="#payoff-of-uno" title="Permalink to this headline">¶</a></h3>
+<p>Each player will receive a reward -1 (lose) or 1 (win) in the end of the
+game.</p>
+</div>
+</div>
+<div class="section" id="sheng-ji">
+<h2>Sheng Ji<a class="headerlink" href="#sheng-ji" title="Permalink to this headline">¶</a></h2>
 <p>(Under construction)</p>
 </div>
 </div>
