@@ -50,10 +50,10 @@
         <div class="wy-side-nav-search" >
           
 
-          
+          <!-- 
             <a href="index.html" class="icon icon-home" alt="Documentation Home"> RLcard
-          
-
+           -->
+          <a href="index.html" style="margin: 0px;"><img src="static/imgs/logo_white.png" style="height: initial; width: initial; border-radius: initial; margin: 0px;" alt="home"></a>
           
           </a>
 
@@ -99,8 +99,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-multiple-processes">Running Multiple Processes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#leduc-holdem-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#training-cfr-on-leduc-holdem">Training CFR on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#leduc-hold-em-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#training-cfr-on-leduc-hold-em">Training CFR on Leduc Hold’em</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
@@ -137,9 +137,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-no-limit-texas-hold-em">Payoff of No-Limit Texas Hold’em</a></li>
 </ul>
 </li>
@@ -830,8 +828,8 @@ Agent 1: +++
 <p>We also provide a running demo of a rule-based agent for UNO. Try it by
 running <code class="docutils literal notranslate"><span class="pre">examples/uno_human.py</span></code>.</p>
 </div>
-<div class="section" id="leduc-holdem-as-single-agent-environment">
-<h2>Leduc Hold’em as Single-Agent Environment<a class="headerlink" href="#leduc-holdem-as-single-agent-environment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="leduc-hold-em-as-single-agent-environment">
+<h2>Leduc Hold’em as Single-Agent Environment<a class="headerlink" href="#leduc-hold-em-as-single-agent-environment" title="Permalink to this headline">¶</a></h2>
 <p>We have wrraped the environment as single agent environment by assuming
 that other players play with pre-trained models. The interfaces are
 exactly the same to OpenAI Gym. Thus, any single-agent algorithm can be
@@ -923,8 +921,8 @@ connected to the environment. An example of Leduc Hold’em is as below:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="training-cfr-on-leduc-holdem">
-<h2>Training CFR on Leduc Hold’em<a class="headerlink" href="#training-cfr-on-leduc-holdem" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="training-cfr-on-leduc-hold-em">
+<h2>Training CFR on Leduc Hold’em<a class="headerlink" href="#training-cfr-on-leduc-hold-em" title="Permalink to this headline">¶</a></h2>
 <p>To show how we can use <code class="docutils literal notranslate"><span class="pre">step</span></code> and <code class="docutils literal notranslate"><span class="pre">step_back</span></code> to traverse the game
 tree, we provide an example of solving Leduc Hold’em with CFR:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>

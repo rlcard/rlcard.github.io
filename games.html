@@ -50,10 +50,10 @@
         <div class="wy-side-nav-search" >
           
 
-          
+          <!-- 
             <a href="index.html" class="icon icon-home" alt="Documentation Home"> RLcard
-          
-
+           -->
+          <a href="index.html" style="margin: 0px;"><img src="static/imgs/logo_white.png" style="height: initial; width: initial; border-radius: initial; margin: 0px;" alt="home"></a>
           
           </a>
 
@@ -99,8 +99,8 @@
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-holdem-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-holdem">Training CFR on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-hold-em-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-hold-em">Training CFR on Leduc Hold’em</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Games in RLCard</a><ul>
@@ -137,9 +137,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#payoff-of-no-limit-texas-hold-em">Payoff of No-Limit Texas Hold’em</a></li>
 </ul>
 </li>
@@ -622,7 +620,7 @@ size of each plane is 5*15. Each entry of a plane can be either 1 or 0.
 Note that the current encoding method is just an example to show how the
 feature can be encoded. Users are encouraged to encode the state for
 their own purposes by modifying <code class="docutils literal notranslate"><span class="pre">extract_state</span></code> function in
-<a class="reference external" href="rlcard/envs/doudizhu.py">rlcard/envs/doudizhu.py</a>. The example
+<code class="docutils literal notranslate"><span class="pre">rlcard/envs/doudizhu.py</span></code>. The example
 encoded planes are as below:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -664,7 +662,7 @@ the agent learns how to play legal actions, it can beat random agents.
 Users can also encode the actions for their own purposes (such as
 increasing the difficulty of the environment) by modifying
 <code class="docutils literal notranslate"><span class="pre">decode_action</span></code> function in
-<a class="reference external" href="rlcard/envs/doudizhu.py">rlcard/envs/doudizhu.py</a>. Users are also
+<code class="docutils literal notranslate"><span class="pre">rlcard/envs/doudizhu.py</span></code>. Users are also
 encouraged to include rule-based agents as opponents. The abstractions
 in the environment are as below. The detailed mapping of action and its
 ID is in
@@ -934,9 +932,8 @@ below:</p>
 </tbody>
 </table>
 </div>
-</div>
 <div class="section" id="action-encoding-of-no-limit-texas-hold-em">
-<h2>Action Encoding of No-Limit Texas Hold’em<a class="headerlink" href="#action-encoding-of-no-limit-texas-hold-em" title="Permalink to this headline">¶</a></h2>
+<h3>Action Encoding of No-Limit Texas Hold’em<a class="headerlink" href="#action-encoding-of-no-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
 <p>There are 103 actions in No-limit Texas Hold’em. They are encoded as
 below.</p>
 <p>*Note: Starting from Action ID 3, the action means the amount player
@@ -967,6 +964,7 @@ corresponds to the bet amount from 1 to 100.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="section" id="payoff-of-no-limit-texas-hold-em">
 <h3>Payoff of No-Limit Texas Hold’em<a class="headerlink" href="#payoff-of-no-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
 <p>The reward is calculated based on big blinds per hand. For example, a
@@ -1049,7 +1047,7 @@ of each plane is 4*15. Each entry of a plane can be either 1 or 0. Note
 that the current encoding method is just an example to show how the
 feature can be encoded. Users are encouraged to encode the state for
 their own purposes by modifying <code class="docutils literal notranslate"><span class="pre">extract_state</span></code> function in
-<a class="reference external" href="rlcard/envs/uno.py">rlcard/envs/uno.py</a>. The example encoded planes
+<code class="docutils literal notranslate"><span class="pre">rlcard/envs/uno.py</span></code>. The example encoded planes
 are as below:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1078,7 +1076,7 @@ are as below:</p>
 <h3>Action Encoding of Uno<a class="headerlink" href="#action-encoding-of-uno" title="Permalink to this headline">¶</a></h3>
 <p>There are 61 actions in Uno. They are encoded as below. The detailed
 mapping of action and its ID is in
-<a class="reference external" href="rlcard/games/uno/jsondata/action_space.json">rlcard/games/uno/jsondata/action_space.json</a>:</p>
+<code class="docutils literal notranslate"><span class="pre">rlcard/games/uno/jsondata/action_space.json</span></code>:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 20%" />
