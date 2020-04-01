@@ -49,10 +49,10 @@
         <div class="wy-side-nav-search" >
           
 
-          <!-- 
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> RLcard
-           -->
+          
           <a href="index.html" style="margin: 0px;"><img src="static/imgs/logo_white.png" style="height: initial; width: initial; border-radius: initial; margin: 0px;" alt="home"></a>
+          
+
           
           </a>
 
@@ -96,10 +96,10 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-hold-em">Training CFR on Leduc Hold’em</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-hold-em-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-hold-em">Training CFR on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
@@ -147,7 +147,14 @@
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-uno">Payoff of Uno</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#sheng-ji">Sheng Ji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#gin-rummy">Gin Rummy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-gin-rummy">State Representation of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-space-of-gin-rummy">Action Space of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-gin-rummy">Payoff of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#settings">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#variations">Variations</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
@@ -179,11 +186,18 @@
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.blackjack">rlcard.envs.blackjack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.doudizhu">rlcard.envs.doudizhu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.limitholdem">rlcard.envs.limitholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.gin_rummy">rlcard.envs.gin_rummy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.leducholdem">rlcard.envs.leducholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.mahjong">rlcard.envs.mahjong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.nolimitholdem">rlcard.envs.nolimitholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.simpledoudizhu">rlcard.envs.simpledoudizhu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.uno">rlcard.envs.uno</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.utils.html">rlcard.utils</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.utils">rlcard.utils.utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.logger">rlcard.utils.logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.exploitability">rlcard.utils.exploitability</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.games.html">rlcard.games</a><ul>
@@ -247,11 +261,38 @@
 <li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.utils">rlcard.games.mahjong.utils</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html">rlcard.games.gin_rummy.utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.action_event">rlcard.games.gin_rummy.utils.action_event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.melding">rlcard.games.gin_rummy.utils.melding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.move">rlcard.games.gin_rummy.utils.move</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.scorers">rlcard.games.gin_rummy.utils.scorers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.settings">rlcard.games.gin_rummy.utils.settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.utils">rlcard.games.gin_rummy.utils.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.dealer">rlcard.games.gin_rummy.dealer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.game">rlcard.games.gin_rummy.game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.judge">rlcard.games.gin_rummy.judge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.player">rlcard.games.gin_rummy.player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.round">rlcard.games.gin_rummy.round</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.simpledoudizhu.html">rlcard.games.simpledoudizhu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.dealer">rlcard.games.simpledoudizhu.dealer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.game">rlcard.games.simpledoudizhu.game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.player">rlcard.games.simpledoudizhu.player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.round">rlcard.games.simpledoudizhu.round</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#rlcard-agents-deep-cfr">rlcard.agents.deep_cfr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.best_response_agent">rlcard.agents.best_response_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.cfr_agent">rlcard.agents.cfr_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr_agent">rlcard.agents.deep_cfr_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.nfsp_agent">rlcard.agents.nfsp_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
 </ul>
 </li>
@@ -271,7 +312,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">RLcard</a>
+          <a href="doctree.html">RLcard</a>
         
       </nav>
 
@@ -349,9 +390,11 @@
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
  | <a href="#J"><strong>J</strong></a>
+ | <a href="#K"><strong>K</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
@@ -363,18 +406,46 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Transition.action">action() (rlcard.agents.dqn_agent.Transition property)</a>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.AdvantageMemory.action">action() (rlcard.agents.deep_cfr_agent.AdvantageMemory property)</a>
+
+      <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Transition.action">(rlcard.agents.dqn_agent.Transition property)</a>
 </li>
-      <li><a href="rlcard.utils.html#rlcard.utils.logger.Logger.add_point">add_point() (rlcard.utils.logger.Logger method)</a>
+      </ul></li>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.DeepCFR.action_advantage">action_advantage() (rlcard.agents.deep_cfr_agent.DeepCFR method)</a>
 </li>
-      <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Normalizer.append">append() (rlcard.agents.dqn_agent.Normalizer method)</a>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.DeepCFR.action_probabilities">action_probabilities() (rlcard.agents.deep_cfr_agent.DeepCFR method)</a>
+</li>
+      <li><a href="rlcard.agents.html#rlcard.agents.best_response_agent.BRAgent.action_probs">action_probs() (rlcard.agents.best_response_agent.BRAgent method)</a>
+
+      <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.cfr_agent.CFRAgent.action_probs">(rlcard.agents.cfr_agent.CFRAgent method)</a>
+</li>
+        <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.Transition.action_probs">(rlcard.agents.nfsp_agent.Transition property)</a>
+</li>
+      </ul></li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.action_event.ActionEvent">ActionEvent (class in rlcard.games.gin_rummy.utils.action_event)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.FixedSizeRingBuffer.add">add() (rlcard.agents.deep_cfr_agent.FixedSizeRingBuffer method)</a>
+
+      <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.ReservoirBuffer.add">(rlcard.agents.nfsp_agent.ReservoirBuffer method)</a>
+</li>
+      </ul></li>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.AdvantageMemory.advantage">advantage() (rlcard.agents.deep_cfr_agent.AdvantageMemory property)</a>
+</li>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.AdvantageMemory">AdvantageMemory (class in rlcard.agents.deep_cfr_agent)</a>
+</li>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.assign_task">assign_task() (in module rlcard.utils.utils)</a>
 </li>
       <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.player.DoudizhuPlayer.available_actions">available_actions() (rlcard.games.doudizhu.player.DoudizhuPlayer method)</a>
+
+      <ul>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.player.SimpleDoudizhuPlayer.available_actions">(rlcard.games.simpledoudizhu.player.SimpleDoudizhuPlayer method)</a>
 </li>
+      </ul></li>
       <li><a href="rlcard.core.html#rlcard.core.Player.available_order">available_order() (rlcard.core.Player method)</a>, <a href="rlcard.html#rlcard.core.Player.available_order">[1]</a>
 </li>
   </ul></td>
@@ -383,6 +454,8 @@
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="rlcard.agents.html#rlcard.agents.best_response_agent.BRAgent.best_response_action">best_response_action() (rlcard.agents.best_response_agent.BRAgent method)</a>
+</li>
       <li><a href="rlcard.games.blackjack.html#rlcard.games.blackjack.dealer.BlackjackDealer">BlackjackDealer (class in rlcard.games.blackjack.dealer)</a>
 </li>
       <li><a href="rlcard.envs.html#rlcard.envs.blackjack.BlackjackEnv">BlackjackEnv (class in rlcard.envs.blackjack)</a>
@@ -395,6 +468,8 @@
 </li>
       <li><a href="rlcard.games.blackjack.html#rlcard.games.blackjack.player.BlackjackPlayer">BlackjackPlayer (class in rlcard.games.blackjack.player)</a>
 </li>
+      <li><a href="rlcard.agents.html#rlcard.agents.best_response_agent.BRAgent">BRAgent (class in rlcard.agents.best_response_agent)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -402,6 +477,8 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.judger.MahjongJudger.cal_set">cal_set() (rlcard.games.mahjong.judger.MahjongJudger method)</a>
+</li>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.judger.DoudizhuJudger.calc_playable_cards">calc_playable_cards() (rlcard.games.doudizhu.judger.DoudizhuJudger method)</a>
 </li>
       <li><a href="rlcard.core.html#rlcard.core.Card">Card (class in rlcard.core)</a>, <a href="rlcard.html#rlcard.core.Card">[1]</a>
 </li>
@@ -411,13 +488,31 @@
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.utils.cards2list">(in module rlcard.games.uno.utils)</a>
 </li>
       </ul></li>
-      <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.judger.MahjongJudger.check_consecutive">check_consecutive() (rlcard.games.mahjong.judger.MahjongJudger static method)</a>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.round.DoudizhuRound.cards_ndarray_to_list">cards_ndarray_to_list() (rlcard.games.doudizhu.round.DoudizhuRound method)</a>
+
+      <ul>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound.cards_ndarray_to_list">(rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound method)</a>
+</li>
+      </ul></li>
+      <li><a href="rlcard.agents.html#rlcard.agents.cfr_agent.CFRAgent">CFRAgent (class in rlcard.agents.cfr_agent)</a>
+</li>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.judger.DoudizhuJudger.chain_indexes">chain_indexes() (rlcard.games.doudizhu.judger.DoudizhuJudger static method)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Settings.change_settings">change_settings() (rlcard.games.gin_rummy.utils.settings.Settings method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.judger.MahjongJudger.check_consecutive">check_consecutive() (rlcard.games.mahjong.judger.MahjongJudger static method)</a>
+</li>
       <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.player.MahjongPlayer.chow">chow() (rlcard.games.mahjong.player.MahjongPlayer method)</a>
 </li>
-      <li><a href="rlcard.utils.html#rlcard.utils.logger.Logger.close_file">close_file() (rlcard.utils.logger.Logger method)</a>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.FixedSizeRingBuffer.clear">clear() (rlcard.agents.deep_cfr_agent.FixedSizeRingBuffer method)</a>
+
+      <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.ReservoirBuffer.clear">(rlcard.agents.nfsp_agent.ReservoirBuffer method)</a>
+</li>
+      </ul></li>
+      <li><a href="rlcard.utils.html#rlcard.utils.logger.Logger.close_files">close_files() (rlcard.utils.logger.Logger method)</a>
 </li>
       <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.utils.compare_hands">compare_hands() (in module rlcard.games.limitholdem.utils)</a>
 </li>
@@ -427,6 +522,12 @@
 </li>
       <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.DQNAgent.copy_params_op">copy_params_op() (rlcard.agents.dqn_agent.DQNAgent method)</a>
 </li>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.player.DoudizhuPlayer.current_hand">current_hand() (rlcard.games.doudizhu.player.DoudizhuPlayer property)</a>
+
+      <ul>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.player.SimpleDoudizhuPlayer.current_hand">(rlcard.games.simpledoudizhu.player.SimpleDoudizhuPlayer property)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -444,30 +545,58 @@
       <ul>
         <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.dealer.DoudizhuDealer.deal_cards">(rlcard.games.doudizhu.dealer.DoudizhuDealer method)</a>
 </li>
+        <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.dealer.GinRummyDealer.deal_cards">(rlcard.games.gin_rummy.dealer.GinRummyDealer method)</a>
+</li>
         <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.dealer.MahjongDealer.deal_cards">(rlcard.games.mahjong.dealer.MahjongDealer method)</a>
+</li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.dealer.SimpleDoudizhuDealer.deal_cards">(rlcard.games.simpledoudizhu.dealer.SimpleDoudizhuDealer method)</a>
 </li>
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.dealer.UnoDealer.deal_cards">(rlcard.games.uno.dealer.UnoDealer method)</a>
 </li>
       </ul></li>
       <li><a href="rlcard.core.html#rlcard.core.Dealer">Dealer (class in rlcard.core)</a>, <a href="rlcard.html#rlcard.core.Dealer">[1]</a>
 </li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Setting.dealer_for_round">dealer_for_round (rlcard.games.gin_rummy.utils.settings.Setting attribute)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.DealerForRound">DealerForRound (class in rlcard.games.gin_rummy.utils.settings)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.move.DealHandMove">DealHandMove (class in rlcard.games.gin_rummy.utils.move)</a>
+</li>
       <li><a href="rlcard.core.html#rlcard.core.Dealer.deck">deck (rlcard.core.Dealer attribute)</a>, <a href="rlcard.html#rlcard.core.Dealer.deck">[1]</a>
 </li>
-      <li><a href="rlcard.envs.html#rlcard.envs.blackjack.BlackjackEnv.decode_action">decode_action() (rlcard.envs.blackjack.BlackjackEnv method)</a>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.round.GinRummyRound.declare_dead_hand">declare_dead_hand() (rlcard.games.gin_rummy.round.GinRummyRound method)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.action_event.DeclareDeadHandAction">DeclareDeadHandAction (class in rlcard.games.gin_rummy.utils.action_event)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.move.DeclareDeadHandMove">DeclareDeadHandMove (class in rlcard.games.gin_rummy.utils.move)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame.decode_action">decode_action() (rlcard.games.gin_rummy.game.GinRummyGame static method)</a>
 
       <ul>
-        <li><a href="rlcard.envs.html#rlcard.envs.doudizhu.DoudizhuEnv.decode_action">(rlcard.envs.doudizhu.DoudizhuEnv method)</a>
-</li>
-        <li><a href="rlcard.envs.html#rlcard.envs.env.Env.decode_action">(rlcard.envs.env.Env method)</a>
-</li>
-        <li><a href="rlcard.envs.html#rlcard.envs.limitholdem.LimitholdemEnv.decode_action">(rlcard.envs.limitholdem.LimitholdemEnv method)</a>
+        <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.action_event.ActionEvent.decode_action">(rlcard.games.gin_rummy.utils.action_event.ActionEvent static method)</a>
 </li>
       </ul></li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.utils.decode_cards">decode_cards() (in module rlcard.games.gin_rummy.utils.utils)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.dealer.DoudizhuDealer.determine_role">determine_role() (rlcard.games.doudizhu.dealer.DoudizhuDealer method)</a>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.DeepCFR">DeepCFR (class in rlcard.agents.deep_cfr_agent)</a>
 </li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Setting.default_setting">default_setting (rlcard.games.gin_rummy.utils.settings.Setting attribute)</a>
+</li>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.dealer.DoudizhuDealer.determine_role">determine_role() (rlcard.games.doudizhu.dealer.DoudizhuDealer method)</a>
+
+      <ul>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.dealer.SimpleDoudizhuDealer.determine_role">(rlcard.games.simpledoudizhu.dealer.SimpleDoudizhuDealer method)</a>
+</li>
+      </ul></li>
       <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.utils.determine_winner">determine_winner() (in module rlcard.games.limitholdem.utils)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.round.GinRummyRound.discard">discard() (rlcard.games.gin_rummy.round.GinRummyRound method)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.action_event.DiscardAction">DiscardAction (class in rlcard.games.gin_rummy.utils.action_event)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.move.DiscardMove">DiscardMove (class in rlcard.games.gin_rummy.utils.move)</a>
 </li>
       <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Transition.done">done() (rlcard.agents.dqn_agent.Transition property)</a>
 </li>
@@ -485,6 +614,12 @@
 </li>
       <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.DQNAgent">DQNAgent (class in rlcard.agents.dqn_agent)</a>
 </li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.round.GinRummyRound.draw_card">draw_card() (rlcard.games.gin_rummy.round.GinRummyRound method)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.action_event.DrawCardAction">DrawCardAction (class in rlcard.games.gin_rummy.utils.action_event)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.move.DrawCardMove">DrawCardMove (class in rlcard.games.gin_rummy.utils.move)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -493,8 +628,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.elegent_form">elegent_form() (in module rlcard.utils.utils)</a>
 </li>
-      <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.utils.encode_cards">encode_cards() (in module rlcard.games.mahjong.utils)</a>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.utils.encode_cards">encode_cards() (in module rlcard.games.gin_rummy.utils.utils)</a>
+
+      <ul>
+        <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.utils.encode_cards">(in module rlcard.games.mahjong.utils)</a>
 </li>
+      </ul></li>
       <li><a href="rlcard.games.uno.html#rlcard.games.uno.utils.encode_hand">encode_hand() (in module rlcard.games.uno.utils)</a>
 </li>
       <li><a href="rlcard.games.uno.html#rlcard.games.uno.utils.encode_target">encode_target() (in module rlcard.games.uno.utils)</a>
@@ -509,24 +648,24 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Estimator">Estimator (class in rlcard.agents.dqn_agent)</a>
 </li>
-      <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.DQNAgent.eval_step">eval_step() (rlcard.agents.dqn_agent.DQNAgent method)</a>
+      <li><a href="rlcard.agents.html#rlcard.agents.best_response_agent.BRAgent.eval_step">eval_step() (rlcard.agents.best_response_agent.BRAgent method)</a>
 
       <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.cfr_agent.CFRAgent.eval_step">(rlcard.agents.cfr_agent.CFRAgent method)</a>
+</li>
+        <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.DeepCFR.eval_step">(rlcard.agents.deep_cfr_agent.DeepCFR method)</a>
+</li>
+        <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.DQNAgent.eval_step">(rlcard.agents.dqn_agent.DQNAgent method)</a>
+</li>
+        <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.NFSPAgent.eval_step">(rlcard.agents.nfsp_agent.NFSPAgent method)</a>
+</li>
         <li><a href="rlcard.agents.html#rlcard.agents.random_agent.RandomAgent.eval_step">(rlcard.agents.random_agent.RandomAgent method)</a>
 </li>
       </ul></li>
       <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.utils.Hand.evaluateHand">evaluateHand() (rlcard.games.limitholdem.utils.Hand method)</a>
 </li>
-      <li><a href="rlcard.envs.html#rlcard.envs.blackjack.BlackjackEnv.extract_state">extract_state() (rlcard.envs.blackjack.BlackjackEnv method)</a>
-
-      <ul>
-        <li><a href="rlcard.envs.html#rlcard.envs.doudizhu.DoudizhuEnv.extract_state">(rlcard.envs.doudizhu.DoudizhuEnv method)</a>
+      <li><a href="rlcard.utils.html#rlcard.utils.exploitability.exploitability">exploitability() (in module rlcard.utils.exploitability)</a>
 </li>
-        <li><a href="rlcard.envs.html#rlcard.envs.env.Env.extract_state">(rlcard.envs.env.Env method)</a>
-</li>
-        <li><a href="rlcard.envs.html#rlcard.envs.limitholdem.LimitholdemEnv.extract_state">(rlcard.envs.limitholdem.LimitholdemEnv method)</a>
-</li>
-      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -534,12 +673,30 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.DQNAgent.feed">feed() (rlcard.agents.dqn_agent.DQNAgent method)</a>
+
+      <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.NFSPAgent.feed">(rlcard.agents.nfsp_agent.NFSPAgent method)</a>
 </li>
+      </ul></li>
       <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.DQNAgent.feed_memory">feed_memory() (rlcard.agents.dqn_agent.DQNAgent method)</a>
 </li>
+      <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.utils.final_compare">final_compare() (in module rlcard.games.limitholdem.utils)</a>
+</li>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.round.DoudizhuRound.find_last_greater_player_id_in_trace">find_last_greater_player_id_in_trace() (rlcard.games.doudizhu.round.DoudizhuRound method)</a>
+
+      <ul>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound.find_last_greater_player_id_in_trace">(rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.DQNAgent.feed_norm">feed_norm() (rlcard.agents.dqn_agent.DQNAgent method)</a>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.round.DoudizhuRound.find_last_played_cards_in_trace">find_last_played_cards_in_trace() (rlcard.games.doudizhu.round.DoudizhuRound method)</a>
+
+      <ul>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound.find_last_played_cards_in_trace">(rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound method)</a>
+</li>
+      </ul></li>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.FixedSizeRingBuffer">FixedSizeRingBuffer (class in rlcard.agents.deep_cfr_agent)</a>
 </li>
       <li><a href="rlcard.games.uno.html#rlcard.games.uno.dealer.UnoDealer.flip_top_card">flip_top_card() (rlcard.games.uno.dealer.UnoDealer method)</a>
 
@@ -547,6 +704,10 @@
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.round.UnoRound.flip_top_card">(rlcard.games.uno.round.UnoRound method)</a>
 </li>
       </ul></li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.utils.from_card_id">from_card_id() (in module rlcard.games.gin_rummy.utils.utils)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.utils.from_text">from_text() (in module rlcard.games.gin_rummy.utils.utils)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -562,32 +723,60 @@
 </li>
         <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.game.DoudizhuGame.get_action_num">(rlcard.games.doudizhu.game.DoudizhuGame static method)</a>
 </li>
+        <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame.get_action_num">(rlcard.games.gin_rummy.game.GinRummyGame method)</a>
+</li>
+        <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.action_event.ActionEvent.get_action_num">(rlcard.games.gin_rummy.utils.action_event.ActionEvent static method)</a>
+</li>
         <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.game.LimitholdemGame.get_action_num">(rlcard.games.limitholdem.game.LimitholdemGame static method)</a>
 </li>
         <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.game.MahjongGame.get_action_num">(rlcard.games.mahjong.game.MahjongGame static method)</a>
 </li>
         <li><a href="rlcard.games.nolimitholdem.html#rlcard.games.nolimitholdem.game.NolimitholdemGame.get_action_num">(rlcard.games.nolimitholdem.game.NolimitholdemGame method)</a>
 </li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame.get_action_num">(rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame static method)</a>
+</li>
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.game.UnoGame.get_action_num">(rlcard.games.uno.game.UnoGame static method)</a>
 </li>
       </ul></li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.melding.get_best_meld_clusters">get_best_meld_clusters() (in module rlcard.games.gin_rummy.utils.melding)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.utils.get_card">get_card() (in module rlcard.games.gin_rummy.utils.utils)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.utils.get_card_id">get_card_id() (in module rlcard.games.gin_rummy.utils.utils)</a>
+</li>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.get_cards_from_ranks">get_cards_from_ranks() (in module rlcard.utils.utils)</a>
 </li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Settings.get_config_with_invalid_settings_set_to_default_value">get_config_with_invalid_settings_set_to_default_value() (rlcard.games.gin_rummy.utils.settings.Settings static method)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame.get_current_player">get_current_player() (rlcard.games.gin_rummy.game.GinRummyGame method)</a>
+
+      <ul>
+        <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.round.GinRummyRound.get_current_player">(rlcard.games.gin_rummy.round.GinRummyRound method)</a>
+</li>
+      </ul></li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.utils.get_deadwood">get_deadwood() (in module rlcard.games.gin_rummy.utils.utils)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.utils.get_deadwood_count">get_deadwood_count() (in module rlcard.games.gin_rummy.utils.utils)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.utils.get_deadwood_value">get_deadwood_value() (in module rlcard.games.gin_rummy.utils.utils)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.utils.get_deck">get_deck() (in module rlcard.games.gin_rummy.utils.utils)</a>
+</li>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.get_downstream_player_id">get_downstream_player_id() (in module rlcard.utils.utils)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.judge.get_gin_cards">get_gin_cards() (in module rlcard.games.gin_rummy.judge)</a>
 </li>
       <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.utils.Hand.get_hand_five_cards">get_hand_five_cards() (rlcard.games.limitholdem.utils.Hand method)</a>
 </li>
       <li><a href="rlcard.core.html#rlcard.core.Card.get_index">get_index() (rlcard.core.Card method)</a>, <a href="rlcard.html#rlcard.core.Card.get_index">[1]</a>
 </li>
-      <li><a href="rlcard.envs.html#rlcard.envs.blackjack.BlackjackEnv.get_legal_actions">get_legal_actions() (rlcard.envs.blackjack.BlackjackEnv method)</a>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.judge.get_knock_cards">get_knock_cards() (in module rlcard.games.gin_rummy.judge)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame.get_last_action">get_last_action() (rlcard.games.gin_rummy.game.GinRummyGame method)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.judge.GinRummyJudge.get_legal_actions">get_legal_actions() (rlcard.games.gin_rummy.judge.GinRummyJudge method)</a>
 
       <ul>
-        <li><a href="rlcard.envs.html#rlcard.envs.doudizhu.DoudizhuEnv.get_legal_actions">(rlcard.envs.doudizhu.DoudizhuEnv method)</a>
-</li>
-        <li><a href="rlcard.envs.html#rlcard.envs.env.Env.get_legal_actions">(rlcard.envs.env.Env method)</a>
-</li>
-        <li><a href="rlcard.envs.html#rlcard.envs.limitholdem.LimitholdemEnv.get_legal_actions">(rlcard.envs.limitholdem.LimitholdemEnv method)</a>
-</li>
         <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.game.LimitholdemGame.get_legal_actions">(rlcard.games.limitholdem.game.LimitholdemGame method)</a>
 </li>
         <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.round.LimitholdemRound.get_legal_actions">(rlcard.games.limitholdem.round.LimitholdemRound method)</a>
@@ -601,7 +790,11 @@
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.round.UnoRound.get_legal_actions">(rlcard.games.uno.round.UnoRound method)</a>
 </li>
       </ul></li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.melding.get_meld_clusters">get_meld_clusters() (in module rlcard.games.gin_rummy.utils.melding)</a>
+</li>
       <li><a href="rlcard.games.nolimitholdem.html#rlcard.games.nolimitholdem.round.NolimitholdemRound.get_nolimit_legal_actions">get_nolimit_legal_actions() (rlcard.games.nolimitholdem.round.NolimitholdemRound method)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.scorers.get_payoff_gin_rummy_v1">get_payoff_gin_rummy_v1() (in module rlcard.games.gin_rummy.utils.scorers)</a>
 </li>
       <li><a href="rlcard.envs.html#rlcard.envs.blackjack.BlackjackEnv.get_payoffs">get_payoffs() (rlcard.envs.blackjack.BlackjackEnv method)</a>
 
@@ -610,13 +803,37 @@
 </li>
         <li><a href="rlcard.envs.html#rlcard.envs.env.Env.get_payoffs">(rlcard.envs.env.Env method)</a>
 </li>
+        <li><a href="rlcard.envs.html#rlcard.envs.gin_rummy.GinRummyEnv.get_payoffs">(rlcard.envs.gin_rummy.GinRummyEnv method)</a>
+</li>
+        <li><a href="rlcard.envs.html#rlcard.envs.leducholdem.LeducholdemEnv.get_payoffs">(rlcard.envs.leducholdem.LeducholdemEnv method)</a>
+</li>
         <li><a href="rlcard.envs.html#rlcard.envs.limitholdem.LimitholdemEnv.get_payoffs">(rlcard.envs.limitholdem.LimitholdemEnv method)</a>
+</li>
+        <li><a href="rlcard.envs.html#rlcard.envs.mahjong.MahjongEnv.get_payoffs">(rlcard.envs.mahjong.MahjongEnv method)</a>
+</li>
+        <li><a href="rlcard.envs.html#rlcard.envs.nolimitholdem.NolimitholdemEnv.get_payoffs">(rlcard.envs.nolimitholdem.NolimitholdemEnv method)</a>
+</li>
+        <li><a href="rlcard.envs.html#rlcard.envs.simpledoudizhu.SimpleDoudizhuEnv.get_payoffs">(rlcard.envs.simpledoudizhu.SimpleDoudizhuEnv method)</a>
+</li>
+        <li><a href="rlcard.envs.html#rlcard.envs.uno.UnoEnv.get_payoffs">(rlcard.envs.uno.UnoEnv method)</a>
+</li>
+        <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.scorers.GinRummyScorer.get_payoffs">(rlcard.games.gin_rummy.utils.scorers.GinRummyScorer method)</a>
 </li>
         <li><a href="rlcard.games.leducholdem.html#rlcard.games.leducholdem.game.LeducholdemGame.get_payoffs">(rlcard.games.leducholdem.game.LeducholdemGame method)</a>
 </li>
         <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.game.LimitholdemGame.get_payoffs">(rlcard.games.limitholdem.game.LimitholdemGame method)</a>
 </li>
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.game.UnoGame.get_payoffs">(rlcard.games.uno.game.UnoGame method)</a>
+</li>
+      </ul></li>
+      <li><a href="rlcard.envs.html#rlcard.envs.env.Env.get_perfect_information">get_perfect_information() (rlcard.envs.env.Env method)</a>
+
+      <ul>
+        <li><a href="rlcard.envs.html#rlcard.envs.leducholdem.LeducholdemEnv.get_perfect_information">(rlcard.envs.leducholdem.LeducholdemEnv method)</a>
+</li>
+        <li><a href="rlcard.envs.html#rlcard.envs.limitholdem.LimitholdemEnv.get_perfect_information">(rlcard.envs.limitholdem.LimitholdemEnv method)</a>
+</li>
+        <li><a href="rlcard.envs.html#rlcard.envs.nolimitholdem.NolimitholdemEnv.get_perfect_information">(rlcard.envs.nolimitholdem.NolimitholdemEnv method)</a>
 </li>
       </ul></li>
       <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.judger.DoudizhuJudger.get_playable_cards">get_playable_cards() (rlcard.games.doudizhu.judger.DoudizhuJudger method)</a>
@@ -632,6 +849,10 @@
 </li>
         <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.game.DoudizhuGame.get_player_id">(rlcard.games.doudizhu.game.DoudizhuGame method)</a>
 </li>
+        <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame.get_player_id">(rlcard.games.gin_rummy.game.GinRummyGame method)</a>
+</li>
+        <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.player.GinRummyPlayer.get_player_id">(rlcard.games.gin_rummy.player.GinRummyPlayer method)</a>
+</li>
         <li><a href="rlcard.games.leducholdem.html#rlcard.games.leducholdem.player.LeducholdemPlayer.get_player_id">(rlcard.games.leducholdem.player.LeducholdemPlayer method)</a>
 </li>
         <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.game.LimitholdemGame.get_player_id">(rlcard.games.limitholdem.game.LimitholdemGame method)</a>
@@ -641,6 +862,8 @@
         <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.game.MahjongGame.get_player_id">(rlcard.games.mahjong.game.MahjongGame method)</a>
 </li>
         <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.player.MahjongPlayer.get_player_id">(rlcard.games.mahjong.player.MahjongPlayer method)</a>
+</li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame.get_player_id">(rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame method)</a>
 </li>
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.game.UnoGame.get_player_id">(rlcard.games.uno.game.UnoGame method)</a>
 </li>
@@ -656,23 +879,37 @@
 </li>
         <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.game.DoudizhuGame.get_player_num">(rlcard.games.doudizhu.game.DoudizhuGame method)</a>
 </li>
+        <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame.get_player_num">(rlcard.games.gin_rummy.game.GinRummyGame method)</a>
+</li>
         <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.game.LimitholdemGame.get_player_num">(rlcard.games.limitholdem.game.LimitholdemGame method)</a>
 </li>
         <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.game.MahjongGame.get_player_num">(rlcard.games.mahjong.game.MahjongGame method)</a>
 </li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame.get_player_num">(rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame method)</a>
+</li>
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.game.UnoGame.get_player_num">(rlcard.games.uno.game.UnoGame method)</a>
 </li>
       </ul></li>
+      <li><a href="rlcard.agents.html#rlcard.agents.best_response_agent.BRAgent.get_q_value">get_q_value() (rlcard.agents.best_response_agent.BRAgent method)</a>
+</li>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.get_random_cards">get_random_cards() (in module rlcard.utils.utils)</a>
 </li>
-      <li><a href="rlcard.envs.html#rlcard.envs.env.Env.get_state">get_state() (rlcard.envs.env.Env method)</a>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.utils.get_rank_id">get_rank_id() (in module rlcard.games.gin_rummy.utils.utils)</a>
+</li>
+      <li><a href="rlcard.agents.html#rlcard.agents.best_response_agent.BRAgent.get_state">get_state() (rlcard.agents.best_response_agent.BRAgent method)</a>
 
       <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.cfr_agent.CFRAgent.get_state">(rlcard.agents.cfr_agent.CFRAgent method)</a>
+</li>
+        <li><a href="rlcard.envs.html#rlcard.envs.env.Env.get_state">(rlcard.envs.env.Env method)</a>
+</li>
         <li><a href="rlcard.games.blackjack.html#rlcard.games.blackjack.game.BlackjackGame.get_state">(rlcard.games.blackjack.game.BlackjackGame method)</a>
 </li>
         <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.game.DoudizhuGame.get_state">(rlcard.games.doudizhu.game.DoudizhuGame method)</a>
 </li>
         <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.player.DoudizhuPlayer.get_state">(rlcard.games.doudizhu.player.DoudizhuPlayer method)</a>
+</li>
+        <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame.get_state">(rlcard.games.gin_rummy.game.GinRummyGame method)</a>
 </li>
         <li><a href="rlcard.games.leducholdem.html#rlcard.games.leducholdem.game.LeducholdemGame.get_state">(rlcard.games.leducholdem.game.LeducholdemGame method)</a>
 </li>
@@ -688,6 +925,10 @@
 </li>
         <li><a href="rlcard.games.nolimitholdem.html#rlcard.games.nolimitholdem.game.NolimitholdemGame.get_state">(rlcard.games.nolimitholdem.game.NolimitholdemGame method)</a>
 </li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame.get_state">(rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame method)</a>
+</li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.player.SimpleDoudizhuPlayer.get_state">(rlcard.games.simpledoudizhu.player.SimpleDoudizhuPlayer method)</a>
+</li>
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.game.UnoGame.get_state">(rlcard.games.uno.game.UnoGame method)</a>
 </li>
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.round.UnoRound.get_state">(rlcard.games.uno.round.UnoRound method)</a>
@@ -699,7 +940,33 @@
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.card.UnoCard.get_str">(rlcard.games.uno.card.UnoCard method)</a>
 </li>
       </ul></li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.utils.get_suit_id">get_suit_id() (in module rlcard.games.gin_rummy.utils.utils)</a>
+</li>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.get_upstream_player_id">get_upstream_player_id() (in module rlcard.utils.utils)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.round.GinRummyRound.gin">gin() (rlcard.games.gin_rummy.round.GinRummyRound method)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.action_event.GinAction">GinAction (class in rlcard.games.gin_rummy.utils.action_event)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.move.GinMove">GinMove (class in rlcard.games.gin_rummy.utils.move)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.dealer.GinRummyDealer">GinRummyDealer (class in rlcard.games.gin_rummy.dealer)</a>
+</li>
+      <li><a href="rlcard.envs.html#rlcard.envs.gin_rummy.GinRummyEnv">GinRummyEnv (class in rlcard.envs.gin_rummy)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame">GinRummyGame (class in rlcard.games.gin_rummy.game)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.judge.GinRummyJudge">GinRummyJudge (class in rlcard.games.gin_rummy.judge)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.move.GinRummyMove">GinRummyMove (class in rlcard.games.gin_rummy.utils.move)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.player.GinRummyPlayer">GinRummyPlayer (class in rlcard.games.gin_rummy.player)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.round.GinRummyRound">GinRummyRound (class in rlcard.games.gin_rummy.round)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.scorers.GinRummyScorer">GinRummyScorer (class in rlcard.games.gin_rummy.utils.scorers)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Setting.going_out_deadwood_count">going_out_deadwood_count (rlcard.games.gin_rummy.utils.settings.Setting attribute)</a>
 </li>
       <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.player.MahjongPlayer.gong">gong() (rlcard.games.mahjong.player.MahjongPlayer method)</a>
 </li>
@@ -729,6 +996,14 @@
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.card.UnoCard.info">(rlcard.games.uno.card.UnoCard attribute)</a>
 </li>
       </ul></li>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.AdvantageMemory.info_state">info_state() (rlcard.agents.deep_cfr_agent.AdvantageMemory property)</a>
+
+      <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.StrategyMemory.info_state">(rlcard.agents.deep_cfr_agent.StrategyMemory property)</a>
+</li>
+        <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.Transition.info_state">(rlcard.agents.nfsp_agent.Transition property)</a>
+</li>
+      </ul></li>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.init_54_deck">init_54_deck() (in module rlcard.utils.utils)</a>
 </li>
       <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.utils.init_deck">init_deck() (in module rlcard.games.mahjong.utils)</a>
@@ -746,6 +1021,8 @@
 </li>
         <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.game.DoudizhuGame.init_game">(rlcard.games.doudizhu.game.DoudizhuGame method)</a>
 </li>
+        <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame.init_game">(rlcard.games.gin_rummy.game.GinRummyGame method)</a>
+</li>
         <li><a href="rlcard.games.leducholdem.html#rlcard.games.leducholdem.game.LeducholdemGame.init_game">(rlcard.games.leducholdem.game.LeducholdemGame method)</a>
 </li>
         <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.game.LimitholdemGame.init_game">(rlcard.games.limitholdem.game.LimitholdemGame method)</a>
@@ -754,16 +1031,34 @@
 </li>
         <li><a href="rlcard.games.nolimitholdem.html#rlcard.games.nolimitholdem.game.NolimitholdemGame.init_game">(rlcard.games.nolimitholdem.game.NolimitholdemGame method)</a>
 </li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame.init_game">(rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame method)</a>
+</li>
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.game.UnoGame.init_game">(rlcard.games.uno.game.UnoGame method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.init_players">init_players() (in module rlcard.utils.utils)</a>
+</li>
+      <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.dealer.SimpleDoudizhuDealer.init_simple_doudizhu_deck">init_simple_doudizhu_deck() (rlcard.games.simpledoudizhu.dealer.SimpleDoudizhuDealer static method)</a>
 </li>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.init_standard_deck">init_standard_deck() (in module rlcard.utils.utils)</a>
 </li>
       <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.round.DoudizhuRound.initiate">initiate() (rlcard.games.doudizhu.round.DoudizhuRound method)</a>
+
+      <ul>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound.initiate">(rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Setting.is_allowed_gin">is_allowed_gin (rlcard.games.gin_rummy.utils.settings.Setting attribute)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Setting.is_allowed_knock">is_allowed_knock (rlcard.games.gin_rummy.utils.settings.Setting attribute)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Setting.is_allowed_pick_up_discard">is_allowed_pick_up_discard (rlcard.games.gin_rummy.utils.settings.Setting attribute)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Setting.is_allowed_to_discard_picked_up_card">is_allowed_to_discard_picked_up_card (rlcard.games.gin_rummy.utils.settings.Setting attribute)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Setting.is_always_knock">is_always_knock (rlcard.games.gin_rummy.utils.settings.Setting attribute)</a>
 </li>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.is_in_cards">is_in_cards() (in module rlcard.utils.utils)</a>
 </li>
@@ -776,6 +1071,8 @@
 </li>
         <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.game.DoudizhuGame.is_over">(rlcard.games.doudizhu.game.DoudizhuGame method)</a>
 </li>
+        <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame.is_over">(rlcard.games.gin_rummy.game.GinRummyGame method)</a>
+</li>
         <li><a href="rlcard.games.leducholdem.html#rlcard.games.leducholdem.game.LeducholdemGame.is_over">(rlcard.games.leducholdem.game.LeducholdemGame method)</a>
 </li>
         <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.game.LimitholdemGame.is_over">(rlcard.games.limitholdem.game.LimitholdemGame method)</a>
@@ -784,6 +1081,8 @@
 </li>
         <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.game.MahjongGame.is_over">(rlcard.games.mahjong.game.MahjongGame method)</a>
 </li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame.is_over">(rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame method)</a>
+</li>
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.game.UnoGame.is_over">(rlcard.games.uno.game.UnoGame method)</a>
 </li>
       </ul></li>
@@ -791,6 +1090,14 @@
 </li>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.is_single">is_single() (in module rlcard.utils.utils)</a>
 </li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Setting.is_south_never_knocks">is_south_never_knocks (rlcard.games.gin_rummy.utils.settings.Setting attribute)</a>
+</li>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.AdvantageMemory.iteration">iteration() (rlcard.agents.deep_cfr_agent.AdvantageMemory property)</a>
+
+      <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.StrategyMemory.iteration">(rlcard.agents.deep_cfr_agent.StrategyMemory property)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -836,10 +1143,26 @@
   </ul></td>
 </tr></table>
 
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.round.GinRummyRound.knock">knock() (rlcard.games.gin_rummy.round.GinRummyRound method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.action_event.KnockAction">KnockAction (class in rlcard.games.gin_rummy.utils.action_event)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.move.KnockMove">KnockMove (class in rlcard.games.gin_rummy.utils.move)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.games.leducholdem.html#rlcard.games.leducholdem.dealer.LeducholdemDealer">LeducholdemDealer (class in rlcard.games.leducholdem.dealer)</a>
+</li>
+      <li><a href="rlcard.envs.html#rlcard.envs.leducholdem.LeducholdemEnv">LeducholdemEnv (class in rlcard.envs.leducholdem)</a>
 </li>
       <li><a href="rlcard.games.leducholdem.html#rlcard.games.leducholdem.game.LeducholdemGame">LeducholdemGame (class in rlcard.games.leducholdem.game)</a>
 </li>
@@ -863,9 +1186,15 @@
 </li>
       <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.round.LimitholdemRound">LimitholdemRound (class in rlcard.games.limitholdem.round)</a>
 </li>
-      <li><a href="rlcard.envs.html#rlcard.envs.env.Env.load_model">load_model() (rlcard.envs.env.Env method)</a>
+      <li><a href="rlcard.agents.html#rlcard.agents.best_response_agent.BRAgent.load">load() (rlcard.agents.best_response_agent.BRAgent method)</a>
+
+      <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.cfr_agent.CFRAgent.load">(rlcard.agents.cfr_agent.CFRAgent method)</a>
 </li>
+      </ul></li>
       <li><a href="rlcard.utils.html#rlcard.utils.logger.Logger.log">log() (rlcard.utils.logger.Logger method)</a>
+</li>
+      <li><a href="rlcard.utils.html#rlcard.utils.logger.Logger.log_performance">log_performance() (rlcard.utils.logger.Logger method)</a>
 </li>
       <li><a href="rlcard.utils.html#rlcard.utils.logger.Logger">Logger (class in rlcard.utils.logger)</a>
 </li>
@@ -878,6 +1207,8 @@
       <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.card.MahjongCard">MahjongCard (class in rlcard.games.mahjong.card)</a>
 </li>
       <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.dealer.MahjongDealer">MahjongDealer (class in rlcard.games.mahjong.dealer)</a>
+</li>
+      <li><a href="rlcard.envs.html#rlcard.envs.mahjong.MahjongEnv">MahjongEnv (class in rlcard.envs.mahjong)</a>
 </li>
       <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.game.MahjongGame">MahjongGame (class in rlcard.games.mahjong.game)</a>
 </li>
@@ -897,9 +1228,11 @@
         <li><a href="rlcard.envs.html#rlcard.envs.registration.EnvSpec.make">(rlcard.envs.registration.EnvSpec method)</a>
 </li>
       </ul></li>
-      <li><a href="rlcard.utils.html#rlcard.utils.logger.Logger.make_plot">make_plot() (rlcard.utils.logger.Logger method)</a>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Setting.max_drawn_card_count">max_drawn_card_count (rlcard.games.gin_rummy.utils.settings.Setting attribute)</a>
 </li>
       <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Memory">Memory (class in rlcard.agents.dqn_agent)</a>
+</li>
+      <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.MODE">MODE (in module rlcard.agents.nfsp_agent)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -909,21 +1242,31 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Transition.next_state">next_state() (rlcard.agents.dqn_agent.Transition property)</a>
 </li>
+      <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.NFSPAgent">NFSPAgent (class in rlcard.agents.nfsp_agent)</a>
+</li>
       <li><a href="rlcard.games.nolimitholdem.html#rlcard.games.nolimitholdem.dealer.NolimitholdemDealer">NolimitholdemDealer (class in rlcard.games.nolimitholdem.dealer)</a>
 </li>
+      <li><a href="rlcard.envs.html#rlcard.envs.nolimitholdem.NolimitholdemEnv">NolimitholdemEnv (class in rlcard.envs.nolimitholdem)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.games.nolimitholdem.html#rlcard.games.nolimitholdem.game.NolimitholdemGame">NolimitholdemGame (class in rlcard.games.nolimitholdem.game)</a>
 </li>
       <li><a href="rlcard.games.nolimitholdem.html#rlcard.games.nolimitholdem.judger.NolimitholdemJudger">NolimitholdemJudger (class in rlcard.games.nolimitholdem.judger)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.games.nolimitholdem.html#rlcard.games.nolimitholdem.player.NolimitholdemPlayer">NolimitholdemPlayer (class in rlcard.games.nolimitholdem.player)</a>
 </li>
       <li><a href="rlcard.games.nolimitholdem.html#rlcard.games.nolimitholdem.round.NolimitholdemRound">NolimitholdemRound (class in rlcard.games.nolimitholdem.round)</a>
 </li>
-      <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Normalizer.normalize">normalize() (rlcard.agents.dqn_agent.Normalizer method)</a>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.DealerForRound.North">North (rlcard.games.gin_rummy.utils.settings.DealerForRound attribute)</a>
 </li>
-      <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Normalizer">Normalizer (class in rlcard.agents.dqn_agent)</a>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.player.GinRummyPlayer.opponent_id_of">opponent_id_of() (rlcard.games.gin_rummy.player.GinRummyPlayer static method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -931,7 +1274,15 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.judger.DoudizhuJudger.pair_attachments">pair_attachments() (rlcard.games.doudizhu.judger.DoudizhuJudger class method)</a>
+</li>
       <li><a href="rlcard.games.uno.html#rlcard.games.uno.round.UnoRound.perform_top_card">perform_top_card() (rlcard.games.uno.round.UnoRound method)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.round.GinRummyRound.pick_up_discard">pick_up_discard() (rlcard.games.gin_rummy.round.GinRummyRound method)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.action_event.PickUpDiscardAction">PickUpDiscardAction (class in rlcard.games.gin_rummy.utils.action_event)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.move.PickupDiscardMove">PickupDiscardMove (class in rlcard.games.gin_rummy.utils.move)</a>
 </li>
       <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.utils.pile2list">pile2list() (in module rlcard.games.mahjong.utils)</a>
 </li>
@@ -940,13 +1291,33 @@
       <ul>
         <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.player.DoudizhuPlayer.play">(rlcard.games.doudizhu.player.DoudizhuPlayer method)</a>
 </li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.player.SimpleDoudizhuPlayer.play">(rlcard.games.simpledoudizhu.player.SimpleDoudizhuPlayer method)</a>
+</li>
+      </ul></li>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.player.DoudizhuPlayer.play_back">play_back() (rlcard.games.doudizhu.player.DoudizhuPlayer method)</a>
+
+      <ul>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.player.SimpleDoudizhuPlayer.play_back">(rlcard.games.simpledoudizhu.player.SimpleDoudizhuPlayer method)</a>
+</li>
       </ul></li>
       <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.player.MahjongPlayer.play_card">play_card() (rlcard.games.mahjong.player.MahjongPlayer method)</a>
+</li>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.judger.DoudizhuJudger.playable_cards_from_hand">playable_cards_from_hand() (rlcard.games.doudizhu.judger.DoudizhuJudger static method)</a>
 </li>
       <li><a href="rlcard.core.html#rlcard.core.Player">Player (class in rlcard.core)</a>, <a href="rlcard.html#rlcard.core.Player">[1]</a>
 </li>
       <li><a href="rlcard.core.html#rlcard.core.Player.player_id">player_id (rlcard.core.Player attribute)</a>, <a href="rlcard.html#rlcard.core.Player.player_id">[1]</a>
 </li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.move.PlayerMove">PlayerMove (class in rlcard.games.gin_rummy.utils.move)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="rlcard.utils.html#rlcard.utils.logger.plot">plot() (in module rlcard.utils.logger)</a>
+
+      <ul>
+        <li><a href="rlcard.utils.html#rlcard.utils.logger.Logger.plot">(rlcard.utils.logger.Logger method)</a>
+</li>
+      </ul></li>
       <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.player.MahjongPlayer.pong">pong() (rlcard.games.mahjong.player.MahjongPlayer method)</a>
 </li>
       <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.DQNAgent.predict">predict() (rlcard.agents.dqn_agent.DQNAgent method)</a>
@@ -955,10 +1326,6 @@
         <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Estimator.predict">(rlcard.agents.dqn_agent.Estimator method)</a>
 </li>
       </ul></li>
-      <li><a href="rlcard.envs.html#rlcard.envs.env.Env.print_action">print_action() (rlcard.envs.env.Env static method)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.print_card">print_card() (in module rlcard.utils.utils)</a>
 </li>
       <li><a href="rlcard.games.uno.html#rlcard.games.uno.card.UnoCard.print_cards">print_cards() (rlcard.games.uno.card.UnoCard static method)</a>
@@ -967,9 +1334,7 @@
 </li>
       <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.player.MahjongPlayer.print_pile">print_pile() (rlcard.games.mahjong.player.MahjongPlayer method)</a>
 </li>
-      <li><a href="rlcard.envs.html#rlcard.envs.env.Env.print_result">print_result() (rlcard.envs.env.Env method)</a>
-</li>
-      <li><a href="rlcard.envs.html#rlcard.envs.env.Env.print_state">print_state() (rlcard.envs.env.Env method)</a>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Settings.print_settings">print_settings() (rlcard.games.gin_rummy.utils.settings.Settings method)</a>
 </li>
       <li><a href="rlcard.core.html#rlcard.core.Round.proceed_round">proceed_round() (rlcard.core.Round method)</a>, <a href="rlcard.html#rlcard.core.Round.proceed_round">[1]</a>
 
@@ -982,6 +1347,8 @@
 </li>
         <li><a href="rlcard.games.nolimitholdem.html#rlcard.games.nolimitholdem.round.NolimitholdemRound.proceed_round">(rlcard.games.nolimitholdem.round.NolimitholdemRound method)</a>
 </li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound.proceed_round">(rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound method)</a>
+</li>
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.round.UnoRound.proceed_round">(rlcard.games.uno.round.UnoRound method)</a>
 </li>
       </ul></li>
@@ -991,6 +1358,8 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.DealerForRound.Random">Random (rlcard.games.gin_rummy.utils.settings.DealerForRound attribute)</a>
+</li>
       <li><a href="rlcard.agents.html#rlcard.agents.random_agent.RandomAgent">RandomAgent (class in rlcard.agents.random_agent)</a>
 </li>
       <li><a href="rlcard.core.html#rlcard.core.Card.rank">rank (rlcard.core.Card attribute)</a>, <a href="rlcard.html#rlcard.core.Card.rank">[1]</a>
@@ -1003,6 +1372,10 @@
         <li><a href="rlcard.envs.html#rlcard.envs.registration.EnvRegistry.register">(rlcard.envs.registration.EnvRegistry method)</a>
 </li>
       </ul></li>
+      <li><a href="rlcard.agents.html#rlcard.agents.cfr_agent.CFRAgent.regret_matching">regret_matching() (rlcard.agents.cfr_agent.CFRAgent method)</a>
+</li>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.DeepCFR.reinitialize_advantage_networks">reinitialize_advantage_networks() (rlcard.agents.deep_cfr_agent.DeepCFR method)</a>
+</li>
       <li><a href="rlcard.core.html#rlcard.core.Dealer.remained_cards">remained_cards (rlcard.core.Dealer attribute)</a>, <a href="rlcard.html#rlcard.core.Dealer.remained_cards">[1]</a>
 </li>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.remove_illegal">remove_illegal() (in module rlcard.utils.utils)</a>
@@ -1011,11 +1384,23 @@
 </li>
       <li><a href="rlcard.games.uno.html#rlcard.games.uno.round.UnoRound.replace_deck">replace_deck() (rlcard.games.uno.round.UnoRound method)</a>
 </li>
+      <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.ReservoirBuffer">ReservoirBuffer (class in rlcard.agents.nfsp_agent)</a>
+</li>
       <li><a href="rlcard.envs.html#rlcard.envs.env.Env.reset">reset() (rlcard.envs.env.Env method)</a>
+</li>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.judger.DoudizhuJudger.restore_playable_cards">restore_playable_cards() (rlcard.games.doudizhu.judger.DoudizhuJudger method)</a>
 </li>
       <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Transition.reward">reward() (rlcard.agents.dqn_agent.Transition property)</a>
 </li>
+      <li><a href="rlcard.agents.html#module-rlcard.agents.best_response_agent">rlcard.agents.best_response_agent (module)</a>
+</li>
+      <li><a href="rlcard.agents.html#module-rlcard.agents.cfr_agent">rlcard.agents.cfr_agent (module)</a>
+</li>
+      <li><a href="rlcard.agents.html#module-rlcard.agents.deep_cfr_agent">rlcard.agents.deep_cfr_agent (module)</a>
+</li>
       <li><a href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent (module)</a>
+</li>
+      <li><a href="rlcard.agents.html#module-rlcard.agents.nfsp_agent">rlcard.agents.nfsp_agent (module)</a>
 </li>
       <li><a href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent (module)</a>
 </li>
@@ -1027,9 +1412,21 @@
 </li>
       <li><a href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env (module)</a>
 </li>
+      <li><a href="rlcard.envs.html#module-rlcard.envs.gin_rummy">rlcard.envs.gin_rummy (module)</a>
+</li>
+      <li><a href="rlcard.envs.html#module-rlcard.envs.leducholdem">rlcard.envs.leducholdem (module)</a>
+</li>
       <li><a href="rlcard.envs.html#module-rlcard.envs.limitholdem">rlcard.envs.limitholdem (module)</a>
 </li>
+      <li><a href="rlcard.envs.html#module-rlcard.envs.mahjong">rlcard.envs.mahjong (module)</a>
+</li>
+      <li><a href="rlcard.envs.html#module-rlcard.envs.nolimitholdem">rlcard.envs.nolimitholdem (module)</a>
+</li>
       <li><a href="rlcard.envs.html#module-rlcard.envs.registration">rlcard.envs.registration (module)</a>
+</li>
+      <li><a href="rlcard.envs.html#module-rlcard.envs.simpledoudizhu">rlcard.envs.simpledoudizhu (module)</a>
+</li>
+      <li><a href="rlcard.envs.html#module-rlcard.envs.uno">rlcard.envs.uno (module)</a>
 </li>
       <li><a href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.dealer">rlcard.games.blackjack.dealer (module)</a>
 </li>
@@ -1049,14 +1446,36 @@
 </li>
       <li><a href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.round">rlcard.games.doudizhu.round (module)</a>
 </li>
+      <li><a href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.dealer">rlcard.games.gin_rummy.dealer (module)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.game">rlcard.games.gin_rummy.game (module)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.judge">rlcard.games.gin_rummy.judge (module)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.player">rlcard.games.gin_rummy.player (module)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.round">rlcard.games.gin_rummy.round (module)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.action_event">rlcard.games.gin_rummy.utils.action_event (module)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.melding">rlcard.games.gin_rummy.utils.melding (module)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.move">rlcard.games.gin_rummy.utils.move (module)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.scorers">rlcard.games.gin_rummy.utils.scorers (module)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.settings">rlcard.games.gin_rummy.utils.settings (module)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.utils">rlcard.games.gin_rummy.utils.utils (module)</a>
+</li>
       <li><a href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.dealer">rlcard.games.leducholdem.dealer (module)</a>
 </li>
       <li><a href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.game">rlcard.games.leducholdem.game (module)</a>
 </li>
       <li><a href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.judger">rlcard.games.leducholdem.judger (module)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.player">rlcard.games.leducholdem.player (module)</a>
 </li>
       <li><a href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.round">rlcard.games.leducholdem.round (module)</a>
@@ -1097,6 +1516,14 @@
 </li>
       <li><a href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.round">rlcard.games.nolimitholdem.round (module)</a>
 </li>
+      <li><a href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.dealer">rlcard.games.simpledoudizhu.dealer (module)</a>
+</li>
+      <li><a href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.game">rlcard.games.simpledoudizhu.game (module)</a>
+</li>
+      <li><a href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.player">rlcard.games.simpledoudizhu.player (module)</a>
+</li>
+      <li><a href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.round">rlcard.games.simpledoudizhu.round (module)</a>
+</li>
       <li><a href="rlcard.games.uno.html#module-rlcard.games.uno.card">rlcard.games.uno.card (module)</a>
 </li>
       <li><a href="rlcard.games.uno.html#module-rlcard.games.uno.dealer">rlcard.games.uno.dealer (module)</a>
@@ -1110,6 +1537,8 @@
       <li><a href="rlcard.games.uno.html#module-rlcard.games.uno.round">rlcard.games.uno.round (module)</a>
 </li>
       <li><a href="rlcard.games.uno.html#module-rlcard.games.uno.utils">rlcard.games.uno.utils (module)</a>
+</li>
+      <li><a href="rlcard.utils.html#module-rlcard.utils.exploitability">rlcard.utils.exploitability (module)</a>
 </li>
       <li><a href="rlcard.utils.html#module-rlcard.utils.logger">rlcard.utils.logger (module)</a>
 </li>
@@ -1127,15 +1556,51 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Memory.sample">sample() (rlcard.agents.dqn_agent.Memory method)</a>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.FixedSizeRingBuffer.sample">sample() (rlcard.agents.deep_cfr_agent.FixedSizeRingBuffer method)</a>
+
+      <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Memory.sample">(rlcard.agents.dqn_agent.Memory method)</a>
 </li>
-      <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Memory.save">save() (rlcard.agents.dqn_agent.Memory method)</a>
+        <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.ReservoirBuffer.sample">(rlcard.agents.nfsp_agent.ReservoirBuffer method)</a>
+</li>
+      </ul></li>
+      <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.NFSPAgent.sample_episode_policy">sample_episode_policy() (rlcard.agents.nfsp_agent.NFSPAgent method)</a>
+</li>
+      <li><a href="rlcard.agents.html#rlcard.agents.best_response_agent.BRAgent.save">save() (rlcard.agents.best_response_agent.BRAgent method)</a>
+
+      <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.cfr_agent.CFRAgent.save">(rlcard.agents.cfr_agent.CFRAgent method)</a>
+</li>
+        <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Memory.save">(rlcard.agents.dqn_agent.Memory method)</a>
+</li>
+      </ul></li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.round.GinRummyRound.score_player_0">score_player_0() (rlcard.games.gin_rummy.round.GinRummyRound method)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.round.GinRummyRound.score_player_1">score_player_1() (rlcard.games.gin_rummy.round.GinRummyRound method)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.move.ScoreNorthMove">ScoreNorthMove (class in rlcard.games.gin_rummy.utils.move)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.action_event.ScoreNorthPlayerAction">ScoreNorthPlayerAction (class in rlcard.games.gin_rummy.utils.action_event)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.move.ScoreSouthMove">ScoreSouthMove (class in rlcard.games.gin_rummy.utils.move)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.action_event.ScoreSouthPlayerAction">ScoreSouthPlayerAction (class in rlcard.games.gin_rummy.utils.action_event)</a>
 </li>
       <li><a href="rlcard.envs.html#rlcard.envs.env.Env.set_agents">set_agents() (rlcard.envs.env.Env method)</a>
 </li>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.player.DoudizhuPlayer.set_current_hand">set_current_hand() (rlcard.games.doudizhu.player.DoudizhuPlayer method)</a>
+
+      <ul>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.player.SimpleDoudizhuPlayer.set_current_hand">(rlcard.games.simpledoudizhu.player.SimpleDoudizhuPlayer method)</a>
+</li>
+      </ul></li>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.set_global_seed">set_global_seed() (in module rlcard.utils.utils)</a>
 </li>
-      <li><a href="rlcard.envs.html#rlcard.envs.env.Env.set_mode">set_mode() (rlcard.envs.env.Env method)</a>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Setting">Setting (class in rlcard.games.gin_rummy.utils.settings)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Settings">Settings (class in rlcard.games.gin_rummy.utils.settings)</a>
+</li>
+      <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.player.GinRummyPlayer.short_name_of">short_name_of() (rlcard.games.gin_rummy.player.GinRummyPlayer static method)</a>
 </li>
       <li><a href="rlcard.core.html#rlcard.core.Dealer.shuffle">shuffle() (rlcard.core.Dealer method)</a>, <a href="rlcard.html#rlcard.core.Dealer.shuffle">[1]</a>
 
@@ -1148,10 +1613,30 @@
 </li>
         <li><a href="rlcard.games.mahjong.html#rlcard.games.mahjong.dealer.MahjongDealer.shuffle">(rlcard.games.mahjong.dealer.MahjongDealer method)</a>
 </li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.dealer.SimpleDoudizhuDealer.shuffle">(rlcard.games.simpledoudizhu.dealer.SimpleDoudizhuDealer method)</a>
+</li>
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.dealer.UnoDealer.shuffle">(rlcard.games.uno.dealer.UnoDealer method)</a>
 </li>
       </ul></li>
-      <li><a href="rlcard.envs.html#rlcard.envs.env.Env.single_agent_step">single_agent_step() (rlcard.envs.env.Env method)</a>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Setting.simple_gin_rummy_setting">simple_gin_rummy_setting (rlcard.games.gin_rummy.utils.settings.Setting attribute)</a>
+</li>
+      <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.dealer.SimpleDoudizhuDealer">SimpleDoudizhuDealer (class in rlcard.games.simpledoudizhu.dealer)</a>
+</li>
+      <li><a href="rlcard.envs.html#rlcard.envs.simpledoudizhu.SimpleDoudizhuEnv">SimpleDoudizhuEnv (class in rlcard.envs.simpledoudizhu)</a>
+</li>
+      <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame">SimpleDoudizhuGame (class in rlcard.games.simpledoudizhu.game)</a>
+</li>
+      <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.player.SimpleDoudizhuPlayer">SimpleDoudizhuPlayer (class in rlcard.games.simpledoudizhu.player)</a>
+</li>
+      <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound">SimpleDoudizhuRound (class in rlcard.games.simpledoudizhu.round)</a>
+</li>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.DeepCFR.simulate_other">simulate_other() (rlcard.agents.deep_cfr_agent.DeepCFR method)</a>
+</li>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.judger.DoudizhuJudger.solo_attachments">solo_attachments() (rlcard.games.doudizhu.judger.DoudizhuJudger class method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.DealerForRound.South">South (rlcard.games.gin_rummy.utils.settings.DealerForRound attribute)</a>
 </li>
       <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.round.LimitholdemRound.start_new_round">start_new_round() (rlcard.games.limitholdem.round.LimitholdemRound method)</a>
 
@@ -1164,6 +1649,8 @@
       <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.DQNAgent.step">step() (rlcard.agents.dqn_agent.DQNAgent method)</a>
 
       <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.NFSPAgent.step">(rlcard.agents.nfsp_agent.NFSPAgent method)</a>
+</li>
         <li><a href="rlcard.agents.html#rlcard.agents.random_agent.RandomAgent.step">(rlcard.agents.random_agent.RandomAgent static method)</a>
 </li>
         <li><a href="rlcard.core.html#rlcard.core.Game.step">(rlcard.core.Game method)</a>, <a href="rlcard.html#rlcard.core.Game.step">[1]</a>
@@ -1174,6 +1661,8 @@
 </li>
         <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.game.DoudizhuGame.step">(rlcard.games.doudizhu.game.DoudizhuGame method)</a>
 </li>
+        <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame.step">(rlcard.games.gin_rummy.game.GinRummyGame method)</a>
+</li>
         <li><a href="rlcard.games.leducholdem.html#rlcard.games.leducholdem.game.LeducholdemGame.step">(rlcard.games.leducholdem.game.LeducholdemGame method)</a>
 </li>
         <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.game.LimitholdemGame.step">(rlcard.games.limitholdem.game.LimitholdemGame method)</a>
@@ -1182,11 +1671,11 @@
 </li>
         <li><a href="rlcard.games.nolimitholdem.html#rlcard.games.nolimitholdem.game.NolimitholdemGame.step">(rlcard.games.nolimitholdem.game.NolimitholdemGame method)</a>
 </li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame.step">(rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame method)</a>
+</li>
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.game.UnoGame.step">(rlcard.games.uno.game.UnoGame method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.core.html#rlcard.core.Game.step_back">step_back() (rlcard.core.Game method)</a>, <a href="rlcard.html#rlcard.core.Game.step_back">[1]</a>
 
       <ul>
@@ -1196,6 +1685,10 @@
 </li>
         <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.game.DoudizhuGame.step_back">(rlcard.games.doudizhu.game.DoudizhuGame method)</a>
 </li>
+        <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.round.DoudizhuRound.step_back">(rlcard.games.doudizhu.round.DoudizhuRound method)</a>
+</li>
+        <li><a href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame.step_back">(rlcard.games.gin_rummy.game.GinRummyGame method)</a>
+</li>
         <li><a href="rlcard.games.leducholdem.html#rlcard.games.leducholdem.game.LeducholdemGame.step_back">(rlcard.games.leducholdem.game.LeducholdemGame method)</a>
 </li>
         <li><a href="rlcard.games.limitholdem.html#rlcard.games.limitholdem.game.LimitholdemGame.step_back">(rlcard.games.limitholdem.game.LimitholdemGame method)</a>
@@ -1204,9 +1697,19 @@
 </li>
         <li><a href="rlcard.games.nolimitholdem.html#rlcard.games.nolimitholdem.game.NolimitholdemGame.step_back">(rlcard.games.nolimitholdem.game.NolimitholdemGame method)</a>
 </li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame.step_back">(rlcard.games.simpledoudizhu.game.SimpleDoudizhuGame method)</a>
+</li>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound.step_back">(rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound method)</a>
+</li>
         <li><a href="rlcard.games.uno.html#rlcard.games.uno.game.UnoGame.step_back">(rlcard.games.uno.game.UnoGame method)</a>
 </li>
       </ul></li>
+      <li><a href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Setting.stockpile_dead_card_count">stockpile_dead_card_count (rlcard.games.gin_rummy.utils.settings.Setting attribute)</a>
+</li>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.StrategyMemory.strategy_action_probs">strategy_action_probs() (rlcard.agents.deep_cfr_agent.StrategyMemory property)</a>
+</li>
+      <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.StrategyMemory">StrategyMemory (class in rlcard.agents.deep_cfr_agent)</a>
+</li>
       <li><a href="rlcard.core.html#rlcard.core.Card.suit">suit (rlcard.core.Card attribute)</a>, <a href="rlcard.html#rlcard.core.Card.suit">[1]</a>
 </li>
   </ul></td>
@@ -1217,12 +1720,32 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.utils.html#rlcard.utils.utils.take_out_cards">take_out_cards() (in module rlcard.utils.utils)</a>
 </li>
+      <li><a href="rlcard.utils.html#rlcard.utils.utils.tournament">tournament() (in module rlcard.utils.utils)</a>
+</li>
+      <li><a href="rlcard.agents.html#rlcard.agents.cfr_agent.CFRAgent.train">train() (rlcard.agents.cfr_agent.CFRAgent method)</a>
+
+      <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.deep_cfr_agent.DeepCFR.train">(rlcard.agents.deep_cfr_agent.DeepCFR method)</a>
+</li>
+        <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.DQNAgent.train">(rlcard.agents.dqn_agent.DQNAgent method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.DQNAgent.train">train() (rlcard.agents.dqn_agent.DQNAgent method)</a>
+      <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.NFSPAgent.train_sl">train_sl() (rlcard.agents.nfsp_agent.NFSPAgent method)</a>
 </li>
       <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Transition">Transition (class in rlcard.agents.dqn_agent)</a>
+
+      <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.nfsp_agent.Transition">(class in rlcard.agents.nfsp_agent)</a>
 </li>
+      </ul></li>
+      <li><a href="rlcard.agents.html#rlcard.agents.best_response_agent.BRAgent.traverse_tree">traverse_tree() (rlcard.agents.best_response_agent.BRAgent method)</a>
+
+      <ul>
+        <li><a href="rlcard.agents.html#rlcard.agents.cfr_agent.CFRAgent.traverse_tree">(rlcard.agents.cfr_agent.CFRAgent method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -1232,6 +1755,8 @@
       <li><a href="rlcard.games.uno.html#rlcard.games.uno.card.UnoCard">UnoCard (class in rlcard.games.uno.card)</a>
 </li>
       <li><a href="rlcard.games.uno.html#rlcard.games.uno.dealer.UnoDealer">UnoDealer (class in rlcard.games.uno.dealer)</a>
+</li>
+      <li><a href="rlcard.envs.html#rlcard.envs.uno.UnoEnv">UnoEnv (class in rlcard.envs.uno)</a>
 </li>
       <li><a href="rlcard.games.uno.html#rlcard.games.uno.game.UnoGame">UnoGame (class in rlcard.games.uno.game)</a>
 </li>
@@ -1245,8 +1770,14 @@
 </li>
       <li><a href="rlcard.agents.html#rlcard.agents.dqn_agent.Estimator.update">update() (rlcard.agents.dqn_agent.Estimator method)</a>
 </li>
-      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.round.DoudizhuRound.update_public">update_public() (rlcard.games.doudizhu.round.DoudizhuRound method)</a>
+      <li><a href="rlcard.agents.html#rlcard.agents.cfr_agent.CFRAgent.update_policy">update_policy() (rlcard.agents.cfr_agent.CFRAgent method)</a>
 </li>
+      <li><a href="rlcard.games.doudizhu.html#rlcard.games.doudizhu.round.DoudizhuRound.update_public">update_public() (rlcard.games.doudizhu.round.DoudizhuRound method)</a>
+
+      <ul>
+        <li><a href="rlcard.games.simpledoudizhu.html#rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound.update_public">(rlcard.games.simpledoudizhu.round.SimpleDoudizhuRound method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -1258,6 +1789,8 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="rlcard.core.html#rlcard.core.Card.valid_suit">valid_suit (rlcard.core.Card attribute)</a>, <a href="rlcard.html#rlcard.core.Card.valid_suit">[1]</a>
+</li>
+      <li><a href="rlcard.agents.html#rlcard.agents.best_response_agent.BRAgent.value">value() (rlcard.agents.best_response_agent.BRAgent method)</a>
 </li>
   </ul></td>
 </tr></table>

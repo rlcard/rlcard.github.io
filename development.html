@@ -50,10 +50,10 @@
         <div class="wy-side-nav-search" >
           
 
-          <!-- 
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> RLcard
-           -->
+          
           <a href="index.html" style="margin: 0px;"><img src="static/imgs/logo_white.png" style="height: initial; width: initial; border-radius: initial; margin: 0px;" alt="home"></a>
+          
+
           
           </a>
 
@@ -97,10 +97,10 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-hold-em">Training CFR on Leduc Hold’em</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-hold-em-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-hold-em">Training CFR on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
@@ -148,7 +148,14 @@
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-uno">Payoff of Uno</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#sheng-ji">Sheng Ji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#gin-rummy">Gin Rummy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-gin-rummy">State Representation of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-space-of-gin-rummy">Action Space of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-gin-rummy">Payoff of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#settings">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#variations">Variations</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
@@ -180,11 +187,18 @@
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.blackjack">rlcard.envs.blackjack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.doudizhu">rlcard.envs.doudizhu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.limitholdem">rlcard.envs.limitholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.gin_rummy">rlcard.envs.gin_rummy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.leducholdem">rlcard.envs.leducholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.mahjong">rlcard.envs.mahjong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.nolimitholdem">rlcard.envs.nolimitholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.simpledoudizhu">rlcard.envs.simpledoudizhu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.uno">rlcard.envs.uno</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.utils.html">rlcard.utils</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.utils">rlcard.utils.utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.logger">rlcard.utils.logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.exploitability">rlcard.utils.exploitability</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.games.html">rlcard.games</a><ul>
@@ -248,11 +262,38 @@
 <li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.utils">rlcard.games.mahjong.utils</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html">rlcard.games.gin_rummy.utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.action_event">rlcard.games.gin_rummy.utils.action_event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.melding">rlcard.games.gin_rummy.utils.melding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.move">rlcard.games.gin_rummy.utils.move</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.scorers">rlcard.games.gin_rummy.utils.scorers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.settings">rlcard.games.gin_rummy.utils.settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.utils">rlcard.games.gin_rummy.utils.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.dealer">rlcard.games.gin_rummy.dealer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.game">rlcard.games.gin_rummy.game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.judge">rlcard.games.gin_rummy.judge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.player">rlcard.games.gin_rummy.player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.round">rlcard.games.gin_rummy.round</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.simpledoudizhu.html">rlcard.games.simpledoudizhu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.dealer">rlcard.games.simpledoudizhu.dealer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.game">rlcard.games.simpledoudizhu.game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.player">rlcard.games.simpledoudizhu.player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.round">rlcard.games.simpledoudizhu.round</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#rlcard-agents-deep-cfr">rlcard.agents.deep_cfr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.best_response_agent">rlcard.agents.best_response_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.cfr_agent">rlcard.agents.cfr_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr_agent">rlcard.agents.deep_cfr_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.nfsp_agent">rlcard.agents.nfsp_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
 </ul>
 </li>
@@ -272,7 +313,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">RLcard</a>
+          <a href="doctree.html">RLcard</a>
         
       </nav>
 
@@ -342,20 +383,26 @@
 <h2>Adding Pre-trained/Rule-based models<a class="headerlink" href="#adding-pre-trained-rule-based-models" title="Permalink to this headline">¶</a></h2>
 <p>You can add your own pre-trained/rule-based models to the toolkit by
 following several steps:</p>
-<ul class="simple">
-<li><p><strong>Develop models.</strong> You can either design a rule-based model save a
-neural network model. For each game, you need to develop models for
-all the players at the same time. You need to wrap each model as a
-class and make sure that <code class="docutils literal notranslate"><span class="pre">step</span></code> and <code class="docutils literal notranslate"><span class="pre">eval_step</span></code> can work
-correctly.</p></li>
+<ul>
+<li><p><strong>Develop models.</strong> You can either design a rule-based model or save
+a neural network model. For each game, you need to develop agents for
+all the players at the same time. You need to wrap each agent as a
+<code class="docutils literal notranslate"><span class="pre">Agent</span></code> class and make sure that <code class="docutils literal notranslate"><span class="pre">step</span></code>, <code class="docutils literal notranslate"><span class="pre">eval_step</span></code> and
+<code class="docutils literal notranslate"><span class="pre">use_raw</span></code> can work correctly.</p></li>
 <li><p><strong>Wrap models.</strong> You need to inherit the <code class="docutils literal notranslate"><span class="pre">Model</span></code> class in
-<code class="docutils literal notranslate"><span class="pre">rlcard/models.model.py</span></code>. Then put all the models for the players
-into a list. Rewrite <code class="docutils literal notranslate"><span class="pre">get_agent</span></code> function and return this list.</p></li>
+<code class="docutils literal notranslate"><span class="pre">rlcard/models/model.py</span></code>. Then put all the agents into a list.
+Rewrite <code class="docutils literal notranslate"><span class="pre">agent</span></code> property to return this list.</p></li>
 <li><p><strong>Register the model.</strong> Register the model in
 <code class="docutils literal notranslate"><span class="pre">rlcard/models/__init__.py</span></code>.</p></li>
-<li><p><strong>Load the model in environment.</strong> To load the model, modify
-<code class="docutils literal notranslate"><span class="pre">load_pretrained_models</span></code> in the corresponding game environment in
-<code class="docutils literal notranslate"><span class="pre">rlcard/envs</span></code>. Use the resgistered name to load the model.</p></li>
+<li><p><strong>Load the model in environment.</strong> An example of loading
+<code class="docutils literal notranslate"><span class="pre">leduc-holdem-nfsp</span></code> model is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rlcard</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="n">leduc_nfsp_model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;leduc-holdem-nfsp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then use <code class="docutils literal notranslate"><span class="pre">leduc_nfsp_model.agents</span></code> to obtain all the agents for the
+game.</p>
+</li>
 </ul>
 </div>
 <div class="section" id="developping-algorithms">
@@ -363,25 +410,35 @@ into a list. Rewrite <code class="docutils literal notranslate"><span class="pre
 <p>Although users may do whatever they like to design and try their
 algorithms. We recommend wrapping a new algorithm as an <code class="docutils literal notranslate"><span class="pre">Agent</span></code> class
 as the <code class="docutils literal notranslate"><span class="pre">example</span> <span class="pre">agents</span></code>. To be compatible with the
-toolkit, the agent should have the following functions:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">step</span></code>: Given the current state, predict the next action.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">eval_step</span></code>: Similar to <code class="docutils literal notranslate"><span class="pre">step</span></code>, but for evaluation purpose. Reinforcement learning algorithms will usually add some noise for better exploration in training. In evaluation, no noise will be added to make predictions.</p></li>
-</ul>
-</div></blockquote>
+toolkit, the agent should have the following functions and attribute:
+- <code class="docutils literal notranslate"><span class="pre">step</span></code>: Given the current state, predict the next action.
+- <code class="docutils literal notranslate"><span class="pre">eval_step</span></code>: Similar to <code class="docutils literal notranslate"><span class="pre">step</span></code>, but for evaluation purpose.
+Reinforcement learning algorithms will usually add some noise for better
+exploration in training. In evaluation, no noise will be added to make
+predictions.
+- <code class="docutils literal notranslate"><span class="pre">use_raw</span></code>: A boolean attribute. <code class="docutils literal notranslate"><span class="pre">True</span></code> if the agent
+uses raw states to do reasoning; <code class="docutils literal notranslate"><span class="pre">False</span></code> if the agent uses numerical
+values to play (such as neural networks).</p>
 </div>
 <div class="section" id="adding-new-environments">
 <h2>Adding New Environments<a class="headerlink" href="#adding-new-environments" title="Permalink to this headline">¶</a></h2>
 <p>To add a new environment to the toolkit, generally you should take the
 following steps:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><strong>Implement a game.</strong> Card games usually have similar structures so that they can be implemented with <code class="docutils literal notranslate"><span class="pre">Game</span></code>, <code class="docutils literal notranslate"><span class="pre">Round</span></code>, <code class="docutils literal notranslate"><span class="pre">Dealer</span></code>, <code class="docutils literal notranslate"><span class="pre">Judger</span></code>, <code class="docutils literal notranslate"><span class="pre">Player</span></code> as in existing games. The easiest way is to inherit the classed in <code class="docutils literal notranslate"><span class="pre">rlcard/core.py</span></code> and implement the functions.</p></li>
-<li><p><strong>Wrap the game with an environment.</strong> The easiest way is to inherit <code class="docutils literal notranslate"><span class="pre">Env</span></code> in <code class="docutils literal notranslate"><span class="pre">rlcard/envs/env.py</span></code>. You need to implement <code class="docutils literal notranslate"><span class="pre">extract_state</span></code> which encodes the state, <code class="docutils literal notranslate"><span class="pre">decode_action</span></code> which decode actions from the id to the text string, and <code class="docutils literal notranslate"><span class="pre">get_payoffs</span></code> which calculate payoffs of the players.</p></li>
-<li><p><strong>Register the game.</strong> Now it is time to tell the toolkit where to locate the new environment. Go to <code class="docutils literal notranslate"><span class="pre">rlcard/envs/__init__.py</span></code>, and indicate the name of the game and its entry point.</p></li>
+<ul class="simple">
+<li><p><strong>Implement a game.</strong> Card games usually have
+similar structures so that they can be implemented with <code class="docutils literal notranslate"><span class="pre">Game</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Round</span></code>, <code class="docutils literal notranslate"><span class="pre">Dealer</span></code>, <code class="docutils literal notranslate"><span class="pre">Judger</span></code>, <code class="docutils literal notranslate"><span class="pre">Player</span></code>, as in existing games. The
+easiest way is to inherit the classed in
+<code class="docutils literal notranslate"><span class="pre">rlcard/core.py</span></code> and implement the functions.</p></li>
+<li><p><strong>Wrap the game with an environment.</strong> The easiest way is to inherit
+<code class="docutils literal notranslate"><span class="pre">Env</span></code> in <code class="docutils literal notranslate"><span class="pre">rlcard/envs/env.py</span></code>. You need to
+implement <code class="docutils literal notranslate"><span class="pre">_extract_state</span></code> which encodes the state, <code class="docutils literal notranslate"><span class="pre">_decode_action</span></code>
+which decodes actions from the id to the text string, and
+<code class="docutils literal notranslate"><span class="pre">get_payoffs</span></code> which calculates payoffs of the players.</p></li>
+<li><p><strong>Register the game.</strong> Now it is time to tell the toolkit where to locate the new
+environment. Go to <code class="docutils literal notranslate"><span class="pre">rlcard/envs/\_\_init\_\_.py</span></code>, and
+indicate the name of the game and its entry point.</p></li>
 </ul>
-</div></blockquote>
 <p>To test whether the new environment is set up successfully:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rlcard</span>
 <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="c1">#the new evironment#)</span>

@@ -50,10 +50,10 @@
         <div class="wy-side-nav-search" >
           
 
-          <!-- 
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> RLcard
-           -->
+          
           <a href="index.html" style="margin: 0px;"><img src="static/imgs/logo_white.png" style="height: initial; width: initial; border-radius: initial; margin: 0px;" alt="home"></a>
+          
+
           
           </a>
 
@@ -97,10 +97,10 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-hold-em">Training CFR on Leduc Hold’em</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-hold-em-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-hold-em">Training CFR on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Games in RLCard</a><ul>
@@ -148,7 +148,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#payoff-of-uno">Payoff of Uno</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#sheng-ji">Sheng Ji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gin-rummy">Gin Rummy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#state-representation-of-gin-rummy">State Representation of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#action-space-of-gin-rummy">Action Space of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#payoff-of-gin-rummy">Payoff of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variations">Variations</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
@@ -180,11 +187,18 @@
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.blackjack">rlcard.envs.blackjack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.doudizhu">rlcard.envs.doudizhu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.limitholdem">rlcard.envs.limitholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.gin_rummy">rlcard.envs.gin_rummy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.leducholdem">rlcard.envs.leducholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.mahjong">rlcard.envs.mahjong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.nolimitholdem">rlcard.envs.nolimitholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.simpledoudizhu">rlcard.envs.simpledoudizhu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.uno">rlcard.envs.uno</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.utils.html">rlcard.utils</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.utils">rlcard.utils.utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.logger">rlcard.utils.logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.exploitability">rlcard.utils.exploitability</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.games.html">rlcard.games</a><ul>
@@ -248,11 +262,38 @@
 <li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.utils">rlcard.games.mahjong.utils</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html">rlcard.games.gin_rummy.utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.action_event">rlcard.games.gin_rummy.utils.action_event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.melding">rlcard.games.gin_rummy.utils.melding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.move">rlcard.games.gin_rummy.utils.move</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.scorers">rlcard.games.gin_rummy.utils.scorers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.settings">rlcard.games.gin_rummy.utils.settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.utils">rlcard.games.gin_rummy.utils.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.dealer">rlcard.games.gin_rummy.dealer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.game">rlcard.games.gin_rummy.game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.judge">rlcard.games.gin_rummy.judge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.player">rlcard.games.gin_rummy.player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.round">rlcard.games.gin_rummy.round</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.simpledoudizhu.html">rlcard.games.simpledoudizhu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.dealer">rlcard.games.simpledoudizhu.dealer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.game">rlcard.games.simpledoudizhu.game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.player">rlcard.games.simpledoudizhu.player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.round">rlcard.games.simpledoudizhu.round</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#rlcard-agents-deep-cfr">rlcard.agents.deep_cfr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.best_response_agent">rlcard.agents.best_response_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.cfr_agent">rlcard.agents.cfr_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr_agent">rlcard.agents.deep_cfr_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.nfsp_agent">rlcard.agents.nfsp_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
 </ul>
 </li>
@@ -272,7 +313,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">RLcard</a>
+          <a href="doctree.html">RLcard</a>
         
       </nav>
 
@@ -401,26 +442,33 @@ higher rank wins. Other rules such as ‘fold’ can refer to Limit Texas
 hold’em.</p>
 <div class="section" id="state-representation-of-leduc-hold-em">
 <h3>State Representation of Leduc Hold’em<a class="headerlink" href="#state-representation-of-leduc-hold-em" title="Permalink to this headline">¶</a></h3>
-<p>Similar to the Limit Hold’em game. The state is encoded as a vector of
-length 6 with each element corresponding to one card. The state contains
-player’s hand and public card (if it has been dealt). The correspondence
-between the index and the card is as below.</p>
+<p>The state is encoded as a vector of length 34. The first 3 elements
+correspond to hand card. The next 3 elements correspond to public card.
+The last 28 elements correspond the chips of the current player and the
+opponent (the chips could be in range 0~13) The correspondence between
+the index and the card is as below.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 27%" />
-<col style="width: 73%" />
+<col style="width: 19%" />
+<col style="width: 81%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Index</p></th>
-<th class="head"><p>Card</p></th>
+<th class="head"><p>Meaning</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>0~2</p></td>
-<td><p>Spade J ~ Spade K</p></td>
+<td><p>J ~ K in hand</p></td>
 </tr>
-<tr class="row-odd"><td><p>3~6</p></td>
-<td><p>Heart J ~ Heart K</p></td>
+<tr class="row-odd"><td><p>3~5</p></td>
+<td><p>J ~ K as public card</p></td>
+</tr>
+<tr class="row-even"><td><p>6~19</p></td>
+<td><p>0 ~ 13 chips for the current player</p></td>
+</tr>
+<tr class="row-odd"><td><p>20~33</p></td>
+<td><p>0 ~ 13 chips for the opponent</p></td>
 </tr>
 </tbody>
 </table>
@@ -456,8 +504,8 @@ far. The last 20 elements are the betting history. The correspondence
 between the index and the card is as below.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 78%" />
+<col style="width: 25%" />
+<col style="width: 75%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Index</p></th>
@@ -497,8 +545,8 @@ between the index and the card is as below.</p>
 <p>There 4 actions in Limit Texas Hold’em. They are encoded as below.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 58%" />
-<col style="width: 42%" />
+<col style="width: 57%" />
+<col style="width: 43%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Action ID</p></th>
@@ -617,15 +665,20 @@ the state:</p>
 <h3>State Encoding of Dou Dizhu<a class="headerlink" href="#state-encoding-of-dou-dizhu" title="Permalink to this headline">¶</a></h3>
 <p>In Dou Dizhu environment, we encode the state into 6 feature planes. The
 size of each plane is 5*15. Each entry of a plane can be either 1 or 0.
-Note that the current encoding method is just an example to show how the
-feature can be encoded. Users are encouraged to encode the state for
-their own purposes by modifying <code class="docutils literal notranslate"><span class="pre">extract_state</span></code> function in
-<code class="docutils literal notranslate"><span class="pre">rlcard/envs/doudizhu.py</span></code>. The example
+The 5 rows represent 0, 1, 2, 3, 4 corresonding cards, respectively. The
+15 columns start from “3” to “RJ” (Black Jack). For example, if we have
+a “3”, then the entry (1, 0) would be 1, and the rest of column 0 would
+be 0. If we have a pair of “4”, then the entry (2, 1) would be 1, and
+the rest of column 1 would be 0. Note that the current encoding method
+is just an example to show how the feature can be encoded. Users are
+encouraged to encode the state for their own purposes by modifying
+<code class="docutils literal notranslate"><span class="pre">extract_state</span></code> function in
+<a href="#id1"><span class="problematic" id="id2">`rlcard/envs/doudizhu.py`__</span></a>. The example
 encoded planes are as below:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 86%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Plane</p></th>
@@ -778,17 +831,17 @@ game.</p>
 <div class="section" id="mahjong">
 <h2>Mahjong<a class="headerlink" href="#mahjong" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
-<div class="line">Mahjong is a tile-based game developed in China, and has spread
-throughout the world since 20th century. It is commonly played but 4
-players. The game is played with a set of 136 tiles. In turn players
-draw and discard tiles until</div>
-<div class="line">The goal of the game is to complete the leagal hand using the 14th
-drawn tile to form 4 sets and a pair. We revised the game into a
-simple version that all of the winning set are equal, and player will
-win as long as she complete forming 4 sets and a pair. Please refer
-the detail on <a class="reference external" href="https://en.wikipedia.org/wiki/Mahjong">Wikipedia</a> or
-<a class="reference external" href="https://baike.baidu.com/item/麻将/215">Baike</a>.</div>
+<div class="line">Mahjong is a tile-based game developed in China, and has spread</div>
 </div>
+<p>throughout the world since 20th century. It is commonly played by 4
+players. The game is played with a set of 136 tiles. In turn players
+draw and discard tiles until
+| The goal of the game is to complete the leagal hand using the 14th
+drawn tile to form 4 sets and a pair. We revised the game into a simple
+version that all of the winning set are equal, and player will win as
+long as she complete forming 4 sets and a pair. Please refer the detail
+on <a class="reference external" href="https://en.wikipedia.org/wiki/Mahjong">Wikipedia</a> or
+<a class="reference external" href="https://baike.baidu.com/item/麻将/215">Baike</a>.</p>
 <div class="section" id="state-representation-of-mahjong">
 <h3>State Representation of Mahjong<a class="headerlink" href="#state-representation-of-mahjong" title="Permalink to this headline">¶</a></h3>
 <p>The state representation of Mahjong is encoded as 6 feature planes,
@@ -1043,16 +1096,18 @@ player’s current hand</p></td>
 <div class="section" id="state-encoding-of-uno">
 <h3>State Encoding of Uno<a class="headerlink" href="#state-encoding-of-uno" title="Permalink to this headline">¶</a></h3>
 <p>In Uno environment, we encode the state into 7 feature planes. The size
-of each plane is 4*15. Each entry of a plane can be either 1 or 0. Note
-that the current encoding method is just an example to show how the
-feature can be encoded. Users are encouraged to encode the state for
-their own purposes by modifying <code class="docutils literal notranslate"><span class="pre">extract_state</span></code> function in
-<code class="docutils literal notranslate"><span class="pre">rlcard/envs/uno.py</span></code>. The example encoded planes
-are as below:</p>
+of each plane is 4*15. Row number 4 means four colors. Column number 15
+means 10 number cards from 0 to 9 and 5 special cards—“Wild”, “Wild Draw
+Four”, “Skip”, “Draw Two”, and “Reverse”. Each entry of a plane can be
+either 1 or 0. Note that the current encoding method is just an example
+to show how the feature can be encoded. Users are encouraged to encode
+the state for their own purposes by modifying <code class="docutils literal notranslate"><span class="pre">extract_state</span></code> function
+in <a href="#id1"><span class="problematic" id="id3">`rlcard/envs/uno.py`__</span></a>. The example encoded
+planes are as below:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 21%" />
-<col style="width: 79%" />
+<col style="width: 36%" />
+<col style="width: 64%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Plane</p></th>
@@ -1067,10 +1122,13 @@ are as below:</p>
 <td><p>target</p></td>
 </tr>
 <tr class="row-even"><td><p>4-6</p></td>
-<td><p>the recent three actions</p></td>
+<td><p>others’ hand</p></td>
 </tr>
 </tbody>
 </table>
+<p>We use 3 planes to represnt players’ hand. Specifically, planes 0-2
+represent 0 card, 1 card, 2 cards, respectively. Planes 4-6 are the
+same.</p>
 </div>
 <div class="section" id="action-encoding-of-uno">
 <h3>Action Encoding of Uno<a class="headerlink" href="#action-encoding-of-uno" title="Permalink to this headline">¶</a></h3>
@@ -1148,9 +1206,166 @@ mapping of action and its ID is in
 game.</p>
 </div>
 </div>
-<div class="section" id="sheng-ji">
-<h2>Sheng Ji<a class="headerlink" href="#sheng-ji" title="Permalink to this headline">¶</a></h2>
-<p>(Under construction)</p>
+<div class="section" id="gin-rummy">
+<h2>Gin Rummy<a class="headerlink" href="#gin-rummy" title="Permalink to this headline">¶</a></h2>
+<p>Gin Rummy is a popular two person card game using a regular 52 card deck
+(ace being low). The dealer deals 11 cards to his opponent and 10 cards
+to himself. Each player tries to form melds of 3+ cards of the same rank
+or 3+ cards of the same suit in sequence. If the deadwood count of the
+non-melded cards is 10 or less, the player can knock. If all cards can
+be melded, the player can gin. Please refer the detail on
+<a class="reference external" href="https://en.wikipedia.org/wiki/Gin_rummy">Wikipedia</a>.</p>
+<p>If a player knocks or gins, the hand ends, each player put down their
+melds, and their scores are determined. If a player knocks, the opponent
+can layoff some of his deadwood cards if they extend melds of the
+knocker. The score is the difference between the two deadwood counts of
+the players. If the score is positive, the player going out receives it.
+Otherwise, if the score is zero or negative, the opponent has undercut
+the player going out and receives the value of the score plus a 25 point
+undercut bonus.</p>
+<p>The non-dealer discards first (or knocks or gins if he can). If the
+player has not knocked or ginned, the next player can pick up the
+discard or draw a card from the face down stockpile. He can knock or gin
+and the hand ends. Otherwise, he must discard and the next player
+continues in the same fashion. If the stockpile is reduced to two cards
+only, then the hand is declared dead and no points are scored.</p>
+<div class="section" id="state-representation-of-gin-rummy">
+<h3>State Representation of Gin Rummy<a class="headerlink" href="#state-representation-of-gin-rummy" title="Permalink to this headline">¶</a></h3>
+<p>The state representation of Gin Rummy is encoded as 5 feature planes,
+where each plane is of dimension 52. For each plane, the column of the
+plane indicates the presence of the card (ordered from AS to KC). The
+information that has been encoded can be referred as follows:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Plane</p></th>
+<th class="head"><p>Feature</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>the cards in current player’s hand</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>the top card of the discard pile</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>the dead cards: cards in discard pile (excluding the top card)</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>opponent known cards: cards picked up from discard pile, but not discarded</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>the unknown cards: cards in stockpile or in opponent hand (but not known)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="action-space-of-gin-rummy">
+<h3>Action Space of Gin Rummy<a class="headerlink" href="#action-space-of-gin-rummy" title="Permalink to this headline">¶</a></h3>
+<p>There are 110 actions in Gin Rummy.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Action ID</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>score_player_0_action</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>score_player_1_action</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>draw_card_action</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>pick_up_discard_action</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>declare_dead_hand_action</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>gin_action</p></td>
+</tr>
+<tr class="row-even"><td><p>6 - 57</p></td>
+<td><p>discard_action</p></td>
+</tr>
+<tr class="row-odd"><td><p>58 - 109</p></td>
+<td><p>knock_action</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="payoff-of-gin-rummy">
+<h3>Payoff of Gin Rummy<a class="headerlink" href="#payoff-of-gin-rummy" title="Permalink to this headline">¶</a></h3>
+<p>The reward is calculated by the terminal state of the game. Note that
+the reward is different from that of the standard game. A player who
+gins is awarded 1 point. A player who knocks is awarded 0.2 points. The
+losing player is punished by the negative of their deadwood count.</p>
+<p>If the hand is declared dead, both players are punished by the negative
+of their deadwood count.</p>
+</div>
+<div class="section" id="settings">
+<h3>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h3>
+<p>The following options can be set.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 65%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>dealer_for_round</p></td>
+<td><p>DealerForRound.Random</p></td>
+</tr>
+<tr class="row-odd"><td><p>stockpile_dead_card_count</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>going_out_deadwood_count</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>max_drawn_card_count</p></td>
+<td><p>52</p></td>
+</tr>
+<tr class="row-even"><td><p>is_allowed_knock</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>is_allowed_gin</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-even"><td><p>is_allowed_pick_up_discard</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>is_allowed_to_discard_picked_up_card</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>is_always_knock</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>is_south_never_knocks</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="variations">
+<h3>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h3>
+<p>One can create variations that are easier to train by changing the
+options and specifying different scoring methods.</p>
+</div>
 </div>
 </div>
 
