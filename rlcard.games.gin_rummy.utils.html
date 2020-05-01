@@ -97,10 +97,10 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-hold-em">Training CFR on Leduc Hold’em</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-hold-em-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-holdem">Training CFR on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-holdem-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
@@ -127,6 +127,13 @@
 <li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-dou-dizhu">State Encoding of Dou Dizhu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#action-abstraction-of-dou-dizhu">Action Abstraction of Dou Dizhu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff">Payoff</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#simple-dou-dizhu">Simple Dou Dizhu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-simple-dou-dizhu">State Representation of Simple Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-simple-dou-dizhu">State Encoding of Simple Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-simple-dou-dizhu">Action Encoding of Simple Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-simple-dou-dizhu">Payoff of Simple Dou Dizhu</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a><ul>
@@ -265,10 +272,12 @@
 <li class="toctree-l2 current"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">rlcard.games.gin_rummy.utils</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.gin_rummy.utils.action_event">rlcard.games.gin_rummy.utils.action_event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.gin_rummy.utils.gin_rummy_error">rlcard.games.gin_rummy.utils.gin_rummy_error</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.gin_rummy.utils.melding">rlcard.games.gin_rummy.utils.melding</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.gin_rummy.utils.move">rlcard.games.gin_rummy.utils.move</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.gin_rummy.utils.scorers">rlcard.games.gin_rummy.utils.scorers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.gin_rummy.utils.settings">rlcard.games.gin_rummy.utils.settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.gin_rummy.utils.thinker">rlcard.games.gin_rummy.utils.thinker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.gin_rummy.utils.utils">rlcard.games.gin_rummy.utils.utils</a></li>
 </ul>
 </li>
@@ -289,6 +298,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.gin_rummy_human_agent">rlcard.agents.gin_rummy_human_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.best_response_agent">rlcard.agents.best_response_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.cfr_agent">rlcard.agents.cfr_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr_agent">rlcard.agents.deep_cfr_agent</a></li>
@@ -462,11 +472,45 @@ Date created: 2/12/2020</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-rlcard.games.gin_rummy.utils.gin_rummy_error">
+<span id="rlcard-games-gin-rummy-utils-gin-rummy-error"></span><h2>rlcard.games.gin_rummy.utils.gin_rummy_error<a class="headerlink" href="#module-rlcard.games.gin_rummy.utils.gin_rummy_error" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gin Rummy
+File name: gin_rummy/utils/gin_rummy_error.py
+Author: William Hale
+Date created: 4/29/2020</p>
+<dl class="exception">
+<dt id="rlcard.games.gin_rummy.utils.gin_rummy_error.GinRummyError">
+<em class="property">exception </em><code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.gin_rummy_error.</code><code class="sig-name descname">GinRummyError</code><a class="headerlink" href="#rlcard.games.gin_rummy.utils.gin_rummy_error.GinRummyError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="rlcard.games.gin_rummy.utils.gin_rummy_error.GinRummyProgramError">
+<em class="property">exception </em><code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.gin_rummy_error.</code><code class="sig-name descname">GinRummyProgramError</code><a class="headerlink" href="#rlcard.games.gin_rummy.utils.gin_rummy_error.GinRummyProgramError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.games.gin_rummy.utils.gin_rummy_error.GinRummyError" title="rlcard.games.gin_rummy.utils.gin_rummy_error.GinRummyError"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.games.gin_rummy.utils.gin_rummy_error.GinRummyError</span></code></a></p>
+</dd></dl>
+
+</div>
 <div class="section" id="module-rlcard.games.gin_rummy.utils.melding">
 <span id="rlcard-games-gin-rummy-utils-melding"></span><h2>rlcard.games.gin_rummy.utils.melding<a class="headerlink" href="#module-rlcard.games.gin_rummy.utils.melding" title="Permalink to this headline">¶</a></h2>
 <p>File name: gin_rummy/melding.py
 Author: William Hale
 Date created: 2/12/2020</p>
+<dl class="function">
+<dt id="rlcard.games.gin_rummy.utils.melding.get_all_run_melds">
+<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.melding.</code><code class="sig-name descname">get_all_run_melds</code><span class="sig-paren">(</span><em class="sig-param">hand: List[rlcard.core.Card]</em><span class="sig-paren">)</span> &#x2192; List[List[rlcard.core.Card]]<a class="headerlink" href="#rlcard.games.gin_rummy.utils.melding.get_all_run_melds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rlcard.games.gin_rummy.utils.melding.get_all_run_melds_for_suit">
+<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.melding.</code><code class="sig-name descname">get_all_run_melds_for_suit</code><span class="sig-paren">(</span><em class="sig-param">cards: List[rlcard.core.Card], suit: str</em><span class="sig-paren">)</span> &#x2192; List[List[rlcard.core.Card]]<a class="headerlink" href="#rlcard.games.gin_rummy.utils.melding.get_all_run_melds_for_suit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rlcard.games.gin_rummy.utils.melding.get_all_set_melds">
+<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.melding.</code><code class="sig-name descname">get_all_set_melds</code><span class="sig-paren">(</span><em class="sig-param">hand: List[rlcard.core.Card]</em><span class="sig-paren">)</span> &#x2192; List[List[rlcard.core.Card]]<a class="headerlink" href="#rlcard.games.gin_rummy.utils.melding.get_all_set_melds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="function">
 <dt id="rlcard.games.gin_rummy.utils.melding.get_best_meld_clusters">
 <code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.melding.</code><code class="sig-name descname">get_best_meld_clusters</code><span class="sig-paren">(</span><em class="sig-param">hand: List[rlcard.core.Card]</em><span class="sig-paren">)</span> &#x2192; List[List[List[rlcard.core.Card]]]<a class="headerlink" href="#rlcard.games.gin_rummy.utils.melding.get_best_meld_clusters" title="Permalink to this definition">¶</a></dt>
@@ -474,7 +518,7 @@ Date created: 2/12/2020</p>
 
 <dl class="function">
 <dt id="rlcard.games.gin_rummy.utils.melding.get_meld_clusters">
-<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.melding.</code><code class="sig-name descname">get_meld_clusters</code><span class="sig-paren">(</span><em class="sig-param">hand: List[rlcard.core.Card], opponent_meld_piles: List[List[rlcard.core.Card]] = None</em><span class="sig-paren">)</span> &#x2192; List[List[List[rlcard.core.Card]]]<a class="headerlink" href="#rlcard.games.gin_rummy.utils.melding.get_meld_clusters" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.melding.</code><code class="sig-name descname">get_meld_clusters</code><span class="sig-paren">(</span><em class="sig-param">hand: List[rlcard.core.Card]</em><span class="sig-paren">)</span> &#x2192; List[List[List[rlcard.core.Card]]]<a class="headerlink" href="#rlcard.games.gin_rummy.utils.melding.get_meld_clusters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -567,8 +611,22 @@ Date created: 2/15/2020</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="rlcard.games.gin_rummy.utils.scorers.get_payoff_gin_rummy_v0">
+<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.scorers.</code><code class="sig-name descname">get_payoff_gin_rummy_v0</code><span class="sig-paren">(</span><em class="sig-param">player: rlcard.games.gin_rummy.player.GinRummyPlayer</em>, <em class="sig-param">game: GinRummyGame</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#rlcard.games.gin_rummy.utils.scorers.get_payoff_gin_rummy_v0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the payoff of player: deadwood_count of player</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>payoff for player (lower is better)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>payoff (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="rlcard.games.gin_rummy.utils.scorers.get_payoff_gin_rummy_v1">
-<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.scorers.</code><code class="sig-name descname">get_payoff_gin_rummy_v1</code><span class="sig-paren">(</span><em class="sig-param">player: rlcard.games.gin_rummy.player.GinRummyPlayer</em>, <em class="sig-param">game: GinRummyGame</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#rlcard.games.gin_rummy.utils.scorers.get_payoff_gin_rummy_v1" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.scorers.</code><code class="sig-name descname">get_payoff_gin_rummy_v1</code><span class="sig-paren">(</span><em class="sig-param">player: rlcard.games.gin_rummy.player.GinRummyPlayer</em>, <em class="sig-param">game: GinRummyGame</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#rlcard.games.gin_rummy.utils.scorers.get_payoff_gin_rummy_v1" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Get the payoff of player:</dt><dd><ol class="loweralpha simple">
 <li><p>1.0 if player gins</p></li>
@@ -579,7 +637,7 @@ Date created: 2/15/2020</p>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>payoff for player</p>
+<dd class="field-odd"><p>payoff for player (higher is better)</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>payoff (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a>)</p>
@@ -704,24 +762,31 @@ Date created: 2/16/2020</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-rlcard.games.gin_rummy.utils.thinker">
+<span id="rlcard-games-gin-rummy-utils-thinker"></span><h2>rlcard.games.gin_rummy.utils.thinker<a class="headerlink" href="#module-rlcard.games.gin_rummy.utils.thinker" title="Permalink to this headline">¶</a></h2>
+<p>File name: gin_rummy/thinker.py
+Author: William Hale
+Date created: 3/28/2020</p>
+<dl class="class">
+<dt id="rlcard.games.gin_rummy.utils.thinker.Thinker">
+<em class="property">class </em><code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.thinker.</code><code class="sig-name descname">Thinker</code><span class="sig-paren">(</span><em class="sig-param">hand: List[rlcard.core.Card]</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.gin_rummy.utils.thinker.Thinker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="rlcard.games.gin_rummy.utils.thinker.Thinker.get_meld_piles_with_discard_card">
+<code class="sig-name descname">get_meld_piles_with_discard_card</code><span class="sig-paren">(</span><em class="sig-param">discard_card: rlcard.core.Card</em><span class="sig-paren">)</span> &#x2192; List[List[rlcard.core.Card]]<a class="headerlink" href="#rlcard.games.gin_rummy.utils.thinker.Thinker.get_meld_piles_with_discard_card" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="module-rlcard.games.gin_rummy.utils.utils">
 <span id="rlcard-games-gin-rummy-utils-utils"></span><h2>rlcard.games.gin_rummy.utils.utils<a class="headerlink" href="#module-rlcard.games.gin_rummy.utils.utils" title="Permalink to this headline">¶</a></h2>
 <p>File name: gin_rummy/utils.py
 Author: William Hale
 Date created: 2/12/2020</p>
 <dl class="function">
-<dt id="rlcard.games.gin_rummy.utils.utils.decode_cards">
-<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.utils.</code><code class="sig-name descname">decode_cards</code><span class="sig-paren">(</span><em class="sig-param">env_cards: numpy.ndarray</em><span class="sig-paren">)</span> &#x2192; List[rlcard.core.Card]<a class="headerlink" href="#rlcard.games.gin_rummy.utils.utils.decode_cards" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="rlcard.games.gin_rummy.utils.utils.encode_cards">
-<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.utils.</code><code class="sig-name descname">encode_cards</code><span class="sig-paren">(</span><em class="sig-param">cards: List[rlcard.core.Card]</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#rlcard.games.gin_rummy.utils.utils.encode_cards" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="rlcard.games.gin_rummy.utils.utils.from_card_id">
-<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.utils.</code><code class="sig-name descname">from_card_id</code><span class="sig-paren">(</span><em class="sig-param">card_id: int</em><span class="sig-paren">)</span> &#x2192; rlcard.core.Card<a class="headerlink" href="#rlcard.games.gin_rummy.utils.utils.from_card_id" title="Permalink to this definition">¶</a></dt>
+<dt id="rlcard.games.gin_rummy.utils.utils.card_from_card_id">
+<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.utils.</code><code class="sig-name descname">card_from_card_id</code><span class="sig-paren">(</span><em class="sig-param">card_id: int</em><span class="sig-paren">)</span> &#x2192; rlcard.core.Card<a class="headerlink" href="#rlcard.games.gin_rummy.utils.utils.card_from_card_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make card from its card_id</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -731,8 +796,18 @@ Date created: 2/12/2020</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="rlcard.games.gin_rummy.utils.utils.from_text">
-<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.utils.</code><code class="sig-name descname">from_text</code><span class="sig-paren">(</span><em class="sig-param">text: str</em><span class="sig-paren">)</span> &#x2192; rlcard.core.Card<a class="headerlink" href="#rlcard.games.gin_rummy.utils.utils.from_text" title="Permalink to this definition">¶</a></dt>
+<dt id="rlcard.games.gin_rummy.utils.utils.card_from_text">
+<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.utils.</code><code class="sig-name descname">card_from_text</code><span class="sig-paren">(</span><em class="sig-param">text: str</em><span class="sig-paren">)</span> &#x2192; rlcard.core.Card<a class="headerlink" href="#rlcard.games.gin_rummy.utils.utils.card_from_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rlcard.games.gin_rummy.utils.utils.decode_cards">
+<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.utils.</code><code class="sig-name descname">decode_cards</code><span class="sig-paren">(</span><em class="sig-param">env_cards: numpy.ndarray</em><span class="sig-paren">)</span> &#x2192; List[rlcard.core.Card]<a class="headerlink" href="#rlcard.games.gin_rummy.utils.utils.decode_cards" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rlcard.games.gin_rummy.utils.utils.encode_cards">
+<code class="sig-prename descclassname">rlcard.games.gin_rummy.utils.utils.</code><code class="sig-name descname">encode_cards</code><span class="sig-paren">(</span><em class="sig-param">cards: List[rlcard.core.Card]</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#rlcard.games.gin_rummy.utils.utils.encode_cards" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">

@@ -97,10 +97,10 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-hold-em">Training CFR on Leduc Hold’em</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-hold-em-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-holdem">Training CFR on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-holdem-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Games in RLCard</a><ul>
@@ -127,6 +127,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#state-encoding-of-dou-dizhu">State Encoding of Dou Dizhu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#action-abstraction-of-dou-dizhu">Action Abstraction of Dou Dizhu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#payoff">Payoff</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#simple-dou-dizhu">Simple Dou Dizhu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#state-representation-of-simple-dou-dizhu">State Representation of Simple Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#state-encoding-of-simple-dou-dizhu">State Encoding of Simple Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#action-encoding-of-simple-dou-dizhu">Action Encoding of Simple Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#payoff-of-simple-dou-dizhu">Payoff of Simple Dou Dizhu</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#mahjong">Mahjong</a><ul>
@@ -265,10 +272,12 @@
 <li class="toctree-l2"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html">rlcard.games.gin_rummy.utils</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.action_event">rlcard.games.gin_rummy.utils.action_event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.gin_rummy_error">rlcard.games.gin_rummy.utils.gin_rummy_error</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.melding">rlcard.games.gin_rummy.utils.melding</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.move">rlcard.games.gin_rummy.utils.move</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.scorers">rlcard.games.gin_rummy.utils.scorers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.settings">rlcard.games.gin_rummy.utils.settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.thinker">rlcard.games.gin_rummy.utils.thinker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.utils">rlcard.games.gin_rummy.utils.utils</a></li>
 </ul>
 </li>
@@ -289,6 +298,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.gin_rummy_human_agent">rlcard.agents.gin_rummy_human_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.best_response_agent">rlcard.agents.best_response_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.cfr_agent">rlcard.agents.cfr_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr_agent">rlcard.agents.deep_cfr_agent</a></li>
@@ -442,15 +452,15 @@ higher rank wins. Other rules such as ‘fold’ can refer to Limit Texas
 hold’em.</p>
 <div class="section" id="state-representation-of-leduc-hold-em">
 <h3>State Representation of Leduc Hold’em<a class="headerlink" href="#state-representation-of-leduc-hold-em" title="Permalink to this headline">¶</a></h3>
-<p>The state is encoded as a vector of length 34. The first 3 elements
+<p>The state is encoded as a vector of length 36. The first 3 elements
 correspond to hand card. The next 3 elements correspond to public card.
-The last 28 elements correspond the chips of the current player and the
-opponent (the chips could be in range 0~13) The correspondence between
+The last 30 elements correspond the chips of the current player and the
+opponent (the chips could be in range 0~14) The correspondence between
 the index and the card is as below.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 19%" />
-<col style="width: 81%" />
+<col style="width: 16%" />
+<col style="width: 84%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Index</p></th>
@@ -464,11 +474,11 @@ the index and the card is as below.</p>
 <tr class="row-odd"><td><p>3~5</p></td>
 <td><p>J ~ K as public card</p></td>
 </tr>
-<tr class="row-even"><td><p>6~19</p></td>
-<td><p>0 ~ 13 chips for the current player</p></td>
+<tr class="row-even"><td><p>6~20</p></td>
+<td><p>0 ~ 14 chips for the current player</p></td>
 </tr>
-<tr class="row-odd"><td><p>20~33</p></td>
-<td><p>0 ~ 13 chips for the opponent</p></td>
+<tr class="row-odd"><td><p>21~35</p></td>
+<td><p>0 ~ 14 chips for the opponent</p></td>
 </tr>
 </tbody>
 </table>
@@ -479,10 +489,7 @@ the index and the card is as below.</p>
 </div>
 <div class="section" id="payoff-of-leduc-hold-em">
 <h3>Payoff of Leduc Hold’em<a class="headerlink" href="#payoff-of-leduc-hold-em" title="Permalink to this headline">¶</a></h3>
-<p>The payoff is calculated similarly with Limit Hold’em game. The only
-difference is that Leduc Hold’em does not has the ‘big blind’ concept.
-As both players start the first round with 1 unit in the pot, we treat
-the ‘big blind’ in calculation as 1 by default.</p>
+<p>The payoff is calculated similarly with Limit Hold’em game.</p>
 </div>
 </div>
 <div class="section" id="limit-texas-hold-em">
@@ -824,8 +831,97 @@ single</p></td>
 </div>
 <div class="section" id="payoff">
 <h3>Payoff<a class="headerlink" href="#payoff" title="Permalink to this headline">¶</a></h3>
-<p>Each player will receive a reward 0 (lose) or 1 (win) in the end of the
-game.</p>
+<p>If the landlord first get rid of all the cards in his hand, he will win
+and receive a reward 1. The two peasants will lose and receive a reward
+0. Similarly, if one of the peasant first get rid of all the cards in
+hand, both peasants will win and receive a reward 1. The landlord will
+lose and receive a reward 0.</p>
+</div>
+</div>
+<div class="section" id="simple-dou-dizhu">
+<h2>Simple Dou Dizhu<a class="headerlink" href="#simple-dou-dizhu" title="Permalink to this headline">¶</a></h2>
+<p>Simple Dou Dizhu is a smaller version of Dou Dizhu. The deck only
+consists of 6 ranks from ‘8’ to ‘A’ (8, 9, T, J, Q, K, A), there are
+four cards with different suits in each rank. What’s more, unlike
+landlord in Dou Dizhu, the landlord in Simple Dou Dizhu only has one
+more card than the peasants. The rules of this game is the same as the
+rules of Dou Dizhu. Just because each player gets fewer cards, they end
+the game faster.</p>
+<div class="section" id="state-representation-of-simple-dou-dizhu">
+<h3>State Representation of Simple Dou Dizhu<a class="headerlink" href="#state-representation-of-simple-dou-dizhu" title="Permalink to this headline">¶</a></h3>
+<p>This is almost the smae as the state representation of Dou Dizhu, but
+the number of the ‘deck’ has reduced from 54 to 28, and the number of
+the ‘seen cards’ reduced from 3 to 1. The following table shows the
+structure of the state:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 56%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>deck</p></td>
+<td><p>A string of one pack of 28 cards without Black Joker and Red Joker. Each character means a card. For conciseness, we use ‘T’ for ‘10’.</p></td>
+<td><p>88889999TTTTJJJJQQQQKKKKAAAA</p></td>
+</tr>
+<tr class="row-odd"><td><p>seen_cards</p></td>
+<td><p>One face-down card distributed to the landlord after bidding. Then the card will be made public to all players.</p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-even"><td><p>landlord</p></td>
+<td><p>An integer of landlord’s id</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>self</p></td>
+<td><p>An integer of current player’s id</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>initial_hand</p></td>
+<td><p>All cards current player initially owned when a game starts. It will not change with playing cards.</p></td>
+<td><p>8TTJJQQKA</p></td>
+</tr>
+<tr class="row-odd"><td><p>trace</p></td>
+<td><p>A list of tuples which records every actions in one game. The first entry of the tuple is player’s id, the second is corresponding player’s action.</p></td>
+<td><p>[(0, ‘8’), (1, ‘A’), (2, ‘pass’), (0, ‘pass’)]</p></td>
+</tr>
+<tr class="row-even"><td><p>played_cards</p></td>
+<td><p>As the game progresses, the cards which have been played by the three players and sorted from low to high.</p></td>
+<td><p>[‘8’, ‘A’]</p></td>
+</tr>
+<tr class="row-odd"><td><p>others_hand</p></td>
+<td><p>The union of the other two player’s current hand</p></td>
+<td><p>889999TTJJQQKKKAAA</p></td>
+</tr>
+<tr class="row-even"><td><p>current_hand</p></td>
+<td><p>The current hand of current player</p></td>
+<td><p>8TTJJQQK</p></td>
+</tr>
+<tr class="row-odd"><td><p>actions</p></td>
+<td><p>The legal actions the current player could do</p></td>
+<td><p>[‘J’, ‘TTJJQQ’, ‘TT’, ‘Q’, ‘T’, ‘K’, ‘QQ’, ‘8’, ‘JJ’]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="state-encoding-of-simple-dou-dizhu">
+<h3>State Encoding of Simple Dou Dizhu<a class="headerlink" href="#state-encoding-of-simple-dou-dizhu" title="Permalink to this headline">¶</a></h3>
+<p>The state encoding is the same as Dou Dizhu game.</p>
+</div>
+<div class="section" id="action-encoding-of-simple-dou-dizhu">
+<h3>Action Encoding of Simple Dou Dizhu<a class="headerlink" href="#action-encoding-of-simple-dou-dizhu" title="Permalink to this headline">¶</a></h3>
+<p>The action encoding is the same as Dou Dizhu game. Because of the
+reduction of deck, the actions encoded have also reduced from 309 to
+131.</p>
+</div>
+<div class="section" id="payoff-of-simple-dou-dizhu">
+<h3>Payoff of Simple Dou Dizhu<a class="headerlink" href="#payoff-of-simple-dou-dizhu" title="Permalink to this headline">¶</a></h3>
+<p>The payoff is the same as Dou Dizhu game.</p>
 </div>
 </div>
 <div class="section" id="mahjong">
@@ -987,15 +1083,16 @@ below:</p>
 </div>
 <div class="section" id="action-encoding-of-no-limit-texas-hold-em">
 <h3>Action Encoding of No-Limit Texas Hold’em<a class="headerlink" href="#action-encoding-of-no-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
-<p>There are 103 actions in No-limit Texas Hold’em. They are encoded as
+<p>There are 6 actions in No-limit Texas Hold’em. They are encoded as
 below.</p>
 <p>*Note: Starting from Action ID 3, the action means the amount player
-should put in the pot when chooses ‘Raise’. The action ID from 3 to 102
-corresponds to the bet amount from 1 to 100.</p>
+should put in the pot when chooses ‘Raise’. The action ID from 3 to 5
+corresponds to the bet amount from half amount of the pot, full amount
+of the pot to all in.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
+<col style="width: 41%" />
+<col style="width: 59%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Action ID</p></th>
@@ -1004,16 +1101,22 @@ corresponds to the bet amount from 1 to 100.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>0</p></td>
-<td><p>Call</p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
 <td><p>Fold</p></td>
 </tr>
-<tr class="row-even"><td><p>2</p></td>
+<tr class="row-odd"><td><p>1</p></td>
 <td><p>Check</p></td>
 </tr>
-<tr class="row-odd"><td><p>3 ~ 102</p></td>
-<td><p>*Raise</p></td>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Call</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Raise Half Pot</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Raise Full Pot</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>All In</p></td>
 </tr>
 </tbody>
 </table>
@@ -1310,9 +1413,10 @@ information that has been encoded can be referred as follows:</p>
 <p>The reward is calculated by the terminal state of the game. Note that
 the reward is different from that of the standard game. A player who
 gins is awarded 1 point. A player who knocks is awarded 0.2 points. The
-losing player is punished by the negative of their deadwood count.</p>
+losing player is punished by the negative of their deadwood count
+divided by 100.</p>
 <p>If the hand is declared dead, both players are punished by the negative
-of their deadwood count.</p>
+of their deadwood count divided by 100.</p>
 </div>
 <div class="section" id="settings">
 <h3>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h3>

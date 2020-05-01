@@ -95,10 +95,10 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-hold-em">Training CFR on Leduc Hold’em</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-hold-em-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-holdem">Training CFR on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-holdem-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
@@ -125,6 +125,13 @@
 <li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-dou-dizhu">State Encoding of Dou Dizhu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#action-abstraction-of-dou-dizhu">Action Abstraction of Dou Dizhu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff">Payoff</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#simple-dou-dizhu">Simple Dou Dizhu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-simple-dou-dizhu">State Representation of Simple Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-simple-dou-dizhu">State Encoding of Simple Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-simple-dou-dizhu">Action Encoding of Simple Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-simple-dou-dizhu">Payoff of Simple Dou Dizhu</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a><ul>
@@ -263,10 +270,12 @@
 <li class="toctree-l2"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html">rlcard.games.gin_rummy.utils</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.action_event">rlcard.games.gin_rummy.utils.action_event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.gin_rummy_error">rlcard.games.gin_rummy.utils.gin_rummy_error</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.melding">rlcard.games.gin_rummy.utils.melding</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.move">rlcard.games.gin_rummy.utils.move</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.scorers">rlcard.games.gin_rummy.utils.scorers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.settings">rlcard.games.gin_rummy.utils.settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.thinker">rlcard.games.gin_rummy.utils.thinker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.utils">rlcard.games.gin_rummy.utils.utils</a></li>
 </ul>
 </li>
@@ -287,6 +296,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.gin_rummy_human_agent">rlcard.agents.gin_rummy_human_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.best_response_agent">rlcard.agents.best_response_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.cfr_agent">rlcard.agents.cfr_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr_agent">rlcard.agents.deep_cfr_agent</a></li>
@@ -413,9 +423,10 @@ you may follow the instructions on <a class="reference external" href="https://p
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>A <strong>short example</strong> is as below.</p>
+<p>A <strong>short example</strong> is as
+below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rlcard</span>
-<span class="kn">from</span> <span class="nn">rlcard.agents.random_agent</span> <span class="kn">import</span> <span class="n">RandomAgent</span>
+<span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">RandomAgent</span>
 
 <span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;blackjack&#39;</span><span class="p">)</span>
 <span class="n">env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">RandomAgent</span><span class="p">(</span><span class="n">action_num</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">action_num</span><span class="p">)])</span>
@@ -542,55 +553,100 @@ models and rule models.</p></li>
 </div>
 <div class="section" id="api-cheat-sheet">
 <h2>API Cheat Sheet<a class="headerlink" href="#api-cheat-sheet" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-create-an-environment">
+<h3>How to create an environment<a class="headerlink" href="#how-to-create-an-environment" title="Permalink to this headline">¶</a></h3>
+<p>You can use the the following interface to make an environment. You can
+specify some configurations with a dictionary.</p>
 <ul class="simple">
-<li><p><strong>rlcard.make(env_id, config={})</strong>: Make an environment. <code class="docutils literal notranslate"><span class="pre">env_id</span></code>
-is a string of a environment; <code class="docutils literal notranslate"><span class="pre">config</span></code> is a dictionary specifying
-some environment configurations, which are as follows.</p>
-<ul>
+<li><p><strong>env = rlcard.make(env_id, config={})</strong>: Make an environment. <code class="docutils literal notranslate"><span class="pre">env_id</span></code> is a string of a environment; <code class="docutils literal notranslate"><span class="pre">config</span></code> is a dictionary specifying some environment configurations, which are as follows.</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">seed</span></code>: Default <code class="docutils literal notranslate"><span class="pre">None</span></code>. Set a environment local random seed for reproducing the results.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">env_num</span></code>: Default <code class="docutils literal notranslate"><span class="pre">1</span></code>. It specifies how many
+environments running in parallel. If the number is larger than 1, then
+the tasks will be assigned to multiple processes for acceleration.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">allow_step_back</span></code>: Defualt <code class="docutils literal notranslate"><span class="pre">False</span></code>. <code class="docutils literal notranslate"><span class="pre">True</span></code> if allowing
 <code class="docutils literal notranslate"><span class="pre">step_back</span></code> function to traverse backward in the tree.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_raw_data</span></code>: Default <code class="docutils literal notranslate"><span class="pre">False</span></code>. <code class="docutils literal notranslate"><span class="pre">True</span></code> if allowing raw
-data in the <code class="docutils literal notranslate"><span class="pre">state</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">single_agent_mode</span></code>: Default <code class="docutils literal notranslate"><span class="pre">False</span></code>. <code class="docutils literal notranslate"><span class="pre">True</span></code> if using single
-agent mode, i.e., Gym style interface with other players as
+<li><p><code class="docutils literal notranslate"><span class="pre">allow_raw_data</span></code>: Default <code class="docutils literal notranslate"><span class="pre">False</span></code>. <code class="docutils literal notranslate"><span class="pre">True</span></code> if allowing raw data in
+the <code class="docutils literal notranslate"><span class="pre">state</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">single_agent_mode</span></code>: Default <code class="docutils literal notranslate"><span class="pre">False</span></code>. <code class="docutils literal notranslate"><span class="pre">True</span></code> if
+using single agent mode, i.e., Gym style interface with other players as
 pretrained/rule models.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">active_player</span></code>: Defualt <code class="docutils literal notranslate"><span class="pre">0</span></code>. If <code class="docutils literal notranslate"><span class="pre">single_agent_mode</span></code> is
-<code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">active_player</span></code> will specify operating on which player
-in single agent mode.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">record_action</span></code>: Default <code class="docutils literal notranslate"><span class="pre">False</span></code>. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, a field of
-<code class="docutils literal notranslate"><span class="pre">action_record</span></code> will be in the <code class="docutils literal notranslate"><span class="pre">state</span></code> to record the
-historical actions. This may be used for human-agent play.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">active_player</span></code>: Defualt <code class="docutils literal notranslate"><span class="pre">0</span></code>. If
+<code class="docutils literal notranslate"><span class="pre">single_agent_mode</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">active_player</span></code> will specify
+operating on which player in single agent mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">record_action</span></code>:
+Default <code class="docutils literal notranslate"><span class="pre">False</span></code>. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, a field of <code class="docutils literal notranslate"><span class="pre">action_record</span></code> will be in
+the <code class="docutils literal notranslate"><span class="pre">state</span></code> to record the historical actions. This may be used for
+human-agent play.</p></li>
 </ul>
-</li>
-<li><p><strong>env.init_game()</strong>: Initialize a game. Return the state and the
-first player ID.</p></li>
-<li><p><strong>env.step(action, raw_action=False)</strong>: Take one step in the
-environment. <code class="docutils literal notranslate"><span class="pre">action</span></code> can be raw action or integer; <code class="docutils literal notranslate"><span class="pre">raw_action</span></code>
-should be <code class="docutils literal notranslate"><span class="pre">True</span></code> if the action is raw action (string).</p></li>
-<li><p><strong>env.step_back()</strong>: Available only when <code class="docutils literal notranslate"><span class="pre">allow_step_back</span></code> is
-<code class="docutils literal notranslate"><span class="pre">True</span></code>. Take one step backward. This can be used for algorithms
-that operate on the game tree, such as CFR.</p></li>
-<li><p><strong>env.get_payoffs()</strong>: In the end of the game, return a list of
-payoffs for all the players.</p></li>
-<li><p><strong>env.get_perfect_information()</strong>: (Currently only support some of
-the games) Obtain the perfect information at the current state.</p></li>
-<li><p><strong>env.set_agents(agents)</strong>: <code class="docutils literal notranslate"><span class="pre">agents</span></code> is a list of <code class="docutils literal notranslate"><span class="pre">Agent</span></code>
-object. The length of the the list should equal to the number of the
-player in the game.</p></li>
-<li><p><strong>env.run(is_training=False)</strong>: Run a complete game and return
-trajectories and payoffs. The function can be used after the
-<code class="docutils literal notranslate"><span class="pre">set_agents</span></code> is called. If <code class="docutils literal notranslate"><span class="pre">is_training</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the
-function will use <code class="docutils literal notranslate"><span class="pre">step</span></code> function in the agent to play the game. If
-<code class="docutils literal notranslate"><span class="pre">is_training</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">eval_step</span></code> will be called instead.</p></li>
-<li><p><strong>State Definition</strong>: State will always have observation
+</div></blockquote>
+<p>Once the environemnt is made, we can access some information of the
+game.</p>
+<ul class="simple">
+<li><p><strong>env.action_num</strong>: The number of actions.</p></li>
+<li><p><strong>env.player_num</strong>: The number of players.</p></li>
+<li><p><strong>env.state_space</strong>: Ther state space of the observations.</p></li>
+<li><p><strong>env.timestep</strong>: The number of
+timesteps stepped by the environment.</p></li>
+</ul>
+</div>
+<div class="section" id="what-is-state-in-rlcard">
+<h3>What is state in RLCard<a class="headerlink" href="#what-is-state-in-rlcard" title="Permalink to this headline">¶</a></h3>
+<p>State is a Python dictionary. It will always have observation
 <code class="docutils literal notranslate"><span class="pre">state['obs']</span></code> and legal actions <code class="docutils literal notranslate"><span class="pre">state['legal_actions']</span></code>. If
 <code class="docutils literal notranslate"><span class="pre">allow_raw_data</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, state will have raw observation
 <code class="docutils literal notranslate"><span class="pre">state['raw_obs']</span></code> and raw legal actions
-<code class="docutils literal notranslate"><span class="pre">state['raw_legal_actions']</span></code>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">state['raw_legal_actions']</span></code>.</p>
+</div>
+<div class="section" id="basic-interfaces">
+<h3>Basic interfaces<a class="headerlink" href="#basic-interfaces" title="Permalink to this headline">¶</a></h3>
+<p>The following interfaces provide a basic usage. It is easy to use but it
+has assumtions on the agent.</p>
+<ul class="simple">
+<li><p><strong>env.set_agents(agents)</strong>: <code class="docutils literal notranslate"><span class="pre">agents</span></code> is a list of <code class="docutils literal notranslate"><span class="pre">Agent</span></code> object.
+The length of the the list should equal to the number of the player in
+the game.</p></li>
+<li><p><strong>env.run(is_training=False)</strong>: Run a complete game and
+return trajectories and payoffs. The function can be used after the
+<code class="docutils literal notranslate"><span class="pre">set_agents</span></code> is called. If <code class="docutils literal notranslate"><span class="pre">is_training</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the function
+will use <code class="docutils literal notranslate"><span class="pre">step</span></code> function in the agent to play the game. If
+<code class="docutils literal notranslate"><span class="pre">is_training</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">eval_step</span></code> will be called instead.</p></li>
 </ul>
-<p>For basic usage, <code class="docutils literal notranslate"><span class="pre">env.set_agents</span></code> and <code class="docutils literal notranslate"><span class="pre">env.run()</span></code> are a good chioce.
-For advanced useage, you may also play the game step be step with
-<code class="docutils literal notranslate"><span class="pre">env.init_game()</span></code> and <code class="docutils literal notranslate"><span class="pre">env.step()</span></code>.</p>
+</div>
+<div class="section" id="advanced-interfaces">
+<h3>Advanced interfaces<a class="headerlink" href="#advanced-interfaces" title="Permalink to this headline">¶</a></h3>
+<p>For advanced usage, the following interfaces allow flexible operations
+on the game tree. These interfaces do not make any assumtions on the
+agent.</p>
+<ul class="simple">
+<li><p><strong>env.reset()</strong>: Initialize a game. Return the state and the
+first player ID.</p></li>
+<li><p><strong>env.step(action, raw_action=False)</strong>: Take one
+step in the environment. <code class="docutils literal notranslate"><span class="pre">action</span></code> can be raw action or integer;
+<code class="docutils literal notranslate"><span class="pre">raw_action</span></code> should be <code class="docutils literal notranslate"><span class="pre">True</span></code> if the action is raw action (string).</p></li>
+<li><p><strong>env.step_back()</strong>: Available only when <code class="docutils literal notranslate"><span class="pre">allow_step_back</span></code> is
+<code class="docutils literal notranslate"><span class="pre">True</span></code>. Take one step backward. This can be used for algorithms that
+operate on the game tree, such as CFR.</p></li>
+<li><p><strong>env.is_over()</strong>: Return
+<code class="docutils literal notranslate"><span class="pre">True</span></code> if the current game is over/ Return <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+<li><p><strong>env.get_player_id()</strong>: Return the Player ID of the current player.</p></li>
+<li><p><strong>env.get_state(player_id)</strong>: Return the state corresponds to
+<code class="docutils literal notranslate"><span class="pre">player_id</span></code>.</p></li>
+<li><p><strong>env.get_payoffs()</strong>: In the end of the game, return
+a list of payoffs for all the players.</p></li>
+<li><p><strong>env.get_perfect_information()</strong>: (Currently only support some of the
+games) Obtain the perfect information at the current state.</p></li>
+</ul>
+</div>
+<div class="section" id="running-with-multiple-processes">
+<h3>Running with multiple processes<a class="headerlink" href="#running-with-multiple-processes" title="Permalink to this headline">¶</a></h3>
+<p>RLCard now supports acceleration with multiple processes. Simply change
+<code class="docutils literal notranslate"><span class="pre">env_num</span></code> when making the environment to indicate how many processes
+would be used. Currenly we only support <code class="docutils literal notranslate"><span class="pre">run()</span></code> function with multiple
+processes.</p>
+</div>
 </div>
 <div class="section" id="contributing">
 <h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
