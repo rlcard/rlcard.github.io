@@ -710,12 +710,12 @@ encoded planes are as below:</p>
 </div>
 <div class="section" id="action-abstraction-of-dou-dizhu">
 <h3>Action Abstraction of Dou Dizhu<a class="headerlink" href="#action-abstraction-of-dou-dizhu" title="Permalink to this headline">¶</a></h3>
-<p>The size of the action space of Dou Dizhu is 33676. This number is too
+<p>The size of the action space of Dou Dizhu is 27472. This number is too
 large for learning algorithms. Thus, we make abstractions to the
 original action space and obtain 309 actions. We note that some recent
 studies also use similar abstraction techniques. The main idea of the
 abstraction is to make the kicker fuzzy and only focus on the major part
-of the combination. For example, “33345” is abstracted as “333 **”.
+of the combination. For example, “33344” is abstracted as “333 **”.
 When the predicted action of the agent is <strong>not legal</strong>, the agent will
 choose “<strong>pass</strong>.”. Thus, the current environment is simple, since once
 the agent learns how to play legal actions, it can beat random agents.
@@ -787,22 +787,22 @@ single</p></td>
 <td><p>155-199</p></td>
 </tr>
 <tr class="row-even"><td><p>Plane with solo</p></td>
-<td><p>24721</p></td>
+<td><p>21822</p></td>
 <td><p>38</p></td>
 <td><p>200-237</p></td>
 </tr>
 <tr class="row-odd"><td><p>Plane with pair</p></td>
-<td><p>6552</p></td>
+<td><p>2939</p></td>
 <td><p>30</p></td>
 <td><p>238-267</p></td>
 </tr>
 <tr class="row-even"><td><p>Quad with solo</p></td>
-<td><p>1339</p></td>
+<td><p>1326</p></td>
 <td><p>13</p></td>
 <td><p>268-280</p></td>
 </tr>
 <tr class="row-odd"><td><p>Quad with pair</p></td>
-<td><p>1014</p></td>
+<td><p>858</p></td>
 <td><p>13</p></td>
 <td><p>281-293</p></td>
 </tr>
@@ -822,7 +822,7 @@ single</p></td>
 <td><p>308</p></td>
 </tr>
 <tr class="row-odd"><td><p>Total</p></td>
-<td><p>33676</p></td>
+<td><p>27472</p></td>
 <td><p>309</p></td>
 <td></td>
 </tr>
