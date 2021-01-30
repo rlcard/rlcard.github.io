@@ -96,7 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-holdem">Training CFR on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-holdem">Training CFR (chance sampling) on Leduc Hold’em</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-holdem-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
 </ul>
@@ -166,7 +166,7 @@
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-q-learning">Deep-Q Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#nfsp">NFSP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr">CFR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr">CFR (chance sampling)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deepcfr">DeepCFR</a></li>
 </ul>
 </li>
@@ -628,7 +628,7 @@ step in the environment. <code class="docutils literal notranslate"><span class=
 <code class="docutils literal notranslate"><span class="pre">raw_action</span></code> should be <code class="docutils literal notranslate"><span class="pre">True</span></code> if the action is raw action (string).</p></li>
 <li><p><strong>env.step_back()</strong>: Available only when <code class="docutils literal notranslate"><span class="pre">allow_step_back</span></code> is
 <code class="docutils literal notranslate"><span class="pre">True</span></code>. Take one step backward. This can be used for algorithms that
-operate on the game tree, such as CFR.</p></li>
+operate on the game tree, such as CFR (chance sampling).</p></li>
 <li><p><strong>env.is_over()</strong>: Return
 <code class="docutils literal notranslate"><span class="pre">True</span></code> if the current game is over/ Return <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
 <li><p><strong>env.get_player_id()</strong>: Return the Player ID of the current player.</p></li>
