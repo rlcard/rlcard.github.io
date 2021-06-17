@@ -400,10 +400,21 @@
 <section id="action-encoding-of-blackjack">
 <h3>Action Encoding of Blackjack<a class="headerlink" href="#action-encoding-of-blackjack" title="Permalink to this headline">¶</a></h3>
 <p>There are two actions in the simple Blackjack. They are encoded as follows:</p>
-<p>| Action ID  | Action  |
-| ———–| :—— |
-| 0          | hit     |
-| 1          | stand   |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action ID</p></th>
+<th class="text-align:left head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td class="text-align:left"><p>hit</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td class="text-align:left"><p>stand</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="payoff-of-blackjack">
 <h3>Payoff of Blackjack<a class="headerlink" href="#payoff-of-blackjack" title="Permalink to this headline">¶</a></h3>
@@ -417,12 +428,27 @@ introduced in <a class="reference external" href="http://poker.cs.ualberta.ca/pu
 <section id="state-representation-of-leduc-hold-em">
 <h3>State Representation of Leduc Hold’em<a class="headerlink" href="#state-representation-of-leduc-hold-em" title="Permalink to this headline">¶</a></h3>
 <p>The state is encoded as a vector of length 36. The first 3 elements correspond to hand card. The next 3 elements correspond to public card. The last 30 elements correspond the chips of the current player and the opponent (the chips could be in range 0~14) The correspondence between the index and the card is as below.</p>
-<p>| Index   | Meaning                              |
-| ——–| :———————————–:|
-| 0~2     | J ~ K in hand                        |
-| 3~5     | J ~ K as public card                 |
-| 6~20    | 0 ~ 14 chips for the current player  |
-| 21~35   | 0 ~ 14 chips for the opponent        |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Index</p></th>
+<th class="text-align:center head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0~2</p></td>
+<td class="text-align:center"><p>J ~ K in hand</p></td>
+</tr>
+<tr class="row-odd"><td><p>3~5</p></td>
+<td class="text-align:center"><p>J ~ K as public card</p></td>
+</tr>
+<tr class="row-even"><td><p>6~20</p></td>
+<td class="text-align:center"><p>0 ~ 14 chips for the current player</p></td>
+</tr>
+<tr class="row-odd"><td><p>21~35</p></td>
+<td class="text-align:center"><p>0 ~ 14 chips for the opponent</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="action-encoding-of-leduc-hold-em">
 <h3>Action Encoding of Leduc Hold’em<a class="headerlink" href="#action-encoding-of-leduc-hold-em" title="Permalink to this headline">¶</a></h3>
@@ -440,26 +466,64 @@ introduced in <a class="reference external" href="http://poker.cs.ualberta.ca/pu
 <section id="state-representation-of-limit-texas-hold-em">
 <h3>State Representation of Limit Texas Hold’em<a class="headerlink" href="#state-representation-of-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
 <p>The state is encoded as a vector of length 72. The first 52 elements represent cards, where each element corresponds to one card. The hand is represented as the two hole cards plus the observed community cards so far. The last 20 elements are the betting history. The correspondence between the index and the card is as below.</p>
-<p>| Index   | Meaning                 |
-| ——- | :———————-:|
-| 0~12    | Spade A ~ Spade K       |
-| 13~25   | Heart A ~ Heart K       |
-| 26~38   | Diamond A ~ Diamond K   |
-| 39~51   | Club A ~ Club K         |
-| 52~56   | Raise number in round 1 |
-| 37~61   | Raise number in round 2 |
-| 62~66   | Raise number in round 3 |
-| 67~71   | Raise number in round 4 |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Index</p></th>
+<th class="text-align:center head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0~12</p></td>
+<td class="text-align:center"><p>Spade A ~ Spade K</p></td>
+</tr>
+<tr class="row-odd"><td><p>13~25</p></td>
+<td class="text-align:center"><p>Heart A ~ Heart K</p></td>
+</tr>
+<tr class="row-even"><td><p>26~38</p></td>
+<td class="text-align:center"><p>Diamond A ~ Diamond K</p></td>
+</tr>
+<tr class="row-odd"><td><p>39~51</p></td>
+<td class="text-align:center"><p>Club A ~ Club K</p></td>
+</tr>
+<tr class="row-even"><td><p>52~56</p></td>
+<td class="text-align:center"><p>Raise number in round 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>37~61</p></td>
+<td class="text-align:center"><p>Raise number in round 2</p></td>
+</tr>
+<tr class="row-even"><td><p>62~66</p></td>
+<td class="text-align:center"><p>Raise number in round 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>67~71</p></td>
+<td class="text-align:center"><p>Raise number in round 4</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="action-encoding-of-limit-texas-hold-em">
 <h3>Action Encoding of Limit Texas Hold’em<a class="headerlink" href="#action-encoding-of-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
 <p>There 4 actions in Limit Texas Hold’em. They are encoded as below.</p>
-<p>| Action ID   |     Action    |
-| ———– | :———— |
-| 0           | Call          |
-| 1           | Raise         |
-| 2           | Fold          |
-| 3           | Check         |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action ID</p></th>
+<th class="text-align:left head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td class="text-align:left"><p>Call</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td class="text-align:left"><p>Raise</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td class="text-align:left"><p>Fold</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td class="text-align:left"><p>Check</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="payoff-of-limit-texas-hold-em">
 <h3>Payoff of Limit Texas Hold’em<a class="headerlink" href="#payoff-of-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
@@ -473,16 +537,48 @@ introduced in <a class="reference external" href="http://poker.cs.ualberta.ca/pu
 <section id="state-representation-of-dou-dizhu">
 <h3>State Representation of Dou Dizhu<a class="headerlink" href="#state-representation-of-dou-dizhu" title="Permalink to this headline">¶</a></h3>
 <p>At each decision point of the game, the corresponding player will be able to observe the current state (or information set in imperfect information game). The state consists of all the information that the player can observe from his view. We encode the information into a readable Python dictionary. The following table shows the structure of the state:</p>
-<p>| Key           | Description                                                                                                                                          | Example value                                                                                       |
-| ————- | :————————————————————————————————————————————————— | ————————————————————————————————— |
-| seen_cards   | Three face-down cards distributed to the landlord after bidding. Then these cards will be made public to all players.                                | TQA                                                                                                 |
-| landlord      | An integer of landlord’s id                                                                                                                          | 0                                                                                                   |
-| self          | An integer of current player’s id                                                                                                                    | 2                                                                                                   |
-| trace         | A list of tuples which records every actions in one game. The first entry of  the tuple is player’s id, the second is corresponding player’s action. | [(0, ‘8222’), (1, ‘pass’), (2, ‘pass’), (0 ‘6KKK’), (1, ‘pass’), (2, ‘pass’), (0, ‘8’), (1, ‘Q’)] |
-| played_cards | As the game progresses, the cards which have been played by the three players and sorted from low to high.                                           | [‘6’, ‘8’, ‘8’, ‘Q’, ‘K’, ‘K’, ‘K’, ‘2’, ‘2’, ‘2’]                                                |
-| others_hand  | The union of the other two player’s current hand                                                                                                     | 333444555678899TTTJJJQQAA2R                                                                         |
-| current_hand | The current hand of current player                                                                                                                   | 3456677799TJQKAAB                                                                                   |
-| actions       | The legal actions the current player could do                                                                                                        | [‘pass’, ‘K’, ‘A’, ‘B’]                                                                           |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="text-align:left head"><p>Description</p></th>
+<th class="head"><p>Example value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>seen_cards</p></td>
+<td class="text-align:left"><p>Three face-down cards distributed to the landlord after bidding. Then these cards will be made public to all players.</p></td>
+<td><p>TQA</p></td>
+</tr>
+<tr class="row-odd"><td><p>landlord</p></td>
+<td class="text-align:left"><p>An integer of landlord’s id</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>self</p></td>
+<td class="text-align:left"><p>An integer of current player’s id</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>trace</p></td>
+<td class="text-align:left"><p>A list of tuples which records every actions in one game. The first entry of  the tuple is player’s id, the second is corresponding player’s action.</p></td>
+<td><p>[(0, ‘8222’), (1, ‘pass’), (2, ‘pass’), (0 ‘6KKK’), (1, ‘pass’), (2, ‘pass’), (0, ‘8’), (1, ‘Q’)]</p></td>
+</tr>
+<tr class="row-even"><td><p>played_cards</p></td>
+<td class="text-align:left"><p>As the game progresses, the cards which have been played by the three players and sorted from low to high.</p></td>
+<td><p>[‘6’, ‘8’, ‘8’, ‘Q’, ‘K’, ‘K’, ‘K’, ‘2’, ‘2’, ‘2’]</p></td>
+</tr>
+<tr class="row-odd"><td><p>others_hand</p></td>
+<td class="text-align:left"><p>The union of the other two player’s current hand</p></td>
+<td><p>333444555678899TTTJJJQQAA2R</p></td>
+</tr>
+<tr class="row-even"><td><p>current_hand</p></td>
+<td class="text-align:left"><p>The current hand of current player</p></td>
+<td><p>3456677799TJQKAAB</p></td>
+</tr>
+<tr class="row-odd"><td><p>actions</p></td>
+<td class="text-align:left"><p>The legal actions the current player could do</p></td>
+<td><p>[‘pass’, ‘K’, ‘A’, ‘B’]</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="state-encoding-of-dou-dizhu">
 <h3>State Encoding of Dou Dizhu<a class="headerlink" href="#state-encoding-of-dou-dizhu" title="Permalink to this headline">¶</a></h3>
@@ -494,24 +590,97 @@ For the peasant players, we similarly encode the following features: current han
 <h3>Action Encoding of Dou Dizhu<a class="headerlink" href="#action-encoding-of-dou-dizhu" title="Permalink to this headline">¶</a></h3>
 <p>The size of the action space of Dou Dizhu is 27472 summarized in the following table. In older version of RLCard, we abstract the action space. Specifically, we make abstractions to the original action space and obtain 309 actions. We note that some recent studies also use similar abstraction techniques. The main idea of the abstraction is to make the kicker fuzzy and only focus on the major part of the combination. For example, “33344” is abstracted as “333
 **”.</p>
-<p>| Type             | Number of Actions | Number of Actions after Abstraction | Action ID         |
-| —————- | :—————: | :———————————: | :—————: |
-| Solo             |        15         |        15                           | 0-14              |
-| pair             |        13         |        13                           | 15-27             |
-| Trio             |        13         |        13                           | 28-40             |
-| Trio with single |        182        |        13                           | 41-53             |
-| Trio with pair   |        156        |        13                           | 54-66             |
-| Chain of solo    |       36          |        36                           | 67-102            |
-| Chain of pair    |       52          |        52                           | 103-154           |
-| Chain of trio    |        45         |        45                           | 155-199           |
-| Plane with solo  |        21822      |        38                           | 200-237           |
-| Plane with pair  |        2939       |        30                           | 238-267           |
-| Quad with solo   |       1326        |        13                           | 268-280           |
-| Quad with pair   |       858        |        13                           | 281-293           |
-| Bomb             |        13         |        13                           | 294-306           |
-| Rocket           |         1         |         1                           | 307               |
-| Pass             |         1         |         1                           | 308               |
-| Total            |       27472       |        309                          |                   |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="text-align:center head"><p>Number of Actions</p></th>
+<th class="text-align:center head"><p>Number of Actions after Abstraction</p></th>
+<th class="text-align:center head"><p>Action ID</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Solo</p></td>
+<td class="text-align:center"><p>15</p></td>
+<td class="text-align:center"><p>15</p></td>
+<td class="text-align:center"><p>0-14</p></td>
+</tr>
+<tr class="row-odd"><td><p>pair</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:center"><p>15-27</p></td>
+</tr>
+<tr class="row-even"><td><p>Trio</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:center"><p>28-40</p></td>
+</tr>
+<tr class="row-odd"><td><p>Trio with single</p></td>
+<td class="text-align:center"><p>182</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:center"><p>41-53</p></td>
+</tr>
+<tr class="row-even"><td><p>Trio with pair</p></td>
+<td class="text-align:center"><p>156</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:center"><p>54-66</p></td>
+</tr>
+<tr class="row-odd"><td><p>Chain of solo</p></td>
+<td class="text-align:center"><p>36</p></td>
+<td class="text-align:center"><p>36</p></td>
+<td class="text-align:center"><p>67-102</p></td>
+</tr>
+<tr class="row-even"><td><p>Chain of pair</p></td>
+<td class="text-align:center"><p>52</p></td>
+<td class="text-align:center"><p>52</p></td>
+<td class="text-align:center"><p>103-154</p></td>
+</tr>
+<tr class="row-odd"><td><p>Chain of trio</p></td>
+<td class="text-align:center"><p>45</p></td>
+<td class="text-align:center"><p>45</p></td>
+<td class="text-align:center"><p>155-199</p></td>
+</tr>
+<tr class="row-even"><td><p>Plane with solo</p></td>
+<td class="text-align:center"><p>21822</p></td>
+<td class="text-align:center"><p>38</p></td>
+<td class="text-align:center"><p>200-237</p></td>
+</tr>
+<tr class="row-odd"><td><p>Plane with pair</p></td>
+<td class="text-align:center"><p>2939</p></td>
+<td class="text-align:center"><p>30</p></td>
+<td class="text-align:center"><p>238-267</p></td>
+</tr>
+<tr class="row-even"><td><p>Quad with solo</p></td>
+<td class="text-align:center"><p>1326</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:center"><p>268-280</p></td>
+</tr>
+<tr class="row-odd"><td><p>Quad with pair</p></td>
+<td class="text-align:center"><p>858</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:center"><p>281-293</p></td>
+</tr>
+<tr class="row-even"><td><p>Bomb</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:center"><p>294-306</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rocket</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>307</p></td>
+</tr>
+<tr class="row-even"><td><p>Pass</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>308</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total</p></td>
+<td class="text-align:center"><p>27472</p></td>
+<td class="text-align:center"><p>309</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+</tbody>
+</table>
 <p>In the new version of RLCard, we realize the actions do not need to be abstracted. Instead, we can extract action features and make the action feature as input. In this way, the agent can effectively reason about the large action space. Similar to the state encoding, each action is encodes into a 54 dimensional one-hot vector.</p>
 </section>
 <section id="payoff">
@@ -532,31 +701,79 @@ forming 4 sets and a pair. Please refer the detail on <a class="reference extern
 For each plane, the column of the plane indicates the number of the cards in the given cards set, and the
 row of the plane represents each kind of cards (Please refer to the action space table). The information that
 has been encoded can be refered as follows:</p>
-<p>| Plane          |                            Feature       |
-| ————– | :————————————— |
-| 0              | the cards in current player’s hand       |
-| 1              | the played cards on the table            |
-| 2-5            | the public piles of each players         |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Plane</p></th>
+<th class="text-align:left head"><p>Feature</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td class="text-align:left"><p>the cards in current player’s hand</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td class="text-align:left"><p>the played cards on the table</p></td>
+</tr>
+<tr class="row-even"><td><p>2-5</p></td>
+<td class="text-align:left"><p>the public piles of each players</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="action-space-of-mahjong">
 <h3>Action Space of Mahjong<a class="headerlink" href="#action-space-of-mahjong" title="Permalink to this headline">¶</a></h3>
 <p>There are 38 actions in Mahjong.</p>
-<p>| Action ID   |     Action                  |
-| ———– | :————————-: |
-| 0 ~ 8       | Bamboo-1 ~ Bamboo-9         |
-| 9 ~ 17      | Characters-1 ~ Character-9  |
-| 18 ~ 26     | Dots-1 ~ Dots-9             |
-| 27          | Dragons-green               |
-| 28          | Dragons-red                 |
-| 29          | Dragons-white               |
-| 30          | Winds-east                  |
-| 31          | Winds-west                  |
-| 32          | Winds-north                 |
-| 33          | Winds-south                 |
-| 34          | Pong                        |
-| 35          | Chow                        |
-| 36          | Gong                        |
-| 37          | Stand                       |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action ID</p></th>
+<th class="text-align:center head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0 ~ 8</p></td>
+<td class="text-align:center"><p>Bamboo-1 ~ Bamboo-9</p></td>
+</tr>
+<tr class="row-odd"><td><p>9 ~ 17</p></td>
+<td class="text-align:center"><p>Characters-1 ~ Character-9</p></td>
+</tr>
+<tr class="row-even"><td><p>18 ~ 26</p></td>
+<td class="text-align:center"><p>Dots-1 ~ Dots-9</p></td>
+</tr>
+<tr class="row-odd"><td><p>27</p></td>
+<td class="text-align:center"><p>Dragons-green</p></td>
+</tr>
+<tr class="row-even"><td><p>28</p></td>
+<td class="text-align:center"><p>Dragons-red</p></td>
+</tr>
+<tr class="row-odd"><td><p>29</p></td>
+<td class="text-align:center"><p>Dragons-white</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td class="text-align:center"><p>Winds-east</p></td>
+</tr>
+<tr class="row-odd"><td><p>31</p></td>
+<td class="text-align:center"><p>Winds-west</p></td>
+</tr>
+<tr class="row-even"><td><p>32</p></td>
+<td class="text-align:center"><p>Winds-north</p></td>
+</tr>
+<tr class="row-odd"><td><p>33</p></td>
+<td class="text-align:center"><p>Winds-south</p></td>
+</tr>
+<tr class="row-even"><td><p>34</p></td>
+<td class="text-align:center"><p>Pong</p></td>
+</tr>
+<tr class="row-odd"><td><p>35</p></td>
+<td class="text-align:center"><p>Chow</p></td>
+</tr>
+<tr class="row-even"><td><p>36</p></td>
+<td class="text-align:center"><p>Gong</p></td>
+</tr>
+<tr class="row-odd"><td><p>37</p></td>
+<td class="text-align:center"><p>Stand</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="payoff-of-mahjong">
 <h3>Payoff of Mahjong<a class="headerlink" href="#payoff-of-mahjong" title="Permalink to this headline">¶</a></h3>
@@ -571,26 +788,64 @@ And if no one win the game, then all players’ reward will be 0.</p>
 <section id="state-representation-of-no-limit-texas-hold-em">
 <h2>State Representation of No-Limit Texas Hold’em<a class="headerlink" href="#state-representation-of-no-limit-texas-hold-em" title="Permalink to this headline">¶</a></h2>
 <p>The state representation is similar to Limit Hold’em game. The state is represented as 52 cards and 2 elements of the chips of the players as below:</p>
-<p>| Index   | Meaning                            |
-| ——- | :——————————— |
-| 0~12    | Spade A ~ Spade K                  |
-| 13~25   | Heart A ~ Heart K                  |
-| 26~38   | Diamond A ~ Diamond K              |
-| 39~51   | Club A ~ Club K                    |
-| 52      | Chips of player 1                  |
-| 53      | Chips that all players have put in |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Index</p></th>
+<th class="text-align:left head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0~12</p></td>
+<td class="text-align:left"><p>Spade A ~ Spade K</p></td>
+</tr>
+<tr class="row-odd"><td><p>13~25</p></td>
+<td class="text-align:left"><p>Heart A ~ Heart K</p></td>
+</tr>
+<tr class="row-even"><td><p>26~38</p></td>
+<td class="text-align:left"><p>Diamond A ~ Diamond K</p></td>
+</tr>
+<tr class="row-odd"><td><p>39~51</p></td>
+<td class="text-align:left"><p>Club A ~ Club K</p></td>
+</tr>
+<tr class="row-even"><td><p>52</p></td>
+<td class="text-align:left"><p>Chips of player 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>53</p></td>
+<td class="text-align:left"><p>Chips that all players have put in</p></td>
+</tr>
+</tbody>
+</table>
 <section id="action-encoding-of-no-limit-texas-hold-em">
 <h3>Action Encoding of No-Limit Texas Hold’em<a class="headerlink" href="#action-encoding-of-no-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
 <p>There are 103 actions in No-limit Texas Hold’em. They are encoded as below.</p>
 <p><small><sup>*</sup>Note: Starting from Action ID 3, the action means the amount player should put in the pot when chooses ‘Raise’. The action ID from 3 to 5 corresponds to the bet amount from half amount of the pot, full amount of the pot to all in.<small></p>
-<p>| Action ID   |     Action         |
-| ———– | :—————– |
-| 0           | Fold               |
-| 1           | Check              |
-| 2           | Call               |
-| 3           | Raise Half Pot     |
-| 4           | Raise Full Pot     |
-| 5           | All In             |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action ID</p></th>
+<th class="text-align:left head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td class="text-align:left"><p>Fold</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td class="text-align:left"><p>Check</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td class="text-align:left"><p>Call</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td class="text-align:left"><p>Raise Half Pot</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td class="text-align:left"><p>Raise Full Pot</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td class="text-align:left"><p>All In</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="payoff-of-no-limit-texas-hold-em">
 <h3>Payoff of No-Limit Texas Hold’em<a class="headerlink" href="#payoff-of-no-limit-texas-hold-em" title="Permalink to this headline">¶</a></h3>
@@ -603,43 +858,112 @@ And if no one win the game, then all players’ reward will be 0.</p>
 <section id="state-representation-of-uno">
 <h3>State Representation of Uno<a class="headerlink" href="#state-representation-of-uno" title="Permalink to this headline">¶</a></h3>
 <p>In state representation, each card is represented as a string of color and trait(number, symbol/action). ‘r’, ‘b’, ‘y’, ‘g’ represent red, blue, yellow and green respectively. And at each decision point of the game, the corresponding player will be able to observe the current state (or information set in imperfect information game). The state consists of all the information that the player can observe from his view. We encode the information into a readable Python dictionary. The following table shows the structure of the state:</p>
-<p>| Key          | Description                                                             | Example value                                                          |
-| ———— | :———————————————————————- | ———————————————————————- |
-| hand         | A list of  the player’s current hand.                                   | [‘g-wild’, ‘b-0’, ‘g-draw_2’, ‘y-skip’, ‘r-draw_2’, ‘y-3’, ‘y-wild’] |
-| target       | The top card in the Discard pile                                        | ‘g-wild’                                                               |
-| played_cards | As the game progresses, the cards which have been played by the players | [‘g-3’, ‘g-wild’]                                                    |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="text-align:left head"><p>Description</p></th>
+<th class="head"><p>Example value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>hand</p></td>
+<td class="text-align:left"><p>A list of  the player’s current hand.</p></td>
+<td><p>[‘g-wild’, ‘b-0’, ‘g-draw_2’, ‘y-skip’, ‘r-draw_2’, ‘y-3’, ‘y-wild’]</p></td>
+</tr>
+<tr class="row-odd"><td><p>target</p></td>
+<td class="text-align:left"><p>The top card in the Discard pile</p></td>
+<td><p>‘g-wild’</p></td>
+</tr>
+<tr class="row-even"><td><p>played_cards</p></td>
+<td class="text-align:left"><p>As the game progresses, the cards which have been played by the players</p></td>
+<td><p>[‘g-3’, ‘g-wild’]</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="state-encoding-of-uno">
 <h3>State Encoding of Uno<a class="headerlink" href="#state-encoding-of-uno" title="Permalink to this headline">¶</a></h3>
 <p>In Uno environment, we encode the state into 4 feature planes. The size of each plane is 4*15. Row number 4 means four colors. Column number 15 means 10 number cards from 0 to 9 and 5 special cards—“Wild”, “Wild Draw Four”, “Skip”, “Draw Two”, and “Reverse”. Each entry of a plane can be either 1 or 0. Note that the current encoding method is just an example to show how the feature can be encoded. The example encoded planes are as below:</p>
-<p>| Plane | Feature                  |
-| —– | :———————– |
-| 0-2   | hand                     |
-| 3     | target                   |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Plane</p></th>
+<th class="text-align:left head"><p>Feature</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0-2</p></td>
+<td class="text-align:left"><p>hand</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td class="text-align:left"><p>target</p></td>
+</tr>
+</tbody>
+</table>
 <p>We use 3 planes to represnt players’ hand. Specifically, planes 0-2 represent 0 card, 1 card, 2 cards, respectively. Planes 4-6 are the same.</p>
 </section>
 <section id="action-encoding-of-uno">
 <h3>Action Encoding of Uno<a class="headerlink" href="#action-encoding-of-uno" title="Permalink to this headline">¶</a></h3>
 <p>There are 61 actions in Uno. They are encoded as below. The detailed  mapping of action and its ID is in <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/rlcard/games/uno/jsondata/action_space.json">rlcard/games/uno/jsondata/action_space.json</a>:</p>
-<p>| Action ID |                   Action                   |
-| ——— | :—————————————-: |
-| 0~9       |        Red number cards from 0 to 9        |
-| 10~12     |  Red action cards: skip, reverse, draw 2   |
-| 13        |               Red wild card                |
-| 14        |          Red wild and draw 4 card          |
-| 15~24     |       green number cards from 0 to 9       |
-| 25~27     | green action cards: skip, reverse, draw 2  |
-| 28        |              green wild card               |
-| 29        |         green wild and draw 4 card         |
-| 30~39     |       blue number cards from 0 to 9        |
-| 40~42     |  blue action cards: skip, reverse, draw 2  |
-| 43        |               blue wild card               |
-| 44        |         blue wild and draw 4 card          |
-| 45~54     |      yellow number cards from 0 to 9       |
-| 55~57     | yellow action cards: skip, reverse, draw 2 |
-| 58        |              yellow wild card              |
-| 59        |        yellow wild and draw 4 card         |
-| 60        |                    draw                    |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action ID</p></th>
+<th class="text-align:center head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0~9</p></td>
+<td class="text-align:center"><p>Red number cards from 0 to 9</p></td>
+</tr>
+<tr class="row-odd"><td><p>10~12</p></td>
+<td class="text-align:center"><p>Red action cards: skip, reverse, draw 2</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td class="text-align:center"><p>Red wild card</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td class="text-align:center"><p>Red wild and draw 4 card</p></td>
+</tr>
+<tr class="row-even"><td><p>15~24</p></td>
+<td class="text-align:center"><p>green number cards from 0 to 9</p></td>
+</tr>
+<tr class="row-odd"><td><p>25~27</p></td>
+<td class="text-align:center"><p>green action cards: skip, reverse, draw 2</p></td>
+</tr>
+<tr class="row-even"><td><p>28</p></td>
+<td class="text-align:center"><p>green wild card</p></td>
+</tr>
+<tr class="row-odd"><td><p>29</p></td>
+<td class="text-align:center"><p>green wild and draw 4 card</p></td>
+</tr>
+<tr class="row-even"><td><p>30~39</p></td>
+<td class="text-align:center"><p>blue number cards from 0 to 9</p></td>
+</tr>
+<tr class="row-odd"><td><p>40~42</p></td>
+<td class="text-align:center"><p>blue action cards: skip, reverse, draw 2</p></td>
+</tr>
+<tr class="row-even"><td><p>43</p></td>
+<td class="text-align:center"><p>blue wild card</p></td>
+</tr>
+<tr class="row-odd"><td><p>44</p></td>
+<td class="text-align:center"><p>blue wild and draw 4 card</p></td>
+</tr>
+<tr class="row-even"><td><p>45~54</p></td>
+<td class="text-align:center"><p>yellow number cards from 0 to 9</p></td>
+</tr>
+<tr class="row-odd"><td><p>55~57</p></td>
+<td class="text-align:center"><p>yellow action cards: skip, reverse, draw 2</p></td>
+</tr>
+<tr class="row-even"><td><p>58</p></td>
+<td class="text-align:center"><p>yellow wild card</p></td>
+</tr>
+<tr class="row-odd"><td><p>59</p></td>
+<td class="text-align:center"><p>yellow wild and draw 4 card</p></td>
+</tr>
+<tr class="row-even"><td><p>60</p></td>
+<td class="text-align:center"><p>draw</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="payoff-of-uno">
 <h3>Payoff of Uno<a class="headerlink" href="#payoff-of-uno" title="Permalink to this headline">¶</a></h3>
@@ -670,27 +994,67 @@ If the stockpile is reduced to two cards only, then the hand is declared dead an
 <p>The state representation of Gin Rummy is encoded as 5 feature planes, where each plane is of dimension 52.
 For each plane, the column of the plane indicates the presence of the card (ordered from AS to KC).
 The information that has been encoded can be referred as follows:</p>
-<p>| Plane          |              Feature                                                         |
-| :————: | —————————————————————————- |
-| 0              | the cards in current player’s hand                                           |
-| 1              | the top card of the discard pile                                             |
-| 2              | the dead cards: cards in discard pile (excluding the top card)               |
-| 3              | opponent known cards: cards picked up from discard pile, but not discarded   |
-| 4              | the unknown cards: cards in stockpile or in opponent hand (but not known)    |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Plane</p></th>
+<th class="head"><p>Feature</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>0</p></td>
+<td><p>the cards in current player’s hand</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>1</p></td>
+<td><p>the top card of the discard pile</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>2</p></td>
+<td><p>the dead cards: cards in discard pile (excluding the top card)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>3</p></td>
+<td><p>opponent known cards: cards picked up from discard pile, but not discarded</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>4</p></td>
+<td><p>the unknown cards: cards in stockpile or in opponent hand (but not known)</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="action-space-of-gin-rummy">
 <h3>Action Space of Gin Rummy<a class="headerlink" href="#action-space-of-gin-rummy" title="Permalink to this headline">¶</a></h3>
 <p>There are 110 actions in Gin Rummy.</p>
-<p>| Action ID     |     Action                 |
-| :———–: | ————————– |
-| 0             | score_player_0_action      |
-| 1             | score_player_1_action      |
-| 2             | draw_card_action           |
-| 3             | pick_up_discard_action     |
-| 4             | declare_dead_hand_action   |
-| 5             | gin_action                 |
-| 6 - 57        | discard_action             |
-| 58 - 109      | knock_action               |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Action ID</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>0</p></td>
+<td><p>score_player_0_action</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>1</p></td>
+<td><p>score_player_1_action</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>2</p></td>
+<td><p>draw_card_action</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>3</p></td>
+<td><p>pick_up_discard_action</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>4</p></td>
+<td><p>declare_dead_hand_action</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>5</p></td>
+<td><p>gin_action</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>6 - 57</p></td>
+<td><p>discard_action</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>58 - 109</p></td>
+<td><p>knock_action</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="payoff-of-gin-rummy">
 <h3>Payoff of Gin Rummy<a class="headerlink" href="#payoff-of-gin-rummy" title="Permalink to this headline">¶</a></h3>
@@ -704,18 +1068,45 @@ The losing player is punished by the negative of their deadwood count divided by
 <section id="settings">
 <h3>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h3>
 <p>The following options can be set.</p>
-<p>| Option                                |    Default value          |
-| ————————————- | :———————–: |
-| dealer_for_round                      | DealerForRound.Random     |
-| stockpile_dead_card_count             | 2                         |
-| going_out_deadwood_count              | 10                        |
-| max_drawn_card_count                  | 52                        |
-| is_allowed_knock                      | True                      |
-| is_allowed_gin                        | True                      |
-| is_allowed_pick_up_discard            | True                      |
-| is_allowed_to_discard_picked_up_card  | False                     |
-| is_always_knock                       | False                     |
-| is_south_never_knocks                 | False                     |</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="text-align:center head"><p>Default value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>dealer_for_round</p></td>
+<td class="text-align:center"><p>DealerForRound.Random</p></td>
+</tr>
+<tr class="row-odd"><td><p>stockpile_dead_card_count</p></td>
+<td class="text-align:center"><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>going_out_deadwood_count</p></td>
+<td class="text-align:center"><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>max_drawn_card_count</p></td>
+<td class="text-align:center"><p>52</p></td>
+</tr>
+<tr class="row-even"><td><p>is_allowed_knock</p></td>
+<td class="text-align:center"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>is_allowed_gin</p></td>
+<td class="text-align:center"><p>True</p></td>
+</tr>
+<tr class="row-even"><td><p>is_allowed_pick_up_discard</p></td>
+<td class="text-align:center"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>is_allowed_to_discard_picked_up_card</p></td>
+<td class="text-align:center"><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>is_always_knock</p></td>
+<td class="text-align:center"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>is_south_never_knocks</p></td>
+<td class="text-align:center"><p>False</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="variations">
 <h3>Variations<a class="headerlink" href="#variations" title="Permalink to this headline">¶</a></h3>
