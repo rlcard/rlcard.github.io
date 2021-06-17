@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>rlcard.games.limitholdem &mdash; RLcard 0.0.1 documentation</title>
@@ -21,10 +22,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-        <script type="text/javascript" src="static/jquery.js"></script>
-        <script type="text/javascript" src="static/underscore.js"></script>
-        <script type="text/javascript" src="static/doctools.js"></script>
-        <script type="text/javascript" src="static/language_data.js"></script>
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
@@ -33,11 +34,13 @@
   
   <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <!-- <link rel="copyright" title="DATA Lab at Texas A&M University"> -->
-    <link rel="next" title="rlcard.games.nolimitholdem" href="rlcard.games.nolimitholdem.html" />
-    <link rel="prev" title="rlcard.games.doudizhu" href="rlcard.games.doudizhu.html" /> 
+    <link rel="next" title="rlcard.games.mahjong" href="rlcard.games.mahjong.html" />
+    <link rel="prev" title="rlcard.games.leducholdem" href="rlcard.games.leducholdem.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,10 +100,13 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-holdem">Training CFR (chance sampling) on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-chance-sampling-on-leduc-hold-em">Training CFR (chance sampling) on Leduc Hold’em</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-holdem-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-dmc-on-dou-dizhu">Training DMC on Dou Dizhu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#evaluating-agents">Evaluating Agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting_started.html#evaluating-dmc-on-dou-dizhu">Evaluating DMC on Dou Dizhu</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
@@ -125,15 +131,8 @@
 <li class="toctree-l2"><a class="reference internal" href="games.html#dou-dizhu">Dou Dizhu</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-dou-dizhu">State Representation of Dou Dizhu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-dou-dizhu">State Encoding of Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-abstraction-of-dou-dizhu">Action Abstraction of Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-dou-dizhu">Action Encoding of Dou Dizhu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff">Payoff</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#simple-dou-dizhu">Simple Dou Dizhu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-simple-dou-dizhu">State Representation of Simple Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-simple-dou-dizhu">State Encoding of Simple Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-simple-dou-dizhu">Action Encoding of Simple Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-simple-dou-dizhu">Payoff of Simple Dou Dizhu</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a><ul>
@@ -142,8 +141,8 @@
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-mahjong">Payoff of Mahjong</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-no-limit-texas-hold-em">Payoff of No-Limit Texas Hold’em</a></li>
 </ul>
@@ -166,10 +165,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-monte-carlo">Deep Monte-Carlo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-q-learning">Deep-Q Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#nfsp">NFSP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr">CFR (chance sampling)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="algorithms.html#deepcfr">DeepCFR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr-chance-sampling">CFR (chance sampling)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
@@ -189,125 +188,127 @@
 <p class="caption"><span class="caption-text">API Documents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="rlcard.envs.html">rlcard.envs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.registration">rlcard.envs.registration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.blackjack">rlcard.envs.blackjack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.doudizhu">rlcard.envs.doudizhu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.limitholdem">rlcard.envs.limitholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.gin_rummy">rlcard.envs.gin_rummy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.leducholdem">rlcard.envs.leducholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.limitholdem">rlcard.envs.limitholdem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.mahjong">rlcard.envs.mahjong</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.nolimitholdem">rlcard.envs.nolimitholdem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.simpledoudizhu">rlcard.envs.simpledoudizhu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.registration">rlcard.envs.registration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.uno">rlcard.envs.uno</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.utils.html">rlcard.utils</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.utils">rlcard.utils.utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.logger">rlcard.utils.logger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.exploitability">rlcard.utils.exploitability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.seeding">rlcard.utils.seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.utils">rlcard.utils.utils</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="rlcard.games.html">rlcard.games</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.blackjack.html">rlcard.games.blackjack</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.dealer">rlcard.games.blackjack.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.game">rlcard.games.blackjack.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.judger">rlcard.games.blackjack.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.player">rlcard.games.blackjack.player</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="rlcard.games.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html">rlcard.games.blackjack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.dealer">rlcard.games.blackjack.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.game">rlcard.games.blackjack.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.judger">rlcard.games.blackjack.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.player">rlcard.games.blackjack.player</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.doudizhu.html">rlcard.games.doudizhu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.dealer">rlcard.games.doudizhu.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.game">rlcard.games.doudizhu.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.judger">rlcard.games.doudizhu.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.player">rlcard.games.doudizhu.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.round">rlcard.games.doudizhu.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html">rlcard.games.doudizhu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.dealer">rlcard.games.doudizhu.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.game">rlcard.games.doudizhu.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.judger">rlcard.games.doudizhu.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.player">rlcard.games.doudizhu.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.round">rlcard.games.doudizhu.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.utils">rlcard.games.doudizhu.utils</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">rlcard.games.limitholdem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-rlcard.games.limitholdem.dealer">rlcard.games.limitholdem.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-rlcard.games.limitholdem.game">rlcard.games.limitholdem.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-rlcard.games.limitholdem.judger">rlcard.games.limitholdem.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-rlcard.games.limitholdem.player">rlcard.games.limitholdem.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-rlcard.games.limitholdem.round">rlcard.games.limitholdem.round</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-rlcard.games.limitholdem.utils">rlcard.games.limitholdem.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.dealer">rlcard.games.gin_rummy.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.game">rlcard.games.gin_rummy.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.judge">rlcard.games.gin_rummy.judge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.player">rlcard.games.gin_rummy.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.round">rlcard.games.gin_rummy.round</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.nolimitholdem.html">rlcard.games.nolimitholdem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.dealer">rlcard.games.nolimitholdem.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.game">rlcard.games.nolimitholdem.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.judger">rlcard.games.nolimitholdem.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.player">rlcard.games.nolimitholdem.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.round">rlcard.games.nolimitholdem.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html">rlcard.games.leducholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.dealer">rlcard.games.leducholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.game">rlcard.games.leducholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.judger">rlcard.games.leducholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.player">rlcard.games.leducholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.round">rlcard.games.leducholdem.round</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.leducholdem.html">rlcard.games.leducholdem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.dealer">rlcard.games.leducholdem.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.game">rlcard.games.leducholdem.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.judger">rlcard.games.leducholdem.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.player">rlcard.games.leducholdem.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.round">rlcard.games.leducholdem.round</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">rlcard.games.limitholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.limitholdem.dealer">rlcard.games.limitholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.limitholdem.game">rlcard.games.limitholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.limitholdem.judger">rlcard.games.limitholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.limitholdem.player">rlcard.games.limitholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.limitholdem.round">rlcard.games.limitholdem.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-rlcard.games.limitholdem.utils">rlcard.games.limitholdem.utils</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.uno.html">rlcard.games.uno</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.dealer">rlcard.games.uno.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.game">rlcard.games.uno.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.judger">rlcard.games.uno.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.player">rlcard.games.uno.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.round">rlcard.games.uno.round</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.card">rlcard.games.uno.card</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.utils">rlcard.games.uno.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html">rlcard.games.mahjong</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.card">rlcard.games.mahjong.card</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.dealer">rlcard.games.mahjong.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.game">rlcard.games.mahjong.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.judger">rlcard.games.mahjong.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.player">rlcard.games.mahjong.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.round">rlcard.games.mahjong.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.utils">rlcard.games.mahjong.utils</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.mahjong.html">rlcard.games.mahjong</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.dealer">rlcard.games.mahjong.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.game">rlcard.games.mahjong.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.judger">rlcard.games.mahjong.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.player">rlcard.games.mahjong.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.round">rlcard.games.mahjong.round</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.card">rlcard.games.mahjong.card</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.utils">rlcard.games.mahjong.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html">rlcard.games.nolimitholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.dealer">rlcard.games.nolimitholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.game">rlcard.games.nolimitholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.judger">rlcard.games.nolimitholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.player">rlcard.games.nolimitholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.round">rlcard.games.nolimitholdem.round</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html">rlcard.games.gin_rummy.utils</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.action_event">rlcard.games.gin_rummy.utils.action_event</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.gin_rummy_error">rlcard.games.gin_rummy.utils.gin_rummy_error</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.melding">rlcard.games.gin_rummy.utils.melding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.move">rlcard.games.gin_rummy.utils.move</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.scorers">rlcard.games.gin_rummy.utils.scorers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.settings">rlcard.games.gin_rummy.utils.settings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.thinker">rlcard.games.gin_rummy.utils.thinker</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.utils">rlcard.games.gin_rummy.utils.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html">rlcard.games.uno</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.card">rlcard.games.uno.card</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.dealer">rlcard.games.uno.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.game">rlcard.games.uno.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.judger">rlcard.games.uno.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.player">rlcard.games.uno.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.round">rlcard.games.uno.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.utils">rlcard.games.uno.utils</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.dealer">rlcard.games.gin_rummy.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.game">rlcard.games.gin_rummy.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.judge">rlcard.games.gin_rummy.judge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.player">rlcard.games.gin_rummy.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.round">rlcard.games.gin_rummy.round</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.simpledoudizhu.html">rlcard.games.simpledoudizhu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.dealer">rlcard.games.simpledoudizhu.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.game">rlcard.games.simpledoudizhu.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.player">rlcard.games.simpledoudizhu.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.round">rlcard.games.simpledoudizhu.round</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.html#module-rlcard.games.base">rlcard.games.base</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.gin_rummy_human_agent">rlcard.agents.gin_rummy_human_agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.best_response_agent">rlcard.agents.best_response_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.agents.dmc_agent.html">rlcard.agents.dmc_agent</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.file_writer">rlcard.agents.dmc_agent.file_writer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.model">rlcard.agents.dmc_agent.model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.trainer">rlcard.agents.dmc_agent.trainer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.utils">rlcard.agents.dmc_agent.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.agents.human_agents.html">rlcard.agents.human_agents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.blackjack_human_agent">rlcard.agents.human_agents.blackjack_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.leduc_holdem_human_agent">rlcard.agents.human_agents.leduc_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.limit_holdem_human_agent">rlcard.agents.human_agents.limit_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.nolimit_holdem_human_agent">rlcard.agents.human_agents.nolimit_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.uno_human_agent">rlcard.agents.human_agents.uno_human_agent</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.cfr_agent">rlcard.agents.cfr_agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr_agent">rlcard.agents.deep_cfr_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.nfsp_agent">rlcard.agents.nfsp_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="rlcard.core.html">rlcard.core</a></li>
 </ul>
 
             
@@ -387,133 +388,139 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="rlcard-games-limitholdem">
+  <section id="rlcard-games-limitholdem">
 <h1>rlcard.games.limitholdem<a class="headerlink" href="#rlcard-games-limitholdem" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-rlcard.games.limitholdem.dealer">
+<section id="module-rlcard.games.limitholdem.dealer">
 <span id="rlcard-games-limitholdem-dealer"></span><h2>rlcard.games.limitholdem.dealer<a class="headerlink" href="#module-rlcard.games.limitholdem.dealer" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.games.limitholdem.dealer.LimitholdemDealer">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.games.limitholdem.dealer.</code><code class="sig-name descname">LimitholdemDealer</code><span class="sig-paren">(</span><em class="sig-param">np_random</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.dealer.LimitholdemDealer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="method">
-<dt id="rlcard.games.limitholdem.dealer.LimitholdemDealer.deal_card">
-<code class="sig-name descname">deal_card</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.dealer.LimitholdemDealer.deal_card" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.dealer.LimitholdemDealer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.games.limitholdem.dealer.</span></span><span class="sig-name descname"><span class="pre">LimitholdemDealer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">np_random</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.dealer.LimitholdemDealer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.dealer.LimitholdemDealer.deal_card">
+<span class="sig-name descname"><span class="pre">deal_card</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.dealer.LimitholdemDealer.deal_card" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deal one card from the deck</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The drawn card from the deck</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference internal" href="rlcard.core.html#rlcard.core.Card" title="rlcard.core.Card">Card</a>)</p>
+<dd class="field-even"><p>(<a class="reference internal" href="rlcard.games.html#rlcard.games.base.Card" title="rlcard.games.base.Card">Card</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.dealer.LimitholdemDealer.shuffle">
-<code class="sig-name descname">shuffle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.dealer.LimitholdemDealer.shuffle" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.dealer.LimitholdemDealer.shuffle">
+<span class="sig-name descname"><span class="pre">shuffle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.dealer.LimitholdemDealer.shuffle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shuffle the deck</p>
 </dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-rlcard.games.limitholdem.game">
+</section>
+<section id="module-rlcard.games.limitholdem.game">
 <span id="rlcard-games-limitholdem-game"></span><h2>rlcard.games.limitholdem.game<a class="headerlink" href="#module-rlcard.games.limitholdem.game" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.games.limitholdem.game.LimitholdemGame">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.games.limitholdem.game.</code><code class="sig-name descname">LimitholdemGame</code><span class="sig-paren">(</span><em class="sig-param">allow_step_back=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="method">
-<dt id="rlcard.games.limitholdem.game.LimitholdemGame.get_action_num">
-<em class="property">static </em><code class="sig-name descname">get_action_num</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.get_action_num" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the number of applicable actions</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The number of actions. There are 4 actions (call, raise, check and fold)</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a>)</p>
-</dd>
-</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.game.LimitholdemGame">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.games.limitholdem.game.</span></span><span class="sig-name descname"><span class="pre">LimitholdemGame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allow_step_back</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_players</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.game.LimitholdemGame.configure">
+<span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.configure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifiy some game specific parameters, such as number of players</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.game.LimitholdemGame.get_legal_actions">
-<code class="sig-name descname">get_legal_actions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.get_legal_actions" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.game.LimitholdemGame.get_legal_actions">
+<span class="sig-name descname"><span class="pre">get_legal_actions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.get_legal_actions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the legal actions for current player</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A list of legal actions</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.game.LimitholdemGame.get_payoffs">
-<code class="sig-name descname">get_payoffs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.get_payoffs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the payoffs of the game</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.game.LimitholdemGame.get_num_actions">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">get_num_actions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.get_num_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of applicable actions</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Each entry corresponds to the payoff of one player</p>
+<dd class="field-odd"><p>The number of actions. There are 4 actions (call, raise, check and fold)</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.game.LimitholdemGame.get_player_id">
-<code class="sig-name descname">get_player_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.get_player_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the current player’s id</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>current player’s id</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.games.limitholdem.game.LimitholdemGame.get_player_num">
-<code class="sig-name descname">get_player_num</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.get_player_num" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.game.LimitholdemGame.get_num_players">
+<span class="sig-name descname"><span class="pre">get_num_players</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.get_num_players" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of players in Limit Texas Hold’em</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The number of players in the game</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a>)</p>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.game.LimitholdemGame.get_state">
-<code class="sig-name descname">get_state</code><span class="sig-paren">(</span><em class="sig-param">player</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.get_state" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.game.LimitholdemGame.get_payoffs">
+<span class="sig-name descname"><span class="pre">get_payoffs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.get_payoffs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the payoffs of the game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Each entry corresponds to the payoff of one player</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.game.LimitholdemGame.get_player_id">
+<span class="sig-name descname"><span class="pre">get_player_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.get_player_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current player’s id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>current player’s id</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.game.LimitholdemGame.get_state">
+<span class="sig-name descname"><span class="pre">get_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.get_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return player’s state</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>player_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – player id</p>
+<dd class="field-odd"><p><strong>player_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – player id</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The state of the player</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a>)</p>
+<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.game.LimitholdemGame.init_game">
-<code class="sig-name descname">init_game</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.init_game" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.game.LimitholdemGame.init_game">
+<span class="sig-name descname"><span class="pre">init_game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.init_game" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialilze the game of Limit Texas Hold’em</p>
 <p>This version supports two-player limit texas hold’em</p>
 <dl class="field-list simple">
@@ -526,14 +533,14 @@
 </p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)">tuple</a>)</p>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.game.LimitholdemGame.is_over">
-<code class="sig-name descname">is_over</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.is_over" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.game.LimitholdemGame.is_over">
+<span class="sig-name descname"><span class="pre">is_over</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.is_over" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the game is over</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -545,13 +552,13 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.game.LimitholdemGame.step">
-<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param">action</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.step" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.game.LimitholdemGame.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the next state</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>action</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – a specific action. (call, raise, fold, or check)</p>
+<dd class="field-odd"><p><strong>action</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – a specific action. (call, raise, fold, or check)</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><p>Tuple containing:</p>
@@ -562,140 +569,159 @@
 </p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)">tuple</a>)</p>
+<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.game.LimitholdemGame.step_back">
-<code class="sig-name descname">step_back</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.step_back" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.game.LimitholdemGame.step_back">
+<span class="sig-name descname"><span class="pre">step_back</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.game.LimitholdemGame.step_back" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return to the previous state of the game</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>True if the game steps back successfully</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a>)</p>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-rlcard.games.limitholdem.judger">
+</section>
+<section id="module-rlcard.games.limitholdem.judger">
 <span id="rlcard-games-limitholdem-judger"></span><h2>rlcard.games.limitholdem.judger<a class="headerlink" href="#module-rlcard.games.limitholdem.judger" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.games.limitholdem.judger.LimitholdemJudger">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.games.limitholdem.judger.</code><code class="sig-name descname">LimitholdemJudger</code><span class="sig-paren">(</span><em class="sig-param">np_random</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.judger.LimitholdemJudger" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.judger.LimitholdemJudger">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.games.limitholdem.judger.</span></span><span class="sig-name descname"><span class="pre">LimitholdemJudger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">np_random</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.judger.LimitholdemJudger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>The Judger class for Texas Hold’em</p>
-<dl class="method">
-<dt id="rlcard.games.limitholdem.judger.LimitholdemJudger.judge_game">
-<em class="property">static </em><code class="sig-name descname">judge_game</code><span class="sig-paren">(</span><em class="sig-param">players</em>, <em class="sig-param">hands</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.judger.LimitholdemJudger.judge_game" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.judger.LimitholdemJudger.judge_game">
+<span class="sig-name descname"><span class="pre">judge_game</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">players</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hands</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.judger.LimitholdemJudger.judge_game" title="Permalink to this definition">¶</a></dt>
 <dd><p>Judge the winner of the game.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>players</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a>) – The list of players who play the game</p></li>
-<li><p><strong>hands</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a>) – The list of hands that from the players</p></li>
+<li><p><strong>players</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – The list of players who play the game</p></li>
+<li><p><strong>hands</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – The list of hands that from the players</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Each entry of the list corresponds to one entry of the</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
+<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.judger.LimitholdemJudger.split_pot_among_players">
+<span class="sig-name descname"><span class="pre">split_pot_among_players</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_chips</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">winners</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.judger.LimitholdemJudger.split_pot_among_players" title="Permalink to this definition">¶</a></dt>
+<dd><p>to split the next (side)pot among players (
+this function is called in loop by distribute_pots_among_players until all chips are allocated
+:param in_chips: list with number of chips bet not yet distributed for each player
+:param winners: list with 1 if the player is among winners else 0
+:return: list of how much chips each player get after this pot has been split and list of chips left to distribute</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-rlcard.games.limitholdem.player">
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.judger.LimitholdemJudger.split_pots_among_players">
+<span class="sig-name descname"><span class="pre">split_pots_among_players</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_chips_initial</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">winners</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.judger.LimitholdemJudger.split_pots_among_players" title="Permalink to this definition">¶</a></dt>
+<dd><p>to split main pot and side pots among players (to handle special case of all-in players)
+:param in_chips_initial: list with number of chips bet for each player
+:param winners: list with 1 if the player is among winners else 0
+:return: list of how much chips each player get back after all pots have been split</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.games.limitholdem.player">
 <span id="rlcard-games-limitholdem-player"></span><h2>rlcard.games.limitholdem.player<a class="headerlink" href="#module-rlcard.games.limitholdem.player" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.games.limitholdem.player.LimitholdemPlayer">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.games.limitholdem.player.</code><code class="sig-name descname">LimitholdemPlayer</code><span class="sig-paren">(</span><em class="sig-param">player_id</em>, <em class="sig-param">np_random</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.player.LimitholdemPlayer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="method">
-<dt id="rlcard.games.limitholdem.player.LimitholdemPlayer.get_player_id">
-<code class="sig-name descname">get_player_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.player.LimitholdemPlayer.get_player_id" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.player.LimitholdemPlayer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.games.limitholdem.player.</span></span><span class="sig-name descname"><span class="pre">LimitholdemPlayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_random</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.player.LimitholdemPlayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.player.LimitholdemPlayer.get_player_id">
+<span class="sig-name descname"><span class="pre">get_player_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.player.LimitholdemPlayer.get_player_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the id of the player</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.player.LimitholdemPlayer.get_state">
-<code class="sig-name descname">get_state</code><span class="sig-paren">(</span><em class="sig-param">public_cards</em>, <em class="sig-param">all_chips</em>, <em class="sig-param">legal_actions</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.player.LimitholdemPlayer.get_state" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.player.LimitholdemPlayer.get_state">
+<span class="sig-name descname"><span class="pre">get_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">public_cards</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_chips</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legal_actions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.player.LimitholdemPlayer.get_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encode the state for the player</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>public_cards</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a>) – A list of public cards that seen by all the players</p></li>
-<li><p><strong>all_chips</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The chips that all players have put in</p></li>
+<li><p><strong>public_cards</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – A list of public cards that seen by all the players</p></li>
+<li><p><strong>all_chips</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – The chips that all players have put in</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The state of the player</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a>)</p>
+<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="rlcard.games.limitholdem.player.PlayerStatus">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.games.limitholdem.player.</code><code class="sig-name descname">PlayerStatus</code><a class="headerlink" href="#rlcard.games.limitholdem.player.PlayerStatus" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.player.PlayerStatus">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.games.limitholdem.player.</span></span><span class="sig-name descname"><span class="pre">PlayerStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.player.PlayerStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
 <p>An enumeration.</p>
-<dl class="attribute">
-<dt id="rlcard.games.limitholdem.player.PlayerStatus.ALIVE">
-<code class="sig-name descname">ALIVE</code><em class="property"> = 0</em><a class="headerlink" href="#rlcard.games.limitholdem.player.PlayerStatus.ALIVE" title="Permalink to this definition">¶</a></dt>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.player.PlayerStatus.ALIVE">
+<span class="sig-name descname"><span class="pre">ALIVE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#rlcard.games.limitholdem.player.PlayerStatus.ALIVE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
-<dt id="rlcard.games.limitholdem.player.PlayerStatus.ALLIN">
-<code class="sig-name descname">ALLIN</code><em class="property"> = 2</em><a class="headerlink" href="#rlcard.games.limitholdem.player.PlayerStatus.ALLIN" title="Permalink to this definition">¶</a></dt>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.player.PlayerStatus.ALLIN">
+<span class="sig-name descname"><span class="pre">ALLIN</span></span><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#rlcard.games.limitholdem.player.PlayerStatus.ALLIN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
-<dt id="rlcard.games.limitholdem.player.PlayerStatus.FOLDED">
-<code class="sig-name descname">FOLDED</code><em class="property"> = 1</em><a class="headerlink" href="#rlcard.games.limitholdem.player.PlayerStatus.FOLDED" title="Permalink to this definition">¶</a></dt>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.player.PlayerStatus.FOLDED">
+<span class="sig-name descname"><span class="pre">FOLDED</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#rlcard.games.limitholdem.player.PlayerStatus.FOLDED" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-rlcard.games.limitholdem.round">
+</section>
+<section id="module-rlcard.games.limitholdem.round">
 <span id="rlcard-games-limitholdem-round"></span><h2>rlcard.games.limitholdem.round<a class="headerlink" href="#module-rlcard.games.limitholdem.round" title="Permalink to this headline">¶</a></h2>
 <p>Implement Limit Texas Hold’em Round class</p>
-<dl class="class">
-<dt id="rlcard.games.limitholdem.round.LimitholdemRound">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.games.limitholdem.round.</code><code class="sig-name descname">LimitholdemRound</code><span class="sig-paren">(</span><em class="sig-param">raise_amount</em>, <em class="sig-param">allowed_raise_num</em>, <em class="sig-param">num_players</em>, <em class="sig-param">np_random</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.round.LimitholdemRound" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.round.LimitholdemRound">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.games.limitholdem.round.</span></span><span class="sig-name descname"><span class="pre">LimitholdemRound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raise_amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_raise_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_players</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_random</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.round.LimitholdemRound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Round can call other Classes’ functions to keep the game running</p>
-<dl class="method">
-<dt id="rlcard.games.limitholdem.round.LimitholdemRound.get_legal_actions">
-<code class="sig-name descname">get_legal_actions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.round.LimitholdemRound.get_legal_actions" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.round.LimitholdemRound.get_legal_actions">
+<span class="sig-name descname"><span class="pre">get_legal_actions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.round.LimitholdemRound.get_legal_actions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtain the legal actions for the curent player</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A list of legal actions</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.round.LimitholdemRound.is_over">
-<code class="sig-name descname">is_over</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.round.LimitholdemRound.is_over" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.round.LimitholdemRound.is_over">
+<span class="sig-name descname"><span class="pre">is_over</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.round.LimitholdemRound.is_over" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check whether the round is over</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -707,33 +733,33 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.round.LimitholdemRound.proceed_round">
-<code class="sig-name descname">proceed_round</code><span class="sig-paren">(</span><em class="sig-param">players</em>, <em class="sig-param">action</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.round.LimitholdemRound.proceed_round" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.round.LimitholdemRound.proceed_round">
+<span class="sig-name descname"><span class="pre">proceed_round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">players</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.round.LimitholdemRound.proceed_round" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call other Classes’s functions to keep one round running</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>players</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a>) – The list of players that play the game</p></li>
-<li><p><strong>action</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – An legal action taken by the player</p></li>
+<li><p><strong>players</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – The list of players that play the game</p></li>
+<li><p><strong>action</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – An legal action taken by the player</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The game_pointer that indicates the next player</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a>)</p>
+<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.round.LimitholdemRound.start_new_round">
-<code class="sig-name descname">start_new_round</code><span class="sig-paren">(</span><em class="sig-param">game_pointer</em>, <em class="sig-param">raised=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.round.LimitholdemRound.start_new_round" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.round.LimitholdemRound.start_new_round">
+<span class="sig-name descname"><span class="pre">start_new_round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_pointer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raised</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.round.LimitholdemRound.start_new_round" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start a new bidding round</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>raised</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a>) – Initialize the chips for each player</p>
+<dd class="field-odd"><p><strong>raised</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – Initialize the chips for each player</p>
 </dd>
 </dl>
 <p>Note: For the first round of the game, we need to setup the big/small blind</p>
@@ -741,23 +767,23 @@
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-rlcard.games.limitholdem.utils">
+</section>
+<section id="module-rlcard.games.limitholdem.utils">
 <span id="rlcard-games-limitholdem-utils"></span><h2>rlcard.games.limitholdem.utils<a class="headerlink" href="#module-rlcard.games.limitholdem.utils" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.games.limitholdem.utils.Hand">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.games.limitholdem.utils.</code><code class="sig-name descname">Hand</code><span class="sig-paren">(</span><em class="sig-param">all_cards</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.Hand" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="method">
-<dt id="rlcard.games.limitholdem.utils.Hand.evaluateHand">
-<code class="sig-name descname">evaluateHand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.Hand.evaluateHand" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.utils.Hand">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.games.limitholdem.utils.</span></span><span class="sig-name descname"><span class="pre">Hand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_cards</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.Hand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.utils.Hand.evaluateHand">
+<span class="sig-name descname"><span class="pre">evaluateHand</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.Hand.evaluateHand" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate all the seven cards, get the best combination catagory
 And pick the best five cards (for comparing in case 2 hands have the same Category) .</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.games.limitholdem.utils.Hand.get_hand_five_cards">
-<code class="sig-name descname">get_hand_five_cards</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.Hand.get_hand_five_cards" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.utils.Hand.get_hand_five_cards">
+<span class="sig-name descname"><span class="pre">get_hand_five_cards</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.Hand.get_hand_five_cards" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the best five cards of a player
 :returns: the best five cards among the seven cards of a player
 :rtype: (list)</p>
@@ -765,13 +791,33 @@ And pick the best five cards (for comparing in case 2 hands have the same Catego
 
 </dd></dl>
 
-<dl class="function">
-<dt id="rlcard.games.limitholdem.utils.compare_hands">
-<code class="sig-prename descclassname">rlcard.games.limitholdem.utils.</code><code class="sig-name descname">compare_hands</code><span class="sig-paren">(</span><em class="sig-param">hands</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.compare_hands" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.utils.compare_hands">
+<span class="sig-prename descclassname"><span class="pre">rlcard.games.limitholdem.utils.</span></span><span class="sig-name descname"><span class="pre">compare_hands</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hands</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.compare_hands" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compare all palyer’s all seven cards
 :param hands: cards of those players with same highest hand_catagory.
 :type hands: list
-:param e.g. hands = [[‘CT’, ‘ST’, ‘H9’, ‘B9’, ‘C2’, ‘C8’, ‘C7’], [‘CJ’, ‘SJ’, ‘H9’, ‘B9’, ‘C2’, ‘C8’, ‘C7’], [‘CT’, ‘ST’, ‘H9’, ‘B9’, ‘C2’, ‘C8’, ‘C7’]]:</p>
+:param e.g. hands = [[‘CT’:
+:param ‘ST’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]:
+:param [‘CJ’:
+:param ‘SJ’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]:
+:param [‘CT’:
+:param ‘ST’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]]:</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>player1 wins
@@ -791,37 +837,76 @@ And pick the best five cards (for comparing in case 2 hands have the same Catego
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="rlcard.games.limitholdem.utils.compare_ranks">
-<code class="sig-prename descclassname">rlcard.games.limitholdem.utils.</code><code class="sig-name descname">compare_ranks</code><span class="sig-paren">(</span><em class="sig-param">position</em>, <em class="sig-param">hands</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.compare_ranks" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.utils.compare_ranks">
+<span class="sig-prename descclassname"><span class="pre">rlcard.games.limitholdem.utils.</span></span><span class="sig-name descname"><span class="pre">compare_ranks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">winner</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.compare_ranks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compare cards in same position of plays’ five handcards
 :param position: the position of a card in a sorted handcard
 :type position: int
 :param hands: cards of those players.
 :type hands: list
-:param e.g. hands = [[‘CT’, ‘ST’, ‘H9’, ‘B9’, ‘C2’, ‘C8’, ‘C7’], [‘CJ’, ‘SJ’, ‘H9’, ‘B9’, ‘C2’, ‘C8’, ‘C7’], [‘CT’, ‘ST’, ‘H9’, ‘B9’, ‘C2’, ‘C8’, ‘C7’]]:</p>
+:param e.g. hands = [[‘CT’:
+:param ‘ST’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]:
+:param [‘CJ’:
+:param ‘SJ’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]:
+:param [‘CT’:
+:param ‘ST’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]]:
+:param winner: array of same length than hands with 1 if the hand is among winners and 0 among losers</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>player1 wins
+<dd class="field-odd"><p>new updated winner array
+[0, 1, 0]: player1 wins
 [1, 0, 0]: player0 wins
 [1, 1, 1]: draw
 [1, 1, 0]: player1 and player0 draws</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>[0, 1, 0]</p>
-</dd>
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="rlcard.games.limitholdem.utils.determine_winner">
-<code class="sig-prename descclassname">rlcard.games.limitholdem.utils.</code><code class="sig-name descname">determine_winner</code><span class="sig-paren">(</span><em class="sig-param">key_index</em>, <em class="sig-param">hands</em>, <em class="sig-param">all_players</em>, <em class="sig-param">potential_winner_index</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.determine_winner" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.utils.determine_winner">
+<span class="sig-prename descclassname"><span class="pre">rlcard.games.limitholdem.utils.</span></span><span class="sig-name descname"><span class="pre">determine_winner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_players</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">potential_winner_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.determine_winner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find out who wins in the situation of having players with same highest hand_catagory
 :param key_index: the position of a card in a sorted handcard
 :type key_index: int
 :param hands: cards of those players with same highest hand_catagory.
 :type hands: list
-:param e.g. hands = [[‘CT’, ‘ST’, ‘H9’, ‘B9’, ‘C2’, ‘C8’, ‘C7’], [‘CJ’, ‘SJ’, ‘H9’, ‘B9’, ‘C2’, ‘C8’, ‘C7’], [‘CT’, ‘ST’, ‘H9’, ‘B9’, ‘C2’, ‘C8’, ‘C7’]]:
+:param e.g. hands = [[‘CT’:
+:param ‘ST’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]:
+:param [‘CJ’:
+:param ‘SJ’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]:
+:param [‘CT’:
+:param ‘ST’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]]:
 :param all_players: all the players in this round, 0 for losing and 1 for winning or draw
 :type all_players: list
 :param potential_winner_index: the positions of those players with same highest hand_catagory in all_players
@@ -839,13 +924,104 @@ And pick the best five cards (for comparing in case 2 hands have the same Catego
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="rlcard.games.limitholdem.utils.final_compare">
-<code class="sig-prename descclassname">rlcard.games.limitholdem.utils.</code><code class="sig-name descname">final_compare</code><span class="sig-paren">(</span><em class="sig-param">hands</em>, <em class="sig-param">potential_winner_index</em>, <em class="sig-param">all_players</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.final_compare" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.utils.determine_winner_four_of_a_kind">
+<span class="sig-prename descclassname"><span class="pre">rlcard.games.limitholdem.utils.</span></span><span class="sig-name descname"><span class="pre">determine_winner_four_of_a_kind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_players</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">potential_winner_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.determine_winner_four_of_a_kind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find out who wins in the situation of having players which all have a four of a kind
+:param key_index: the position of a card in a sorted handcard
+:type key_index: int
+:param hands: cards of those players with a four of a kind
+:type hands: list
+:param e.g. hands = [[‘CT’:
+:param ‘ST’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]:
+:param [‘CJ’:
+:param ‘SJ’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]:
+:param [‘CT’:
+:param ‘ST’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]]:
+:param all_players: all the players in this round, 0 for losing and 1 for winning or draw
+:type all_players: list
+:param potential_winner_index: the positions of those players with same highest hand_catagory in all_players
+:type potential_winner_index: list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>player1 wins
+[1, 0, 0]: player0 wins
+[1, 1, 1]: draw
+[1, 1, 0]: player1 and player0 draws</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>[0, 1, 0]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.utils.determine_winner_straight">
+<span class="sig-prename descclassname"><span class="pre">rlcard.games.limitholdem.utils.</span></span><span class="sig-name descname"><span class="pre">determine_winner_straight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_players</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">potential_winner_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.determine_winner_straight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find out who wins in the situation of having players all having a straight or straight flush
+:param key_index: the position of a card in a sorted handcard
+:type key_index: int
+:param hands: cards of those players which all have a straight or straight flush
+:type hands: list
+:param all_players: all the players in this round, 0 for losing and 1 for winning or draw
+:type all_players: list
+:param potential_winner_index: the positions of those players with same highest hand_catagory in all_players
+:type potential_winner_index: list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>player1 wins
+[1, 0, 0]: player0 wins
+[1, 1, 1]: draw
+[1, 1, 0]: player1 and player0 draws</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>[0, 1, 0]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.games.limitholdem.utils.final_compare">
+<span class="sig-prename descclassname"><span class="pre">rlcard.games.limitholdem.utils.</span></span><span class="sig-name descname"><span class="pre">final_compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">potential_winner_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_players</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.games.limitholdem.utils.final_compare" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find out the winners from those who didn’t fold
 :param hands: cards of those players with same highest hand_catagory.
 :type hands: list
-:param e.g. hands = [[‘CT’, ‘ST’, ‘H9’, ‘B9’, ‘C2’, ‘C8’, ‘C7’], [‘CJ’, ‘SJ’, ‘H9’, ‘B9’, ‘C2’, ‘C8’, ‘C7’], [‘CT’, ‘ST’, ‘H9’, ‘B9’, ‘C2’, ‘C8’, ‘C7’]]:
+:param e.g. hands = [[‘CT’:
+:param ‘ST’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]:
+:param [‘CJ’:
+:param ‘SJ’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]:
+:param [‘CT’:
+:param ‘ST’:
+:param ‘H9’:
+:param ‘B9’:
+:param ‘C2’:
+:param ‘C8’:
+:param ‘C7’]]:
 :param potential_winner_index: index of those with same max card_catagory in all_players
 :type potential_winner_index: list
 :param all_players: a list of all the player’s win/lose situation, 0 for lose and 1 for win
@@ -869,8 +1045,8 @@ And pick the best five cards (for comparing in case 2 hands have the same Catego
 </dl>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -880,10 +1056,10 @@ And pick the best five cards (for comparing in case 2 hands have the same Catego
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="rlcard.games.nolimitholdem.html" class="btn btn-neutral float-right" title="rlcard.games.nolimitholdem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="rlcard.games.mahjong.html" class="btn btn-neutral float-right" title="rlcard.games.mahjong" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="rlcard.games.doudizhu.html" class="btn btn-neutral float-left" title="rlcard.games.doudizhu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="rlcard.games.leducholdem.html" class="btn btn-neutral float-left" title="rlcard.games.leducholdem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

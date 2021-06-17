@@ -1,0 +1,1036 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rlcard.models &mdash; RLcard 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
+    
+    <script type="text/javascript" src="static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <!-- <link rel="copyright" title="DATA Lab at Texas A&M University"> --> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+          <a href="index.html" style="margin: 0px;"><img src="static/imgs/logo_white.png" style="height: initial; width: initial; border-radius: initial; margin: 0px;" alt="home"></a>
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search" id="test-search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#design-principles">Design Principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#rlcard-high-level-design">RLCard High-level Design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#environments">Environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#games">Games</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#agents">Agents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-chance-sampling-on-leduc-hold-em">Training CFR (chance sampling) on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-dmc-on-dou-dizhu">Training DMC on Dou Dizhu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#evaluating-agents">Evaluating Agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting_started.html#evaluating-dmc-on-dou-dizhu">Evaluating DMC on Dou Dizhu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="games.html#blackjack">Blackjack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-blackjack">State Representation of Blackjack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-blackjack">Action Encoding of Blackjack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-blackjack">Payoff of Blackjack</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#leduc-hold-em">Leduc Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-leduc-hold-em">State Representation of Leduc Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-leduc-hold-em">Action Encoding of Leduc Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-leduc-hold-em">Payoff of Leduc Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#limit-texas-hold-em">Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-limit-texas-hold-em">State Representation of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-limit-texas-hold-em">Action Encoding of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-limit-texas-hold-em">Payoff of Limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#dou-dizhu">Dou Dizhu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-dou-dizhu">State Representation of Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-dou-dizhu">State Encoding of Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-dou-dizhu">Action Encoding of Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff">Payoff</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-mahjong">State Representation of Mahjong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-space-of-mahjong">Action Space of Mahjong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-mahjong">Payoff of Mahjong</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-no-limit-texas-hold-em">Payoff of No-Limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#uno">UNO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-uno">State Representation of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-uno">State Encoding of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-uno">Action Encoding of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-uno">Payoff of Uno</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#gin-rummy">Gin Rummy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-gin-rummy">State Representation of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-space-of-gin-rummy">Action Space of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-gin-rummy">Payoff of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#settings">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#variations">Variations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-monte-carlo">Deep Monte-Carlo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-q-learning">Deep-Q Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#nfsp">NFSP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr-chance-sampling">CFR (chance sampling)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#adding-pre-trained-rule-based-models">Adding Pre-trained/Rule-based models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#developping-algorithms">Developping Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#adding-new-environments">Adding New Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#customizing-environments">Customizing Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="development.html#state-representation">State Representation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development.html#action-encoding">Action Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development.html#reward-calculation">Reward Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development.html#modifying-game">Modifying Game</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Documents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rlcard.envs.html">rlcard.envs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.blackjack">rlcard.envs.blackjack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.doudizhu">rlcard.envs.doudizhu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.gin_rummy">rlcard.envs.gin_rummy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.leducholdem">rlcard.envs.leducholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.limitholdem">rlcard.envs.limitholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.mahjong">rlcard.envs.mahjong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.nolimitholdem">rlcard.envs.nolimitholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.registration">rlcard.envs.registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.uno">rlcard.envs.uno</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rlcard.utils.html">rlcard.utils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.logger">rlcard.utils.logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.seeding">rlcard.utils.seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.utils">rlcard.utils.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rlcard.games.html">rlcard.games</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html">rlcard.games.blackjack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.dealer">rlcard.games.blackjack.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.game">rlcard.games.blackjack.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.judger">rlcard.games.blackjack.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.player">rlcard.games.blackjack.player</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html">rlcard.games.doudizhu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.dealer">rlcard.games.doudizhu.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.game">rlcard.games.doudizhu.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.judger">rlcard.games.doudizhu.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.player">rlcard.games.doudizhu.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.round">rlcard.games.doudizhu.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.utils">rlcard.games.doudizhu.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.dealer">rlcard.games.gin_rummy.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.game">rlcard.games.gin_rummy.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.judge">rlcard.games.gin_rummy.judge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.player">rlcard.games.gin_rummy.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.round">rlcard.games.gin_rummy.round</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html">rlcard.games.leducholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.dealer">rlcard.games.leducholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.game">rlcard.games.leducholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.judger">rlcard.games.leducholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.player">rlcard.games.leducholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.round">rlcard.games.leducholdem.round</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html">rlcard.games.limitholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.dealer">rlcard.games.limitholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.game">rlcard.games.limitholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.judger">rlcard.games.limitholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.player">rlcard.games.limitholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.round">rlcard.games.limitholdem.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.utils">rlcard.games.limitholdem.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html">rlcard.games.mahjong</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.card">rlcard.games.mahjong.card</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.dealer">rlcard.games.mahjong.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.game">rlcard.games.mahjong.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.judger">rlcard.games.mahjong.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.player">rlcard.games.mahjong.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.round">rlcard.games.mahjong.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.utils">rlcard.games.mahjong.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html">rlcard.games.nolimitholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.dealer">rlcard.games.nolimitholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.game">rlcard.games.nolimitholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.judger">rlcard.games.nolimitholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.player">rlcard.games.nolimitholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.round">rlcard.games.nolimitholdem.round</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html">rlcard.games.uno</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.card">rlcard.games.uno.card</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.dealer">rlcard.games.uno.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.game">rlcard.games.uno.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.judger">rlcard.games.uno.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.player">rlcard.games.uno.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.round">rlcard.games.uno.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.utils">rlcard.games.uno.utils</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.html#module-rlcard.games.base">rlcard.games.base</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.agents.dmc_agent.html">rlcard.agents.dmc_agent</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.file_writer">rlcard.agents.dmc_agent.file_writer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.model">rlcard.agents.dmc_agent.model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.trainer">rlcard.agents.dmc_agent.trainer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.utils">rlcard.agents.dmc_agent.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.agents.human_agents.html">rlcard.agents.human_agents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.blackjack_human_agent">rlcard.agents.human_agents.blackjack_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.leduc_holdem_human_agent">rlcard.agents.human_agents.leduc_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.limit_holdem_human_agent">rlcard.agents.human_agents.limit_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.nolimit_holdem_human_agent">rlcard.agents.human_agents.nolimit_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.uno_human_agent">rlcard.agents.human_agents.uno_human_agent</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.cfr_agent">rlcard.agents.cfr_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.nfsp_agent">rlcard.agents.nfsp_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="doctree.html">RLcard</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="display: flex; justify-content: space-between">
+  <div role="navigation" aria-label="breadcrumbs navigation">
+
+    <ul class="wy-breadcrumbs" style="margin-top: 0.3rem;">
+      
+        <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          
+        <li>RLCard: A Toolkit for Reinforcement Learning in Card Games</li>
+      
+    </ul>
+
+    
+  </div>
+  <div style="display: block; width: 7.5rem; max-width: 7.5rem; padding-right: .6rem; float: right;">
+    <a href="https://github.com/datamllab/rlcard" title="Go to repository" data-md-source="github" data-md-state="done" style="display: block; padding-right: .6rem; line-height: 1.2">
+      <div style="display: inline-block; width: 2.4rem; height: 2.4rem;">
+        <i class="fa fa-github" style="font-size: 2rem"></i>  
+      </div>
+      <div style="display: inline-block; margin-left: -2rem; margin-top: -0.6rem; padding-left: 2rem; vertical-align: middle">
+        GitHub
+        <ul style="font-size: 0.7rem; list-style-type: none;"><li style="float: left" id="github-stars">... Stars</li></ul>
+      </div>
+      <script>
+        $(document).ready(function(){
+        $.ajax({ url: "https://api.github.com/repos/datamllab/rlcard",
+                context: document.body,
+                success: function(response){
+                  console.log(response.stargazers_count);
+                  $("#github-stars").html(response.stargazers_count + ' Stars');
+                }});
+        });
+      </script>
+    </a>
+  </div>
+</div>
+<hr/>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="rlcard-models">
+<h1>rlcard.models<a class="headerlink" href="#rlcard-models" title="Permalink to this headline">¶</a></h1>
+<section id="module-rlcard.models.doudizhu_rule_models">
+<span id="rlcard-models-doudizhu-rule-models"></span><h2>rlcard.models.doudizhu_rule_models<a class="headerlink" href="#module-rlcard.models.doudizhu_rule_models" title="Permalink to this headline">¶</a></h2>
+<p>Dou Dizhu rule models</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.doudizhu_rule_models.</span></span><span class="sig-name descname"><span class="pre">DouDizhuRuleAgentV1</span></span><a class="headerlink" href="#rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Dou Dizhu Rule agent version 1</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1.card_str2list">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">card_str2list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1.card_str2list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1.combine_cards">
+<span class="sig-name descname"><span class="pre">combine_cards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1.combine_cards" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get optimal combinations of cards in hand</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1.eval_step">
+<span class="sig-name descname"><span class="pre">eval_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1.eval_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Step for evaluation. The same to step</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1.list2card_str">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">list2card_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1.list2card_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1.pick_chain">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">pick_chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1.pick_chain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.doudizhu_rule_models.DouDizhuRuleAgentV1.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict the action given raw state. A naive rule.
+:param state: Raw state from the game
+:type state: dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Predicted action</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>action (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.doudizhu_rule_models.DouDizhuRuleModelV1">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.doudizhu_rule_models.</span></span><span class="sig-name descname"><span class="pre">DouDizhuRuleModelV1</span></span><a class="headerlink" href="#rlcard.models.doudizhu_rule_models.DouDizhuRuleModelV1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.models.model.Model" title="rlcard.models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.models.model.Model</span></code></a></p>
+<p>Dou Dizhu Rule Model version 1</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.models.doudizhu_rule_models.DouDizhuRuleModelV1.agents">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">agents</span></span><a class="headerlink" href="#rlcard.models.doudizhu_rule_models.DouDizhuRuleModelV1.agents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of agents for each position in a the game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of agents</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>agents (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Note: Each agent should be just like RL agent with step and eval_step</dt><dd><p>functioning well.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.models.gin_rummy_rule_models">
+<span id="rlcard-models-gin-rummy-rule-models"></span><h2>rlcard.models.gin_rummy_rule_models<a class="headerlink" href="#module-rlcard.models.gin_rummy_rule_models" title="Permalink to this headline">¶</a></h2>
+<p>File name: models/gin_rummy_rule_models.py
+Author: William Hale
+Date created: 2/12/2020</p>
+<p>Gin Rummy rule models</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.gin_rummy_rule_models.GinRummyNoviceRuleAgent">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.gin_rummy_rule_models.</span></span><span class="sig-name descname"><span class="pre">GinRummyNoviceRuleAgent</span></span><a class="headerlink" href="#rlcard.models.gin_rummy_rule_models.GinRummyNoviceRuleAgent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Agent always discards highest deadwood value card</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.gin_rummy_rule_models.GinRummyNoviceRuleAgent.eval_step">
+<span class="sig-name descname"><span class="pre">eval_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.gin_rummy_rule_models.GinRummyNoviceRuleAgent.eval_step" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Predict the action given the current state for evaluation.</dt><dd><p>Since the agents is not trained, this function is equivalent to step function.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>numpy.array</em>) – an numpy array that represents the current state</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the action predicted by the agent
+probabilities (list): The list of action probabilities</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>action (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.gin_rummy_rule_models.GinRummyNoviceRuleAgent.step">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.gin_rummy_rule_models.GinRummyNoviceRuleAgent.step" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Predict the action given the current state.</dt><dd><dl class="simple">
+<dt>Novice strategy:</dt><dd><dl class="simple">
+<dt>Case where can gin:</dt><dd><p>Choose one of the gin actions.</p>
+</dd>
+<dt>Case where can knock:</dt><dd><p>Choose one of the knock actions.</p>
+</dd>
+<dt>Case where can discard:</dt><dd><p>Gin if can. Knock if can.
+Otherwise, put aside cards in some best meld cluster.
+Choose one of the remaining cards with highest deadwood value.
+Discard that card.</p>
+</dd>
+<dt>Case otherwise:</dt><dd><p>Choose a random action.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>numpy.array</em>) – an numpy array that represents the current state</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the action predicted</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>action (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.gin_rummy_rule_models.GinRummyNoviceRuleModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.gin_rummy_rule_models.</span></span><span class="sig-name descname"><span class="pre">GinRummyNoviceRuleModel</span></span><a class="headerlink" href="#rlcard.models.gin_rummy_rule_models.GinRummyNoviceRuleModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.models.model.Model" title="rlcard.models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.models.model.Model</span></code></a></p>
+<p>Gin Rummy Rule Model</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.models.gin_rummy_rule_models.GinRummyNoviceRuleModel.agents">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">agents</span></span><a class="headerlink" href="#rlcard.models.gin_rummy_rule_models.GinRummyNoviceRuleModel.agents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of agents for each position in a the game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of agents</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>agents (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Note: Each agent should be just like RL agent with step and eval_step</dt><dd><p>functioning well.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.models.leducholdem_rule_models">
+<span id="rlcard-models-leducholdem-rule-models"></span><h2>rlcard.models.leducholdem_rule_models<a class="headerlink" href="#module-rlcard.models.leducholdem_rule_models" title="Permalink to this headline">¶</a></h2>
+<p>Leduc Hold ‘em rule model</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.leducholdem_rule_models.LeducHoldemRuleAgentV1">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.leducholdem_rule_models.</span></span><span class="sig-name descname"><span class="pre">LeducHoldemRuleAgentV1</span></span><a class="headerlink" href="#rlcard.models.leducholdem_rule_models.LeducHoldemRuleAgentV1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Leduc Hold ‘em Rule agent version 1</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.leducholdem_rule_models.LeducHoldemRuleAgentV1.eval_step">
+<span class="sig-name descname"><span class="pre">eval_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.leducholdem_rule_models.LeducHoldemRuleAgentV1.eval_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Step for evaluation. The same to step</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.leducholdem_rule_models.LeducHoldemRuleAgentV1.step">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.leducholdem_rule_models.LeducHoldemRuleAgentV1.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict the action when given raw state. A simple rule-based AI.
+:param state: Raw state from the game
+:type state: dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Predicted action</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>action (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.leducholdem_rule_models.LeducHoldemRuleAgentV2">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.leducholdem_rule_models.</span></span><span class="sig-name descname"><span class="pre">LeducHoldemRuleAgentV2</span></span><a class="headerlink" href="#rlcard.models.leducholdem_rule_models.LeducHoldemRuleAgentV2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Leduc Hold ‘em Rule agent version 2</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.leducholdem_rule_models.LeducHoldemRuleAgentV2.step">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.leducholdem_rule_models.LeducHoldemRuleAgentV2.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict the action when given raw state. A simple rule-based AI.
+:param state: Raw state from the game
+:type state: dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Predicted action</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>action (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.leducholdem_rule_models.LeducHoldemRuleModelV1">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.leducholdem_rule_models.</span></span><span class="sig-name descname"><span class="pre">LeducHoldemRuleModelV1</span></span><a class="headerlink" href="#rlcard.models.leducholdem_rule_models.LeducHoldemRuleModelV1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.models.model.Model" title="rlcard.models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.models.model.Model</span></code></a></p>
+<p>Leduc holdem Rule Model version 1</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.models.leducholdem_rule_models.LeducHoldemRuleModelV1.agents">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">agents</span></span><a class="headerlink" href="#rlcard.models.leducholdem_rule_models.LeducHoldemRuleModelV1.agents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of agents for each position in a the game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of agents</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>agents (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Note: Each agent should be just like RL agent with step and eval_step</dt><dd><p>functioning well.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.leducholdem_rule_models.LeducHoldemRuleModelV2">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.leducholdem_rule_models.</span></span><span class="sig-name descname"><span class="pre">LeducHoldemRuleModelV2</span></span><a class="headerlink" href="#rlcard.models.leducholdem_rule_models.LeducHoldemRuleModelV2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.models.model.Model" title="rlcard.models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.models.model.Model</span></code></a></p>
+<p>Leduc holdem Rule Model version 2</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.models.leducholdem_rule_models.LeducHoldemRuleModelV2.agents">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">agents</span></span><a class="headerlink" href="#rlcard.models.leducholdem_rule_models.LeducHoldemRuleModelV2.agents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of agents for each position in a the game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of agents</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>agents (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Note: Each agent should be just like RL agent with step and eval_step</dt><dd><p>functioning well.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.models.limitholdem_rule_models">
+<span id="rlcard-models-limitholdem-rule-models"></span><h2>rlcard.models.limitholdem_rule_models<a class="headerlink" href="#module-rlcard.models.limitholdem_rule_models" title="Permalink to this headline">¶</a></h2>
+<p>Limit Hold ‘em rule model</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.limitholdem_rule_models.LimitholdemRuleAgentV1">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.limitholdem_rule_models.</span></span><span class="sig-name descname"><span class="pre">LimitholdemRuleAgentV1</span></span><a class="headerlink" href="#rlcard.models.limitholdem_rule_models.LimitholdemRuleAgentV1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Limit Hold ‘em Rule agent version 1</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.limitholdem_rule_models.LimitholdemRuleAgentV1.eval_step">
+<span class="sig-name descname"><span class="pre">eval_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.limitholdem_rule_models.LimitholdemRuleAgentV1.eval_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Step for evaluation. The same to step</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.limitholdem_rule_models.LimitholdemRuleAgentV1.step">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.limitholdem_rule_models.LimitholdemRuleAgentV1.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict the action when given raw state. A simple rule-based AI.
+:param state: Raw state from the game
+:type state: dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Predicted action</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>action (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.limitholdem_rule_models.LimitholdemRuleModelV1">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.limitholdem_rule_models.</span></span><span class="sig-name descname"><span class="pre">LimitholdemRuleModelV1</span></span><a class="headerlink" href="#rlcard.models.limitholdem_rule_models.LimitholdemRuleModelV1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.models.model.Model" title="rlcard.models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.models.model.Model</span></code></a></p>
+<p>Limitholdem Rule Model version 1</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.models.limitholdem_rule_models.LimitholdemRuleModelV1.agents">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">agents</span></span><a class="headerlink" href="#rlcard.models.limitholdem_rule_models.LimitholdemRuleModelV1.agents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of agents for each position in a the game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of agents</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>agents (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Note: Each agent should be just like RL agent with step and eval_step</dt><dd><p>functioning well.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.models.limitholdem_rule_models.LimitholdemRuleModelV1.use_raw">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">use_raw</span></span><a class="headerlink" href="#rlcard.models.limitholdem_rule_models.LimitholdemRuleModelV1.use_raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicate whether use raw state and action</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if using raw state and action</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>use_raw (boolean)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.models.model">
+<span id="rlcard-models-model"></span><h2>rlcard.models.model<a class="headerlink" href="#module-rlcard.models.model" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.model.Model">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.model.</span></span><span class="sig-name descname"><span class="pre">Model</span></span><a class="headerlink" href="#rlcard.models.model.Model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>The base model class</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.models.model.Model.agents">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">agents</span></span><a class="headerlink" href="#rlcard.models.model.Model.agents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of agents for each position in a the game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of agents</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>agents (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Note: Each agent should be just like RL agent with step and eval_step</dt><dd><p>functioning well.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.models.pretrained_models">
+<span id="rlcard-models-pretrained-models"></span><h2>rlcard.models.pretrained_models<a class="headerlink" href="#module-rlcard.models.pretrained_models" title="Permalink to this headline">¶</a></h2>
+<p>Wrrapers of pretrained models.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.pretrained_models.LeducHoldemCFRModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.pretrained_models.</span></span><span class="sig-name descname"><span class="pre">LeducHoldemCFRModel</span></span><a class="headerlink" href="#rlcard.models.pretrained_models.LeducHoldemCFRModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.models.model.Model" title="rlcard.models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.models.model.Model</span></code></a></p>
+<p>A pretrained model on Leduc Holdem with CFR (chance sampling)</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.models.pretrained_models.LeducHoldemCFRModel.agents">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">agents</span></span><a class="headerlink" href="#rlcard.models.pretrained_models.LeducHoldemCFRModel.agents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of agents for each position in a the game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of agents</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>agents (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Note: Each agent should be just like RL agent with step and eval_step</dt><dd><p>functioning well.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.models.registration">
+<span id="rlcard-models-registration"></span><h2>rlcard.models.registration<a class="headerlink" href="#module-rlcard.models.registration" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.registration.ModelRegistry">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.registration.</span></span><span class="sig-name descname"><span class="pre">ModelRegistry</span></span><a class="headerlink" href="#rlcard.models.registration.ModelRegistry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Register a model by ID</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.registration.ModelRegistry.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.registration.ModelRegistry.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a model instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_id</strong> (<em>string</em>) – the name of the model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.registration.ModelRegistry.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry_point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.registration.ModelRegistry.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register an model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_id</strong> (<em>string</em>) – the name of the model</p></li>
+<li><p><strong>entry_point</strong> (<em>string</em>) – a string the indicates the location of the model class</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.registration.ModelSpec">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.registration.</span></span><span class="sig-name descname"><span class="pre">ModelSpec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry_point</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.registration.ModelSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A specification for a particular Model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.registration.ModelSpec.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.registration.ModelSpec.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates an instance of the model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an instance of the Model</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#rlcard.models.model.Model" title="rlcard.models.model.Model">Model</a> (<a class="reference internal" href="#rlcard.models.model.Model" title="rlcard.models.model.Model">Model</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.models.registration.load">
+<span class="sig-prename descclassname"><span class="pre">rlcard.models.registration.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.registration.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and model instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_id</strong> (<em>string</em>) – the name of the model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.models.registration.register">
+<span class="sig-prename descclassname"><span class="pre">rlcard.models.registration.</span></span><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry_point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.registration.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_id</strong> (<em>string</em>) – the name of the model</p></li>
+<li><p><strong>entry_point</strong> (<em>string</em>) – a string the indicates the location of the model class</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-rlcard.models.uno_rule_models">
+<span id="rlcard-models-uno-rule-models"></span><h2>rlcard.models.uno_rule_models<a class="headerlink" href="#module-rlcard.models.uno_rule_models" title="Permalink to this headline">¶</a></h2>
+<p>UNO rule models</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.uno_rule_models.UNORuleAgentV1">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.uno_rule_models.</span></span><span class="sig-name descname"><span class="pre">UNORuleAgentV1</span></span><a class="headerlink" href="#rlcard.models.uno_rule_models.UNORuleAgentV1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>UNO Rule agent version 1</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.uno_rule_models.UNORuleAgentV1.count_colors">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">count_colors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.uno_rule_models.UNORuleAgentV1.count_colors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count the number of cards in each color in hand</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hand</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – A list of UNO card string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The number cards of each color</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>color_nums (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.uno_rule_models.UNORuleAgentV1.eval_step">
+<span class="sig-name descname"><span class="pre">eval_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.uno_rule_models.UNORuleAgentV1.eval_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Step for evaluation. The same to step</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.uno_rule_models.UNORuleAgentV1.filter_wild">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">filter_wild</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hand</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.uno_rule_models.UNORuleAgentV1.filter_wild" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter the wild cards. If all are wild cards, we do not filter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hand</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – A list of UNO card string</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A filtered list of UNO string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>filtered_hand (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.models.uno_rule_models.UNORuleAgentV1.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.models.uno_rule_models.UNORuleAgentV1.step" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Predict the action given raw state. A naive rule. Choose the color</dt><dd><p>that appears least in the hand from legal actions. Try to keep wild
+cards as long as it can.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a>) – Raw state from the game</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Predicted action</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>action (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.models.uno_rule_models.UNORuleModelV1">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.models.uno_rule_models.</span></span><span class="sig-name descname"><span class="pre">UNORuleModelV1</span></span><a class="headerlink" href="#rlcard.models.uno_rule_models.UNORuleModelV1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.models.model.Model" title="rlcard.models.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.models.model.Model</span></code></a></p>
+<p>UNO Rule Model version 1</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.models.uno_rule_models.UNORuleModelV1.agents">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">agents</span></span><a class="headerlink" href="#rlcard.models.uno_rule_models.UNORuleModelV1.agents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of agents for each position in a the game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of agents</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>agents (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Note: Each agent should be just like RL agent with step and eval_step</dt><dd><p>functioning well.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.models.uno_rule_models.UNORuleModelV1.use_raw">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">use_raw</span></span><a class="headerlink" href="#rlcard.models.uno_rule_models.UNORuleModelV1.use_raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicate whether use raw state and action</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if using raw state and action</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>use_raw (boolean)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright DATA Lab at Texas A&amp;M University
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

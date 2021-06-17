@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>rlcard.envs &mdash; RLcard 0.0.1 documentation</title>
@@ -21,10 +22,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-        <script type="text/javascript" src="static/jquery.js"></script>
-        <script type="text/javascript" src="static/underscore.js"></script>
-        <script type="text/javascript" src="static/doctools.js"></script>
-        <script type="text/javascript" src="static/language_data.js"></script>
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
@@ -33,6 +34,8 @@
   
   <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <!-- <link rel="copyright" title="DATA Lab at Texas A&M University"> -->
@@ -97,10 +100,13 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-multiple-processes">Running Multiple Processes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-on-leduc-holdem">Training CFR (chance sampling) on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-chance-sampling-on-leduc-hold-em">Training CFR (chance sampling) on Leduc Hold’em</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#leduc-holdem-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-dmc-on-dou-dizhu">Training DMC on Dou Dizhu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#evaluating-agents">Evaluating Agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting_started.html#evaluating-dmc-on-dou-dizhu">Evaluating DMC on Dou Dizhu</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
@@ -125,15 +131,8 @@
 <li class="toctree-l2"><a class="reference internal" href="games.html#dou-dizhu">Dou Dizhu</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-dou-dizhu">State Representation of Dou Dizhu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-dou-dizhu">State Encoding of Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-abstraction-of-dou-dizhu">Action Abstraction of Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-dou-dizhu">Action Encoding of Dou Dizhu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff">Payoff</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#simple-dou-dizhu">Simple Dou Dizhu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-simple-dou-dizhu">State Representation of Simple Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-simple-dou-dizhu">State Encoding of Simple Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-simple-dou-dizhu">Action Encoding of Simple Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-simple-dou-dizhu">Payoff of Simple Dou Dizhu</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a><ul>
@@ -142,8 +141,8 @@
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-mahjong">Payoff of Mahjong</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-no-limit-texas-hold-em">Payoff of No-Limit Texas Hold’em</a></li>
 </ul>
@@ -166,10 +165,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-monte-carlo">Deep Monte-Carlo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-q-learning">Deep-Q Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#nfsp">NFSP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr">CFR (chance sampling)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="algorithms.html#deepcfr">DeepCFR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr-chance-sampling">CFR (chance sampling)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
@@ -189,125 +188,127 @@
 <p class="caption"><span class="caption-text">API Documents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">rlcard.envs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.env">rlcard.envs.env</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.registration">rlcard.envs.registration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.blackjack">rlcard.envs.blackjack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.doudizhu">rlcard.envs.doudizhu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.limitholdem">rlcard.envs.limitholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.env">rlcard.envs.env</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.gin_rummy">rlcard.envs.gin_rummy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.leducholdem">rlcard.envs.leducholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.limitholdem">rlcard.envs.limitholdem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.mahjong">rlcard.envs.mahjong</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.nolimitholdem">rlcard.envs.nolimitholdem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.simpledoudizhu">rlcard.envs.simpledoudizhu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.registration">rlcard.envs.registration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-rlcard.envs.uno">rlcard.envs.uno</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.utils.html">rlcard.utils</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.utils">rlcard.utils.utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.logger">rlcard.utils.logger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.exploitability">rlcard.utils.exploitability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.seeding">rlcard.utils.seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.utils">rlcard.utils.utils</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.games.html">rlcard.games</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.blackjack.html">rlcard.games.blackjack</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.dealer">rlcard.games.blackjack.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.game">rlcard.games.blackjack.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.judger">rlcard.games.blackjack.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.player">rlcard.games.blackjack.player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html">rlcard.games.blackjack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.dealer">rlcard.games.blackjack.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.game">rlcard.games.blackjack.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.judger">rlcard.games.blackjack.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.player">rlcard.games.blackjack.player</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.doudizhu.html">rlcard.games.doudizhu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.dealer">rlcard.games.doudizhu.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.game">rlcard.games.doudizhu.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.judger">rlcard.games.doudizhu.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.player">rlcard.games.doudizhu.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.round">rlcard.games.doudizhu.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html">rlcard.games.doudizhu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.dealer">rlcard.games.doudizhu.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.game">rlcard.games.doudizhu.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.judger">rlcard.games.doudizhu.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.player">rlcard.games.doudizhu.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.round">rlcard.games.doudizhu.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.utils">rlcard.games.doudizhu.utils</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.limitholdem.html">rlcard.games.limitholdem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.dealer">rlcard.games.limitholdem.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.game">rlcard.games.limitholdem.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.judger">rlcard.games.limitholdem.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.player">rlcard.games.limitholdem.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.round">rlcard.games.limitholdem.round</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.utils">rlcard.games.limitholdem.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.dealer">rlcard.games.gin_rummy.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.game">rlcard.games.gin_rummy.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.judge">rlcard.games.gin_rummy.judge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.player">rlcard.games.gin_rummy.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.round">rlcard.games.gin_rummy.round</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.nolimitholdem.html">rlcard.games.nolimitholdem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.dealer">rlcard.games.nolimitholdem.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.game">rlcard.games.nolimitholdem.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.judger">rlcard.games.nolimitholdem.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.player">rlcard.games.nolimitholdem.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.round">rlcard.games.nolimitholdem.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html">rlcard.games.leducholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.dealer">rlcard.games.leducholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.game">rlcard.games.leducholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.judger">rlcard.games.leducholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.player">rlcard.games.leducholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.round">rlcard.games.leducholdem.round</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.leducholdem.html">rlcard.games.leducholdem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.dealer">rlcard.games.leducholdem.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.game">rlcard.games.leducholdem.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.judger">rlcard.games.leducholdem.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.player">rlcard.games.leducholdem.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.round">rlcard.games.leducholdem.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html">rlcard.games.limitholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.dealer">rlcard.games.limitholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.game">rlcard.games.limitholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.judger">rlcard.games.limitholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.player">rlcard.games.limitholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.round">rlcard.games.limitholdem.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.utils">rlcard.games.limitholdem.utils</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.uno.html">rlcard.games.uno</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.dealer">rlcard.games.uno.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.game">rlcard.games.uno.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.judger">rlcard.games.uno.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.player">rlcard.games.uno.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.round">rlcard.games.uno.round</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.card">rlcard.games.uno.card</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.utils">rlcard.games.uno.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html">rlcard.games.mahjong</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.card">rlcard.games.mahjong.card</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.dealer">rlcard.games.mahjong.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.game">rlcard.games.mahjong.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.judger">rlcard.games.mahjong.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.player">rlcard.games.mahjong.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.round">rlcard.games.mahjong.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.utils">rlcard.games.mahjong.utils</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.mahjong.html">rlcard.games.mahjong</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.dealer">rlcard.games.mahjong.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.game">rlcard.games.mahjong.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.judger">rlcard.games.mahjong.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.player">rlcard.games.mahjong.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.round">rlcard.games.mahjong.round</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.card">rlcard.games.mahjong.card</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.utils">rlcard.games.mahjong.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html">rlcard.games.nolimitholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.dealer">rlcard.games.nolimitholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.game">rlcard.games.nolimitholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.judger">rlcard.games.nolimitholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.player">rlcard.games.nolimitholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.round">rlcard.games.nolimitholdem.round</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html">rlcard.games.gin_rummy.utils</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.action_event">rlcard.games.gin_rummy.utils.action_event</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.gin_rummy_error">rlcard.games.gin_rummy.utils.gin_rummy_error</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.melding">rlcard.games.gin_rummy.utils.melding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.move">rlcard.games.gin_rummy.utils.move</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.scorers">rlcard.games.gin_rummy.utils.scorers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.settings">rlcard.games.gin_rummy.utils.settings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.thinker">rlcard.games.gin_rummy.utils.thinker</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.utils">rlcard.games.gin_rummy.utils.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html">rlcard.games.uno</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.card">rlcard.games.uno.card</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.dealer">rlcard.games.uno.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.game">rlcard.games.uno.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.judger">rlcard.games.uno.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.player">rlcard.games.uno.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.round">rlcard.games.uno.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.utils">rlcard.games.uno.utils</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.dealer">rlcard.games.gin_rummy.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.game">rlcard.games.gin_rummy.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.judge">rlcard.games.gin_rummy.judge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.player">rlcard.games.gin_rummy.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.round">rlcard.games.gin_rummy.round</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.simpledoudizhu.html">rlcard.games.simpledoudizhu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.dealer">rlcard.games.simpledoudizhu.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.game">rlcard.games.simpledoudizhu.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.player">rlcard.games.simpledoudizhu.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.round">rlcard.games.simpledoudizhu.round</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.html#module-rlcard.games.base">rlcard.games.base</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.gin_rummy_human_agent">rlcard.agents.gin_rummy_human_agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.best_response_agent">rlcard.agents.best_response_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.agents.dmc_agent.html">rlcard.agents.dmc_agent</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.file_writer">rlcard.agents.dmc_agent.file_writer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.model">rlcard.agents.dmc_agent.model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.trainer">rlcard.agents.dmc_agent.trainer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.utils">rlcard.agents.dmc_agent.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.agents.human_agents.html">rlcard.agents.human_agents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.blackjack_human_agent">rlcard.agents.human_agents.blackjack_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.leduc_holdem_human_agent">rlcard.agents.human_agents.leduc_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.limit_holdem_human_agent">rlcard.agents.human_agents.limit_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.nolimit_holdem_human_agent">rlcard.agents.human_agents.nolimit_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.uno_human_agent">rlcard.agents.human_agents.uno_human_agent</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.cfr_agent">rlcard.agents.cfr_agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr_agent">rlcard.agents.deep_cfr_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.nfsp_agent">rlcard.agents.nfsp_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="rlcard.core.html">rlcard.core</a></li>
 </ul>
 
             
@@ -387,66 +388,157 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="rlcard-envs">
+  <section id="rlcard-envs">
 <h1>rlcard.envs<a class="headerlink" href="#rlcard-envs" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-rlcard.envs.env">
-<span id="rlcard-envs-env"></span><h2>rlcard.envs.env<a class="headerlink" href="#module-rlcard.envs.env" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.envs.env.Env">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.envs.env.</code><code class="sig-name descname">Env</code><span class="sig-paren">(</span><em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>The base Env class</p>
-<dl class="method">
-<dt id="rlcard.envs.env.Env.get_payoffs">
-<code class="sig-name descname">get_payoffs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.get_payoffs" title="Permalink to this definition">¶</a></dt>
+<section id="module-rlcard.envs.blackjack">
+<span id="rlcard-envs-blackjack"></span><h2>rlcard.envs.blackjack<a class="headerlink" href="#module-rlcard.envs.blackjack" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.envs.blackjack.BlackjackEnv">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.envs.blackjack.</span></span><span class="sig-name descname"><span class="pre">BlackjackEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.blackjack.BlackjackEnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
+<p>Blackjack Environment</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.blackjack.BlackjackEnv.get_payoffs">
+<span class="sig-name descname"><span class="pre">get_payoffs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.blackjack.BlackjackEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the payoff of a game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of payoffs</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.envs.doudizhu">
+<span id="rlcard-envs-doudizhu"></span><h2>rlcard.envs.doudizhu<a class="headerlink" href="#module-rlcard.envs.doudizhu" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.envs.doudizhu.DoudizhuEnv">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.envs.doudizhu.</span></span><span class="sig-name descname"><span class="pre">DoudizhuEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.doudizhu.DoudizhuEnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
+<p>Doudizhu Environment</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.doudizhu.DoudizhuEnv.get_action_feature">
+<span class="sig-name descname"><span class="pre">get_action_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.doudizhu.DoudizhuEnv.get_action_feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>For some environments such as DouDizhu, we can have action features</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The action features</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(numpy.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.doudizhu.DoudizhuEnv.get_payoffs">
+<span class="sig-name descname"><span class="pre">get_payoffs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.doudizhu.DoudizhuEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the payoffs of players. Must be implemented in the child class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A list of payoffs for each player.</p>
+<dd class="field-odd"><p>a list of payoffs for each player</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
+<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
 </dd>
 </dl>
-<p>Note: Must be implemented in the child class.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.envs.env.Env.get_perfect_information">
-<code class="sig-name descname">get_perfect_information</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.get_perfect_information" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.doudizhu.DoudizhuEnv.get_perfect_information">
+<span class="sig-name descname"><span class="pre">get_perfect_information</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.doudizhu.DoudizhuEnv.get_perfect_information" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the perfect information of the current state</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A dictionary of all the perfect information of the current state</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a>)</p>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.envs.env">
+<span id="rlcard-envs-env"></span><h2>rlcard.envs.env<a class="headerlink" href="#module-rlcard.envs.env" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.envs.env.Env">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.envs.env.</span></span><span class="sig-name descname"><span class="pre">Env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>The base Env class. For all the environments in RLCard,
+we should base on this class and implement as many functions
+as we can.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.env.Env.get_action_feature">
+<span class="sig-name descname"><span class="pre">get_action_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.get_action_feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>For some environments such as DouDizhu, we can have action features</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The action features</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(numpy.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.env.Env.get_payoffs">
+<span class="sig-name descname"><span class="pre">get_payoffs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.get_payoffs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the payoffs of players. Must be implemented in the child class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of payoffs for each player.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
 </dd>
 </dl>
 <p>Note: Must be implemented in the child class.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.envs.env.Env.get_player_id">
-<code class="sig-name descname">get_player_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.get_player_id" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.env.Env.get_perfect_information">
+<span class="sig-name descname"><span class="pre">get_perfect_information</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.get_perfect_information" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the perfect information of the current state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary of all the perfect information of the current state</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.env.Env.get_player_id">
+<span class="sig-name descname"><span class="pre">get_player_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.get_player_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the current player id</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The id of the current player</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a>)</p>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.envs.env.Env.get_state">
-<code class="sig-name descname">get_state</code><span class="sig-paren">(</span><em class="sig-param">player_id</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.get_state" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.env.Env.get_state">
+<span class="sig-name descname"><span class="pre">get_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.get_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the state given player id</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>player_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The player id</p>
+<dd class="field-odd"><p><strong>player_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – The player id</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The observed state of the player</p>
@@ -457,18 +549,13 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.envs.env.Env.init_game">
-<code class="sig-name descname">init_game</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.init_game" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="rlcard.envs.env.Env.is_over">
-<code class="sig-name descname">is_over</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.is_over" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.env.Env.is_over">
+<span class="sig-name descname"><span class="pre">is_over</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.is_over" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check whether the curent game is over</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>True is current game is over</p>
+<dd class="field-odd"><p>True if current game is over</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>(boolean)</p>
@@ -476,16 +563,28 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.envs.env.Env.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.reset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reset environment in single-agent mode
-Call _init_game if not in single agent mode</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.env.Env.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a new game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Tuple containing:</p>
+<blockquote>
+<div><p>(numpy.array): The begining state of the game
+(int): The begining player</p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a>)</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.envs.env.Env.run">
-<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">is_training=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.run" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.env.Env.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run a complete game, either for evaluation or training RL agent.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -496,7 +595,7 @@ Call _init_game if not in single agent mode</p>
 (list): A list payoffs. Each entry corresponds to one player.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)">tuple</a>) Tuple containing</p>
+<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a>) Tuple containing</p>
 </dd>
 </dl>
 <dl class="simple">
@@ -505,25 +604,31 @@ Call _init_game if not in single agent mode</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.envs.env.Env.set_agents">
-<code class="sig-name descname">set_agents</code><span class="sig-paren">(</span><em class="sig-param">agents</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.set_agents" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the agents that will interact with the environment</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.env.Env.seed">
+<span class="sig-name descname"><span class="pre">seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.seed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.env.Env.set_agents">
+<span class="sig-name descname"><span class="pre">set_agents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agents</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.set_agents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the agents that will interact with the environment.
+This function must be called before <cite>run</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>agents</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a>) – List of Agent classes</p>
+<dd class="field-odd"><p><strong>agents</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)"><em>list</em></a>) – List of Agent classes</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.envs.env.Env.step">
-<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param">action</em>, <em class="sig-param">raw_action=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.step" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.env.Env.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Step forward</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>action</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The action taken by the current player</p></li>
+<li><p><strong>action</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – The action taken by the current player</p></li>
 <li><p><strong>raw_action</strong> (<em>boolean</em>) – True if the action is a raw action</p></li>
 </ul>
 </dd>
@@ -536,14 +641,14 @@ Call _init_game if not in single agent mode</p>
 </p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)">tuple</a>)</p>
+<dd class="field-odd"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a>)</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.envs.env.Env.step_back">
-<code class="sig-name descname">step_back</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.step_back" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.env.Env.step_back">
+<span class="sig-name descname"><span class="pre">step_back</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.env.Env.step_back" title="Permalink to this definition">¶</a></dt>
 <dd><p>Take one step backward.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -555,7 +660,7 @@ Call _init_game if not in single agent mode</p>
 </p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)">tuple</a>)</p>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a>)</p>
 </dd>
 </dl>
 <p>Note: Error will be raised if step back from the root node.</p>
@@ -563,31 +668,196 @@ Call _init_game if not in single agent mode</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-rlcard.envs.registration">
+</section>
+<section id="module-rlcard.envs.gin_rummy">
+<span id="rlcard-envs-gin-rummy"></span><h2>rlcard.envs.gin_rummy<a class="headerlink" href="#module-rlcard.envs.gin_rummy" title="Permalink to this headline">¶</a></h2>
+<p>File name: envs/gin_rummy.py
+Author: William Hale
+Date created: 2/12/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.envs.gin_rummy.GinRummyEnv">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.envs.gin_rummy.</span></span><span class="sig-name descname"><span class="pre">GinRummyEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.gin_rummy.GinRummyEnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
+<p>GinRummy Environment</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.gin_rummy.GinRummyEnv.get_payoffs">
+<span class="sig-name descname"><span class="pre">get_payoffs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.gin_rummy.GinRummyEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the payoffs of players. Must be implemented in the child class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a list of payoffs for each player</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.envs.leducholdem">
+<span id="rlcard-envs-leducholdem"></span><h2>rlcard.envs.leducholdem<a class="headerlink" href="#module-rlcard.envs.leducholdem" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.envs.leducholdem.LeducholdemEnv">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.envs.leducholdem.</span></span><span class="sig-name descname"><span class="pre">LeducholdemEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.leducholdem.LeducholdemEnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
+<p>Leduc Hold’em Environment</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.leducholdem.LeducholdemEnv.get_payoffs">
+<span class="sig-name descname"><span class="pre">get_payoffs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.leducholdem.LeducholdemEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the payoff of a game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of payoffs</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.leducholdem.LeducholdemEnv.get_perfect_information">
+<span class="sig-name descname"><span class="pre">get_perfect_information</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.leducholdem.LeducholdemEnv.get_perfect_information" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the perfect information of the current state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary of all the perfect information of the current state</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.envs.limitholdem">
+<span id="rlcard-envs-limitholdem"></span><h2>rlcard.envs.limitholdem<a class="headerlink" href="#module-rlcard.envs.limitholdem" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.envs.limitholdem.LimitholdemEnv">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.envs.limitholdem.</span></span><span class="sig-name descname"><span class="pre">LimitholdemEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.limitholdem.LimitholdemEnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
+<p>Limitholdem Environment</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.limitholdem.LimitholdemEnv.get_payoffs">
+<span class="sig-name descname"><span class="pre">get_payoffs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.limitholdem.LimitholdemEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the payoff of a game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of payoffs</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.limitholdem.LimitholdemEnv.get_perfect_information">
+<span class="sig-name descname"><span class="pre">get_perfect_information</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.limitholdem.LimitholdemEnv.get_perfect_information" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the perfect information of the current state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary of all the perfect information of the current state</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.envs.mahjong">
+<span id="rlcard-envs-mahjong"></span><h2>rlcard.envs.mahjong<a class="headerlink" href="#module-rlcard.envs.mahjong" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.envs.mahjong.MahjongEnv">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.envs.mahjong.</span></span><span class="sig-name descname"><span class="pre">MahjongEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.mahjong.MahjongEnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
+<p>Mahjong Environment</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.mahjong.MahjongEnv.get_payoffs">
+<span class="sig-name descname"><span class="pre">get_payoffs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.mahjong.MahjongEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the payoffs of players. Must be implemented in the child class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a list of payoffs for each player</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.envs.nolimitholdem">
+<span id="rlcard-envs-nolimitholdem"></span><h2>rlcard.envs.nolimitholdem<a class="headerlink" href="#module-rlcard.envs.nolimitholdem" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.envs.nolimitholdem.NolimitholdemEnv">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.envs.nolimitholdem.</span></span><span class="sig-name descname"><span class="pre">NolimitholdemEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.nolimitholdem.NolimitholdemEnv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
+<p>Limitholdem Environment</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.nolimitholdem.NolimitholdemEnv.get_payoffs">
+<span class="sig-name descname"><span class="pre">get_payoffs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.nolimitholdem.NolimitholdemEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the payoff of a game</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of payoffs</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.nolimitholdem.NolimitholdemEnv.get_perfect_information">
+<span class="sig-name descname"><span class="pre">get_perfect_information</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.nolimitholdem.NolimitholdemEnv.get_perfect_information" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the perfect information of the current state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary of all the perfect information of the current state</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.envs.registration">
 <span id="rlcard-envs-registration"></span><h2>rlcard.envs.registration<a class="headerlink" href="#module-rlcard.envs.registration" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.envs.registration.EnvRegistry">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.envs.registration.</code><code class="sig-name descname">EnvRegistry</code><a class="headerlink" href="#rlcard.envs.registration.EnvRegistry" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.envs.registration.EnvRegistry">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.envs.registration.</span></span><span class="sig-name descname"><span class="pre">EnvRegistry</span></span><a class="headerlink" href="#rlcard.envs.registration.EnvRegistry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Register an environment (game) by ID</p>
-<dl class="method">
-<dt id="rlcard.envs.registration.EnvRegistry.make">
-<code class="sig-name descname">make</code><span class="sig-paren">(</span><em class="sig-param">env_id</em>, <em class="sig-param">config={'active_player': 0</em>, <em class="sig-param">'allow_raw_data': False</em>, <em class="sig-param">'allow_step_back': False</em>, <em class="sig-param">'env_num': 1</em>, <em class="sig-param">'record_action': False</em>, <em class="sig-param">'seed': None</em>, <em class="sig-param">'single_agent_mode': False}</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.registration.EnvRegistry.make" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.registration.EnvRegistry.make">
+<span class="sig-name descname"><span class="pre">make</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'allow_step_back':</span> <span class="pre">False,</span> <span class="pre">'seed':</span> <span class="pre">None}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.registration.EnvRegistry.make" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create and environment instance</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>env_id</strong> (<em>string</em>) – The name of the environment</p></li>
-<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – A dictionary of the environment settings</p></li>
+<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a>) – A dictionary of the environment settings</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="rlcard.envs.registration.EnvRegistry.register">
-<code class="sig-name descname">register</code><span class="sig-paren">(</span><em class="sig-param">env_id</em>, <em class="sig-param">entry_point</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.registration.EnvRegistry.register" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.registration.EnvRegistry.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry_point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.registration.EnvRegistry.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register an environment</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -601,14 +871,14 @@ Call _init_game if not in single agent mode</p>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="rlcard.envs.registration.EnvSpec">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.envs.registration.</code><code class="sig-name descname">EnvSpec</code><span class="sig-paren">(</span><em class="sig-param">env_id</em>, <em class="sig-param">entry_point=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.registration.EnvSpec" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.envs.registration.EnvSpec">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.envs.registration.</span></span><span class="sig-name descname"><span class="pre">EnvSpec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry_point</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.registration.EnvSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>A specification for a particular instance of the environment.</p>
-<dl class="method">
-<dt id="rlcard.envs.registration.EnvSpec.make">
-<code class="sig-name descname">make</code><span class="sig-paren">(</span><em class="sig-param">config={'active_player': 0</em>, <em class="sig-param">'allow_raw_data': False</em>, <em class="sig-param">'allow_step_back': False</em>, <em class="sig-param">'env_num': 1</em>, <em class="sig-param">'record_action': False</em>, <em class="sig-param">'seed': None</em>, <em class="sig-param">'single_agent_mode': False}</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.registration.EnvSpec.make" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.registration.EnvSpec.make">
+<span class="sig-name descname"><span class="pre">make</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'allow_step_back':</span> <span class="pre">False,</span> <span class="pre">'seed':</span> <span class="pre">None}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.registration.EnvSpec.make" title="Permalink to this definition">¶</a></dt>
 <dd><p>Instantiates an instance of the environment</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -623,24 +893,24 @@ config (dict): A dictionary of the environment settings</p>
 
 </dd></dl>
 
-<dl class="function">
-<dt id="rlcard.envs.registration.make">
-<code class="sig-prename descclassname">rlcard.envs.registration.</code><code class="sig-name descname">make</code><span class="sig-paren">(</span><em class="sig-param">env_id</em>, <em class="sig-param">config={}</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.registration.make" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.envs.registration.make">
+<span class="sig-prename descclassname"><span class="pre">rlcard.envs.registration.</span></span><span class="sig-name descname"><span class="pre">make</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.registration.make" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create and environment instance</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>env_id</strong> (<em>string</em>) – The name of the environment</p></li>
-<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a>) – A dictionary of the environment settings</p></li>
-<li><p><strong>env_num</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – The number of environments</p></li>
+<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><em>dict</em></a>) – A dictionary of the environment settings</p></li>
+<li><p><strong>env_num</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – The number of environments</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="rlcard.envs.registration.register">
-<code class="sig-prename descclassname">rlcard.envs.registration.</code><code class="sig-name descname">register</code><span class="sig-paren">(</span><em class="sig-param">env_id</em>, <em class="sig-param">entry_point</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.registration.register" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.envs.registration.register">
+<span class="sig-prename descclassname"><span class="pre">rlcard.envs.registration.</span></span><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry_point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.registration.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register an environment</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -652,269 +922,46 @@ config (dict): A dictionary of the environment settings</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-rlcard.envs.blackjack">
-<span id="rlcard-envs-blackjack"></span><h2>rlcard.envs.blackjack<a class="headerlink" href="#module-rlcard.envs.blackjack" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.envs.blackjack.BlackjackEnv">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.envs.blackjack.</code><code class="sig-name descname">BlackjackEnv</code><span class="sig-paren">(</span><em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.blackjack.BlackjackEnv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
-<p>Blackjack Environment</p>
-<dl class="method">
-<dt id="rlcard.envs.blackjack.BlackjackEnv.get_payoffs">
-<code class="sig-name descname">get_payoffs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.blackjack.BlackjackEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the payoff of a game</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>list of payoffs</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-rlcard.envs.doudizhu">
-<span id="rlcard-envs-doudizhu"></span><h2>rlcard.envs.doudizhu<a class="headerlink" href="#module-rlcard.envs.doudizhu" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.envs.doudizhu.DoudizhuEnv">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.envs.doudizhu.</code><code class="sig-name descname">DoudizhuEnv</code><span class="sig-paren">(</span><em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.doudizhu.DoudizhuEnv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
-<p>Doudizhu Environment</p>
-<dl class="method">
-<dt id="rlcard.envs.doudizhu.DoudizhuEnv.get_payoffs">
-<code class="sig-name descname">get_payoffs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.doudizhu.DoudizhuEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the payoffs of players. Must be implemented in the child class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>a list of payoffs for each player</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-rlcard.envs.limitholdem">
-<span id="rlcard-envs-limitholdem"></span><h2>rlcard.envs.limitholdem<a class="headerlink" href="#module-rlcard.envs.limitholdem" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.envs.limitholdem.LimitholdemEnv">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.envs.limitholdem.</code><code class="sig-name descname">LimitholdemEnv</code><span class="sig-paren">(</span><em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.limitholdem.LimitholdemEnv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
-<p>Limitholdem Environment</p>
-<dl class="method">
-<dt id="rlcard.envs.limitholdem.LimitholdemEnv.get_payoffs">
-<code class="sig-name descname">get_payoffs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.limitholdem.LimitholdemEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the payoff of a game</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>list of payoffs</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.envs.limitholdem.LimitholdemEnv.get_perfect_information">
-<code class="sig-name descname">get_perfect_information</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.limitholdem.LimitholdemEnv.get_perfect_information" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the perfect information of the current state</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A dictionary of all the perfect information of the current state</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-rlcard.envs.gin_rummy">
-<span id="rlcard-envs-gin-rummy"></span><h2>rlcard.envs.gin_rummy<a class="headerlink" href="#module-rlcard.envs.gin_rummy" title="Permalink to this headline">¶</a></h2>
-<p>File name: envs/gin_rummy.py
-Author: William Hale
-Date created: 2/12/2020</p>
-<dl class="class">
-<dt id="rlcard.envs.gin_rummy.GinRummyEnv">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.envs.gin_rummy.</code><code class="sig-name descname">GinRummyEnv</code><span class="sig-paren">(</span><em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.gin_rummy.GinRummyEnv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
-<p>GinRummy Environment</p>
-<dl class="method">
-<dt id="rlcard.envs.gin_rummy.GinRummyEnv.get_payoffs">
-<code class="sig-name descname">get_payoffs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.gin_rummy.GinRummyEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the payoffs of players. Must be implemented in the child class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>a list of payoffs for each player</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-rlcard.envs.leducholdem">
-<span id="rlcard-envs-leducholdem"></span><h2>rlcard.envs.leducholdem<a class="headerlink" href="#module-rlcard.envs.leducholdem" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.envs.leducholdem.LeducholdemEnv">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.envs.leducholdem.</code><code class="sig-name descname">LeducholdemEnv</code><span class="sig-paren">(</span><em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.leducholdem.LeducholdemEnv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
-<p>Leduc Hold’em Environment</p>
-<dl class="method">
-<dt id="rlcard.envs.leducholdem.LeducholdemEnv.get_payoffs">
-<code class="sig-name descname">get_payoffs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.leducholdem.LeducholdemEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the payoff of a game</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>list of payoffs</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.envs.leducholdem.LeducholdemEnv.get_perfect_information">
-<code class="sig-name descname">get_perfect_information</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.leducholdem.LeducholdemEnv.get_perfect_information" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the perfect information of the current state</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A dictionary of all the perfect information of the current state</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-rlcard.envs.mahjong">
-<span id="rlcard-envs-mahjong"></span><h2>rlcard.envs.mahjong<a class="headerlink" href="#module-rlcard.envs.mahjong" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.envs.mahjong.MahjongEnv">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.envs.mahjong.</code><code class="sig-name descname">MahjongEnv</code><span class="sig-paren">(</span><em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.mahjong.MahjongEnv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
-<p>Mahjong Environment</p>
-<dl class="method">
-<dt id="rlcard.envs.mahjong.MahjongEnv.get_payoffs">
-<code class="sig-name descname">get_payoffs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.mahjong.MahjongEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the payoffs of players. Must be implemented in the child class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>a list of payoffs for each player</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-rlcard.envs.nolimitholdem">
-<span id="rlcard-envs-nolimitholdem"></span><h2>rlcard.envs.nolimitholdem<a class="headerlink" href="#module-rlcard.envs.nolimitholdem" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.envs.nolimitholdem.NolimitholdemEnv">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.envs.nolimitholdem.</code><code class="sig-name descname">NolimitholdemEnv</code><span class="sig-paren">(</span><em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.nolimitholdem.NolimitholdemEnv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
-<p>Limitholdem Environment</p>
-<dl class="method">
-<dt id="rlcard.envs.nolimitholdem.NolimitholdemEnv.get_payoffs">
-<code class="sig-name descname">get_payoffs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.nolimitholdem.NolimitholdemEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the payoff of a game</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>list of payoffs</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="rlcard.envs.nolimitholdem.NolimitholdemEnv.get_perfect_information">
-<code class="sig-name descname">get_perfect_information</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.nolimitholdem.NolimitholdemEnv.get_perfect_information" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the perfect information of the current state</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A dictionary of all the perfect information of the current state</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-rlcard.envs.simpledoudizhu">
-<span id="rlcard-envs-simpledoudizhu"></span><h2>rlcard.envs.simpledoudizhu<a class="headerlink" href="#module-rlcard.envs.simpledoudizhu" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.envs.simpledoudizhu.SimpleDoudizhuEnv">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.envs.simpledoudizhu.</code><code class="sig-name descname">SimpleDoudizhuEnv</code><span class="sig-paren">(</span><em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.simpledoudizhu.SimpleDoudizhuEnv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
-<p>SimpleDoudizhu Environment</p>
-<dl class="method">
-<dt id="rlcard.envs.simpledoudizhu.SimpleDoudizhuEnv.get_payoffs">
-<code class="sig-name descname">get_payoffs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.simpledoudizhu.SimpleDoudizhuEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the payoffs of players. Must be implemented in the child class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>a list of payoffs for each player</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>payoffs (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-rlcard.envs.uno">
+</section>
+<section id="module-rlcard.envs.uno">
 <span id="rlcard-envs-uno"></span><h2>rlcard.envs.uno<a class="headerlink" href="#module-rlcard.envs.uno" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rlcard.envs.uno.UnoEnv">
-<em class="property">class </em><code class="sig-prename descclassname">rlcard.envs.uno.</code><code class="sig-name descname">UnoEnv</code><span class="sig-paren">(</span><em class="sig-param">config</em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.uno.UnoEnv" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.envs.uno.UnoEnv">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.envs.uno.</span></span><span class="sig-name descname"><span class="pre">UnoEnv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.uno.UnoEnv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#rlcard.envs.env.Env" title="rlcard.envs.env.Env"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.envs.env.Env</span></code></a></p>
-<dl class="method">
-<dt id="rlcard.envs.uno.UnoEnv.get_payoffs">
-<code class="sig-name descname">get_payoffs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.uno.UnoEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.uno.UnoEnv.get_payoffs">
+<span class="sig-name descname"><span class="pre">get_payoffs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.uno.UnoEnv.get_payoffs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the payoffs of players. Must be implemented in the child class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A list of payoffs for each player.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>)</p>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>)</p>
 </dd>
 </dl>
 <p>Note: Must be implemented in the child class.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.envs.uno.UnoEnv.get_perfect_information">
+<span class="sig-name descname"><span class="pre">get_perfect_information</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.envs.uno.UnoEnv.get_perfect_information" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the perfect information of the current state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary of all the perfect information of the current state</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)">dict</a>)</p>
+</dd>
+</dl>
 </dd></dl>
 
-</div>
-</div>
+</dd></dl>
+
+</section>
+</section>
 
 
            </div>

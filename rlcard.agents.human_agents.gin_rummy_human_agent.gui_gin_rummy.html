@@ -1,0 +1,1278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy &mdash; RLcard 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
+    
+    <script type="text/javascript" src="static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <!-- <link rel="copyright" title="DATA Lab at Texas A&M University"> -->
+    <link rel="prev" title="rlcard.agents.human_agents.gin_rummy_human_agent.gui_cards" href="rlcard.agents.human_agents.gin_rummy_human_agent.gui_cards.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+          <a href="index.html" style="margin: 0px;"><img src="static/imgs/logo_white.png" style="height: initial; width: initial; border-radius: initial; margin: 0px;" alt="home"></a>
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search" id="test-search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#design-principles">Design Principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#rlcard-high-level-design">RLCard High-level Design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#environments">Environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#games">Games</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview.html#agents">Agents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-chance-sampling-on-leduc-hold-em">Training CFR (chance sampling) on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-dmc-on-dou-dizhu">Training DMC on Dou Dizhu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#evaluating-agents">Evaluating Agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getting_started.html#evaluating-dmc-on-dou-dizhu">Evaluating DMC on Dou Dizhu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="games.html#blackjack">Blackjack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-blackjack">State Representation of Blackjack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-blackjack">Action Encoding of Blackjack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-blackjack">Payoff of Blackjack</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#leduc-hold-em">Leduc Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-leduc-hold-em">State Representation of Leduc Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-leduc-hold-em">Action Encoding of Leduc Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-leduc-hold-em">Payoff of Leduc Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#limit-texas-hold-em">Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-limit-texas-hold-em">State Representation of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-limit-texas-hold-em">Action Encoding of Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-limit-texas-hold-em">Payoff of Limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#dou-dizhu">Dou Dizhu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-dou-dizhu">State Representation of Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-dou-dizhu">State Encoding of Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-dou-dizhu">Action Encoding of Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff">Payoff</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-mahjong">State Representation of Mahjong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-space-of-mahjong">Action Space of Mahjong</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-mahjong">Payoff of Mahjong</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-no-limit-texas-hold-em">Payoff of No-Limit Texas Hold’em</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#uno">UNO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-uno">State Representation of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-uno">State Encoding of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-uno">Action Encoding of Uno</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-uno">Payoff of Uno</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#gin-rummy">Gin Rummy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-gin-rummy">State Representation of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-space-of-gin-rummy">Action Space of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-gin-rummy">Payoff of Gin Rummy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#settings">Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#variations">Variations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-monte-carlo">Deep Monte-Carlo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-q-learning">Deep-Q Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#nfsp">NFSP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr-chance-sampling">CFR (chance sampling)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development.html#adding-pre-trained-rule-based-models">Adding Pre-trained/Rule-based models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#developping-algorithms">Developping Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#adding-new-environments">Adding New Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html#customizing-environments">Customizing Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="development.html#state-representation">State Representation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development.html#action-encoding">Action Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development.html#reward-calculation">Reward Calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="development.html#modifying-game">Modifying Game</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Documents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="rlcard.envs.html">rlcard.envs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.blackjack">rlcard.envs.blackjack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.doudizhu">rlcard.envs.doudizhu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.gin_rummy">rlcard.envs.gin_rummy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.leducholdem">rlcard.envs.leducholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.limitholdem">rlcard.envs.limitholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.mahjong">rlcard.envs.mahjong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.nolimitholdem">rlcard.envs.nolimitholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.registration">rlcard.envs.registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.uno">rlcard.envs.uno</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rlcard.utils.html">rlcard.utils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.logger">rlcard.utils.logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.seeding">rlcard.utils.seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.utils">rlcard.utils.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rlcard.games.html">rlcard.games</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html">rlcard.games.blackjack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.dealer">rlcard.games.blackjack.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.game">rlcard.games.blackjack.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.judger">rlcard.games.blackjack.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.player">rlcard.games.blackjack.player</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html">rlcard.games.doudizhu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.dealer">rlcard.games.doudizhu.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.game">rlcard.games.doudizhu.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.judger">rlcard.games.doudizhu.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.player">rlcard.games.doudizhu.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.round">rlcard.games.doudizhu.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.utils">rlcard.games.doudizhu.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.dealer">rlcard.games.gin_rummy.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.game">rlcard.games.gin_rummy.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.judge">rlcard.games.gin_rummy.judge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.player">rlcard.games.gin_rummy.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.round">rlcard.games.gin_rummy.round</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html">rlcard.games.leducholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.dealer">rlcard.games.leducholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.game">rlcard.games.leducholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.judger">rlcard.games.leducholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.player">rlcard.games.leducholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.round">rlcard.games.leducholdem.round</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html">rlcard.games.limitholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.dealer">rlcard.games.limitholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.game">rlcard.games.limitholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.judger">rlcard.games.limitholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.player">rlcard.games.limitholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.round">rlcard.games.limitholdem.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.utils">rlcard.games.limitholdem.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html">rlcard.games.mahjong</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.card">rlcard.games.mahjong.card</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.dealer">rlcard.games.mahjong.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.game">rlcard.games.mahjong.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.judger">rlcard.games.mahjong.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.player">rlcard.games.mahjong.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.round">rlcard.games.mahjong.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.utils">rlcard.games.mahjong.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html">rlcard.games.nolimitholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.dealer">rlcard.games.nolimitholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.game">rlcard.games.nolimitholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.judger">rlcard.games.nolimitholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.player">rlcard.games.nolimitholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.round">rlcard.games.nolimitholdem.round</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html">rlcard.games.uno</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.card">rlcard.games.uno.card</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.dealer">rlcard.games.uno.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.game">rlcard.games.uno.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.judger">rlcard.games.uno.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.player">rlcard.games.uno.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.round">rlcard.games.uno.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.utils">rlcard.games.uno.utils</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.html#module-rlcard.games.base">rlcard.games.base</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="rlcard.agents.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="rlcard.agents.dmc_agent.html">rlcard.agents.dmc_agent</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.file_writer">rlcard.agents.dmc_agent.file_writer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.model">rlcard.agents.dmc_agent.model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.trainer">rlcard.agents.dmc_agent.trainer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.utils">rlcard.agents.dmc_agent.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="rlcard.agents.human_agents.html">rlcard.agents.human_agents</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="rlcard.agents.human_agents.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.blackjack_human_agent">rlcard.agents.human_agents.blackjack_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.leduc_holdem_human_agent">rlcard.agents.human_agents.leduc_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.limit_holdem_human_agent">rlcard.agents.human_agents.limit_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.nolimit_holdem_human_agent">rlcard.agents.human_agents.nolimit_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.uno_human_agent">rlcard.agents.human_agents.uno_human_agent</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.cfr_agent">rlcard.agents.cfr_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.nfsp_agent">rlcard.agents.nfsp_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="doctree.html">RLcard</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="display: flex; justify-content: space-between">
+  <div role="navigation" aria-label="breadcrumbs navigation">
+
+    <ul class="wy-breadcrumbs" style="margin-top: 0.3rem;">
+      
+        <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          
+        <li>RLCard: A Toolkit for Reinforcement Learning in Card Games</li>
+      
+    </ul>
+
+    
+  </div>
+  <div style="display: block; width: 7.5rem; max-width: 7.5rem; padding-right: .6rem; float: right;">
+    <a href="https://github.com/datamllab/rlcard" title="Go to repository" data-md-source="github" data-md-state="done" style="display: block; padding-right: .6rem; line-height: 1.2">
+      <div style="display: inline-block; width: 2.4rem; height: 2.4rem;">
+        <i class="fa fa-github" style="font-size: 2rem"></i>  
+      </div>
+      <div style="display: inline-block; margin-left: -2rem; margin-top: -0.6rem; padding-left: 2rem; vertical-align: middle">
+        GitHub
+        <ul style="font-size: 0.7rem; list-style-type: none;"><li style="float: left" id="github-stars">... Stars</li></ul>
+      </div>
+      <script>
+        $(document).ready(function(){
+        $.ajax({ url: "https://api.github.com/repos/datamllab/rlcard",
+                context: document.body,
+                success: function(response){
+                  console.log(response.stargazers_count);
+                  $("#github-stars").html(response.stargazers_count + ' Stars');
+                }});
+        });
+      </script>
+    </a>
+  </div>
+</div>
+<hr/>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy">
+<h1>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy<a class="headerlink" href="#rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy" title="Permalink to this headline">¶</a></h1>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-canvas-item"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: canvas_item.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.</span></span><span class="sig-name descname"><span class="pre">CanvasItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem.get_tags">
+<span class="sig-name descname"><span class="pre">get_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem.get_tags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CardItem">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.</span></span><span class="sig-name descname"><span class="pre">CardItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">card_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">card_image</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">CardImage</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CardItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem" title="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CardItem.flip_over">
+<span class="sig-name descname"><span class="pre">flip_over</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CardItem.flip_over" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CardItem.is_face_up">
+<span class="sig-name descname"><span class="pre">is_face_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CardItem.is_face_up" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CardItem.set_card_id_face_up">
+<span class="sig-name descname"><span class="pre">set_card_id_face_up</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">face_up</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CardItem.set_card_id_face_up" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.configurations">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-configurations"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.configurations<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.configurations" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: configurations.py
+Author: William Hale
+Date created: 3/14/2020</p>
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-env-thread"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: env_thread.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread.EnvThread">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread.</span></span><span class="sig-name descname"><span class="pre">EnvThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gin_rummy_env</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="rlcard.envs.html#rlcard.envs.gin_rummy.GinRummyEnv" title="rlcard.envs.gin_rummy.GinRummyEnv"><span class="pre">rlcard.envs.gin_rummy.GinRummyEnv</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread.EnvThread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/threading.html#threading.Thread" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread.EnvThread.get_waiting_player_id">
+<span class="sig-name descname"><span class="pre">get_waiting_player_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread.EnvThread.get_waiting_player_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread.EnvThread.is_action_id_available">
+<span class="sig-name descname"><span class="pre">is_action_id_available</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread.EnvThread.is_action_id_available" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread.EnvThread.moves">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">moves</span></span><em class="property"><span class="pre">:</span> <span class="pre">List[rlcard.games.gin_rummy.utils.move.GinRummyMove]</span></em><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread.EnvThread.moves" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread.EnvThread.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread.EnvThread.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method representing the thread’s activity.</p>
+<p>You may override this method in a subclass. The standard run() method
+invokes the callable object passed to the object’s constructor as the
+target argument, if any, with sequential and keyword arguments taken
+from the args and kwargs arguments, respectively.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread.EnvThread.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.env_thread.EnvThread.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_app">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-game-app"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_app<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_app" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: game_app.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_app.GameApp">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_app.</span></span><span class="sig-name descname"><span class="pre">GameApp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">make_gin_rummy_env</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">GinRummyEnv</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_app.GameApp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-game-canvas"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: game_canvas.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.</span></span><span class="sig-name descname"><span class="pre">GameCanvas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tkinter.Frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_app</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameApp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.Canvas</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.current_player_id">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">current_player_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.current_player_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.is_treating_as_human">
+<span class="sig-name descname"><span class="pre">is_treating_as_human</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.is_treating_as_human" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.on_dead_hand">
+<span class="sig-name descname"><span class="pre">on_dead_hand</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.on_dead_hand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.on_going_out">
+<span class="sig-name descname"><span class="pre">on_going_out</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.on_going_out" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.player_types">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">player_types</span></span><em class="property"><span class="pre">:</span> <span class="pre">List[rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.player_type.PlayerType]</span></em><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.player_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.update_configuration_game_background_color">
+<span class="sig-name descname"><span class="pre">update_configuration_game_background_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">background_color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.update_configuration_game_background_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.update_configurations">
+<span class="sig-name descname"><span class="pre">update_configurations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas.GameCanvas.update_configurations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_debug">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-game-canvas-debug"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_debug<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_debug" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: game_canvas_debug.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_debug.GameCanvasDebug">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_debug.</span></span><span class="sig-name descname"><span class="pre">GameCanvasDebug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_debug.GameCanvasDebug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_debug.GameCanvasDebug.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_debug.GameCanvasDebug.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_debug.GameCanvasDebug.get_card_name">
+<span class="sig-name descname"><span class="pre">get_card_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">card_item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_debug.GameCanvasDebug.get_card_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-game-canvas-getter"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: game_canvas_getter.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.</span></span><span class="sig-name descname"><span class="pre">GameCanvasGetter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_card_id">
+<span class="sig-name descname"><span class="pre">get_card_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">card_item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_card_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_current_player_id">
+<span class="sig-name descname"><span class="pre">get_current_player_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_current_player_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_game">
+<span class="sig-name descname"><span class="pre">get_game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame" title="rlcard.games.gin_rummy.game.GinRummyGame"><span class="pre">rlcard.games.gin_rummy.game.GinRummyGame</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_game" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_game_canvas_moves">
+<span class="sig-name descname"><span class="pre">get_game_canvas_moves</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.move.GinRummyMove" title="rlcard.games.gin_rummy.utils.move.GinRummyMove"><span class="pre">rlcard.games.gin_rummy.utils.move.GinRummyMove</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_game_canvas_moves" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_held_pile_cards">
+<span class="sig-name descname"><span class="pre">get_held_pile_cards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="rlcard.games.html#rlcard.games.base.Card" title="rlcard.games.base.Card"><span class="pre">rlcard.games.base.Card</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_held_pile_cards" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_held_pile_item_ids">
+<span class="sig-name descname"><span class="pre">get_held_pile_item_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_held_pile_item_ids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_legal_actions">
+<span class="sig-name descname"><span class="pre">get_legal_actions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.action_event.ActionEvent" title="rlcard.games.gin_rummy.utils.action_event.ActionEvent"><span class="pre">rlcard.games.gin_rummy.utils.action_event.ActionEvent</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_legal_actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_selected_held_pile_item_ids">
+<span class="sig-name descname"><span class="pre">get_selected_held_pile_item_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_selected_held_pile_item_ids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_settings">
+<span class="sig-name descname"><span class="pre">get_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="rlcard.games.gin_rummy.utils.html#rlcard.games.gin_rummy.utils.settings.Settings" title="rlcard.games.gin_rummy.utils.settings.Settings"><span class="pre">rlcard.games.gin_rummy.utils.settings.Settings</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_stock_pile_item_ids">
+<span class="sig-name descname"><span class="pre">get_stock_pile_item_ids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_stock_pile_item_ids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_tags">
+<span class="sig-name descname"><span class="pre">get_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item_id</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_tags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_top_discard_pile_item_id">
+<span class="sig-name descname"><span class="pre">get_top_discard_pile_item_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_top_discard_pile_item_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_top_stock_pile_item_id">
+<span class="sig-name descname"><span class="pre">get_top_stock_pile_item_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_getter.GameCanvasGetter.get_top_stock_pile_item_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-game-canvas-post-doing-action"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: game_canvas_post_doing_action.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.</span></span><span class="sig-name descname"><span class="pre">GameCanvasPostDoingAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.post_do_declare_dead_hand_action">
+<span class="sig-name descname"><span class="pre">post_do_declare_dead_hand_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.post_do_declare_dead_hand_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.post_do_discard_action">
+<span class="sig-name descname"><span class="pre">post_do_discard_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">selected_held_pile_item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.post_do_discard_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.post_do_discard_card_drawn_from_stock_pile_action">
+<span class="sig-name descname"><span class="pre">post_do_discard_card_drawn_from_stock_pile_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">top_stock_pile_item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.post_do_discard_card_drawn_from_stock_pile_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.post_do_get_card_action">
+<span class="sig-name descname"><span class="pre">post_do_get_card_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">drawn_card_item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">hit_item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">drawn_card_item_tag</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.post_do_get_card_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.post_do_gin_action">
+<span class="sig-name descname"><span class="pre">post_do_gin_action</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.post_do_gin_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.post_do_knock_action">
+<span class="sig-name descname"><span class="pre">post_do_knock_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selected_held_pile_item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.post_do_knock_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.put_down_meld_cluster">
+<span class="sig-name descname"><span class="pre">put_down_meld_cluster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meld_cluster</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.put_down_meld_cluster" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.put_down_meld_pile">
+<span class="sig-name descname"><span class="pre">put_down_meld_pile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meld_pile</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="rlcard.games.html#rlcard.games.base.Card" title="rlcard.games.base.Card"><span class="pre">rlcard.games.base.Card</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anchor</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_post_doing_action.GameCanvasPostDoingAction.put_down_meld_pile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-game-canvas-query"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: game_canvas.query.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.</span></span><span class="sig-name descname"><span class="pre">GameCanvasQuery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.can_declare_dead_hand">
+<span class="sig-name descname"><span class="pre">can_declare_dead_hand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.can_declare_dead_hand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.can_discard_card">
+<span class="sig-name descname"><span class="pre">can_discard_card</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.can_discard_card" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.can_draw_from_discard_pile">
+<span class="sig-name descname"><span class="pre">can_draw_from_discard_pile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.can_draw_from_discard_pile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.can_draw_from_stock_pile">
+<span class="sig-name descname"><span class="pre">can_draw_from_stock_pile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.can_draw_from_stock_pile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.can_gin">
+<span class="sig-name descname"><span class="pre">can_gin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.can_gin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.can_knock">
+<span class="sig-name descname"><span class="pre">can_knock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.can_knock" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.get_game">
+<span class="sig-name descname"><span class="pre">get_game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame" title="rlcard.games.gin_rummy.game.GinRummyGame"><span class="pre">rlcard.games.gin_rummy.game.GinRummyGame</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.get_game" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_dead_hand_button_visible">
+<span class="sig-name descname"><span class="pre">is_dead_hand_button_visible</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_dead_hand_button_visible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_game_over">
+<span class="sig-name descname"><span class="pre">is_game_over</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_game_over" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_going_out_button_visible">
+<span class="sig-name descname"><span class="pre">is_going_out_button_visible</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_going_out_button_visible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_human">
+<span class="sig-name descname"><span class="pre">is_human</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_human" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_item_id_selected">
+<span class="sig-name descname"><span class="pre">is_item_id_selected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item_id</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_item_id_selected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_scoring">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">is_scoring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">legal_actions</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_scoring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_top_discard_pile_item_drawn">
+<span class="sig-name descname"><span class="pre">is_top_discard_pile_item_drawn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_top_discard_pile_item_drawn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_top_stock_pile_item_drawn">
+<span class="sig-name descname"><span class="pre">is_top_stock_pile_item_drawn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_query.GameCanvasQuery.is_top_stock_pile_item_drawn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-game-canvas-updater"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: game_canvas_updater.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.</span></span><span class="sig-name descname"><span class="pre">GameCanvasUpdater</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater.apply_canvas_updates">
+<span class="sig-name descname"><span class="pre">apply_canvas_updates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater.apply_canvas_updates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater.did_perform_actions">
+<span class="sig-name descname"><span class="pre">did_perform_actions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actions</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater.did_perform_actions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater.env">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">env</span></span><em class="property"><span class="pre">:</span> <span class="pre">GinRummyEnv</span></em><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater.env" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater.human_agent">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">human_agent</span></span><em class="property"><span class="pre">:</span> <span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gin_rummy_human_agent.HumanAgent</span></em><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater.human_agent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater.mark">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">mark</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater.mark" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater.moves">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">moves</span></span><em class="property"><span class="pre">:</span> <span class="pre">List[rlcard.games.gin_rummy.utils.move.GinRummyMove]</span></em><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas_updater.GameCanvasUpdater.moves" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_frame">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-game-frame"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_frame<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_frame" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: game_frame.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_frame.GameFrame">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_frame.</span></span><span class="sig-name descname"><span class="pre">GameFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/tkinter.html#tkinter.Tk" title="(in Python v3.9)"><span class="pre">tkinter.Tk</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_app</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameApp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_frame.GameFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.Frame</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_frame.GameFrame.start_new_game">
+<span class="sig-name descname"><span class="pre">start_new_game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_frame.GameFrame.start_new_game" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_frame.GameFrame.update_configuration_game_background_color">
+<span class="sig-name descname"><span class="pre">update_configuration_game_background_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">background_color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_frame.GameFrame.update_configuration_game_background_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_frame.GameFrame.update_configurations">
+<span class="sig-name descname"><span class="pre">update_configurations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_frame.GameFrame.update_configurations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-handling-tap"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: handling_tap.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap.on_game_canvas_tap">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap.</span></span><span class="sig-name descname"><span class="pre">on_game_canvas_tap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap.on_game_canvas_tap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_discard_pile">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-handling-tap-discard-pile"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_discard_pile<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_discard_pile" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: handling_tap_discard_pile.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_discard_pile.handle_tap_discard_pile">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_discard_pile.</span></span><span class="sig-name descname"><span class="pre">handle_tap_discard_pile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hit_item</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem" title="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_discard_pile.handle_tap_discard_pile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_held_pile">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-handling-tap-held-pile"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_held_pile<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_held_pile" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: handling_tap_held_pile.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_held_pile.handle_tap_held_pile">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_held_pile.</span></span><span class="sig-name descname"><span class="pre">handle_tap_held_pile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hit_item</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem" title="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_held_pile.handle_tap_held_pile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_player_pane">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-handling-tap-player-pane"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_player_pane<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_player_pane" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: handling_tap_player_pane.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_player_pane.handle_tap_player_pane">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_player_pane.</span></span><span class="sig-name descname"><span class="pre">handle_tap_player_pane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hit_item</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem" title="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_player_pane.handle_tap_player_pane" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_stock_pile">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-handling-tap-stock-pile"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_stock_pile<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_stock_pile" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: handling_tap_stock_pile.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_stock_pile.handle_tap_stock_pile">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_stock_pile.</span></span><span class="sig-name descname"><span class="pre">handle_tap_stock_pile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hit_item</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem" title="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_stock_pile.handle_tap_stock_pile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_to_arrange_held_pile">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-handling-tap-to-arrange-held-pile"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_to_arrange_held_pile<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_to_arrange_held_pile" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: handling_tap_to_arrange_held_pile.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_to_arrange_held_pile.handle_tap_to_arrange_held_pile">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_to_arrange_held_pile.</span></span><span class="sig-name descname"><span class="pre">handle_tap_to_arrange_held_pile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hit_item</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem" title="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_to_arrange_held_pile.handle_tap_to_arrange_held_pile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_to_arrange_held_pile.on_tap_to_arrange_held_pile">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_to_arrange_held_pile.</span></span><span class="sig-name descname"><span class="pre">on_tap_to_arrange_held_pile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.handling_tap_to_arrange_held_pile.on_tap_to_arrange_held_pile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-info-messaging"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: info_messaging.py
+Author: William Hale
+Date created: 3/28/2020</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.blank_info_message_label">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.</span></span><span class="sig-name descname"><span class="pre">blank_info_message_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.blank_info_message_label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.show_activate_menus_message">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.</span></span><span class="sig-name descname"><span class="pre">show_activate_menus_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.show_activate_menus_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.show_arrange_cards_message">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.</span></span><span class="sig-name descname"><span class="pre">show_arrange_cards_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.show_arrange_cards_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.show_hide_tips_message">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.</span></span><span class="sig-name descname"><span class="pre">show_hide_tips_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.show_hide_tips_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.show_pick_up_discard_message">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.</span></span><span class="sig-name descname"><span class="pre">show_pick_up_discard_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.info_messaging.show_pick_up_discard_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.menu_bar">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-menu-bar"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.menu_bar<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.menu_bar" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: menu_bar.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.menu_bar.MenuBar">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.menu_bar.</span></span><span class="sig-name descname"><span class="pre">MenuBar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/tkinter.html#tkinter.Tk" title="(in Python v3.9)"><span class="pre">tkinter.Tk</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_frame</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.menu_bar.MenuBar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.Menu</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.menu_bar.MenuBar.on_about_menu_clicked">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">on_about_menu_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.menu_bar.MenuBar.on_about_menu_clicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.menu_bar.MenuBar.on_new_game_menu_clicked">
+<span class="sig-name descname"><span class="pre">on_new_game_menu_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.menu_bar.MenuBar.on_new_game_menu_clicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.menu_bar.MenuBar.on_preference_menu_clicked">
+<span class="sig-name descname"><span class="pre">on_preference_menu_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.menu_bar.MenuBar.on_preference_menu_clicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.player_type">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-player-type"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.player_type<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.player_type" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: player_type.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.player_type.PlayerType">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.player_type.</span></span><span class="sig-name descname"><span class="pre">PlayerType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.player_type.PlayerType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.player_type.PlayerType.computer_player">
+<span class="sig-name descname"><span class="pre">computer_player</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.player_type.PlayerType.computer_player" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.player_type.PlayerType.demo_player">
+<span class="sig-name descname"><span class="pre">demo_player</span></span><em class="property"> <span class="pre">=</span> <span class="pre">3</span></em><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.player_type.PlayerType.demo_player" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.player_type.PlayerType.human_player">
+<span class="sig-name descname"><span class="pre">human_player</span></span><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.player_type.PlayerType.human_player" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-preferences-window"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: preferences_window.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.</span></span><span class="sig-name descname"><span class="pre">PreferencesWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.create_checkbutton">
+<span class="sig-name descname"><span class="pre">create_checkbutton</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tkinter.BooleanVar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.create_checkbutton" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.create_choice_line">
+<span class="sig-name descname"><span class="pre">create_choice_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">choice_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.create_choice_line" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.create_listbox">
+<span class="sig-name descname"><span class="pre">create_listbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columnspan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.create_listbox" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.on_cancel_button_clicked">
+<span class="sig-name descname"><span class="pre">on_cancel_button_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.on_cancel_button_clicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.on_save_button_clicked">
+<span class="sig-name descname"><span class="pre">on_save_button_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.on_save_button_clicked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.set_game_background_color">
+<span class="sig-name descname"><span class="pre">set_game_background_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.set_game_background_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.set_new_values">
+<span class="sig-name descname"><span class="pre">set_new_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.preferences_window.PreferencesWindow.set_new_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.starting_new_game">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-starting-new-game"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.starting_new_game<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.starting_new_game" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: starting_new_game.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.starting_new_game.show_new_game">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.starting_new_game.</span></span><span class="sig-name descname"><span class="pre">show_new_game</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.starting_new_game.show_new_game" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.starting_new_game.start_new_game">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.starting_new_game.</span></span><span class="sig-name descname"><span class="pre">start_new_game</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.starting_new_game.start_new_game" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-status-messaging"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: status_messaging.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging.show_epilog_message_on_declare_dead_hand">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging.</span></span><span class="sig-name descname"><span class="pre">show_epilog_message_on_declare_dead_hand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging.show_epilog_message_on_declare_dead_hand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging.show_game_over_message">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging.</span></span><span class="sig-name descname"><span class="pre">show_game_over_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="rlcard.games.gin_rummy.html#rlcard.games.gin_rummy.game.GinRummyGame" title="rlcard.games.gin_rummy.game.GinRummyGame"><span class="pre">rlcard.games.gin_rummy.game.GinRummyGame</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging.show_game_over_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging.show_prolog_message">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging.</span></span><span class="sig-name descname"><span class="pre">show_prolog_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">legal_actions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging.show_prolog_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging.show_put_card_message">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging.</span></span><span class="sig-name descname"><span class="pre">show_put_card_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.status_messaging.show_put_card_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-utils"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: utils.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.drop_item_ids">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">drop_item_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item_ids</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.drop_item_ids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.fan_held_pile">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">fan_held_pile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.fan_held_pile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.flip_card_id">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">flip_card_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">card_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.flip_card_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.get_action_card_id">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">get_action_card_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.get_action_card_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.get_action_type">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">get_action_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.get_action_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.gin_rummy_sort_order_id">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">gin_rummy_sort_order_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">card_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.gin_rummy_sort_order_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.held_pile_insert">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">held_pile_insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">card_item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">above_hit_item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.held_pile_insert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.is_debug">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">is_debug</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.is_debug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.jog_card_id">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">jog_card_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">card_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.jog_card_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.move_to">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">move_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tkinter.Canvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.move_to" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.player_name">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">player_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.player_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.player_short_name">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">player_short_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.player_short_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.set_card_id_face_up">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">set_card_id_face_up</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">card_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">face_up</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.set_card_id_face_up" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.set_card_item_id_face_up">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">set_card_item_id_face_up</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">card_item_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">face_up</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.set_card_item_id_face_up" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.toggle_discard_pile_item_selected">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">toggle_discard_pile_item_selected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.toggle_discard_pile_item_selected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.toggle_held_pile_item_selected">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">toggle_held_pile_item_selected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem" title="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.canvas_item.CanvasItem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.toggle_held_pile_item_selected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.toggle_stock_pile_item_selected">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">toggle_stock_pile_item_selected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_canvas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">GameCanvas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.toggle_stock_pile_item_selected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.translated_by">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.</span></span><span class="sig-name descname"><span class="pre">translated_by</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils.translated_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils_extra">
+<span id="rlcard-agents-human-agents-gin-rummy-human-agent-gui-gin-rummy-utils-extra"></span><h2>rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils_extra<a class="headerlink" href="#module-rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils_extra" title="Permalink to this headline">¶</a></h2>
+<p>Project: Gui Gin Rummy
+File name: utils_extra.py
+Author: William Hale
+Date created: 3/14/2020</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils_extra.mask_rounded_rectangle_transparent">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils_extra.</span></span><span class="sig-name descname"><span class="pre">mask_rounded_rectangle_transparent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pil_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corner_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils_extra.mask_rounded_rectangle_transparent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils_extra.rounded_rectangle">
+<span class="sig-prename descclassname"><span class="pre">rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils_extra.</span></span><span class="sig-name descname"><span class="pre">rounded_rectangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">&lt;module</span> <span class="pre">'PIL.ImageDraw'</span> <span class="pre">from</span> <span class="pre">'/Users/songyih/.pyenv/versions/3.7.2/lib/python3.7/site-packages/PIL/ImageDraw.py'&gt;</span></em>, <em class="sig-param"><span class="pre">xy</span></em>, <em class="sig-param"><span class="pre">corner_radius</span></em>, <em class="sig-param"><span class="pre">fill=None</span></em>, <em class="sig-param"><span class="pre">outline=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.utils_extra.rounded_rectangle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="rlcard.agents.human_agents.gin_rummy_human_agent.gui_cards.html" class="btn btn-neutral float-left" title="rlcard.agents.human_agents.gin_rummy_human_agent.gui_cards" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright DATA Lab at Texas A&amp;M University
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

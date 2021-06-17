@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Getting Started &mdash; RLcard 0.0.1 documentation</title>
@@ -21,10 +22,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-        <script type="text/javascript" src="static/jquery.js"></script>
-        <script type="text/javascript" src="static/underscore.js"></script>
-        <script type="text/javascript" src="static/doctools.js"></script>
-        <script type="text/javascript" src="static/language_data.js"></script>
+        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
+        <script src="static/jquery.js"></script>
+        <script src="static/underscore.js"></script>
+        <script src="static/doctools.js"></script>
     
     <script type="text/javascript" src="static/js/theme.js"></script>
 
@@ -33,6 +34,8 @@
   
   <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <!-- <link rel="copyright" title="DATA Lab at Texas A&M University"> -->
@@ -97,10 +100,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#playing-with-random-agents">Playing with Random Agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-multiple-processes">Running Multiple Processes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#training-cfr-on-leduc-holdem">Training CFR (chance sampling) on Leduc Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#training-cfr-chance-sampling-on-leduc-hold-em">Training CFR (chance sampling) on Leduc Hold’em</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#leduc-holdem-as-single-agent-environment">Leduc Hold’em as Single-Agent Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#training-dmc-on-dou-dizhu">Training DMC on Dou Dizhu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#evaluating-agents">Evaluating Agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#evaluating-dmc-on-dou-dizhu">Evaluating DMC on Dou Dizhu</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
@@ -125,15 +131,8 @@
 <li class="toctree-l2"><a class="reference internal" href="games.html#dou-dizhu">Dou Dizhu</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-dou-dizhu">State Representation of Dou Dizhu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-dou-dizhu">State Encoding of Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-abstraction-of-dou-dizhu">Action Abstraction of Dou Dizhu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-dou-dizhu">Action Encoding of Dou Dizhu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff">Payoff</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#simple-dou-dizhu">Simple Dou Dizhu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-simple-dou-dizhu">State Representation of Simple Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-simple-dou-dizhu">State Encoding of Simple Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-simple-dou-dizhu">Action Encoding of Simple Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-simple-dou-dizhu">Payoff of Simple Dou Dizhu</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a><ul>
@@ -142,8 +141,8 @@
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-mahjong">Payoff of Mahjong</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a></li>
+<li class="toctree-l2"><a class="reference internal" href="games.html#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a></li>
 <li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-no-limit-texas-hold-em">Payoff of No-Limit Texas Hold’em</a></li>
 </ul>
@@ -166,10 +165,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-monte-carlo">Deep Monte-Carlo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-q-learning">Deep-Q Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="algorithms.html#nfsp">NFSP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr">CFR (chance sampling)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="algorithms.html#deepcfr">DeepCFR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr-chance-sampling">CFR (chance sampling)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
@@ -189,125 +188,127 @@
 <p class="caption"><span class="caption-text">API Documents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.envs.html">rlcard.envs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.registration">rlcard.envs.registration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.blackjack">rlcard.envs.blackjack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.doudizhu">rlcard.envs.doudizhu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.limitholdem">rlcard.envs.limitholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.gin_rummy">rlcard.envs.gin_rummy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.leducholdem">rlcard.envs.leducholdem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.limitholdem">rlcard.envs.limitholdem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.mahjong">rlcard.envs.mahjong</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.nolimitholdem">rlcard.envs.nolimitholdem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.simpledoudizhu">rlcard.envs.simpledoudizhu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.registration">rlcard.envs.registration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.uno">rlcard.envs.uno</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.utils.html">rlcard.utils</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.utils">rlcard.utils.utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.logger">rlcard.utils.logger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.exploitability">rlcard.utils.exploitability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.seeding">rlcard.utils.seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.utils">rlcard.utils.utils</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.games.html">rlcard.games</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.blackjack.html">rlcard.games.blackjack</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.dealer">rlcard.games.blackjack.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.game">rlcard.games.blackjack.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.judger">rlcard.games.blackjack.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.player">rlcard.games.blackjack.player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html">rlcard.games.blackjack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.dealer">rlcard.games.blackjack.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.game">rlcard.games.blackjack.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.judger">rlcard.games.blackjack.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.player">rlcard.games.blackjack.player</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.doudizhu.html">rlcard.games.doudizhu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.dealer">rlcard.games.doudizhu.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.game">rlcard.games.doudizhu.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.judger">rlcard.games.doudizhu.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.player">rlcard.games.doudizhu.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.round">rlcard.games.doudizhu.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html">rlcard.games.doudizhu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.dealer">rlcard.games.doudizhu.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.game">rlcard.games.doudizhu.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.judger">rlcard.games.doudizhu.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.player">rlcard.games.doudizhu.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.round">rlcard.games.doudizhu.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.utils">rlcard.games.doudizhu.utils</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.limitholdem.html">rlcard.games.limitholdem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.dealer">rlcard.games.limitholdem.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.game">rlcard.games.limitholdem.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.judger">rlcard.games.limitholdem.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.player">rlcard.games.limitholdem.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.round">rlcard.games.limitholdem.round</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.utils">rlcard.games.limitholdem.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.dealer">rlcard.games.gin_rummy.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.game">rlcard.games.gin_rummy.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.judge">rlcard.games.gin_rummy.judge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.player">rlcard.games.gin_rummy.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.round">rlcard.games.gin_rummy.round</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.nolimitholdem.html">rlcard.games.nolimitholdem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.dealer">rlcard.games.nolimitholdem.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.game">rlcard.games.nolimitholdem.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.judger">rlcard.games.nolimitholdem.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.player">rlcard.games.nolimitholdem.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.round">rlcard.games.nolimitholdem.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html">rlcard.games.leducholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.dealer">rlcard.games.leducholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.game">rlcard.games.leducholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.judger">rlcard.games.leducholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.player">rlcard.games.leducholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.round">rlcard.games.leducholdem.round</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.leducholdem.html">rlcard.games.leducholdem</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.dealer">rlcard.games.leducholdem.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.game">rlcard.games.leducholdem.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.judger">rlcard.games.leducholdem.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.player">rlcard.games.leducholdem.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.round">rlcard.games.leducholdem.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html">rlcard.games.limitholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.dealer">rlcard.games.limitholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.game">rlcard.games.limitholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.judger">rlcard.games.limitholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.player">rlcard.games.limitholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.round">rlcard.games.limitholdem.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.utils">rlcard.games.limitholdem.utils</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.uno.html">rlcard.games.uno</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.dealer">rlcard.games.uno.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.game">rlcard.games.uno.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.judger">rlcard.games.uno.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.player">rlcard.games.uno.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.round">rlcard.games.uno.round</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.card">rlcard.games.uno.card</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.utils">rlcard.games.uno.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html">rlcard.games.mahjong</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.card">rlcard.games.mahjong.card</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.dealer">rlcard.games.mahjong.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.game">rlcard.games.mahjong.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.judger">rlcard.games.mahjong.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.player">rlcard.games.mahjong.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.round">rlcard.games.mahjong.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.utils">rlcard.games.mahjong.utils</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.mahjong.html">rlcard.games.mahjong</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.dealer">rlcard.games.mahjong.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.game">rlcard.games.mahjong.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.judger">rlcard.games.mahjong.judger</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.player">rlcard.games.mahjong.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.round">rlcard.games.mahjong.round</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.card">rlcard.games.mahjong.card</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.utils">rlcard.games.mahjong.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html">rlcard.games.nolimitholdem</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.dealer">rlcard.games.nolimitholdem.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.game">rlcard.games.nolimitholdem.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.judger">rlcard.games.nolimitholdem.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.player">rlcard.games.nolimitholdem.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.round">rlcard.games.nolimitholdem.round</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html">rlcard.games.gin_rummy.utils</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.action_event">rlcard.games.gin_rummy.utils.action_event</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.gin_rummy_error">rlcard.games.gin_rummy.utils.gin_rummy_error</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.melding">rlcard.games.gin_rummy.utils.melding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.move">rlcard.games.gin_rummy.utils.move</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.scorers">rlcard.games.gin_rummy.utils.scorers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.settings">rlcard.games.gin_rummy.utils.settings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.thinker">rlcard.games.gin_rummy.utils.thinker</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.utils.html#module-rlcard.games.gin_rummy.utils.utils">rlcard.games.gin_rummy.utils.utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html">rlcard.games.uno</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.card">rlcard.games.uno.card</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.dealer">rlcard.games.uno.dealer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.game">rlcard.games.uno.game</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.judger">rlcard.games.uno.judger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.player">rlcard.games.uno.player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.round">rlcard.games.uno.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.utils">rlcard.games.uno.utils</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.dealer">rlcard.games.gin_rummy.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.game">rlcard.games.gin_rummy.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.judge">rlcard.games.gin_rummy.judge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.player">rlcard.games.gin_rummy.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.round">rlcard.games.gin_rummy.round</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.simpledoudizhu.html">rlcard.games.simpledoudizhu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.dealer">rlcard.games.simpledoudizhu.dealer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.game">rlcard.games.simpledoudizhu.game</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.player">rlcard.games.simpledoudizhu.player</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.simpledoudizhu.html#module-rlcard.games.simpledoudizhu.round">rlcard.games.simpledoudizhu.round</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.games.html#module-rlcard.games.base">rlcard.games.base</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.gin_rummy_human_agent">rlcard.agents.gin_rummy_human_agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.best_response_agent">rlcard.agents.best_response_agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.agents.dmc_agent.html">rlcard.agents.dmc_agent</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.file_writer">rlcard.agents.dmc_agent.file_writer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.model">rlcard.agents.dmc_agent.model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.trainer">rlcard.agents.dmc_agent.trainer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.utils">rlcard.agents.dmc_agent.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rlcard.agents.human_agents.html">rlcard.agents.human_agents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.blackjack_human_agent">rlcard.agents.human_agents.blackjack_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.leduc_holdem_human_agent">rlcard.agents.human_agents.leduc_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.limit_holdem_human_agent">rlcard.agents.human_agents.limit_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.nolimit_holdem_human_agent">rlcard.agents.human_agents.nolimit_holdem_human_agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.uno_human_agent">rlcard.agents.human_agents.uno_human_agent</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.cfr_agent">rlcard.agents.cfr_agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.deep_cfr_agent">rlcard.agents.deep_cfr_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.nfsp_agent">rlcard.agents.nfsp_agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="rlcard.core.html">rlcard.core</a></li>
 </ul>
 
             
@@ -387,400 +388,282 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="getting-started">
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<p>In this document, we provide some toy examples for getting started. All
-the examples in this document and even more examples are available in
-<a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples">examples/</a>.</p>
-<div class="section" id="playing-with-random-agents">
+<p>In this document, we provide some toy examples for getting started. All the examples are available in <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples">examples/</a>.</p>
+<section id="playing-with-random-agents">
 <h2>Playing with Random Agents<a class="headerlink" href="#playing-with-random-agents" title="Permalink to this headline">¶</a></h2>
-<p>We have set up a random agent that can play randomly on each
-environment. An example of applying a random agent on Blackjack is as
-follow:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rlcard</span>
+<p>We provide a random agent that can play randomly on each environment. Example code is as follows. You can also find the code in <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/run_random.py">examples/run_random.py</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="kn">import</span> <span class="nn">rlcard</span>
 <span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">RandomAgent</span>
-<span class="kn">from</span> <span class="nn">rlcard.utils</span> <span class="kn">import</span> <span class="n">set_global_seed</span>
+<span class="kn">from</span> <span class="nn">rlcard.utils</span> <span class="kn">import</span> <span class="n">set_seed</span>
 
-<span class="c1"># Make environment</span>
-<span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;blackjack&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
-<span class="n">episode_num</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="c1"># Make environment</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">env</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">})</span>
+    <span class="n">num_episodes</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="c1"># Set a global seed</span>
-<span class="n">set_global_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1"># Seed numpy, torch, random</span>
+    <span class="n">set_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 
-<span class="c1"># Set up agents</span>
-<span class="n">agent_0</span> <span class="o">=</span> <span class="n">RandomAgent</span><span class="p">(</span><span class="n">action_num</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">action_num</span><span class="p">)</span>
-<span class="n">env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">agent_0</span><span class="p">])</span>
+    <span class="c1"># Set agents</span>
+    <span class="n">agent</span> <span class="o">=</span> <span class="n">RandomAgent</span><span class="p">(</span><span class="n">num_actions</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">num_actions</span><span class="p">)</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">agent</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">num_players</span><span class="p">)])</span>
 
-<span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">episode_num</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_episodes</span><span class="p">):</span>
 
-    <span class="c1"># Generate data from the environment</span>
-    <span class="n">trajectories</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">is_training</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="c1"># Generate data from the environment</span>
+        <span class="n">trajectories</span><span class="p">,</span> <span class="n">player_wins</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">is_training</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="c1"># Print out the trajectories</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Episode </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">episode</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">trajectories</span><span class="p">)</span>
 
-    <span class="c1"># Print out the trajectories</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Episode {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">episode</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">ts</span> <span class="ow">in</span> <span class="n">trajectories</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;State: {}, Action: {}, Reward: {}, Next State: {}, Done: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ts</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">ts</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">ts</span><span class="p">[</span><span class="mi">4</span><span class="p">]))</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="s2">&quot;Random example in RLCard&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--env&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">)</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="n">run</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run the code to randomly generate data from Leduc Hold’em with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">examples</span><span class="o">/</span><span class="n">run_random</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">env</span> <span class="n">leduc</span><span class="o">-</span><span class="n">holdem</span>
 </pre></div>
 </div>
 <p>The expected output should look like something as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Episode</span> <span class="mi">0</span>
-<span class="n">State</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span>  <span class="mi">3</span><span class="p">]),</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span> <span class="n">Action</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Reward</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Next</span> <span class="n">State</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span>  <span class="mi">3</span><span class="p">]),</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span> <span class="n">Done</span><span class="p">:</span> <span class="kc">False</span>
-<span class="n">State</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span>  <span class="mi">3</span><span class="p">]),</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span> <span class="n">Action</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Reward</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">Next</span> <span class="n">State</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">]),</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span> <span class="n">Done</span><span class="p">:</span> <span class="kc">True</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">Trajectories</span><span class="p">:</span>
+<span class="p">[[{</span><span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span>
+       <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span>
+       <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]),</span> <span class="s1">&#39;raw_obs&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;hand&#39;</span><span class="p">:</span> <span class="s1">&#39;HQ&#39;</span><span class="p">,</span> <span class="s1">&#39;public_card&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;all_chips&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;my_chips&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;raise&#39;</span><span class="p">,</span> <span class="s1">&#39;fold&#39;</span><span class="p">,</span> <span class="s1">&#39;check&#39;</span><span class="p">],</span> <span class="s1">&#39;current_player&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="s1">&#39;raw_legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;raise&#39;</span><span class="p">,</span> <span class="s1">&#39;fold&#39;</span><span class="p">,</span> <span class="s1">&#39;check&#39;</span><span class="p">],</span> <span class="s1">&#39;action_record&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fold&#39;</span><span class="p">)]}],</span> <span class="p">[{</span><span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span>
+       <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span>
+       <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]),</span> <span class="s1">&#39;raw_obs&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;hand&#39;</span><span class="p">:</span> <span class="s1">&#39;HJ&#39;</span><span class="p">,</span> <span class="s1">&#39;public_card&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;all_chips&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;my_chips&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;call&#39;</span><span class="p">,</span> <span class="s1">&#39;raise&#39;</span><span class="p">,</span> <span class="s1">&#39;fold&#39;</span><span class="p">],</span> <span class="s1">&#39;current_player&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="s1">&#39;raw_legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;call&#39;</span><span class="p">,</span> <span class="s1">&#39;raise&#39;</span><span class="p">,</span> <span class="s1">&#39;fold&#39;</span><span class="p">],</span> <span class="s1">&#39;action_record&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fold&#39;</span><span class="p">)]},</span> <span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span>
+       <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span>
+       <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]),</span> <span class="s1">&#39;raw_obs&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;hand&#39;</span><span class="p">:</span> <span class="s1">&#39;HJ&#39;</span><span class="p">,</span> <span class="s1">&#39;public_card&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;all_chips&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;my_chips&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;raise&#39;</span><span class="p">,</span> <span class="s1">&#39;fold&#39;</span><span class="p">,</span> <span class="s1">&#39;check&#39;</span><span class="p">],</span> <span class="s1">&#39;current_player&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="s1">&#39;raw_legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;raise&#39;</span><span class="p">,</span> <span class="s1">&#39;fold&#39;</span><span class="p">,</span> <span class="s1">&#39;check&#39;</span><span class="p">],</span> <span class="s1">&#39;action_record&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;fold&#39;</span><span class="p">)]}]]</span>
 
-<span class="n">Episode</span> <span class="mi">1</span>
-<span class="n">State</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span>  <span class="mi">5</span><span class="p">]),</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span> <span class="n">Action</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Reward</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Next</span> <span class="n">State</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;obs&#39;</span><span class="p">:</span> <span class="n">array</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">23</span><span class="p">]),</span> <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span> <span class="n">Done</span><span class="p">:</span> <span class="kc">True</span>
+<span class="n">Sample</span> <span class="n">raw</span> <span class="n">observation</span><span class="p">:</span>
+<span class="p">{</span><span class="s1">&#39;all_chips&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+ <span class="s1">&#39;current_player&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+ <span class="s1">&#39;hand&#39;</span><span class="p">:</span> <span class="s1">&#39;HQ&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;legal_actions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;raise&#39;</span><span class="p">,</span> <span class="s1">&#39;fold&#39;</span><span class="p">,</span> <span class="s1">&#39;check&#39;</span><span class="p">],</span>
+ <span class="s1">&#39;my_chips&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+ <span class="s1">&#39;public_card&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+
+<span class="n">Sample</span> <span class="n">raw</span> <span class="n">legal_actions</span><span class="p">:</span>
+<span class="p">[</span><span class="s1">&#39;raise&#39;</span><span class="p">,</span> <span class="s1">&#39;fold&#39;</span><span class="p">,</span> <span class="s1">&#39;check&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Note that the states and actions are wrapped by <code class="docutils literal notranslate"><span class="pre">env</span></code> in Blackjack. In
-this example, the <code class="docutils literal notranslate"><span class="pre">[20,</span> <span class="pre">3]</span></code> suggests the current player obtains score
-20 while the card that faces up in the dealer’s hand has score 3. Action
-0 means “hit” while action 1 means “stand”. Reward 1 suggests the player
-wins while reward -1 suggests the dealer wins. Reward 0 suggests a tie.
-The above data can be directly fed into a RL algorithm for training.</p>
-</div>
-<div class="section" id="deep-q-learning-on-blackjack">
+</section>
+<section id="deep-q-learning-on-blackjack">
 <h2>Deep-Q Learning on Blackjack<a class="headerlink" href="#deep-q-learning-on-blackjack" title="Permalink to this headline">¶</a></h2>
-<p>The second example is to use Deep-Q learning to train an agent on
-Blackjack. We aim to use this example to show how reinforcement learning
-algorithms can be developed and applied in our toolkit. We design a
-<code class="docutils literal notranslate"><span class="pre">run</span></code> function which plays one complete game and provides the data for
-training RL agents. The example is shown below:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<p>The second example is to use Deep-Q learning to train an agent on Blackjack. We aim to use this example to show how reinforcement learning algorithms can be developed and applied in our toolkit. We design a <code class="docutils literal notranslate"><span class="pre">run</span></code> function which plays one complete game and provides the data for training RL agents. The example is shown below. You can also find the code in <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/run_rl.py">examples/run_rl.py</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
 
 <span class="kn">import</span> <span class="nn">rlcard</span>
-<span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">DQNAgent</span>
-<span class="kn">from</span> <span class="nn">rlcard.utils</span> <span class="kn">import</span> <span class="n">set_global_seed</span><span class="p">,</span> <span class="n">tournament</span>
-<span class="kn">from</span> <span class="nn">rlcard.utils</span> <span class="kn">import</span> <span class="n">Logger</span>
+<span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">RandomAgent</span>
+<span class="kn">from</span> <span class="nn">rlcard.utils</span> <span class="kn">import</span> <span class="n">get_device</span><span class="p">,</span> <span class="n">set_seed</span><span class="p">,</span> <span class="n">tournament</span><span class="p">,</span> <span class="n">reorganize</span><span class="p">,</span> <span class="n">Logger</span>
 
-<span class="c1"># Make environment</span>
-<span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;blackjack&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
-<span class="n">eval_env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;blackjack&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+<span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
 
-<span class="c1"># Set the iterations numbers and how frequently we evaluate/save plot</span>
-<span class="n">evaluate_every</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">evaluate_num</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">episode_num</span> <span class="o">=</span> <span class="mi">100000</span>
+    <span class="c1"># Check whether gpu is available</span>
+    <span class="n">device</span> <span class="o">=</span> <span class="n">get_device</span><span class="p">()</span>
+        
+    <span class="c1"># Seed numpy, torch, random</span>
+    <span class="n">set_seed</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span>
 
-<span class="c1"># The intial memory size</span>
-<span class="n">memory_init_size</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="c1"># Make the environment with seed</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">env</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">seed</span><span class="p">})</span>
 
-<span class="c1"># Train the agent every X steps</span>
-<span class="n">train_every</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="c1"># Initialize the agent and use random agents as opponents</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">algorithm</span> <span class="o">==</span> <span class="s1">&#39;dqn&#39;</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">DQNAgent</span>
+        <span class="n">agent</span> <span class="o">=</span> <span class="n">DQNAgent</span><span class="p">(</span><span class="n">num_actions</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">num_actions</span><span class="p">,</span>
+                         <span class="n">state_shape</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">state_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                         <span class="n">mlp_layers</span><span class="o">=</span><span class="p">[</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">],</span>
+                         <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">algorithm</span> <span class="o">==</span> <span class="s1">&#39;nfsp&#39;</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">NFSPAgent</span>
+        <span class="n">agent</span> <span class="o">=</span> <span class="n">NFSPAgent</span><span class="p">(</span><span class="n">num_actions</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">num_actions</span><span class="p">,</span>
+                          <span class="n">state_shape</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">state_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                          <span class="n">hidden_layers_sizes</span><span class="o">=</span><span class="p">[</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">],</span>
+                          <span class="n">q_mlp_layers</span><span class="o">=</span><span class="p">[</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">],</span>
+                          <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">agents</span> <span class="o">=</span> <span class="p">[</span><span class="n">agent</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">num_players</span><span class="p">):</span>
+        <span class="n">agents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">RandomAgent</span><span class="p">(</span><span class="n">num_actions</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">num_actions</span><span class="p">))</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
 
-<span class="c1"># The paths for saving the logs and learning curves</span>
-<span class="n">log_dir</span> <span class="o">=</span> <span class="s1">&#39;./experiments/blackjack_dqn_result/&#39;</span>
+    <span class="c1"># Start training</span>
+    <span class="k">with</span> <span class="n">Logger</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">log_dir</span><span class="p">)</span> <span class="k">as</span> <span class="n">logger</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">num_episodes</span><span class="p">):</span>
 
-<span class="c1"># Set a global seed</span>
-<span class="n">set_global_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
-
-    <span class="c1"># Initialize a global step</span>
-    <span class="n">global_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;global_step&#39;</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-
-    <span class="c1"># Set up the agents</span>
-    <span class="n">agent</span> <span class="o">=</span> <span class="n">DQNAgent</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span>
-                     <span class="n">scope</span><span class="o">=</span><span class="s1">&#39;dqn&#39;</span><span class="p">,</span>
-                     <span class="n">action_num</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">action_num</span><span class="p">,</span>
-                     <span class="n">replay_memory_init_size</span><span class="o">=</span><span class="n">memory_init_size</span><span class="p">,</span>
-                     <span class="n">train_every</span><span class="o">=</span><span class="n">train_every</span><span class="p">,</span>
-                     <span class="n">state_shape</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">state_shape</span><span class="p">,</span>
-                     <span class="n">mlp_layers</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
-    <span class="n">env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">agent</span><span class="p">])</span>
-    <span class="n">eval_env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">agent</span><span class="p">])</span>
-
-    <span class="c1"># Initialize global variables</span>
-    <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>
-
-    <span class="c1"># Init a Logger to plot the learning curve</span>
-    <span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">log_dir</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">episode_num</span><span class="p">):</span>
-
-        <span class="c1"># Generate data from the environment</span>
-        <span class="n">trajectories</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">is_training</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
-        <span class="c1"># Feed transitions into agent memory, and train the agent</span>
-        <span class="k">for</span> <span class="n">ts</span> <span class="ow">in</span> <span class="n">trajectories</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-            <span class="n">agent</span><span class="o">.</span><span class="n">feed</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
-
-        <span class="c1"># Evaluate the performance. Play with random agents.</span>
-        <span class="k">if</span> <span class="n">episode</span> <span class="o">%</span> <span class="n">evaluate_every</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">log_performance</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">timestep</span><span class="p">,</span> <span class="n">tournament</span><span class="p">(</span><span class="n">eval_env</span><span class="p">,</span> <span class="n">evaluate_num</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-
-    <span class="c1"># Close files in the logger</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">close_files</span><span class="p">()</span>
-
-    <span class="c1"># Plot the learning curve</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;DQN&#39;</span><span class="p">)</span>
-
-    <span class="c1"># Save model</span>
-    <span class="n">save_dir</span> <span class="o">=</span> <span class="s1">&#39;models/blackjack_dqn&#39;</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">save_dir</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">save_dir</span><span class="p">)</span>
-    <span class="n">saver</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Saver</span><span class="p">()</span>
-    <span class="n">saver</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>The expected output is something like below:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">----------------------------------------</span>
-  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">1</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">0.7342</span>
-<span class="o">----------------------------------------</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Agent</span> <span class="n">dqn</span><span class="p">,</span> <span class="n">step</span> <span class="mi">100</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">1.0042707920074463</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Copied</span> <span class="n">model</span> <span class="n">parameters</span> <span class="n">to</span> <span class="n">target</span> <span class="n">network</span><span class="o">.</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Agent</span> <span class="n">dqn</span><span class="p">,</span> <span class="n">step</span> <span class="mi">136</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.7888197302818298</span>
-<span class="o">----------------------------------------</span>
-  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">136</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">0.1406</span>
-<span class="o">----------------------------------------</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Agent</span> <span class="n">dqn</span><span class="p">,</span> <span class="n">step</span> <span class="mi">278</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.6946825981140137</span>
-<span class="o">----------------------------------------</span>
-  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">278</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">0.1523</span>
-<span class="o">----------------------------------------</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Agent</span> <span class="n">dqn</span><span class="p">,</span> <span class="n">step</span> <span class="mi">412</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.62268990278244025</span>
-<span class="o">----------------------------------------</span>
-  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">412</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">0.088</span>
-<span class="o">----------------------------------------</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Agent</span> <span class="n">dqn</span><span class="p">,</span> <span class="n">step</span> <span class="mi">544</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.69050502777099616</span>
-<span class="o">----------------------------------------</span>
-  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">544</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">0.08</span>
-<span class="o">----------------------------------------</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Agent</span> <span class="n">dqn</span><span class="p">,</span> <span class="n">step</span> <span class="mi">681</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.61789089441299444</span>
-<span class="o">----------------------------------------</span>
-  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">681</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">0.0793</span>
-<span class="o">----------------------------------------</span>
-</pre></div>
-</div>
-<p>In Blackjack, the player will get a payoff at the end of the game: 1 if
-the player wins, -1 if the player loses, and 0 if it is a tie. The
-performance is measured by the average payoff the player obtains by
-playing 10000 episodes. The above example shows that the agent achieves
-better and better performance during training. The logs and learning
-curves are saved in <code class="docutils literal notranslate"><span class="pre">./experiments/blackjack_dqn_result/</span></code>.</p>
-</div>
-<div class="section" id="running-multiple-processes">
-<h2>Running Multiple Processes<a class="headerlink" href="#running-multiple-processes" title="Permalink to this headline">¶</a></h2>
-<p>The environments can be run with multiple processes to accelerate the
-training. Below is an example to train DQN on Blackjack with multiple
-processes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39; An example of learning a Deep-Q Agent on Blackjack with multiple processes</span>
-<span class="sd">Note that we must use if __name__ == &#39;__main__&#39; for multiprocessing</span>
-<span class="sd">&#39;&#39;&#39;</span>
-
-<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="kn">import</span> <span class="nn">rlcard</span>
-<span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">DQNAgent</span>
-<span class="kn">from</span> <span class="nn">rlcard.utils</span> <span class="kn">import</span> <span class="n">set_global_seed</span><span class="p">,</span> <span class="n">tournament</span>
-<span class="kn">from</span> <span class="nn">rlcard.utils</span> <span class="kn">import</span> <span class="n">Logger</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="c1"># Make environment</span>
-    <span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;blackjack&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;env_num&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
-    <span class="n">eval_env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;blackjack&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;env_num&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
-
-    <span class="c1"># Set the iterations numbers and how frequently we evaluate performance</span>
-    <span class="n">evaluate_every</span> <span class="o">=</span> <span class="mi">100</span>
-    <span class="n">evaluate_num</span> <span class="o">=</span> <span class="mi">10000</span>
-    <span class="n">iteration_num</span> <span class="o">=</span> <span class="mi">100000</span>
-
-    <span class="c1"># The intial memory size</span>
-    <span class="n">memory_init_size</span> <span class="o">=</span> <span class="mi">100</span>
-
-    <span class="c1"># Train the agent every X steps</span>
-    <span class="n">train_every</span> <span class="o">=</span> <span class="mi">1</span>
-
-    <span class="c1"># The paths for saving the logs and learning curves</span>
-    <span class="n">log_dir</span> <span class="o">=</span> <span class="s1">&#39;./experiments/blackjack_dqn_result/&#39;</span>
-
-    <span class="c1"># Set a global seed</span>
-    <span class="n">set_global_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-    <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
-
-        <span class="c1"># Initialize a global step</span>
-        <span class="n">global_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;global_step&#39;</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-
-        <span class="c1"># Set up the agents</span>
-        <span class="n">agent</span> <span class="o">=</span> <span class="n">DQNAgent</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span>
-                         <span class="n">scope</span><span class="o">=</span><span class="s1">&#39;dqn&#39;</span><span class="p">,</span>
-                         <span class="n">action_num</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">action_num</span><span class="p">,</span>
-                         <span class="n">replay_memory_init_size</span><span class="o">=</span><span class="n">memory_init_size</span><span class="p">,</span>
-                         <span class="n">train_every</span><span class="o">=</span><span class="n">train_every</span><span class="p">,</span>
-                         <span class="n">state_shape</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">state_shape</span><span class="p">,</span>
-                         <span class="n">mlp_layers</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
-        <span class="n">env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">agent</span><span class="p">])</span>
-        <span class="n">eval_env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">agent</span><span class="p">])</span>
-
-        <span class="c1"># Initialize global variables</span>
-        <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>
-
-        <span class="c1"># Initialize a Logger to plot the learning curve</span>
-        <span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">log_dir</span><span class="p">)</span>
-
-        <span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iteration_num</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">algorithm</span> <span class="o">==</span> <span class="s1">&#39;nfsp&#39;</span><span class="p">:</span>
+                <span class="n">agents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sample_episode_policy</span><span class="p">()</span>
 
             <span class="c1"># Generate data from the environment</span>
-            <span class="n">trajectories</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">is_training</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            <span class="n">trajectories</span><span class="p">,</span> <span class="n">payoffs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">is_training</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="c1"># Reorganaize the data to be state, action, reward, next_state, done</span>
+            <span class="n">trajectories</span> <span class="o">=</span> <span class="n">reorganize</span><span class="p">(</span><span class="n">trajectories</span><span class="p">,</span> <span class="n">payoffs</span><span class="p">)</span>
 
             <span class="c1"># Feed transitions into agent memory, and train the agent</span>
+            <span class="c1"># Here, we assume that DQN always plays the first position</span>
+            <span class="c1"># and the other players play randomly (if any)</span>
             <span class="k">for</span> <span class="n">ts</span> <span class="ow">in</span> <span class="n">trajectories</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
                 <span class="n">agent</span><span class="o">.</span><span class="n">feed</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
 
             <span class="c1"># Evaluate the performance. Play with random agents.</span>
-            <span class="k">if</span> <span class="n">iteration</span> <span class="o">%</span> <span class="n">evaluate_every</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">log_performance</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">timestep</span><span class="p">,</span> <span class="n">tournament</span><span class="p">(</span><span class="n">eval_env</span><span class="p">,</span> <span class="n">evaluate_num</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-
-        <span class="c1"># Close files in the logger</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">close_files</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">episode</span> <span class="o">%</span> <span class="n">args</span><span class="o">.</span><span class="n">evaluate_every</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">log_performance</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">timestep</span><span class="p">,</span> <span class="n">tournament</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">num_games</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
 
         <span class="c1"># Plot the learning curve</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;DQN&#39;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">algorithm</span><span class="p">)</span>
 
-        <span class="c1"># Save model</span>
-        <span class="n">save_dir</span> <span class="o">=</span> <span class="s1">&#39;models/blackjack_dqn&#39;</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">save_dir</span><span class="p">):</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">save_dir</span><span class="p">)</span>
-        <span class="n">saver</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Saver</span><span class="p">()</span>
-        <span class="n">saver</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">))</span>
+    <span class="c1"># Save model</span>
+    <span class="n">save_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">log_dir</span><span class="p">,</span> <span class="s1">&#39;model.pth&#39;</span><span class="p">)</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="n">save_path</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Model saved in&#39;</span><span class="p">,</span> <span class="n">save_path</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Example output is as follow:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">----------------------------------------</span>
-  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">17</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">0.7378</span>
-<span class="o">----------------------------------------</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="s2">&quot;DQN example in RLCard&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--env&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--algorithm&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;dqn&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;dqn&#39;</span><span class="p">,</span> <span class="s1">&#39;nfsp&#39;</span><span class="p">])</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--cuda&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--seed&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--num_episodes&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--num_games&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--evaluate_every&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--log_dir&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;experiments/leduc_holdem_dqn_result/&#39;</span><span class="p">)</span>
 
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Copied</span> <span class="n">model</span> <span class="n">parameters</span> <span class="n">to</span> <span class="n">target</span> <span class="n">network</span><span class="o">.</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Agent</span> <span class="n">dqn</span><span class="p">,</span> <span class="n">step</span> <span class="mi">1100</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.40940183401107797</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Copied</span> <span class="n">model</span> <span class="n">parameters</span> <span class="n">to</span> <span class="n">target</span> <span class="n">network</span><span class="o">.</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Agent</span> <span class="n">dqn</span><span class="p">,</span> <span class="n">step</span> <span class="mi">2100</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.44971221685409546</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Copied</span> <span class="n">model</span> <span class="n">parameters</span> <span class="n">to</span> <span class="n">target</span> <span class="n">network</span><span class="o">.</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Agent</span> <span class="n">dqn</span><span class="p">,</span> <span class="n">step</span> <span class="mi">2225</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.65466868877410897</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CUDA_VISIBLE_DEVICES&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">cuda</span>
+    <span class="n">train</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Train DQN on Blackjack with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">examples</span><span class="o">/</span><span class="n">run_rl</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">env</span> <span class="n">blackjack</span> <span class="o">--</span><span class="n">algorithm</span> <span class="n">dqn</span>
+</pre></div>
+</div>
+<p>The expected output is something like below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--&gt;</span> <span class="n">Running</span> <span class="n">on</span> <span class="n">the</span> <span class="n">CPU</span>
+
 <span class="o">----------------------------------------</span>
-  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">2225</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">0.0658</span>
+  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">2</span>
+  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">0.213</span>
 <span class="o">----------------------------------------</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Agent</span> <span class="n">dqn</span><span class="p">,</span> <span class="n">step</span> <span class="mi">3100</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.48663979768753053</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">100</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">1.2863489389419556</span>
 <span class="n">INFO</span> <span class="o">-</span> <span class="n">Copied</span> <span class="n">model</span> <span class="n">parameters</span> <span class="n">to</span> <span class="n">target</span> <span class="n">network</span><span class="o">.</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Agent</span> <span class="n">dqn</span><span class="p">,</span> <span class="n">step</span> <span class="mi">4100</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.71293979883193974</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Copied</span> <span class="n">model</span> <span class="n">parameters</span> <span class="n">to</span> <span class="n">target</span> <span class="n">network</span><span class="o">.</span>
-<span class="n">INFO</span> <span class="o">-</span> <span class="n">Agent</span> <span class="n">dqn</span><span class="p">,</span> <span class="n">step</span> <span class="mi">4440</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.55871248245239263</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">153</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.68201494216918955</span>
 <span class="o">----------------------------------------</span>
-  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">4440</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">0.0736</span>
+  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">2153</span>
+  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">0.2855</span>
+<span class="o">----------------------------------------</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">274</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.48299887776374817</span>
+<span class="o">----------------------------------------</span>
+  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">5133</span>
+  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">0.105</span>
+<span class="o">----------------------------------------</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">412</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.41647660732269287</span>
+<span class="o">----------------------------------------</span>
+  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">7615</span>
+  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">0.1375</span>
+<span class="o">----------------------------------------</span>
+<span class="n">INFO</span> <span class="o">-</span> <span class="n">Step</span> <span class="mi">545</span><span class="p">,</span> <span class="n">rl</span><span class="o">-</span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.48143920302391055</span>
 <span class="o">----------------------------------------</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="training-cfr-on-leduc-holdem">
-<h2>Training CFR (chance sampling) on Leduc Hold’em<a class="headerlink" href="#training-cfr-on-leduc-holdem" title="Permalink to this headline">¶</a></h2>
-<p>To show how we can use <code class="docutils literal notranslate"><span class="pre">step</span></code> and <code class="docutils literal notranslate"><span class="pre">step_back</span></code> to traverse the game
-tree, we provide an example of solving Leduc Hold’em with CFR (chance sampling):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<p>In Blackjack, the player will get a payoff at the end of the game: 1 if the player wins, -1 if the player loses, and 0 if it is a tie. The performance is measured by the average payoff the player obtains by playing 10000 episodes. The above example shows that the agent achieves better and better performance during training. The logs and learning curves are saved in <code class="docutils literal notranslate"><span class="pre">experiments/blackjack_dqn_result/</span></code>.</p>
+<p>You can also freely try nfsp algorithm or other environments by simply changing the arguments.</p>
+</section>
+<section id="training-cfr-chance-sampling-on-leduc-hold-em">
+<h2>Training CFR (chance sampling) on Leduc Hold’em<a class="headerlink" href="#training-cfr-chance-sampling-on-leduc-hold-em" title="Permalink to this headline">¶</a></h2>
+<p>To show how we can use <code class="docutils literal notranslate"><span class="pre">step</span></code> and <code class="docutils literal notranslate"><span class="pre">step_back</span></code> to traverse the game tree, we provide an example of solving Leduc Hold’em with CFR (chance sampling). You can also find the code in <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/run_cfr.py">examples/run_cfr.py</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="kn">import</span> <span class="nn">rlcard</span>
-<span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">CFRAgent</span>
-<span class="kn">from</span> <span class="nn">rlcard</span> <span class="kn">import</span> <span class="n">models</span>
-<span class="kn">from</span> <span class="nn">rlcard.utils</span> <span class="kn">import</span> <span class="n">set_global_seed</span><span class="p">,</span> <span class="n">tournament</span>
-<span class="kn">from</span> <span class="nn">rlcard.utils</span> <span class="kn">import</span> <span class="n">Logger</span>
+<span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">CFRAgent</span><span class="p">,</span> <span class="n">RandomAgent</span>
+<span class="kn">from</span> <span class="nn">rlcard.utils</span> <span class="kn">import</span> <span class="n">set_seed</span><span class="p">,</span> <span class="n">tournament</span><span class="p">,</span> <span class="n">Logger</span>
 
-<span class="c1"># Make environment and enable human mode</span>
-<span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;allow_step_back&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">})</span>
-<span class="n">eval_env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+<span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="c1"># Make environments, CFR only supports Leduc Holdem</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;allow_step_back&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">})</span>
+    <span class="n">eval_env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
 
-<span class="c1"># Set the iterations numbers and how frequently we evaluate/save plot</span>
-<span class="n">evaluate_every</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">save_plot_every</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">evaluate_num</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">episode_num</span> <span class="o">=</span> <span class="mi">10000</span>
+    <span class="c1"># Seed numpy, torch, random</span>
+    <span class="n">set_seed</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span>
 
-<span class="c1"># The paths for saving the logs and learning curves</span>
-<span class="n">log_dir</span> <span class="o">=</span> <span class="s1">&#39;./experiments/leduc_holdem_cfr_result/&#39;</span>
+    <span class="c1"># Initilize CFR Agent</span>
+    <span class="n">agent</span> <span class="o">=</span> <span class="n">CFRAgent</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">log_dir</span><span class="p">,</span> <span class="s1">&#39;cfr_model&#39;</span><span class="p">))</span>
+    <span class="n">agent</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>  <span class="c1"># If we have saved model, we first load the model</span>
 
-<span class="c1"># Set a global seed</span>
-<span class="n">set_global_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1"># Evaluate CFR against random</span>
+    <span class="n">eval_env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">agent</span><span class="p">,</span> <span class="n">RandomAgent</span><span class="p">(</span><span class="n">num_actions</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">num_actions</span><span class="p">)])</span>
 
-<span class="c1"># Initilize CFR Agent</span>
-<span class="n">agent</span> <span class="o">=</span> <span class="n">CFRAgent</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
-<span class="n">agent</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>  <span class="c1"># If we have saved model, we first load the model</span>
+    <span class="c1"># Start training</span>
+    <span class="k">with</span> <span class="n">Logger</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">log_dir</span><span class="p">)</span> <span class="k">as</span> <span class="n">logger</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">num_episodes</span><span class="p">):</span>
+            <span class="n">agent</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">Iteration </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">episode</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="c1"># Evaluate the performance. Play with Random agents.</span>
+            <span class="k">if</span> <span class="n">episode</span> <span class="o">%</span> <span class="n">args</span><span class="o">.</span><span class="n">evaluate_every</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">agent</span><span class="o">.</span><span class="n">save</span><span class="p">()</span> <span class="c1"># Save model</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">log_performance</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">timestep</span><span class="p">,</span> <span class="n">tournament</span><span class="p">(</span><span class="n">eval_env</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">num_games</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
 
-<span class="c1"># Evaluate CFR against pre-trained NFSP</span>
-<span class="n">eval_env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">agent</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;leduc-holdem-nfsp&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+        <span class="c1"># Plot the learning curve</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;CFR&#39;</span><span class="p">)</span>
 
-<span class="c1"># Init a Logger to plot the learning curve</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">log_dir</span><span class="p">)</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="s2">&quot;DQN example in RLCard&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--seed&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--num_episodes&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--num_games&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--evaluate_every&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--log_dir&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;experiments/leduc_holdem_cfr_result/&#39;</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">episode_num</span><span class="p">):</span>
-    <span class="n">agent</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">Iteration {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">episode</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="c1"># Evaluate the performance. Play with NFSP agents.</span>
-    <span class="k">if</span> <span class="n">episode</span> <span class="o">%</span> <span class="n">evaluate_every</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">agent</span><span class="o">.</span><span class="n">save</span><span class="p">()</span> <span class="c1"># Save model</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">log_performance</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">timestep</span><span class="p">,</span> <span class="n">tournament</span><span class="p">(</span><span class="n">eval_env</span><span class="p">,</span> <span class="n">evaluate_num</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 
-<span class="c1"># Close files in the logger</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">close_files</span><span class="p">()</span>
-
-<span class="c1"># Plot the learning curve</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;CFR&#39;</span><span class="p">)</span>
+    <span class="n">train</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In the above example, the performance is measured by playing against a
-pre-trained NFSP model. The expected output is as below:</p>
+<p>Run the code with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">examples</span><span class="o">/</span><span class="n">run_cfr</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>The expected output is as below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Iteration</span> <span class="mi">0</span>
 <span class="o">----------------------------------------</span>
   <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">192</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="o">-</span><span class="mf">1.3662</span>
+  <span class="n">reward</span>       <span class="o">|</span>  <span class="mf">0.80175</span>
 <span class="o">----------------------------------------</span>
 <span class="n">Iteration</span> <span class="mi">100</span>
 <span class="o">----------------------------------------</span>
   <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">19392</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="mf">0.9462</span>
+  <span class="n">reward</span>       <span class="o">|</span>  <span class="mf">0.75675</span>
 <span class="o">----------------------------------------</span>
 <span class="n">Iteration</span> <span class="mi">200</span>
 <span class="o">----------------------------------------</span>
   <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">38592</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="mf">0.8591</span>
+  <span class="n">reward</span>       <span class="o">|</span>  <span class="mf">0.8145</span>
 <span class="o">----------------------------------------</span>
 <span class="n">Iteration</span> <span class="mi">300</span>
 <span class="o">----------------------------------------</span>
   <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">57792</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="mf">0.7861</span>
-<span class="o">----------------------------------------</span>
-<span class="n">Iteration</span> <span class="mi">400</span>
-<span class="o">----------------------------------------</span>
-  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">76992</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="mf">0.7752</span>
-<span class="o">----------------------------------------</span>
-<span class="n">Iteration</span> <span class="mi">500</span>
-<span class="o">----------------------------------------</span>
-  <span class="n">timestep</span>     <span class="o">|</span>  <span class="mi">96192</span>
-  <span class="n">reward</span>       <span class="o">|</span>  <span class="mf">0.7215</span>
+  <span class="n">reward</span>       <span class="o">|</span>  <span class="mf">0.66375</span>
 <span class="o">----------------------------------------</span>
 </pre></div>
 </div>
-<p>We observe that CFR (chance sampling) achieves better performance as NFSP. However, CFR (chance sampling)
-requires traversal of the game tree, which is infeasible in large
-environments.</p>
-</div>
-<div class="section" id="having-fun-with-pretrained-leduc-model">
+</section>
+<section id="having-fun-with-pretrained-leduc-model">
 <h2>Having Fun with Pretrained Leduc Model<a class="headerlink" href="#having-fun-with-pretrained-leduc-model" title="Permalink to this headline">¶</a></h2>
-<p>We have designed simple human interfaces to play against the pretrained
-model. Leduc Hold’em is a simplified version of Texas Hold’em. Rules can
-be found <a class="reference external" href="games.md#leduc-holdem">here</a>. Example of playing against
-Leduc Hold’em CFR (chance sampling) model is as below:</p>
+<p>We have designed simple human interfaces to play against the pretrained model. Leduc Hold’em is a simplified version of Texas Hold’em. Rules can be found <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/games.md#leduc-holdem">here</a>. Example of playing against Leduc Hold’em CFR (chance sampling) model is as below. You can find the code in <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/human/leduc_holdem_human.py">examples/human/leduc_holdem_human.py</a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rlcard</span>
 <span class="kn">from</span> <span class="nn">rlcard</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">LeducholdemHumanAgent</span> <span class="k">as</span> <span class="n">HumanAgent</span>
@@ -788,20 +671,20 @@ Leduc Hold’em CFR (chance sampling) model is as below:</p>
 
 <span class="c1"># Make environment</span>
 <span class="c1"># Set &#39;record_action&#39; to True because we need it to print results</span>
-<span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;record_action&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
-<span class="n">human_agent</span> <span class="o">=</span> <span class="n">HumanAgent</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_num</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;record_action&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+<span class="n">human_agent</span> <span class="o">=</span> <span class="n">HumanAgent</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">num_actions</span><span class="p">)</span>
 <span class="n">cfr_agent</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;leduc-holdem-cfr&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">human_agent</span><span class="p">,</span> <span class="n">cfr_agent</span><span class="p">])</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt; Leduc Hold&#39;em pre-trained model&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt; Leduc Hold&#39;em pre-trained model&quot;</span><span class="p">)</span>
 
-<span class="k">while</span> <span class="p">(</span><span class="bp">True</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt; Start a new game&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt; Start a new game&quot;</span><span class="p">)</span>
 
-    <span class="n">trajectories</span><span class="p">,</span> <span class="n">payoffs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">is_training</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">trajectories</span><span class="p">,</span> <span class="n">payoffs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">is_training</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="c1"># If the human does not take the final action, we need to</span>
     <span class="c1"># print other players action</span>
-    <span class="n">final_state</span> <span class="o">=</span> <span class="n">trajectories</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">final_state</span> <span class="o">=</span> <span class="n">trajectories</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">action_record</span> <span class="o">=</span> <span class="n">final_state</span><span class="p">[</span><span class="s1">&#39;action_record&#39;</span><span class="p">]</span>
     <span class="n">state</span> <span class="o">=</span> <span class="n">final_state</span><span class="p">[</span><span class="s1">&#39;raw_obs&#39;</span><span class="p">]</span>
     <span class="n">_action_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -810,20 +693,20 @@ Leduc Hold’em CFR (chance sampling) model is as below:</p>
             <span class="k">break</span>
         <span class="n">_action_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">action_record</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">])</span>
     <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">_action_list</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt; Player&#39;</span><span class="p">,</span> <span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;chooses&#39;</span><span class="p">,</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt; Player&#39;</span><span class="p">,</span> <span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;chooses&#39;</span><span class="p">,</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
     <span class="c1"># Let&#39;s take a look at what the agent card is</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;===============     CFR Agent    ===============&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;===============     CFR Agent    ===============&#39;</span><span class="p">)</span>
     <span class="n">print_card</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">get_perfect_information</span><span class="p">()[</span><span class="s1">&#39;hand_cards&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;===============     Result     ===============&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;===============     Result     ===============&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">payoffs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;You win {} chips!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">payoffs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You win </span><span class="si">{}</span><span class="s1"> chips!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">payoffs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
     <span class="k">elif</span> <span class="n">payoffs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;It is a tie.&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;It is a tie.&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;You lose {} chips!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="n">payoffs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You lose </span><span class="si">{}</span><span class="s1"> chips!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="n">payoffs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
     <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Press any key to continue...&quot;</span><span class="p">)</span>
 </pre></div>
@@ -863,99 +746,183 @@ Agent 1: +++
 &gt;&gt; You choose action (integer):
 </pre></div>
 </div>
-<p>We also provide a running demo of a rule-based agent for UNO. Try it by
-running <code class="docutils literal notranslate"><span class="pre">examples/uno_human.py</span></code>.</p>
-</div>
-<div class="section" id="leduc-holdem-as-single-agent-environment">
-<h2>Leduc Hold’em as Single-Agent Environment<a class="headerlink" href="#leduc-holdem-as-single-agent-environment" title="Permalink to this headline">¶</a></h2>
-<p>We have wrraped the environment as single agent environment by assuming
-that other players play with pre-trained models. The interfaces are
-exactly the same to OpenAI Gym. Thus, any single-agent algorithm can be
-connected to the environment. An example of Leduc Hold’em is as below:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+</section>
+<section id="training-dmc-on-dou-dizhu">
+<h2>Training DMC on Dou Dizhu<a class="headerlink" href="#training-dmc-on-dou-dizhu" title="Permalink to this headline">¶</a></h2>
+<p>Finally, we provide an example to traing Deep Monte-Carlo (DMC) on the large-scale game Dou Dizhu. You can also find the code in <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/run_dmc.py">examples/run_dmc.py</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
 
 <span class="kn">import</span> <span class="nn">rlcard</span>
-<span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">DQNAgent</span>
-<span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">RandomAgent</span>
-<span class="kn">from</span> <span class="nn">rlcard.utils</span> <span class="kn">import</span> <span class="n">set_global_seed</span><span class="p">,</span> <span class="n">tournament</span>
-<span class="kn">from</span> <span class="nn">rlcard.utils</span> <span class="kn">import</span> <span class="n">Logger</span>
+<span class="kn">from</span> <span class="nn">rlcard.agents.dmc_agent</span> <span class="kn">import</span> <span class="n">DMCTrainer</span>
 
-<span class="c1"># Make environment</span>
-<span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;single_agent_mode&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">})</span>
-<span class="n">eval_env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;single_agent_mode&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">})</span>
+<span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
 
-<span class="c1"># Set the iterations numbers and how frequently we evaluate/save plot</span>
-<span class="n">evaluate_every</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">evaluate_num</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">timesteps</span> <span class="o">=</span> <span class="mi">100000</span>
+    <span class="c1"># Make the environment</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">env</span><span class="p">)</span>
 
-<span class="c1"># The intial memory size</span>
-<span class="n">memory_init_size</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="c1"># Initialize the DMC trainer</span>
+    <span class="n">trainer</span> <span class="o">=</span> <span class="n">DMCTrainer</span><span class="p">(</span><span class="n">env</span><span class="p">,</span>
+                         <span class="n">load_model</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">load_model</span><span class="p">,</span>
+                         <span class="n">xpid</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">xpid</span><span class="p">,</span>
+                         <span class="n">savedir</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">savedir</span><span class="p">,</span>
+                         <span class="n">save_interval</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">save_interval</span><span class="p">,</span>
+                         <span class="n">num_actor_devices</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">num_actor_devices</span><span class="p">,</span>
+                         <span class="n">num_actors</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">num_actors</span><span class="p">,</span>
+                         <span class="n">training_device</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">training_device</span><span class="p">)</span>
 
-<span class="c1"># Train the agent every X steps</span>
-<span class="n">train_every</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="c1"># Train DMC Agents</span>
+    <span class="n">trainer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 
-<span class="c1"># The paths for saving the logs and learning curves</span>
-<span class="n">log_dir</span> <span class="o">=</span> <span class="s1">&#39;./experiments/leduc_holdem_single_dqn_result/&#39;</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="s2">&quot;DQN example in RLCard&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--env&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;doudizhu&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--cuda&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--load_model&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span>
+                    <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Load an existing model&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--xpid&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;doudizhu&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Experiment id (default: doudizhu)&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--savedir&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;experiments/dmc_result&#39;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Root dir where experiment data will be saved&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--save_interval&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Time interval (in minutes) at which to save the model&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--num_actor_devices&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The number of devices used for simulation&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--num_actors&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The number of actors for each simulation device&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--training_device&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The index of the GPU used for training models&#39;</span><span class="p">)</span>
 
-<span class="c1"># Set a global seed</span>
-<span class="n">set_global_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 
-<span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
-
-    <span class="c1"># Initialize a global step</span>
-    <span class="n">global_step</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;global_step&#39;</span><span class="p">,</span> <span class="n">trainable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-
-    <span class="c1"># Set up the agents</span>
-    <span class="n">agent</span> <span class="o">=</span> <span class="n">DQNAgent</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span>
-                     <span class="n">scope</span><span class="o">=</span><span class="s1">&#39;dqn&#39;</span><span class="p">,</span>
-                     <span class="n">action_num</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">action_num</span><span class="p">,</span>
-                     <span class="n">replay_memory_init_size</span><span class="o">=</span><span class="n">memory_init_size</span><span class="p">,</span>
-                     <span class="n">train_every</span><span class="o">=</span><span class="n">train_every</span><span class="p">,</span>
-                     <span class="n">state_shape</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">state_shape</span><span class="p">,</span>
-                     <span class="n">mlp_layers</span><span class="o">=</span><span class="p">[</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">])</span>
-    <span class="c1"># Initialize global variables</span>
-    <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">global_variables_initializer</span><span class="p">())</span>
-
-    <span class="c1"># Init a Logger to plot the learning curve</span>
-    <span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="p">(</span><span class="n">log_dir</span><span class="p">)</span>
-
-    <span class="n">state</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-
-    <span class="k">for</span> <span class="n">timestep</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">timesteps</span><span class="p">):</span>
-        <span class="n">action</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-        <span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
-        <span class="n">ts</span> <span class="o">=</span> <span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span><span class="p">,</span> <span class="n">done</span><span class="p">)</span>
-        <span class="n">agent</span><span class="o">.</span><span class="n">feed</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">timestep</span> <span class="o">%</span> <span class="n">evaluate_every</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">rewards</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="n">state</span> <span class="o">=</span> <span class="n">eval_env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">evaluate_num</span><span class="p">):</span>
-                <span class="n">action</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">eval_step</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-                <span class="n">_</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">done</span><span class="p">:</span>
-                    <span class="n">rewards</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reward</span><span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">log_performance</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">timestep</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">rewards</span><span class="p">))</span>
-
-    <span class="c1"># Close files in the logger</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">close_files</span><span class="p">()</span>
-
-    <span class="c1"># Plot the learning curve</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;DQN&#39;</span><span class="p">)</span>
-
-    <span class="c1"># Save model</span>
-    <span class="n">save_dir</span> <span class="o">=</span> <span class="s1">&#39;models/leduc_holdem_single_dqn&#39;</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">save_dir</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">save_dir</span><span class="p">)</span>
-    <span class="n">saver</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">Saver</span><span class="p">()</span>
-    <span class="n">saver</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">))</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CUDA_VISIBLE_DEVICES&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">cuda</span>
+    <span class="n">train</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Run DMC with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">examples</span><span class="o">/</span><span class="n">run_dmc</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
 </div>
+<p>The expected output is as below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Creating</span> <span class="n">log</span> <span class="n">directory</span><span class="p">:</span> <span class="n">experiments</span><span class="o">/</span><span class="n">dmc_result</span><span class="o">/</span><span class="n">doudizhu</span>
+<span class="n">Saving</span> <span class="n">arguments</span> <span class="n">to</span> <span class="n">experiments</span><span class="o">/</span><span class="n">dmc_result</span><span class="o">/</span><span class="n">doudizhu</span><span class="o">/</span><span class="n">meta</span><span class="o">.</span><span class="n">json</span>
+<span class="n">Saving</span> <span class="n">messages</span> <span class="n">to</span> <span class="n">experiments</span><span class="o">/</span><span class="n">dmc_result</span><span class="o">/</span><span class="n">doudizhu</span><span class="o">/</span><span class="n">out</span><span class="o">.</span><span class="n">log</span>
+<span class="n">Saving</span> <span class="n">logs</span> <span class="n">data</span> <span class="n">to</span> <span class="n">experiments</span><span class="o">/</span><span class="n">dmc_result</span><span class="o">/</span><span class="n">doudizhu</span><span class="o">/</span><span class="n">logs</span><span class="o">.</span><span class="n">csv</span>
+<span class="n">Saving</span> <span class="n">logs</span><span class="s1">&#39; fields to experiments/dmc_result/doudizhu/fields.csv</span>
+<span class="p">[</span><span class="n">INFO</span><span class="p">:</span><span class="mi">8880</span> <span class="n">utils</span><span class="p">:</span><span class="mi">66</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">15</span> <span class="mi">20</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span><span class="mi">447</span><span class="p">]</span> <span class="n">Device</span> <span class="mi">0</span> <span class="n">Actor</span> <span class="mi">0</span> <span class="n">started</span><span class="o">.</span>
+<span class="p">[</span><span class="n">INFO</span><span class="p">:</span><span class="mi">8957</span> <span class="n">utils</span><span class="p">:</span><span class="mi">66</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">15</span> <span class="mi">20</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="mi">990</span><span class="p">]</span> <span class="n">Device</span> <span class="mi">0</span> <span class="n">Actor</span> <span class="mi">1</span> <span class="n">started</span><span class="o">.</span>
+<span class="p">[</span><span class="n">INFO</span><span class="p">:</span><span class="mi">9033</span> <span class="n">utils</span><span class="p">:</span><span class="mi">66</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">15</span> <span class="mi">20</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="mi">504</span><span class="p">]</span> <span class="n">Device</span> <span class="mi">0</span> <span class="n">Actor</span> <span class="mi">2</span> <span class="n">started</span><span class="o">.</span>
+<span class="p">[</span><span class="n">INFO</span><span class="p">:</span><span class="mi">9111</span> <span class="n">utils</span><span class="p">:</span><span class="mi">66</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">15</span> <span class="mi">20</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">34</span><span class="p">,</span><span class="mi">976</span><span class="p">]</span> <span class="n">Device</span> <span class="mi">0</span> <span class="n">Actor</span> <span class="mi">3</span> <span class="n">started</span><span class="o">.</span>
+<span class="p">[</span><span class="n">INFO</span><span class="p">:</span><span class="mi">9185</span> <span class="n">utils</span><span class="p">:</span><span class="mi">66</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">15</span> <span class="mi">20</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">39</span><span class="p">,</span><span class="mi">535</span><span class="p">]</span> <span class="n">Device</span> <span class="mi">0</span> <span class="n">Actor</span> <span class="mi">4</span> <span class="n">started</span><span class="o">.</span>
+<span class="n">Updated</span> <span class="n">log</span> <span class="n">fields</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;_tick&#39;</span><span class="p">,</span> <span class="s1">&#39;_time&#39;</span><span class="p">,</span> <span class="s1">&#39;frames&#39;</span><span class="p">,</span> <span class="s1">&#39;mean_episode_return_0&#39;</span><span class="p">,</span> <span class="s1">&#39;loss_0&#39;</span><span class="p">,</span> <span class="s1">&#39;mean_episode_return_1&#39;</span><span class="p">,</span> <span class="s1">&#39;loss_1&#39;</span><span class="p">,</span> <span class="s1">&#39;mean_episode_return_2&#39;</span><span class="p">,</span> <span class="s1">&#39;loss_2&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="n">INFO</span><span class="p">:</span><span class="mi">8802</span> <span class="n">trainer</span><span class="p">:</span><span class="mi">244</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">15</span> <span class="mi">20</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">44</span><span class="p">,</span><span class="mi">550</span><span class="p">]</span> <span class="n">Saving</span> <span class="n">checkpoint</span> <span class="n">to</span> <span class="n">experiments</span><span class="o">/</span><span class="n">dmc_result</span><span class="o">/</span><span class="n">doudizhu</span><span class="o">/</span><span class="n">model</span><span class="o">.</span><span class="n">tar</span>
+<span class="p">[</span><span class="n">INFO</span><span class="p">:</span><span class="mi">8802</span> <span class="n">trainer</span><span class="p">:</span><span class="mi">276</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">15</span> <span class="mi">20</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">44</span><span class="p">,</span><span class="mi">668</span><span class="p">]</span> <span class="n">After</span> <span class="mi">9600</span> <span class="n">frames</span><span class="p">:</span> <span class="o">@</span> <span class="mf">1873.8</span> <span class="n">fps</span> <span class="n">Stats</span><span class="p">:</span>
+<span class="p">{</span><span class="s1">&#39;loss_0&#39;</span><span class="p">:</span> <span class="mf">0.27473658323287964</span><span class="p">,</span>
+ <span class="s1">&#39;loss_1&#39;</span><span class="p">:</span> <span class="mf">0.8208091259002686</span><span class="p">,</span>
+ <span class="s1">&#39;loss_2&#39;</span><span class="p">:</span> <span class="mf">0.7109626531600952</span><span class="p">,</span>
+ <span class="s1">&#39;mean_episode_return_0&#39;</span><span class="p">:</span> <span class="mf">0.24358974397182465</span><span class="p">,</span>
+ <span class="s1">&#39;mean_episode_return_1&#39;</span><span class="p">:</span> <span class="mf">0.7515923976898193</span><span class="p">,</span>
+ <span class="s1">&#39;mean_episode_return_2&#39;</span><span class="p">:</span> <span class="mf">0.762499988079071</span><span class="p">}</span>
+<span class="p">[</span><span class="n">INFO</span><span class="p">:</span><span class="mi">8802</span> <span class="n">trainer</span><span class="p">:</span><span class="mi">276</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">15</span> <span class="mi">20</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">49</span><span class="p">,</span><span class="mi">674</span><span class="p">]</span> <span class="n">After</span> <span class="mi">19200</span> <span class="n">frames</span><span class="p">:</span> <span class="o">@</span> <span class="mf">1918.0</span> <span class="n">fps</span> <span class="n">Stats</span><span class="p">:</span>
+<span class="p">{</span><span class="s1">&#39;loss_0&#39;</span><span class="p">:</span> <span class="mf">0.4458627700805664</span><span class="p">,</span>
+ <span class="s1">&#39;loss_1&#39;</span><span class="p">:</span> <span class="mf">0.5232920050621033</span><span class="p">,</span>
+ <span class="s1">&#39;loss_2&#39;</span><span class="p">:</span> <span class="mf">0.43021461367607117</span><span class="p">,</span>
+ <span class="s1">&#39;mean_episode_return_0&#39;</span><span class="p">:</span> <span class="mf">0.3717948794364929</span><span class="p">,</span>
+ <span class="s1">&#39;mean_episode_return_1&#39;</span><span class="p">:</span> <span class="mf">0.6348323225975037</span><span class="p">,</span>
+ <span class="s1">&#39;mean_episode_return_2&#39;</span><span class="p">:</span> <span class="mf">0.6357409954071045</span><span class="p">}</span>
+</pre></div>
 </div>
+<p>The models will by defult be saved in <code class="docutils literal notranslate"><span class="pre">experiments/dmc_result/doudizhu</span></code>. I have provide some scripts to run DMC in single/multiple GPUs in <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/scripts/">examples/scripts/</a>. To evaluate the performance, see <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/toy-examples.md#evaluating-dmc-on-dou-dizhu">here</a>.</p>
+</section>
+<section id="evaluating-agents">
+<h2>Evaluating Agents<a class="headerlink" href="#evaluating-agents" title="Permalink to this headline">¶</a></h2>
+<p>We also provide an example to compare agents. You can find the code in <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/evaluate.py">examples/evaluate.py</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="kn">import</span> <span class="nn">rlcard</span>
+<span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">DQNAgent</span><span class="p">,</span> <span class="n">RandomAgent</span>
+<span class="kn">from</span> <span class="nn">rlcard.utils</span> <span class="kn">import</span> <span class="n">get_device</span><span class="p">,</span> <span class="n">set_seed</span><span class="p">,</span> <span class="n">tournament</span><span class="p">,</span> <span class="n">reorganize</span><span class="p">,</span> <span class="n">Logger</span>
+
+<span class="k">def</span> <span class="nf">load_model</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">model_path</span><span class="p">):</span>  <span class="c1"># Torch model</span>
+        <span class="kn">import</span> <span class="nn">torch</span>
+        <span class="n">agent</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">set_device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">model_path</span><span class="p">):</span>  <span class="c1"># CFR model</span>
+        <span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">CFRAgent</span>
+        <span class="n">agent</span> <span class="o">=</span> <span class="n">CFRAgent</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">model_path</span><span class="p">)</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">model_path</span> <span class="o">==</span> <span class="s1">&#39;random&#39;</span><span class="p">:</span>  <span class="c1"># Random model</span>
+        <span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">RandomAgent</span>
+        <span class="n">agent</span> <span class="o">=</span> <span class="n">RandomAgent</span><span class="p">(</span><span class="n">num_actions</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">num_actions</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># A model in the model zoo</span>
+        <span class="kn">from</span> <span class="nn">rlcard</span> <span class="kn">import</span> <span class="n">models</span>
+        <span class="n">agent</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="n">position</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">agent</span>
+
+<span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+
+    <span class="c1"># Check whether gpu is available</span>
+    <span class="n">device</span> <span class="o">=</span> <span class="n">get_device</span><span class="p">()</span>
+        
+    <span class="c1"># Seed numpy, torch, random</span>
+    <span class="n">set_seed</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span>
+
+    <span class="c1"># Make the environment with seed</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">env</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">seed</span><span class="p">})</span>
+
+    <span class="c1"># Load models</span>
+    <span class="n">agents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">position</span><span class="p">,</span> <span class="n">model_path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">models</span><span class="p">):</span>
+        <span class="n">agents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">load_model</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">device</span><span class="p">))</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
+
+    <span class="c1"># Evaluate</span>
+    <span class="n">rewards</span> <span class="o">=</span> <span class="n">tournament</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">num_games</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">position</span><span class="p">,</span> <span class="n">reward</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rewards</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">models</span><span class="p">[</span><span class="n">position</span><span class="p">],</span> <span class="n">reward</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="s2">&quot;Evaluation example in RLCard&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--env&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;leduc-holdem&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--models&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;experiments/leduc_holdem_dqn_result/model.pth&#39;</span><span class="p">,</span> <span class="s1">&#39;random&#39;</span><span class="p">])</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--cuda&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--seed&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--num_games&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CUDA_VISIBLE_DEVICES&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">cuda</span>
+    <span class="n">evaluate</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We assume that you have already trained a DQN agent on Leduc Hold’em. Run the following command to compare the agent with random agent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">examples</span><span class="o">/</span><span class="n">evaluate</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>The expected output is as below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--&gt;</span> <span class="n">Running</span> <span class="n">on</span> <span class="n">the</span> <span class="n">CPU</span>
+<span class="mi">0</span> <span class="n">experiments</span><span class="o">/</span><span class="n">leduc_holdem_dqn_result</span><span class="o">/</span><span class="n">model</span><span class="o">.</span><span class="n">pth</span> <span class="mf">1.21185</span>
+<span class="mi">1</span> <span class="n">random</span> <span class="o">-</span><span class="mf">1.21185</span>
+</pre></div>
+</div>
+<section id="evaluating-dmc-on-dou-dizhu">
+<h3>Evaluating DMC on Dou Dizhu<a class="headerlink" href="#evaluating-dmc-on-dou-dizhu" title="Permalink to this headline">¶</a></h3>
+<p>DMC models can be similarly loaded with the evaluation script. To achieve this, you need to first specify which checkpoint you would like to load. Then you can eveluate DMC by similarly passing the model paths to the script. For example, you may evaluate DMC landlord against rule peasants with (the exact timestep could differ):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">examples</span><span class="o">/</span><span class="n">evaluate</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">env</span> <span class="n">doudizhu</span> <span class="o">--</span><span class="n">models</span> <span class="n">experiments</span><span class="o">/</span><span class="n">dmc_result</span><span class="o">/</span><span class="n">doudizhu</span><span class="o">/</span><span class="mf">0_432758400.</span><span class="n">pth</span> <span class="n">doudizhu</span><span class="o">-</span><span class="n">rule</span><span class="o">-</span><span class="n">v1</span> <span class="n">doudizhu</span><span class="o">-</span><span class="n">rule</span><span class="o">-</span><span class="n">v1</span> <span class="o">--</span><span class="n">cuda</span> <span class="mi">0</span> <span class="o">--</span><span class="n">num_games</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+<p>You may also do it reversely by running</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">examples</span><span class="o">/</span><span class="n">evaluate</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">env</span> <span class="n">doudizhu</span> <span class="o">--</span><span class="n">models</span> <span class="n">doudizhu</span><span class="o">-</span><span class="n">rule</span><span class="o">-</span><span class="n">v1</span> <span class="n">experiments</span><span class="o">/</span><span class="n">dmc_result</span><span class="o">/</span><span class="n">doudizhu</span><span class="o">/</span><span class="mf">1_432758400.</span><span class="n">pth</span> <span class="n">experiments</span><span class="o">/</span><span class="n">dmc_result</span><span class="o">/</span><span class="n">doudizhu</span><span class="o">/</span><span class="mf">2_432758400.</span><span class="n">pth</span> <span class="o">--</span><span class="n">cuda</span> <span class="mi">0</span> <span class="o">--</span><span class="n">num_games</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
 
 
            </div>
