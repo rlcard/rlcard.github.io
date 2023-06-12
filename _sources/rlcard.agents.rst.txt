@@ -1,0 +1,130 @@
+rlcard.agents
+===================
+
+rlcard.agents.cfr_agent
+-----------------------
+
+.. automodule:: rlcard.agents.cfr_agent
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.dqn_agent
+-----------------------
+
+.. automodule:: rlcard.agents.dqn_agent
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.nfsp_agent
+------------------------
+
+.. automodule:: rlcard.agents.nfsp_agent
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.pettingzoo_agents
+-------------------------------
+
+.. automodule:: rlcard.agents.pettingzoo_agents
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.random_agent
+--------------------------
+
+.. automodule:: rlcard.agents.random_agent
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.dmc_agent.file_writer
+-----------------------------------
+
+.. automodule:: rlcard.agents.dmc_agent.file_writer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.dmc_agent.model
+-----------------------------
+
+.. automodule:: rlcard.agents.dmc_agent.model
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.dmc_agent.pettingzoo_model
+----------------------------------------
+
+.. automodule:: rlcard.agents.dmc_agent.pettingzoo_model
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.dmc_agent.pettingzoo_utils
+----------------------------------------
+
+.. automodule:: rlcard.agents.dmc_agent.pettingzoo_utils
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.dmc_agent.trainer
+-------------------------------
+
+.. automodule:: rlcard.agents.dmc_agent.trainer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.dmc_agent.utils
+-----------------------------
+
+.. automodule:: rlcard.agents.dmc_agent.utils
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.human_agents.blackjack_human_agent
+-------------------------------------------------
+
+.. automodule:: rlcard.agents.human_agents.blackjack_human_agent
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.human_agents.leduc_holdem_human_agent
+----------------------------------------------------
+
+.. automodule:: rlcard.agents.human_agents.leduc_holdem_human_agent
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.human_agents.limit_holdem_human_agent
+----------------------------------------------------
+
+.. automodule:: rlcard.agents.human_agents.limit_holdem_human_agent
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.human_agents.nolimit_holdem_human_agent
+------------------------------------------------------
+
+.. automodule:: rlcard.agents.human_agents.nolimit_holdem_human_agent
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.agents.human_agents.uno_human_agent
+-------------------------------------------
+
+.. automodule:: rlcard.agents.human_agents.uno_human_agent
+    :members:
+    :undoc-members:
+    :show-inheritance:

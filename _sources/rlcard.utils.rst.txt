@@ -1,0 +1,34 @@
+rlcard.utils
+====================
+
+rlcard.utils.utils
+-------------------------
+
+.. automodule:: rlcard.utils.utils
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.utils.logger
+-------------------------
+
+.. automodule:: rlcard.utils.logger
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.utils.seeding
+---------------------------
+
+.. automodule:: rlcard.utils.seeding
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+rlcard.utils.pettingzoo_utils
+-----------------------------
+
+.. automodule:: rlcard.utils.pettingzoo_utils
+    :members:
+    :undoc-members:
+    :show-inheritance:

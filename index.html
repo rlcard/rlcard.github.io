@@ -1,336 +1,74 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RLCard: A Toolkit for Reinforcement Learning in Card Games &mdash; RLcard 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-        <script data-url_root="./" id="documentation_options" src="static/documentation_options.js"></script>
-        <script src="static/jquery.js"></script>
-        <script src="static/underscore.js"></script>
-        <script src="static/doctools.js"></script>
-    
-    <script type="text/javascript" src="static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <!-- <link rel="copyright" title="DATA Lab at Texas A&M University"> --> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-          <a href="index.html" style="margin: 0px;"><img src="imgs/logo_white.png" style="height: initial; width: initial; border-radius: initial; margin: 0px;" alt="home"></a>
           
-
-          
+          <a href="index.html">
+            
+              <img src="_static/logo_white.png" class="logo" alt="Logo"/>
           </a>
-
-          
-            
-            
-          
-
-          
-<div role="search" id="test-search">
+<div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Documentation:</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#design-principles">Design Principles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html#rlcard-high-level-design">RLCard High-level Design</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="overview.html#environments">Environments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="overview.html#games">Games</a></li>
-<li class="toctree-l3"><a class="reference internal" href="overview.html#agents">Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
 </ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#playing-with-random-agents">Playing with Random Agents</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#deep-q-learning-on-blackjack">Deep-Q Learning on Blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-cfr-chance-sampling-on-leduc-hold-em">Training CFR (chance sampling) on Leduc Hold’em</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#having-fun-with-pretrained-leduc-model">Having Fun with Pretrained Leduc Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#training-dmc-on-dou-dizhu">Training DMC on Dou Dizhu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#evaluating-agents">Evaluating Agents</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="getting_started.html#evaluating-dmc-on-dou-dizhu">Evaluating DMC on Dou Dizhu</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="games.html">Games in RLCard</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="games.html#blackjack">Blackjack</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-blackjack">State Representation of Blackjack</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-blackjack">Action Encoding of Blackjack</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-blackjack">Payoff of Blackjack</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#leduc-hold-em">Leduc Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-leduc-hold-em">State Representation of Leduc Hold’em</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-leduc-hold-em">Action Encoding of Leduc Hold’em</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-leduc-hold-em">Payoff of Leduc Hold’em</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#limit-texas-hold-em">Limit Texas Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-limit-texas-hold-em">State Representation of Limit Texas Hold’em</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-limit-texas-hold-em">Action Encoding of Limit Texas Hold’em</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-limit-texas-hold-em">Payoff of Limit Texas Hold’em</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#dou-dizhu">Dou Dizhu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-dou-dizhu">State Representation of Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-dou-dizhu">State Encoding of Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-dou-dizhu">Action Encoding of Dou Dizhu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff">Payoff</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#mahjong">Mahjong</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-mahjong">State Representation of Mahjong</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-space-of-mahjong">Action Space of Mahjong</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-mahjong">Payoff of Mahjong</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#no-limit-texas-hold-em">No-limit Texas Hold’em</a></li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#state-representation-of-no-limit-texas-hold-em">State Representation of No-Limit Texas Hold’em</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-no-limit-texas-hold-em">Action Encoding of No-Limit Texas Hold’em</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-no-limit-texas-hold-em">Payoff of No-Limit Texas Hold’em</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#uno">UNO</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-uno">State Representation of Uno</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-encoding-of-uno">State Encoding of Uno</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-encoding-of-uno">Action Encoding of Uno</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-uno">Payoff of Uno</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="games.html#gin-rummy">Gin Rummy</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="games.html#state-representation-of-gin-rummy">State Representation of Gin Rummy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#action-space-of-gin-rummy">Action Space of Gin Rummy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#payoff-of-gin-rummy">Payoff of Gin Rummy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#settings">Settings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="games.html#variations">Variations</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-monte-carlo">Deep Monte-Carlo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="algorithms.html#deep-q-learning">Deep-Q Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="algorithms.html#nfsp">NFSP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="algorithms.html#cfr-chance-sampling">CFR (chance sampling)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="development.html#adding-pre-trained-rule-based-models">Adding Pre-trained/Rule-based models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development.html#developping-algorithms">Developping Algorithms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development.html#adding-new-environments">Adding New Environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="development.html#customizing-environments">Customizing Environments</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="development.html#state-representation">State Representation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="development.html#action-encoding">Action Encoding</a></li>
-<li class="toctree-l3"><a class="reference internal" href="development.html#reward-calculation">Reward Calculation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="development.html#modifying-game">Modifying Game</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">API Documents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">API Documents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="rlcard.envs.html">rlcard.envs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.blackjack">rlcard.envs.blackjack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.doudizhu">rlcard.envs.doudizhu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.env">rlcard.envs.env</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.gin_rummy">rlcard.envs.gin_rummy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.leducholdem">rlcard.envs.leducholdem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.limitholdem">rlcard.envs.limitholdem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.mahjong">rlcard.envs.mahjong</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.nolimitholdem">rlcard.envs.nolimitholdem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.registration">rlcard.envs.registration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.envs.html#module-rlcard.envs.uno">rlcard.envs.uno</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="rlcard.utils.html">rlcard.utils</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.logger">rlcard.utils.logger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.seeding">rlcard.utils.seeding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.utils.html#module-rlcard.utils.utils">rlcard.utils.utils</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="rlcard.games.html">rlcard.games</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.blackjack.html">rlcard.games.blackjack</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.dealer">rlcard.games.blackjack.dealer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.game">rlcard.games.blackjack.game</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.judger">rlcard.games.blackjack.judger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.blackjack.html#module-rlcard.games.blackjack.player">rlcard.games.blackjack.player</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.doudizhu.html">rlcard.games.doudizhu</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.dealer">rlcard.games.doudizhu.dealer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.game">rlcard.games.doudizhu.game</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.judger">rlcard.games.doudizhu.judger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.player">rlcard.games.doudizhu.player</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.round">rlcard.games.doudizhu.round</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.doudizhu.html#module-rlcard.games.doudizhu.utils">rlcard.games.doudizhu.utils</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.gin_rummy.html">rlcard.games.gin_rummy</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#subpackages">Subpackages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.dealer">rlcard.games.gin_rummy.dealer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.game">rlcard.games.gin_rummy.game</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.judge">rlcard.games.gin_rummy.judge</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.player">rlcard.games.gin_rummy.player</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.gin_rummy.html#module-rlcard.games.gin_rummy.round">rlcard.games.gin_rummy.round</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.leducholdem.html">rlcard.games.leducholdem</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.dealer">rlcard.games.leducholdem.dealer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.game">rlcard.games.leducholdem.game</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.judger">rlcard.games.leducholdem.judger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.player">rlcard.games.leducholdem.player</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.leducholdem.html#module-rlcard.games.leducholdem.round">rlcard.games.leducholdem.round</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.limitholdem.html">rlcard.games.limitholdem</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.dealer">rlcard.games.limitholdem.dealer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.game">rlcard.games.limitholdem.game</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.judger">rlcard.games.limitholdem.judger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.player">rlcard.games.limitholdem.player</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.round">rlcard.games.limitholdem.round</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.limitholdem.html#module-rlcard.games.limitholdem.utils">rlcard.games.limitholdem.utils</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.mahjong.html">rlcard.games.mahjong</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.card">rlcard.games.mahjong.card</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.dealer">rlcard.games.mahjong.dealer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.game">rlcard.games.mahjong.game</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.judger">rlcard.games.mahjong.judger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.player">rlcard.games.mahjong.player</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.round">rlcard.games.mahjong.round</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.mahjong.html#module-rlcard.games.mahjong.utils">rlcard.games.mahjong.utils</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.nolimitholdem.html">rlcard.games.nolimitholdem</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.dealer">rlcard.games.nolimitholdem.dealer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.game">rlcard.games.nolimitholdem.game</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.judger">rlcard.games.nolimitholdem.judger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.player">rlcard.games.nolimitholdem.player</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.nolimitholdem.html#module-rlcard.games.nolimitholdem.round">rlcard.games.nolimitholdem.round</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.games.uno.html">rlcard.games.uno</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.card">rlcard.games.uno.card</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.dealer">rlcard.games.uno.dealer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.game">rlcard.games.uno.game</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.judger">rlcard.games.uno.judger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.player">rlcard.games.uno.player</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.round">rlcard.games.uno.round</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.games.uno.html#module-rlcard.games.uno.utils">rlcard.games.uno.utils</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.games.html#module-rlcard.games.base">rlcard.games.base</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.agents.dmc_agent.html">rlcard.agents.dmc_agent</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.file_writer">rlcard.agents.dmc_agent.file_writer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.model">rlcard.agents.dmc_agent.model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.trainer">rlcard.agents.dmc_agent.trainer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.dmc_agent.html#module-rlcard.agents.dmc_agent.utils">rlcard.agents.dmc_agent.utils</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="rlcard.agents.human_agents.html">rlcard.agents.human_agents</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#subpackages">Subpackages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.blackjack_human_agent">rlcard.agents.human_agents.blackjack_human_agent</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.leduc_holdem_human_agent">rlcard.agents.human_agents.leduc_holdem_human_agent</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.limit_holdem_human_agent">rlcard.agents.human_agents.limit_holdem_human_agent</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.nolimit_holdem_human_agent">rlcard.agents.human_agents.nolimit_holdem_human_agent</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rlcard.agents.human_agents.html#module-rlcard.agents.human_agents.uno_human_agent">rlcard.agents.human_agents.uno_human_agent</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.cfr_agent">rlcard.agents.cfr_agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.dqn_agent">rlcard.agents.dqn_agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.nfsp_agent">rlcard.agents.nfsp_agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rlcard.agents.html#module-rlcard.agents.random_agent">rlcard.agents.random_agent</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="rlcard.envs.html">rlcard.envs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rlcard.utils.html">rlcard.utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rlcard.games.html">rlcard.games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rlcard.agents.html">rlcard.agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rlcard.models.html">rlcard.models</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="doctree.html">RLcard</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
 
@@ -385,40 +123,54 @@
 <hr/>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <section class="tex2jax_ignore mathjax_ignore" id="rlcard-a-toolkit-for-reinforcement-learning-in-card-games">
-<h1>RLCard: A Toolkit for Reinforcement Learning in Card Games<a class="headerlink" href="#rlcard-a-toolkit-for-reinforcement-learning-in-card-games" title="Permalink to this headline">¶</a></h1>
-<p>RLCard is a toolkit for Reinforcement Learning (RL) in card games. It supports multiple card environments with easy-to-use interfaces for implementing various reinforcement learning and searching algorithms. The goal of RLCard is to bridge reinforcement learning and imperfect information games. RLCard is developed by <a class="reference external" href="http://faculty.cs.tamu.edu/xiahu/">DATA Lab</a> at Texas A&amp;M University and community contributors.</p>
+             
+  <section id="rlcard-a-toolkit-for-reinforcement-learning-in-card-games">
+<h1>RLCard: A Toolkit for Reinforcement Learning in Card Games<a class="headerlink" href="#rlcard-a-toolkit-for-reinforcement-learning-in-card-games" title="Permalink to this heading">¶</a></h1>
+<img width="500" src="https://dczha.com/files/rlcard/logo.jpg" alt="Logo" />
+<p><a class="reference external" href="https://github.com/datamllab/rlcard/actions/workflows/python-package.yml"><img alt="Testing" src="https://github.com/datamllab/rlcard/actions/workflows/python-package.yml/badge.svg" /></a>
+<a class="reference external" href="https://badge.fury.io/py/rlcard"><img alt="PyPI version" src="https://badge.fury.io/py/rlcard.svg" /></a>
+<a class="reference external" href="https://coveralls.io/github/datamllab/rlcard?branch=master"><img alt="Coverage Status" src="https://coveralls.io/repos/github/datamllab/rlcard/badge.svg" /></a>
+<a class="reference external" href="https://pepy.tech/project/rlcard"><img alt="Downloads" src="https://pepy.tech/badge/rlcard" /></a>
+<a class="reference external" href="https://pepy.tech/project/rlcard"><img alt="Downloads" src="https://pepy.tech/badge/rlcard/month" /></a>
+<a class="reference external" href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a></p>
+<p>RLCard is a toolkit for Reinforcement Learning (RL) in card games. It supports multiple card environments with easy-to-use interfaces for implementing various reinforcement learning and searching algorithms. The goal of RLCard is to bridge reinforcement learning and imperfect information games. RLCard is developed by <a class="reference external" href="http://faculty.cs.tamu.edu/xiahu/">DATA Lab</a> at Rice and Texas A&amp;M University, and community contributors.</p>
 <ul class="simple">
 <li><p>Official Website: <a class="reference external" href="https://www.rlcard.org">https://www.rlcard.org</a></p></li>
 <li><p>Tutorial in Jupyter Notebook: <a class="reference external" href="https://github.com/datamllab/rlcard-tutorial">https://github.com/datamllab/rlcard-tutorial</a></p></li>
 <li><p>Paper: <a class="reference external" href="https://arxiv.org/abs/1910.04376">https://arxiv.org/abs/1910.04376</a></p></li>
+<li><p>Video: <a class="reference external" href="https://youtu.be/krK2jmSdKZc">YouTube</a></p></li>
 <li><p>GUI: <a class="reference external" href="https://github.com/datamllab/rlcard-showdown">RLCard-Showdown</a></p></li>
 <li><p>Dou Dizhu Demo: <a class="reference external" href="https://douzero.org/">Demo</a></p></li>
 <li><p>Resources: <a class="reference external" href="https://github.com/datamllab/awesome-game-ai">Awesome-Game-AI</a></p></li>
 <li><p>Related Project: <a class="reference external" href="https://github.com/kwai/DouZero">DouZero Project</a></p></li>
+<li><p>Zhihu: https://zhuanlan.zhihu.com/p/526723604</p></li>
+<li><p>Miscellaneous Resources: Have you heard of data-centric AI? Please check out our <a class="reference external" href="https://arxiv.org/abs/2303.10158">data-centric AI survey</a> and <a class="reference external" href="https://github.com/daochenzha/data-centric-AI">awesome data-centric AI resources</a>!</p></li>
 </ul>
 <p><strong>Community:</strong></p>
 <ul class="simple">
 <li><p><strong>Slack</strong>: Discuss in our <a class="reference external" href="https://join.slack.com/t/rlcard/shared_invite/zt-rkvktsaq-xkMwz8BfKupCM6zGhO01xg">#rlcard-project</a> slack channel.</p></li>
-<li><p><strong>QQ Group</strong>: Join our QQ group 665647450. Password: rlcardqqgroup</p></li>
+<li><p><strong>QQ Group</strong>: Join our QQ group to discuss. Password: rlcardqqgroup</p>
+<ul>
+<li><p>Group 1: 665647450</p></li>
+<li><p>Group 2: 117349516</p></li>
+</ul>
+</li>
 </ul>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
 <p>Make sure that you have <strong>Python 3.6+</strong> and <strong>pip</strong> installed. We recommend installing the stable version of <code class="docutils literal notranslate"><span class="pre">rlcard</span></code> with <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">rlcard</span>
-</pre></div>
-</div>
-<p>If you are in China and the above command is too slow, you can use the mirror provided by Tsinghua University:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">rlcard</span> <span class="n">-i</span> <span class="n">https://pypi.tuna.tsinghua.edu.cn/simple</span>
 </pre></div>
 </div>
 <p>The default installation will only include the card environments. To use PyTorch implementation of the training algorithms, run</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">rlcard</span><span class="p">[</span><span class="n">torch</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Alternatively, you can clone the latest version with (if you are in China and Github is slow, you can use the mirror in <a class="reference external" href="https://gitee.com/daochenzha/rlcard">Gitee</a>):
-</p>
+<p>If you are in China and the above command is too slow, you can use the mirror provided by Tsinghua University:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">rlcard</span> <span class="o">-</span><span class="n">i</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">tuna</span><span class="o">.</span><span class="n">tsinghua</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">simple</span>
+</pre></div>
+</div>
+<p>Alternatively, you can clone the latest version with (if you are in China and Github is slow, you can use the mirror in <a class="reference external" href="https://gitee.com/daochenzha/rlcard">Gitee</a>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">datamllab</span><span class="o">/</span><span class="n">rlcard</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
@@ -439,35 +191,36 @@
 <p>Conda installation only provides the card environments, you need to manually install Pytorch on your demands.</p>
 </section>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
 <p>A <strong>short example</strong> is as below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rlcard</span>
 <span class="kn">from</span> <span class="nn">rlcard.agents</span> <span class="kn">import</span> <span class="n">RandomAgent</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;blackjack&#39;</span><span class="p">)</span>
+<span class="n">env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">RandomAgent</span><span class="p">(</span><span class="n">num_actions</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">num_actions</span><span class="p">)])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">num_actions</span><span class="p">)</span> <span class="c1"># 2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">num_players</span><span class="p">)</span> <span class="c1"># 1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state_shape</span><span class="p">)</span> <span class="c1"># [[2]]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_shape</span><span class="p">)</span> <span class="c1"># [None]</span>
 
-<span class="n">env</span> <span class="o">=</span> <span class="n">rlcard</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;blackjack&#39;</span><span class="p">)</span>
-<span class="n">env</span><span class="o">.</span><span class="n">set_agents</span><span class="p">([</span><span class="n">RandomAgent</span><span class="p">(</span><span class="n">num_actions</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">num_actions</span><span class="p">)])</span>
-
 <span class="n">trajectories</span><span class="p">,</span> <span class="n">payoffs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>RLCard can be flexibly connected to various algorithms. See the following examples:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/toy-examples.md#playing-with-random-agents">Playing with random agents</a></p></li>
-<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/toy-examples.md#deep-q-learning-on-blackjack">Deep-Q learning on Blackjack</a></p></li>
-<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/toy-examples.md#training-cfr-on-leduc-holdem">Training CFR (chance sampling) on Leduc Hold’em</a></p></li>
-<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/toy-examples.md#having-fun-with-pretrained-leduc-model">Having fun with pretrained Leduc model</a></p></li>
-<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/toy-examples.md#training-dmc-on-dou-dizhu">Training DMC on Dou Dizhu</a></p></li>
-<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/toy-examples.md#evaluating-agents">Evaluating Agents</a></p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/toy-examples.md#playing-with-random-agents">Playing with random agents</a></p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/toy-examples.md#deep-q-learning-on-blackjack">Deep-Q learning on Blackjack</a></p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/toy-examples.md#training-cfr-on-leduc-holdem">Training CFR (chance sampling) on Leduc Hold’em</a></p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/toy-examples.md#having-fun-with-pretrained-leduc-model">Having fun with pretrained Leduc model</a></p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/toy-examples.md#training-dmc-on-dou-dizhu">Training DMC on Dou Dizhu</a></p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/toy-examples.md#evaluating-agents">Evaluating Agents</a></p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/pettingzoo">Training Agents on PettingZoo</a></p></li>
 </ul>
 </section>
 <section id="demo">
-<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
-<p>Run <code class="docutils literal notranslate"><span class="pre">examples/human/leduc_holdem_human.py</span></code> to play with the pre-trained Leduc Hold’em model. Leduc Hold’em is a simplified version of Texas Hold’em. Rules can be found <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/games.md#leduc-holdem">here</a>.</p>
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this heading">¶</a></h2>
+<p>Run <code class="docutils literal notranslate"><span class="pre">examples/human/leduc_holdem_human.py</span></code> to play with the pre-trained Leduc Hold’em model. Leduc Hold’em is a simplified version of Texas Hold’em. Rules can be found <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/games.md#leduc-holdem">here</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt; Leduc Hold&#39;em pre-trained model
 
 &gt;&gt; Start a new game!
@@ -507,151 +260,158 @@ Agent 1: +++
 <img alt="leduc-replay" src="https://github.com/datamllab/rlcard-showdown/blob/master/docs/imgs/leduc-replay.png?raw=true" /></p>
 </section>
 <section id="available-environments">
-<h2>Available Environments<a class="headerlink" href="#available-environments" title="Permalink to this headline">¶</a></h2>
+<h2>Available Environments<a class="headerlink" href="#available-environments" title="Permalink to this heading">¶</a></h2>
 <p>We provide a complexity estimation for the games on several aspects. <strong>InfoSet Number:</strong> the number of information sets; <strong>InfoSet Size:</strong> the average number of states in a single information set; <strong>Action Size:</strong> the size of the action space. <strong>Name:</strong> the name that should be passed to <code class="docutils literal notranslate"><span class="pre">rlcard.make</span></code> to create the game environment. We also provide the link to the documentation and the random example.</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Game</p></th>
-<th class="text-align:center head"><p>InfoSet Number</p></th>
-<th class="text-align:center head"><p>InfoSet Size</p></th>
-<th class="text-align:center head"><p>Action Size</p></th>
-<th class="text-align:center head"><p>Name</p></th>
-<th class="text-align:center head"><p>Usage</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Game</p></th>
+<th class="head text-center"><p>InfoSet Number</p></th>
+<th class="head text-center"><p>InfoSet Size</p></th>
+<th class="head text-center"><p>Action Size</p></th>
+<th class="head text-center"><p>Name</p></th>
+<th class="head text-center"><p>Usage</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>Blackjack (<a class="reference external" href="https://en.wikipedia.org/wiki/Blackjack">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/21%E7%82%B9/5481683?fr=aladdin">baike</a>)</p></td>
-<td class="text-align:center"><p>10^3</p></td>
-<td class="text-align:center"><p>10^1</p></td>
-<td class="text-align:center"><p>10^0</p></td>
-<td class="text-align:center"><p>blackjack</p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/games.md#blackjack">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/blackjack_random.py">example</a></p></td>
+<tr class="row-even"><td class="text-center"><p>Blackjack (<a class="reference external" href="https://en.wikipedia.org/wiki/Blackjack">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/21%E7%82%B9/5481683?fr=aladdin">baike</a>)</p></td>
+<td class="text-center"><p>10^3</p></td>
+<td class="text-center"><p>10^1</p></td>
+<td class="text-center"><p>10^0</p></td>
+<td class="text-center"><p>blackjack</p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/games.md#blackjack">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/run_random.py">example</a></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>Leduc Hold’em (<a class="reference external" href="http://poker.cs.ualberta.ca/publications/UAI05.pdf">paper</a>)</p></td>
-<td class="text-align:center"><p>10^2</p></td>
-<td class="text-align:center"><p>10^2</p></td>
-<td class="text-align:center"><p>10^0</p></td>
-<td class="text-align:center"><p>leduc-holdem</p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/games.md#leduc-holdem">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/leduc_holdem_random.py">example</a></p></td>
+<tr class="row-odd"><td class="text-center"><p>Leduc Hold’em (<a class="reference external" href="http://poker.cs.ualberta.ca/publications/UAI05.pdf">paper</a>)</p></td>
+<td class="text-center"><p>10^2</p></td>
+<td class="text-center"><p>10^2</p></td>
+<td class="text-center"><p>10^0</p></td>
+<td class="text-center"><p>leduc-holdem</p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/games.md#leduc-holdem">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/run_random.py">example</a></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>Limit Texas Hold’em (<a class="reference external" href="https://en.wikipedia.org/wiki/Texas_hold_%27em">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/%E5%BE%B7%E5%85%8B%E8%90%A8%E6%96%AF%E6%89%91%E5%85%8B/83440?fr=aladdin">baike</a>)</p></td>
-<td class="text-align:center"><p>10^14</p></td>
-<td class="text-align:center"><p>10^3</p></td>
-<td class="text-align:center"><p>10^0</p></td>
-<td class="text-align:center"><p>limit-holdem</p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/games.md#limit-texas-holdem">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/limit_holdem_random.py">example</a></p></td>
+<tr class="row-even"><td class="text-center"><p>Limit Texas Hold’em (<a class="reference external" href="https://en.wikipedia.org/wiki/Texas_hold_%27em">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/%E5%BE%B7%E5%85%8B%E8%90%A8%E6%96%AF%E6%89%91%E5%85%8B/83440?fr=aladdin">baike</a>)</p></td>
+<td class="text-center"><p>10^14</p></td>
+<td class="text-center"><p>10^3</p></td>
+<td class="text-center"><p>10^0</p></td>
+<td class="text-center"><p>limit-holdem</p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/games.md#limit-texas-holdem">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/run_random.py">example</a></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>Dou Dizhu (<a class="reference external" href="https://en.wikipedia.org/wiki/Dou_dizhu">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/%E6%96%97%E5%9C%B0%E4%B8%BB/177997?fr=aladdin">baike</a>)</p></td>
-<td class="text-align:center"><p>10^53 ~ 10^83</p></td>
-<td class="text-align:center"><p>10^23</p></td>
-<td class="text-align:center"><p>10^4</p></td>
-<td class="text-align:center"><p>doudizhu</p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/games.md#dou-dizhu">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/doudizhu_random.py">example</a></p></td>
+<tr class="row-odd"><td class="text-center"><p>Dou Dizhu (<a class="reference external" href="https://en.wikipedia.org/wiki/Dou_dizhu">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/%E6%96%97%E5%9C%B0%E4%B8%BB/177997?fr=aladdin">baike</a>)</p></td>
+<td class="text-center"><p>10^53 ~ 10^83</p></td>
+<td class="text-center"><p>10^23</p></td>
+<td class="text-center"><p>10^4</p></td>
+<td class="text-center"><p>doudizhu</p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/games.md#dou-dizhu">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/run_random.py">example</a></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>Mahjong (<a class="reference external" href="https://en.wikipedia.org/wiki/Competition_Mahjong_scoring_rules">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/%E9%BA%BB%E5%B0%86/215">baike</a>)</p></td>
-<td class="text-align:center"><p>10^121</p></td>
-<td class="text-align:center"><p>10^48</p></td>
-<td class="text-align:center"><p>10^2</p></td>
-<td class="text-align:center"><p>mahjong</p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/games.md#mahjong">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/mahjong_random.py">example</a></p></td>
+<tr class="row-even"><td class="text-center"><p>Mahjong (<a class="reference external" href="https://en.wikipedia.org/wiki/Competition_Mahjong_scoring_rules">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/%E9%BA%BB%E5%B0%86/215">baike</a>)</p></td>
+<td class="text-center"><p>10^121</p></td>
+<td class="text-center"><p>10^48</p></td>
+<td class="text-center"><p>10^2</p></td>
+<td class="text-center"><p>mahjong</p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/games.md#mahjong">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/run_random.py">example</a></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>No-limit Texas Hold’em (<a class="reference external" href="https://en.wikipedia.org/wiki/Texas_hold_%27em">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/%E5%BE%B7%E5%85%8B%E8%90%A8%E6%96%AF%E6%89%91%E5%85%8B/83440?fr=aladdin">baike</a>)</p></td>
-<td class="text-align:center"><p>10^162</p></td>
-<td class="text-align:center"><p>10^3</p></td>
-<td class="text-align:center"><p>10^4</p></td>
-<td class="text-align:center"><p>no-limit-holdem</p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/games.md#no-limit-texas-holdem">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/nolimit_holdem_random.py">example</a></p></td>
+<tr class="row-odd"><td class="text-center"><p>No-limit Texas Hold’em (<a class="reference external" href="https://en.wikipedia.org/wiki/Texas_hold_%27em">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/%E5%BE%B7%E5%85%8B%E8%90%A8%E6%96%AF%E6%89%91%E5%85%8B/83440?fr=aladdin">baike</a>)</p></td>
+<td class="text-center"><p>10^162</p></td>
+<td class="text-center"><p>10^3</p></td>
+<td class="text-center"><p>10^4</p></td>
+<td class="text-center"><p>no-limit-holdem</p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/games.md#no-limit-texas-holdem">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/run_random.py">example</a></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>UNO (<a class="reference external" href="https://en.wikipedia.org/wiki/Uno_%5C(card_game%5C)">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/UNO%E7%89%8C/2249587">baike</a>)</p></td>
-<td class="text-align:center"><p>10^163</p></td>
-<td class="text-align:center"><p>10^10</p></td>
-<td class="text-align:center"><p>10^1</p></td>
-<td class="text-align:center"><p>uno</p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/games.md#uno">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/uno_random.py">example</a></p></td>
+<tr class="row-even"><td class="text-center"><p>UNO (<a class="reference external" href="https://en.wikipedia.org/wiki/Uno_(card_game)">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/UNO%E7%89%8C/2249587">baike</a>)</p></td>
+<td class="text-center"><p>10^163</p></td>
+<td class="text-center"><p>10^10</p></td>
+<td class="text-center"><p>10^1</p></td>
+<td class="text-center"><p>uno</p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/games.md#uno">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/run_random.py">example</a></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>Gin Rummy (<a class="reference external" href="https://en.wikipedia.org/wiki/Gin_rummy">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/%E9%87%91%E6%8B%89%E7%B1%B3/3471710">baike</a>)</p></td>
-<td class="text-align:center"><p>10^52</p></td>
-<td class="text-align:center"><p>-</p></td>
-<td class="text-align:center"><p>-</p></td>
-<td class="text-align:center"><p>gin-rummy</p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/games.md#gin-rummy">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/gin_rummy_random.py">example</a></p></td>
+<tr class="row-odd"><td class="text-center"><p>Gin Rummy (<a class="reference external" href="https://en.wikipedia.org/wiki/Gin_rummy">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/%E9%87%91%E6%8B%89%E7%B1%B3/3471710">baike</a>)</p></td>
+<td class="text-center"><p>10^52</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>gin-rummy</p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/games.md#gin-rummy">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/run_random.py">example</a></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Bridge (<a class="reference external" href="https://en.wikipedia.org/wiki/Bridge">wiki</a>, <a class="reference external" href="https://baike.baidu.com/item/%E6%A1%A5%E7%89%8C/332030">baike</a>)</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>bridge</p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/games.md#bridge">doc</a>, <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/run_random.py">example</a></p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="supported-algorithms">
-<h2>Supported Algorithms<a class="headerlink" href="#supported-algorithms" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-auto docutils align-default">
+<h2>Supported Algorithms<a class="headerlink" href="#supported-algorithms" title="Permalink to this heading">¶</a></h2>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Algorithm</p></th>
-<th class="text-align:center head"><p>example</p></th>
-<th class="text-align:center head"><p>reference</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Algorithm</p></th>
+<th class="head text-center"><p>example</p></th>
+<th class="head text-center"><p>reference</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>Deep Monte-Carlo (DMC)</p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/run_dmc.py">examples/run_dmc.py</a></p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://arxiv.org/abs/2106.06135">[paper]</a></p></td>
+<tr class="row-even"><td class="text-center"><p>Deep Monte-Carlo (DMC)</p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/run_dmc.py">examples/run_dmc.py</a></p></td>
+<td class="text-center"><p><a class="reference external" href="https://arxiv.org/abs/2106.06135">[paper]</a></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>Deep Q-Learning (DQN)</p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/run_rl.py">examples/run_rl.py</a></p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://arxiv.org/abs/1312.5602">[paper]</a></p></td>
+<tr class="row-odd"><td class="text-center"><p>Deep Q-Learning (DQN)</p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/run_rl.py">examples/run_rl.py</a></p></td>
+<td class="text-center"><p><a class="reference external" href="https://arxiv.org/abs/1312.5602">[paper]</a></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>Neural Fictitious Self-Play (NFSP)</p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/run_rl.py">examples/run_rl.py</a></p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://arxiv.org/abs/1603.01121">[paper]</a></p></td>
+<tr class="row-even"><td class="text-center"><p>Neural Fictitious Self-Play (NFSP)</p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/run_rl.py">examples/run_rl.py</a></p></td>
+<td class="text-center"><p><a class="reference external" href="https://arxiv.org/abs/1603.01121">[paper]</a></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>Counterfactual Regret Minimization (CFR)</p></td>
-<td class="text-align:center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples/run_cfr.py">examples/run_cfr.py</a></p></td>
-<td class="text-align:center"><p><a class="reference external" href="http://papers.nips.cc/paper/3306-regret-minimization-in-games-with-incomplete-information.pdf">[paper]</a></p></td>
+<tr class="row-odd"><td class="text-center"><p>Counterfactual Regret Minimization (CFR)</p></td>
+<td class="text-center"><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/run_cfr.py">examples/run_cfr.py</a></p></td>
+<td class="text-center"><p><a class="reference external" href="http://papers.nips.cc/paper/3306-regret-minimization-in-games-with-incomplete-information.pdf">[paper]</a></p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="pre-trained-and-rule-based-models">
-<h2>Pre-trained and Rule-based Models<a class="headerlink" href="#pre-trained-and-rule-based-models" title="Permalink to this headline">¶</a></h2>
-<p>We provide a <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/rlcard/models">model zoo</a> to serve as the baselines.</p>
-<table class="colwidths-auto docutils align-default">
+<h2>Pre-trained and Rule-based Models<a class="headerlink" href="#pre-trained-and-rule-based-models" title="Permalink to this heading">¶</a></h2>
+<p>We provide a <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/rlcard/models">model zoo</a> to serve as the baselines.</p>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Model</p></th>
-<th class="text-align:center head"><p>Explanation</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Model</p></th>
+<th class="head text-center"><p>Explanation</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>leduc-holdem-cfr</p></td>
-<td class="text-align:center"><p>Pre-trained CFR (chance sampling) model on Leduc Hold’em</p></td>
+<tr class="row-even"><td class="text-center"><p>leduc-holdem-cfr</p></td>
+<td class="text-center"><p>Pre-trained CFR (chance sampling) model on Leduc Hold’em</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>leduc-holdem-rule-v1</p></td>
-<td class="text-align:center"><p>Rule-based model for Leduc Hold’em, v1</p></td>
+<tr class="row-odd"><td class="text-center"><p>leduc-holdem-rule-v1</p></td>
+<td class="text-center"><p>Rule-based model for Leduc Hold’em, v1</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>leduc-holdem-rule-v2</p></td>
-<td class="text-align:center"><p>Rule-based model for Leduc Hold’em, v2</p></td>
+<tr class="row-even"><td class="text-center"><p>leduc-holdem-rule-v2</p></td>
+<td class="text-center"><p>Rule-based model for Leduc Hold’em, v2</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>uno-rule-v1</p></td>
-<td class="text-align:center"><p>Rule-based model for UNO, v1</p></td>
+<tr class="row-odd"><td class="text-center"><p>uno-rule-v1</p></td>
+<td class="text-center"><p>Rule-based model for UNO, v1</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>limit-holdem-rule-v1</p></td>
-<td class="text-align:center"><p>Rule-based model for Limit Texas Hold’em, v1</p></td>
+<tr class="row-even"><td class="text-center"><p>limit-holdem-rule-v1</p></td>
+<td class="text-center"><p>Rule-based model for Limit Texas Hold’em, v1</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>doudizhu-rule-v1</p></td>
-<td class="text-align:center"><p>Rule-based model for Dou Dizhu, v1</p></td>
+<tr class="row-odd"><td class="text-center"><p>doudizhu-rule-v1</p></td>
+<td class="text-center"><p>Rule-based model for Dou Dizhu, v1</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>gin-rummy-novice-rule</p></td>
-<td class="text-align:center"><p>Gin Rummy novice rule model</p></td>
+<tr class="row-even"><td class="text-center"><p>gin-rummy-novice-rule</p></td>
+<td class="text-center"><p>Gin Rummy novice rule model</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="api-cheat-sheet">
-<h2>API Cheat Sheet<a class="headerlink" href="#api-cheat-sheet" title="Permalink to this headline">¶</a></h2>
+<h2>API Cheat Sheet<a class="headerlink" href="#api-cheat-sheet" title="Permalink to this heading">¶</a></h2>
 <section id="how-to-create-an-environment">
-<h3>How to create an environment<a class="headerlink" href="#how-to-create-an-environment" title="Permalink to this headline">¶</a></h3>
+<h3>How to create an environment<a class="headerlink" href="#how-to-create-an-environment" title="Permalink to this heading">¶</a></h3>
 <p>You can use the the following interface to make an environment. You may optionally specify some configurations with a dictionary.</p>
 <ul class="simple">
 <li><p><strong>env = rlcard.make(env_id, config={})</strong>: Make an environment. <code class="docutils literal notranslate"><span class="pre">env_id</span></code> is a string of a environment; <code class="docutils literal notranslate"><span class="pre">config</span></code> is a dictionary that specifies some environment configurations, which are as follows.</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">seed</span></code>: Default <code class="docutils literal notranslate"><span class="pre">None</span></code>. Set a environment local random seed for reproducing the results.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">allow_step_back</span></code>: Defualt <code class="docutils literal notranslate"><span class="pre">False</span></code>. <code class="docutils literal notranslate"><span class="pre">True</span></code> if allowing <code class="docutils literal notranslate"><span class="pre">step_back</span></code> function to traverse backward in the tree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">allow_step_back</span></code>: Default <code class="docutils literal notranslate"><span class="pre">False</span></code>. <code class="docutils literal notranslate"><span class="pre">True</span></code> if allowing <code class="docutils literal notranslate"><span class="pre">step_back</span></code> function to traverse backward in the tree.</p></li>
 <li><p>Game specific configurations: These fields start with <code class="docutils literal notranslate"><span class="pre">game_</span></code>. Currently, we only support <code class="docutils literal notranslate"><span class="pre">game_num_players</span></code> in Blackjack, .</p></li>
 </ul>
 </li>
@@ -665,19 +425,19 @@ Agent 1: +++
 </ul>
 </section>
 <section id="what-is-state-in-rlcard">
-<h3>What is state in RLCard<a class="headerlink" href="#what-is-state-in-rlcard" title="Permalink to this headline">¶</a></h3>
+<h3>What is state in RLCard<a class="headerlink" href="#what-is-state-in-rlcard" title="Permalink to this heading">¶</a></h3>
 <p>State is a Python dictionary. It consists of observation <code class="docutils literal notranslate"><span class="pre">state['obs']</span></code>, legal actions <code class="docutils literal notranslate"><span class="pre">state['legal_actions']</span></code>, raw observation <code class="docutils literal notranslate"><span class="pre">state['raw_obs']</span></code> and raw legal actions <code class="docutils literal notranslate"><span class="pre">state['raw_legal_actions']</span></code>.</p>
 </section>
 <section id="basic-interfaces">
-<h3>Basic interfaces<a class="headerlink" href="#basic-interfaces" title="Permalink to this headline">¶</a></h3>
-<p>The following interfaces provide a basic usage. It is easy to use but it has assumtions on the agent. The agent must follow <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/developping-algorithms.md">agent template</a>.</p>
+<h3>Basic interfaces<a class="headerlink" href="#basic-interfaces" title="Permalink to this heading">¶</a></h3>
+<p>The following interfaces provide a basic usage. It is easy to use but it has assumtions on the agent. The agent must follow <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/docs/developping-algorithms.md">agent template</a>.</p>
 <ul class="simple">
 <li><p><strong>env.set_agents(agents)</strong>: <code class="docutils literal notranslate"><span class="pre">agents</span></code> is a list of <code class="docutils literal notranslate"><span class="pre">Agent</span></code> object. The length of the list should be equal to the number of the players in the game.</p></li>
 <li><p><strong>env.run(is_training=False)</strong>: Run a complete game and return trajectories and payoffs. The function can be used after the <code class="docutils literal notranslate"><span class="pre">set_agents</span></code> is called. If <code class="docutils literal notranslate"><span class="pre">is_training</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, it will use <code class="docutils literal notranslate"><span class="pre">step</span></code> function in the agent to play the game. If <code class="docutils literal notranslate"><span class="pre">is_training</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">eval_step</span></code> will be called instead.</p></li>
 </ul>
 </section>
 <section id="advanced-interfaces">
-<h3>Advanced interfaces<a class="headerlink" href="#advanced-interfaces" title="Permalink to this headline">¶</a></h3>
+<h3>Advanced interfaces<a class="headerlink" href="#advanced-interfaces" title="Permalink to this heading">¶</a></h3>
 <p>For advanced usage, the following interfaces allow flexible operations on the game tree. These interfaces do not make any assumtions on the agent.</p>
 <ul class="simple">
 <li><p><strong>env.reset()</strong>: Initialize a game. Return the state and the first player ID.</p></li>
@@ -692,72 +452,54 @@ Agent 1: +++
 </section>
 </section>
 <section id="library-structure">
-<h2>Library Structure<a class="headerlink" href="#library-structure" title="Permalink to this headline">¶</a></h2>
+<h2>Library Structure<a class="headerlink" href="#library-structure" title="Permalink to this heading">¶</a></h2>
 <p>The purposes of the main modules are listed as below:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/examples">/examples</a>: Examples of using RLCard.</p></li>
-<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs">/docs</a>: Documentation of RLCard.</p></li>
-<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/tests">/tests</a>: Testing scripts for RLCard.</p></li>
-<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/rlcard/agents">/rlcard/agents</a>: Reinforcement learning algorithms and human agents.</p></li>
-<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/rlcard/envs">/rlcard/envs</a>: Environment wrappers (state representation, action encoding etc.)</p></li>
-<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/rlcard/games">/rlcard/games</a>: Various game engines.</p></li>
-<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/rlcard/models">/rlcard/models</a>: Model zoo including pre-trained models and rule models.</p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/examples">/examples</a>: Examples of using RLCard.</p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/docs">/docs</a>: Documentation of RLCard.</p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/tests">/tests</a>: Testing scripts for RLCard.</p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/rlcard/agents">/rlcard/agents</a>: Reinforcement learning algorithms and human agents.</p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/rlcard/envs">/rlcard/envs</a>: Environment wrappers (state representation, action encoding etc.)</p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/rlcard/games">/rlcard/games</a>: Various game engines.</p></li>
+<li><p><a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/examples/rlcard/models">/rlcard/models</a>: Model zoo including pre-trained models and rule models.</p></li>
 </ul>
 </section>
-<section id="more-documents">
-<h2>More Documents<a class="headerlink" href="#more-documents" title="Permalink to this headline">¶</a></h2>
-<p>For more documentation, please refer to the <a class="reference external" href="https://github.com/datamllab/rlcard/tree/master/docs/README.md">Documents</a> for general introductions. API documents are available at our <a class="reference external" href="http://www.rlcard.org">website</a>.</p>
-</section>
 <section id="contributing">
-<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
-<p>Contribution to this project is greatly appreciated! Please create an issue for feedbacks/bugs. If you want to contribute codes, please refer to <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/CONTRIBUTING.md">Contributing Guide</a>. If you have any questions, please contact <a class="reference external" href="https://github.com/daochenzha">Daochen Zha</a> with <a class="reference external" href="mailto:daochen&#46;zha&#37;&#52;&#48;tamu&#46;edu">daochen<span>&#46;</span>zha<span>&#64;</span>tamu<span>&#46;</span>edu</a>.</p>
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">¶</a></h2>
+<p>Contribution to this project is greatly appreciated! Please create an issue for feedbacks/bugs. If you want to contribute codes, please refer to <a class="reference external" href="https://github.com/datamllab/rlcard/blob/master/CONTRIBUTING.md">Contributing Guide</a>. If you have any questions, please contact <a class="reference external" href="https://github.com/daochenzha">Daochen Zha</a> with <a class="reference external" href="mailto:daochen&#46;zha&#37;&#52;&#48;rice&#46;edu">daochen<span>&#46;</span>zha<span>&#64;</span>rice<span>&#46;</span>edu</a>.</p>
 </section>
 <section id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">¶</a></h2>
 <p>We would like to thank JJ World Network Technology Co.,LTD for the generous support and all the contributions from the community contributors.</p>
 </section>
 </section>
 
 
            </div>
-           
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        
-        &copy; Copyright DATA Lab at Texas A&amp;M University
-
-    </p>
+    <p>&#169; Copyright DATA Lab at Texas A&amp;M University.</p>
   </div>
-    
-    
-      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
